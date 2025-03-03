@@ -1,9 +1,5 @@
 # MetricFcpEntry
 
-import { RuntimeBadge } from '@lynx';
-
-<RuntimeBadge type={'bts'} />
-
 FCP is a key performance metric that measures the time required for the first rendering of a page to complete. It refers to the time taken for users to see any content (such as text or images) on a Lynx page for the first time. `MetricFcpEntry` is the data type used to describe this metric, inheriting from [`PerformanceEntry`](../performance-entry).
 
 The FCP event is triggered when Lynx completes the rendering of the first frame of the page. For pages that rely on network requests or asynchronous I/O to fetch data, the typical state monitored at FCP is the loading page or a placeholder, as shown in the diagram below:

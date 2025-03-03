@@ -1,0 +1,20 @@
+[
+  "main-thread-element",
+  {
+    "type": "file",
+    "name": "lynx-get-text-info",
+    "label": "lynx.getTextInfo()"
+  },
+  "lynx-query-selector",
+  "lynx-query-select-all",
+  {
+    "type": "file",
+    "name": "lynx-request-animation-frame",
+    "label": "lynx.requestAnimationFrame()"
+  },
+  {
+    "type": "file",
+    "name": "lynx-global-props",
+    "label": "lynx.__globalProps"
+  }
+]

@@ -2,15 +2,13 @@
 title: getElementById()
 ---
 
-import { RuntimeBadge } from '@lynx';
-
 # getElementById()
-
-<RuntimeBadge type={'bts'} />
 
 ## 介绍
 
-`getElementById` 是一个用于在当前文档中根据指定 id 寻找元素的方法。这个方法通过 id 选择器作为参数，返回对应元素的节点引用。
+`getElementById` 是一个用于在当前[页面](/guide/spec.html#page)中根据指定 id 获取元件节点引用的方法。这个方法通过 id 选择器作为参数，返回对应元件节点引用。
+请注该引用无法让后台线程可以持有元件，后台线程只能利用该引用[跨线程调用](/guide/spec.html#inter-thread-call-or-itc)[元件方法](/guide/spec.html#element-method)，
+同时该引用不会影响元件的生命周期。
 
 ## 语法
 

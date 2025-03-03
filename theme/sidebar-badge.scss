@@ -1,0 +1,28 @@
+@mixin badge-style {
+  @apply sh-inline-flex sh-items-center sh-justify-center sh-rounded-full sh-text-xs sh-bg-secondary sh-font-semibold sh-px-2.5 sh-h-6 sh-gap-1 sh-text-xs;
+  padding: 0.125rem 0.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+$badge-names: (
+  'BTS': 'BTS Only',
+  'MTS': 'MTS Only',
+);
+
+@each $context, $label in $badge-names {
+  .rspress-sidebar-collapse[data-context='#{$context}'],
+  .rspress-sidebar-item[data-context='#{$context}']:not(
+      :has(.rspress-sidebar-item)
+    )
+    div {
+    position: relative;
+
+    &:after {
+      content: '#{$label}';
+      @include badge-style;
+    }
+  }
+}

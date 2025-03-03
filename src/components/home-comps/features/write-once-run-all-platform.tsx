@@ -1,20 +1,14 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './write-once-run-all-platform.module.less';
-import { useFixDark } from '@site/theme/hooks/use-fix-dark';
 
 export const WriteOnceRunAllPlatform = () => {
-  const isDark = useFixDark();
   return (
     <div className={styles['write-once-run-all-platform-container']}>
-      <LeftLine></LeftLine>
-      <ContainerWithHexagonBackground
-        color={isDark ? '#FFFFFF1A' : 'transparent'}
-        className={styles['outer-hexagon']}
-      >
-        <ContainerWithHexagonBackground
-          color={isDark ? '#FFFFFF1A' : '#1111130A'}
-          className={styles['inner-hexagon']}
-        >
+      <div style={{ width: '33%' }}>
+        <LeftLine></LeftLine>
+      </div>
+      <ContainerWithHexagonBackground className={styles['outer-hexagon']}>
+        <ContainerWithHexagonBackground className={styles['inner-hexagon']}>
           <div className={styles['lynx-logo']}></div>
         </ContainerWithHexagonBackground>
       </ContainerWithHexagonBackground>
@@ -29,11 +23,6 @@ const RightPlatforms = () => {
   return (
     <div className={styles['right-container']}>
       <div>
-        <div
-          className={
-            styles['right-side-base'] + ' ' + styles['right-upper-animation']
-          }
-        ></div>
         <RightlineGoesUp></RightlineGoesUp>
       </div>
       <div
@@ -47,11 +36,6 @@ const RightPlatforms = () => {
         <AnimationLine className={styles['right-line']} />
       </div>
       <div>
-        <div
-          className={
-            styles['right-side-base'] + ' ' + styles['right-down-animation']
-          }
-        ></div>
         <RightlineGoesDown></RightlineGoesDown>
       </div>
     </div>
@@ -59,43 +43,87 @@ const RightPlatforms = () => {
 };
 
 const RightlineGoesUp = () => {
-  const isDark = useFixDark();
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="153"
+      width="100%"
       height="48"
       viewBox="0 0 153 48"
       fill="none"
     >
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="100%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff00" />
+          <stop offset="100%" stop-color="#ff351a" />
+        </linearGradient>
+      </defs>
       <path
+        className={styles['svg-stroke']}
         id="rightLineUp"
-        d="M151.645 1.53027L96.9051 33.1959C81.6857 42 64.4141 46.6357 46.8318 46.6357H0.896946"
-        stroke={isDark ? '#FFFFFF' : '#111113'}
+        d="M0.896946 46.6357 C46.8318 46.6357 64.4141 46.6357 81.6857 42 C98.9573 37.3643 123.275 17.363 151.645 1.53027"
+        stroke={'transparent'}
         stroke-opacity="0.08"
         stroke-width="1.5"
       />
+      <rect
+        transform="translate(-10, -0.5)"
+        fill="url(#grad)"
+        width="10"
+        height="1"
+      >
+        <animateMotion
+          origin="path"
+          rotate="auto"
+          path="M0.896946 46.6357 C46.8318 46.6357 64.4141 46.6357 81.6857 42 C98.9573 37.3643 123.275 17.363 151.645 1.53027"
+          dur="2s"
+          begin="1s"
+          restart="always"
+          repeatCount="indefinite"
+        />
+      </rect>
     </svg>
   );
 };
 
 const RightlineGoesDown = () => {
-  const isDark = useFixDark();
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="153"
+      width="100%"
       height="48"
       viewBox="0 0 153 48"
       fill="none"
     >
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="100%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ffffff00" />
+          <stop offset="100%" stop-color="#12e5e5" />
+        </linearGradient>
+      </defs>
       <path
         id="rightLineDown"
-        d="M151.645 46.7686L96.9051 15.1029C81.6857 6.29883 64.4141 1.66309 46.8318 1.66309H0.896946"
-        stroke={isDark ? '#FFFFFF' : '#111113'}
+        className={styles['svg-stroke']}
+        d="M0.896946 1.66309H46.8318C64.4141 1.66309 81.6857 6.29883 96.9051 15.1029L151.645 46.7686"
+        stroke={'transparent'}
         stroke-opacity="0.08"
         stroke-width="1.5"
       />
+      <rect
+        transform="translate(-10, -0.5)"
+        fill="url(#grad1)"
+        width="10"
+        height="1"
+      >
+        <animateMotion
+          origin="path"
+          rotate="auto"
+          path="M0.896946 1.66309H46.8318C64.4141 1.66309 81.6857 6.29883 96.9051 15.1029L151.645 46.7686"
+          dur="2s"
+          begin="0.5s"
+          restart="always"
+          repeatCount="indefinite"
+        />
+      </rect>
     </svg>
   );
 };

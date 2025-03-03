@@ -34,7 +34,7 @@ const featuresConfig: Record<
   '/': [
     {
       title: {
-        en: 'Write Once, Render Everywhere',
+        en: 'Write Once, Render Anywhere',
         zh: '一次编写，多端渲染',
       },
       desc: {

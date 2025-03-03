@@ -1,9 +1,5 @@
 # InitContainerEntry
 
-import { RuntimeBadge } from '@lynx';
-
-<RuntimeBadge type={'bts'} />
-
 `InitContainerEntry` 接口提供了 Lynx 页面显示前**容器**（**Container**）准备工作的关键时间点，它继承自 [`PerformanceEntry`](api/lynx-api/performance-api/performance-entry)。
 
 > 在应用程序中，容器是一个独立的模块，它负责管理 [LynxView](guide/spec#lynxview) 的生命周期。其主要职责包括创建、初始化、配置、加载内容、处理状态变化及销毁 LynxView 实例等。

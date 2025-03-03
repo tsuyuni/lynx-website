@@ -143,15 +143,17 @@ function HomeLayout() {
   return (
     <>
       <MeteorsBackground gridSize={120} meteorCount={3} />
-      <BaseHomeLayout
-        afterHero={
-          <>
-            <Features src={routePath} />
-            {routePath === '/' && <ShowCase />}
-            {routePath === '/' && <Banner />}
-          </>
-        }
-      />
+      <div className="home-layout-container">
+        <BaseHomeLayout
+          afterHero={
+            <>
+              <Features src={routePath} />
+              {routePath === '/' && <ShowCase />}
+              {routePath === '/' && <Banner />}
+            </>
+          }
+        />
+      </div>
     </>
   );
 }

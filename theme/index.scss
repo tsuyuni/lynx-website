@@ -5,6 +5,7 @@
 @use './home-layout-var';
 @use './hero-text';
 @use './semi';
+@use './sidebar-badge';
 @keyframes gradient-move {
   0% {
     background-position: 0% 50%;
@@ -186,4 +187,21 @@ $overview-index-color-dark: #f9f9f9;
 }
 .dark[data-subsite='guide'] {
   @include custom-link-color($link-color-dark, $overview-index-color-dark);
+}
+
+.home-layout-container {
+  h1 {
+    display: flex;
+    margin: 0px -100px;
+    margin-top: 62px;
+    white-space: nowrap;
+    overflow: hidden;
+    & > span {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      margin-top: 54px;
+    }
+  }
 }

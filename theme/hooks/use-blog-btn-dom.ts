@@ -62,6 +62,7 @@ const useBlogBtnDom = (src: string) => {
     newElement.textContent = config[configKey].text[lang];
 
     targetElement.insertBefore(newElement, targetElement.firstChild);
+    h1.style.margin = '0px -100px';
 
     if (configKey === '/') {
       newElement.addEventListener('click', handleInteraction);

@@ -1,14 +1,12 @@
-import { RuntimeBadge } from '@lynx';
+---
+context: 'MTS'
+---
 
 # Main Thread APIs
 
 Main Thread Script allows JavaScript scripts to be executed on the main thread.
 
 Main Thread Scripts are commonly used for smooth animations and gesture handling. They address the response delay issue caused by events being triggered and handled on different threads in the Lynx multi-threaded architecture, thereby achieving a near-native interactive experience.
-
-## APIs Shared Between Main Thread Script and Background Thread
-
-APIs available to main thread scripts are labeled with <RuntimeBadge type={'bts'}/>, background thread scripts are labeled with <RuntimeBadge type={'bts'}/>, and shared APIs are has no label.
 
 ## Compatibility
 

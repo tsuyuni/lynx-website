@@ -1,14 +1,12 @@
-import { RuntimeBadge } from '@lynx';
+---
+context: 'MTS'
+---
 
 # Main Thread APIs
 
 主线程脚本（Main Thread Script）允许在主线程执行 JS 脚本。
 
 主线程脚本常用于跟手动画和手势处理，解决 Lynx 多线程架构下事件触发和响应位于不同线程所导致的响应延迟问题，来达到近似原生的交互体验。
-
-## 主线程脚本和后台线程共享的 API
-
-主线程脚本可用 API 使用 <RuntimeBadge type={'bts'}/> 标注，后台线程脚本使用 <RuntimeBadge type={'bts'}/> 标注，无特殊标识的，属于共享 API。
 
 ## 兼容性
 

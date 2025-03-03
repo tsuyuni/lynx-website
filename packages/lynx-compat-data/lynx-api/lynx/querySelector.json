@@ -4,7 +4,7 @@
       "querySelector": {
         "__compat": {
           "description": "",
-          "lynx_path": "api/lynx-api/lynx/lynx-query-selector",
+          "lynx_path": "api/lynx-api/main-thread/lynx-query-selector",
           "spec_url": [],
           "status": {
             "deprecated": false,

@@ -108,11 +108,11 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '9.0'
 
 target 'YourTarget' do
-  pod 'Lynx', '~> 3.2.0-alpha.1', :subspecs => [
+  pod 'Lynx', '3.2.0-alpha.1', :subspecs => [
     'Framework',
   ]
 
-  pod 'PrimJS', '~> 0.2.2', :subspecs => ['quickjs', 'napi']
+  pod 'PrimJS', '2.11.1-alpha.2', :subspecs => ['quickjs', 'napi']
 end
 ```
 
@@ -123,6 +123,6 @@ dependencies {
     implementation "org.lynxsdk.lynx:lynx:3.2.0-alpha.1"
     implementation "org.lynxsdk.lynx:lynx-jssdk:3.2.0-alpha.1"
     implementation "org.lynxsdk.lynx:lynx-trace:3.2.0-alpha.1"
-    implementation "org.lynxsdk.lynx:primjs:0.2.2"
+    implementation "org.lynxsdk.lynx:primjs:2.11.1-alpha.2"
 }
 ```

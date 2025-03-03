@@ -55,6 +55,7 @@ interface ExampleContentProps {
   highlight?: string;
   entry?: string;
   defaultWebPreviewFile?: string;
+  initState: boolean;
 }
 
 export const ExampleContent: FC<ExampleContentProps> = ({
@@ -73,6 +74,7 @@ export const ExampleContent: FC<ExampleContentProps> = ({
   highlight,
   entry,
   defaultWebPreviewFile,
+  initState,
 }) => {
   const { treeData, doChangeExpand, selectedKeys, expandedKeys, entryData } =
     useTreeController({ fileNames, value: currentFileName, entry });
@@ -232,7 +234,7 @@ export const ExampleContent: FC<ExampleContentProps> = ({
             >
               <div className={s['preview-wrap']}>
                 <div className="w-full h-full flex flex-col items-center">
-                  {isFullPreview && (
+                  {
                     <RadioGroup
                       onChange={(e) => setPreviewType(e.target.value)}
                       value={previewType}
@@ -243,17 +245,27 @@ export const ExampleContent: FC<ExampleContentProps> = ({
                         justifyContent: 'center',
                       }}
                     >
-                      {previewImage && (
-                        <Radio value={PreviewType.Preview}>
-                          {t('go.preview')}
-                        </Radio>
+                      {initState ? (
+                        <>
+                          {previewImage && (
+                            <Radio value={PreviewType.Preview}>
+                              {t('go.preview')}
+                            </Radio>
+                          )}
+                          {defaultWebPreviewFile && (
+                            <Radio value={PreviewType.Web}>Web</Radio>
+                          )}
+                          {currentEntry && (
+                            <Radio value={PreviewType.QRCode}>
+                              {t('go.qrcode')}
+                            </Radio>
+                          )}
+                        </>
+                      ) : (
+                        <div style={{ width: '100%', height: '32px' }}></div>
                       )}
-                      {defaultWebPreviewFile && (
-                        <Radio value={PreviewType.Web}>Web</Radio>
-                      )}
-                      <Radio value={PreviewType.QRCode}>{t('go.qrcode')}</Radio>
                     </RadioGroup>
-                  )}
+                  }
                   {previewType === PreviewType.QRCode && currentEntry && (
                     <div className={s.qrcode} style={{ minHeight: '0px' }}>
                       <Typography.Text

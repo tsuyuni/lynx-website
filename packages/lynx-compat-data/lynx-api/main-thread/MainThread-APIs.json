@@ -22,7 +22,98 @@
             }
           }
         },
-        "`requestAnimationFrame`": {
+        "Element": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/main-thread-element",
+            "spec_url": [],
+            "status": {
+              "deprecated": false,
+              "experimental": {
+                "version_added": "2.14"
+              }
+            },
+            "support": {
+              "android": {
+                "version_added": "2.14"
+              },
+              "ios": {
+                "version_added": "2.14"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "lynx.getTextInfo": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/lynx-get-text-info",
+            "spec_url": [],
+            "status": {
+              "experimental": {
+                "version_added": "2.14"
+              }
+            },
+            "support": {
+              "android": {
+                "version_added": "2.14"
+              },
+              "ios": {
+                "version_added": "2.14"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "lynx.querySelector": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/lynx-query-selector",
+            "spec_url": [],
+            "status": {
+              "deprecated": false,
+              "experimental": true
+            },
+            "support": {
+              "android": {
+                "version_added": "2.14"
+              },
+              "ios": {
+                "version_added": "2.14"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "lynx.querySelectorAll": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/lynx-query-selector-all",
+            "spec_url": [],
+            "status": {
+              "deprecated": false,
+              "experimental": true
+            },
+            "support": {
+              "android": {
+                "version_added": "2.14"
+              },
+              "ios": {
+                "version_added": "2.14"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "lynx.requestAnimationFrame": {
           "__compat": {
             "description": "",
             "lynx_path": "api/lynx-api/main-thread/main-thread",
@@ -40,6 +131,23 @@
               },
               "web_lynx": {
                 "version_added": false
+              }
+            }
+          }
+        },
+        "lynx.__globalProps": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/lynx-global-props",
+            "support": {
+              "android": {
+                "version_added": "1.3"
+              },
+              "ios": {
+                "version_added": "1.3"
+              },
+              "web_lynx": {
+                "version_added": true
               }
             }
           }

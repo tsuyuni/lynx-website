@@ -2,8 +2,6 @@ import { RuntimeBadge } from '@lynx';
 
 # MetricFcpEntry
 
-<RuntimeBadge type={'bts'} />
-
 FCP 是衡量页面首次渲染完成所需时间的关键性能指标。它指的是用户第一次看到 Lynx 页面中任意内容（如文本、图片等）所需的时间。`MetricFcpEntry` 是用于描述该指标的数据类型，继承自 [`PerformanceEntry`](../performance-entry)。
 
 FCP 事件在 Lynx 绘制完页面第一帧时触发。对于依赖网络请求或异步 IO 获取数据的页面，FCP 通常监测到的状态是 Loading 页或框架图，如下图：

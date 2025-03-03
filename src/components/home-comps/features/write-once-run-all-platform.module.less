@@ -5,19 +5,20 @@
 //// 尺寸计算
 ///外层容器宽度，该组件和外层容器等大
 @self-width-lagger: 470px;
+@self-width-smaller: 114%;
 ///外层容器的padding尺寸，该组件相对定位向左偏移来修正 padding 效果
 @padding-size: 47px;
 ///中间的六边形尺寸
-@hexagon-width: 170px;
+@hexagon-width: 30%;
 /// 左右两次动画组件的宽度为（该容器尺寸 - 六边形尺寸） / 2
 @animation-line-width: (@self-width-lagger - @hexagon-width) * 0.5;
 
 /// 动画时间计算
 @left-animation-duration: 2s;
 @right-animation-duration: 2s;
-@right-up-delay: 0s + @left-animation-duration;
-@right-meddium-delay: 0.5s + @left-animation-duration;
-@right-down-delay: 1s + @left-animation-duration;
+@right-up-delay: 0s;
+@right-meddium-delay: 0s;
+@right-down-delay: 0s;
 
 .write-once-run-all-platform-container {
   width: @self-width-lagger;
@@ -44,6 +45,26 @@
   position: relative;
 }
 
+.outer-hexagon {
+  svg {
+    path {
+      fill: var(--home-features-svg-outer-color);
+    }
+  }
+}
+
+.inner-hexagon {
+  svg {
+    path {
+      fill: var(--home-features-svg-inner-color);
+    }
+  }
+}
+
+.svg-stroke {
+  stroke: var(--home-features-svg-stroke) !important;
+}
+
 .hexagon-as-bg {
   position: absolute;
   width: 100%;
@@ -51,7 +72,7 @@
 }
 
 .outer-hexagon {
-  width: @hexagon-width;
+  width: 40%;
   height: 192px;
 }
 
@@ -61,7 +82,7 @@
 }
 
 .right-container {
-  flex: 1;
+  flex: 1 0 33%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -115,8 +136,9 @@
 .animation-line {
   &-background {
     height: 1px;
-    width: @animation-line-width;
+    width: 100%;
     background-color: @stroke-gray-color;
+    overflow: hidden;
   }
   :global(.dark) &-background {
     background-color: @stroke-gray-color-dark;
@@ -132,7 +154,7 @@
     @animation-tail-gray-color 0%,
     var(--gradient-brand-color) 100%
   );
-  animation: leftLineRun @right-meddium-delay @right-meddium-delay infinite
+  animation: leftLineRun @right-animation-duration @right-meddium-delay infinite
     linear;
 }
 .left-line {

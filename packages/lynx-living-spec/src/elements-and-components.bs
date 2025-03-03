@@ -2,9 +2,16 @@
 
 ## Definition
 
-### <dfn for=ElementsComponents>Element</dfn>
+### <dfn for=ElementsComponents>Element Tag</dfn>
+An element tag is an abstraction notion, which is a static markup structure in [=DSL=],
+composed of tags wrapped in angle brackets (such as <view>),
+used to describe the structure and semantics of the [=page=].
 
-An element is an abstraction notion describing the basic building blocks that form the [=element tree=]. Element is almost always implemented natively on the host platform.
+### <dfn for=ElementsComponents>Element</dfn>
+Element is implemented natively on the host platform.
+It is a native object created during the [=Framework Rendering=] phase,
+consisting of nodes (Node) that form a tree structure
+and provide an interface for script access to and manipulation of [=page=] content.
 
 ### <dfn for=ElementsComponents>Component</dfn>
 An abstraction notion describing reusable, encapsulated pieces of UI that can be defined upon [=ElementsComponents/elements=].

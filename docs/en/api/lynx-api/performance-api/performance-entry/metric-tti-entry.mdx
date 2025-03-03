@@ -2,8 +2,6 @@ import { RuntimeBadge } from '@lynx';
 
 # MetricTtiEntry
 
-<RuntimeBadge type={'bts'} />
-
 TTI is a performance metric that measures the time it takes for a page to become interactive. `MetricTtiEntry` is the data type that describes this metric, inheriting from [`PerformanceEntry`](../performance-entry).
 
 In Lynx, the [Main Thread Script (MTS)](guide/spec#main-thread-script-or-mts) is responsible for rendering the UI and accepting user interactions, while the [Background Thread Script (BTS)](guide/spec#background-thread-script-or-bts) handles interaction events and business logic. Therefore, in Lynx, MTS must complete the first render and BTS must complete loading before user interactions can be responded to.

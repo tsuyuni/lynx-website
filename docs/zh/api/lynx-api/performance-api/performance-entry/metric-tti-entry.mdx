@@ -2,8 +2,6 @@ import { RuntimeBadge } from '@lynx';
 
 # MetricTtiEntry
 
-<RuntimeBadge type={'bts'} />
-
 TTI 是衡量页面达到可交互状态所需时间的性能指标，`MetricTtiEntry` 是描述该指标的数据类型，继承自 [`PerformanceEntry`](../performance-entry)。
 
 在 Lynx 中，[Main Thread Script（MTS）](guide/spec#main-thread-script-or-mts)负责渲染 UI 和接受用户交互，[Background Thread Script（BTS）](guide/spec#background-thread-script-or-bts)负责处理交互事件和业务逻辑。

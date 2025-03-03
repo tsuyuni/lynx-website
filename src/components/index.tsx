@@ -106,3 +106,5 @@ export {
 } from './VersionTag';
 
 export { ExamplePreview } from './go/example-preview';
+
+export { BlogAvatar } from './blog-avatar';

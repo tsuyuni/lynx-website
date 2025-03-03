@@ -47,6 +47,7 @@ export const ExamplePreview = ({
   const [currentEntry, setCurrentEntry] = useState('');
 
   const [defaultWebPreviewFile, setDefaultWebPreviewFile] = useState('');
+  const [initState, setInitState] = useState(false);
   const storeRef = useRef({});
   const highlightData = useMemo(() => {
     return typeof highlight === 'string'
@@ -130,6 +131,7 @@ export const ExamplePreview = ({
         }
         setCurrentEntry(tmpEntry.name);
       }
+      setInitState(true);
     }
   }, [exampleData, defaultEntryFile]);
 
@@ -159,6 +161,7 @@ export const ExamplePreview = ({
       highlight={highlightData[currentName]}
       entry={entry}
       defaultWebPreviewFile={defaultWebPreviewFile}
+      initState={initState}
     />
   );
 };

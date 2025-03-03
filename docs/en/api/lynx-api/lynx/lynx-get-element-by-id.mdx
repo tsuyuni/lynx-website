@@ -2,15 +2,15 @@
 title: getElementById()
 ---
 
-import { RuntimeBadge } from '@lynx';
-
 # getElementById()
-
-<RuntimeBadge type={'bts'} />
 
 ## Introduction
 
-getElementById is a method for finding elements based on a specified id. This method takes an id selector as the parameter and returns a reference to the corresponding element.
+getElementById is a method for finding elements' reference based on a specified id in the current [page](/guide/spec.html#page).
+This method takes an id selector as the parameter and returns a reference to the corresponding element's reference.
+Please note that this reference does not allow background threads to hold the elements;
+background threads can only use this reference to [inter thread call](/guide/spec.html#inter-thread-call-or-itc) [element methods](/guide/spec.html#element-method) across threads,
+and this reference does not affect the element's lifecycle.
 
 ## Syntax
 
