@@ -1,0 +1,77 @@
+# 将样式属性应用到元件
+
+## 选择器
+
+Lynx 通过符合 CSS 规范的选择器来预先定义样式，并将样式属性设置到对应的元件上。包括类型选择器、类选择器、ID 选择器等。你可以通过组合器将他们组合在一起，例如通过后代组合器来为某个特定祖先元件下的某一个元件匹配样式。
+为了保持 Lynx 中样式匹配的系统的高效，以及高并发的特性，我们移除了大部分与渲染上下文有关的伪类，只保留了 `:active`、`:not` 和 `:root`。
+对与树结构相关的样式匹配，如 `:nth`、`:first-child` 等，由于没有相对应的伪类，我们建议通过在渲染逻辑中控制特定节点的样式来取代伪类的使用，比如
+
+```typescript
+array.map((item, index)=>{
+    <view class=`{index === 0 ? 'a' : 'b' }`/>
+})
+```
+
+其余与输入状态和与用户行为相关的伪类，我们会根据我们在移动端的特有交互形态，选择性地跟进 CSS 标准。如果需要 Lynx 中选择器的更多细节，请参考[选择器 API](api/css/selectors)。
+
+如果你之前没接触过 CSS，可以通过该[教程](https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core/Styling_basics)对 CSS 有一个初步了解。
+
+## 嵌套
+
+标准的 CSS 规范中，允许通过 `&` 来声明嵌套的选择器。例如:
+
+```scss
+.a {
+  background: red;
+  &-b {
+    border-radius: 30px;
+  }
+}
+
+/* 等效于 */
+
+.a {
+  background: red;
+}
+
+.a-b {
+  border-radius: 30px;
+}
+```
+
+Lynx 中的所有 CSS 内容都在编译期处理，需要使用 `&` 来声明嵌套的选择器能力的话可以选择使用 [Sass](rspeedy/styling.html#%E4%BD%BF%E7%94%A8-sass) 或者是通过其他 [PostCSS](rspeedy/styling.html#using-postcss) 插件如 [postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting) 处理。
+
+## 级联（Cascading）与继承（Inheritance）
+
+Lynx 中样式的级联行为是符合 CSS 规范的, 你可以按照 Cascade and inheritance 规范来推测哪些属性样式会在元件上生效。比如，通过元件上的样式属性（`style` 属性）设置的样式会覆盖通过样式规则（style rule, 比如类选择器）匹配到的样式; 权重 (specificity) 高的选择器中的样式样式覆盖权重低的；在文档中后出现的样式规则覆盖先出现的等。
+
+:::warning
+
+需要注意的是 Lynx 中没有诸如 `initial`、`inherit` 等全局关键字；
+Lynx 中也不支持使用 `!important`, `layer` 提高或降低属性在级联中的优先级，声明了 `!important` 或在 `layer` 中的属性会因为该值非法而不生效；
+
+:::
+
+CSS 标准中的继承行为会将父亲元素的样式传递给它的孩子。在 Lynx 中属性不会默认集成，如果你想要有属性继承的行为，请参考[如何开启 CSS 继承](guide/styling/custom-theming#如何开启-css-继承)
+
+## 伪元素
+
+Lynx 对 `::selection` 伪元素进行了支持。
+参考 web 标准并结合移动端平台的特点，Lynx 在支持 `::selection` 伪元素时，除支持标准中的 `background-color` 属性外，还新增 `-x-handle-size` 和 `-x-handle-color` 属性。其中，`-x-handle-size` 用于调整浮标大小（iOS 为选中之后两端浮标小圆点直径，Android 为选中之后两端浮标大小），`-x-handle-color` 用于调整浮标颜色。
+
+```html
+<style>
+  .light::selection {
+    background-color: yellow;
+    -x-handle-color: blue;
+    -x-handle-size: 12px;
+  }
+</style>
+
+<text class="light">hello world</text>
+```
+
+## 媒体查询
+
+在 Lynx 可使用 `@import` 规则引通过绝对或相对路径引用工程本地的 CSS 文件。不支持 @media 规则。
+当前 Lynx 中不具备通过媒体查询获取客户端相关信息的能力，如果想要实现针对视窗大小等属性来动态调整样式，在 Lynx 中可以通过 [`SystemInfo`](api/lynx-api/global/system-info) 对象中的值，在渲染逻辑中动态配置。如果 `SystemInfo` 中的属性不满足你的需求，可以配合 [`lynx.__globalProps`](api/lynx-api/lynx/lynx-global-props) 注入和更新一些自定义的信息，来动态调整样式。

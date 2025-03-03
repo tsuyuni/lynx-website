@@ -1,0 +1,49 @@
+---
+title: registerModule()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: registerModule() static method
+
+<RuntimeBadge type={'bts'} />
+
+Register a JavaScript value that can be shared within a single LynxView, but not between different LynxViews.
+
+## Syntax
+
+```ts
+registerModule: <Module>(name: string, module: Module) => void;
+```
+
+### Parameters
+
+#### name
+
+The name of the value.
+
+#### module
+
+The value to be registered, can use any JavaScript types.
+
+### Return Value
+
+None (`undefined`).
+
+## Examples
+
+### Get module from JS
+
+Use the [`lynx.getJSModule`] method to get a registered value:
+
+```js
+const fooModule = {};
+lynx.registerModule('foo', fooModule);
+lynx.getJSModule('foo') === fooModule; // true
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/registerModule" />

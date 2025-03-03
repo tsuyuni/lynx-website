@@ -1,0 +1,55 @@
+---
+title: __globalProps
+---
+
+# lynx: \_\_globalProps readonly object
+
+`lynx.__globalProps` is a global variable, which is an object and you can access it from anywhere。
+
+- It is read-only in the front-end code, you cannot modify its value
+- The client can set and update its value by calling the API provided by lynx SDK
+- Every time the client performs an update, it will trigger a re-rendering of the entire page
+
+## Usage
+
+```jsx
+function App() {
+  const themeClass = useMemo(
+    () => `theme-${lynx.__globalProps.appTheme}`,
+    [lynx.__globalProps.appTheme],
+  );
+
+  return (
+    <view class={themeClass}>
+      <text>{lynx.__globalProps.title}</text>
+    </view>
+  );
+}
+```
+
+## Client side
+
+`__globalProps` can be updated through the API provided by `LynxView`
+
+### Android
+
+```java
+void updateGlobalProps(@NonNull Map<String, Object> props)
+
+void updateGlobalProps(@NonNull TemplateData props)
+
+```
+
+### iOS
+
+```objc
+- (void)updateGlobalPropsWithDictionary:(NSDictionary<NSString*, id>*)data
+
+- (void)updateGlobalPropsWithTemplateData:(LynxTemplateData*)data
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/globalProps" />

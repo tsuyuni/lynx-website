@@ -1,0 +1,28 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "querySelector": {
+        "__compat": {
+          "description": "",
+          "lynx_path": "api/lynx-api/lynx/lynx-query-selector",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": true
+          },
+          "support": {
+            "android": {
+              "version_added": "2.14"
+            },
+            "ios": {
+              "version_added": "2.14"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

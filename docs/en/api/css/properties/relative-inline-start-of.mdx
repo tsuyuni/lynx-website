@@ -1,0 +1,67 @@
+---
+id: relative-inline-start-of
+slug: relative-inline-start-of
+title: relative-inline-start-of
+---
+
+## Introduction
+
+The current element is to the left/right of the sibling element corresponding to the specified [`id`](./relative-id.mdx) in [relative-layout](guide/ui/layout/relative-layout.mdx).
+
+When [`direction`](./direction.mdx) is `ltr`, `relative-inline-start-of` is equivalent to [`relative-left-of`](./relative-left-of.mdx);
+
+When [`direction`](./direction.mdx) is `rtl/lynx-rtl`, `relative-inline-start-of` is equivalent to [`relative-right-of`](./relative-right-of.mdx).
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/relative-inline-start-of/App.tsx"
+  img="/assets/doc/css/relative-inline-start-of.png"
+  defaultEntryFile="dist/relative-inline-start-of.lynx.bundle"
+  entry="src/relative-inline-start-of"
+/>
+
+## Values
+
+The `relative-inline-start-of` property takes the same values as the [`relative-left-of`](./relative-left-of.mdx).
+
+## Syntax
+
+```css
+relative-inline-start-of: none;
+relative-inline-start-of: 1;
+relative-inline-start-of: 2;
+```
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={
+    <>
+      <code>none</code>
+    </>
+  }
+  appliesTo={<>relative items</>}
+  inherited="no"
+/>
+
+## Formal syntax
+
+```
+relative-inline-start-of = none | <number>
+```
+
+## Difference between web
+
+- There is no such style in web.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/relative-inline-start-of" />

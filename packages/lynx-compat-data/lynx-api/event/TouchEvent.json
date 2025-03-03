@@ -1,0 +1,166 @@
+{
+  "lynx-api": {
+    "event": {
+      "TouchEvent": {
+        "__compat": {
+          "lynx_path": "api/lynx-api/event/touch-event",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        },
+        "detail": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "touches": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "changedTouches": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "touchstart": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "touchmove": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "touchend": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "touchcancel": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "tap": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "longpress": {
+          "__compat": {
+            "lynx_path": "api/lynx-api/event/touch-event",
+            "support": {
+              "android": {
+                "version_added": "1.5"
+              },
+              "ios": {
+                "version_added": "1.5"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

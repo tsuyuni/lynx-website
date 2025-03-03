@@ -1,0 +1,31 @@
+# LoadTemplate
+
+使用 [`LynxLoadMeta`](../lynx-load-meta.mdx) 渲染 `LynxView`，是客户端加载 `Lynx` 模板的主入口。
+
+## 语法
+
+### Android
+
+```java
+void loadTemplate(@NonNull LynxLoadMeta meta);
+```
+
+### 参数说明
+
+- `meta: LynxLoadMeta`: Lynx 模板加载元数据，开发者通过该数据结构指定模板加载的可选数据。
+
+### iOS
+
+```objc
+- (void)loadTemplate:(nonnull LynxLoadMeta*)meta;
+```
+
+### 参数说明
+
+- `meta: LynxLoadMeta*`: Lynx 模板加载元数据，开发者通过该数据结构指定模板加载的可选数据。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/load-template" />

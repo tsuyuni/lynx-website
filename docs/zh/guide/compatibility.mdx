@@ -1,0 +1,123 @@
+import { Columns, Mermaid } from '@lynx';
+
+# 兼容性
+
+本文主要介绍如何确保 [Bundle] 和 [Lynx Engine] 之间的版本兼容性，以及如何应对 Lynx Engine 版本演进带来的挑战。
+
+## 从源码构建
+
+一种简单的保证兼容性的方法是，**永远同时从源码构建 Bundle 和宿主应用**。
+
+- Bundle 可以充分利用当前 Lynx Engine 版本的所有特性
+- 在开发阶段就能完全确保兼容性，所见即所得
+
+## 多版本兼容
+
+但是在一个复杂的工程中，Bundle 和 Lynx Engine 之间并非一一对应的关系
+
+- 一个 Bundle 可能运行在多个含有不同版本 Lynx Engine 的应用中
+
+- 一个应用中也可以运行多个由不同团队维护的 Bundle
+
+此时，需要为 Bundle 设置**引擎版本**（[`engineVersion`]）来保证兼容性
+
+:::info 引擎版本
+
+当 Bundle 的引擎版本大于 Lynx Engine 版本时，将无法运行
+
+:::
+
+例如：一个 [`engineVersion`] 为 3.3 的 Bundle 可以在 Lynx Engine 3.3 及以后的版本上运行，但不能在 3.2 上运行。
+
+<Mermaid title="版本兼容性示意图">
+  {`
+graph TB
+    subgraph Bundle["🎯 Bundle"]
+        B10["引擎版本 3.3"]
+    end
+    subgraph Engine["⚙️ Lynx Engine"]
+        E12["Version 3.5"]
+        E11["Version 3.4"]
+        E10["Version 3.3"]
+        E09["Version 3.2"]
+    end
+    B10 -.->|❌ 不支持| E09
+    B10 ==>|✅ 可运行| E10
+    B10 ==>|✅ 可运行| E11
+    B10 ==>|✅ 可运行| E12
+    %% 节点样式
+    style E12 fill:#2b5a83,stroke:#4a90e2,stroke-width:3px,rx:10px
+    style E11 fill:#2b5a83,stroke:#4a90e2,stroke-width:3px,rx:10px
+    style E10 fill:#2b5a83,stroke:#4a90e2,stroke-width:3px,rx:10px
+    style E09 fill:#2b5a83,stroke:#4a90e2,stroke-width:2px,rx:10px,stroke-dasharray:5,5
+    style B10 fill:#2d5a1e,stroke:#7ed321,stroke-width:3px,rx:10px
+    %% 子图样式
+    style Bundle fill:transparent,stroke:#7ed321,stroke-width:2px,rx:10px
+    style Engine fill:transparent,stroke:#4a90e2,stroke-width:2px,rx:10px
+    %% 默认样式
+    classDef default fill:#23272f,color:#ccc,font-family:system-ui
+    %% 连接线标签样式
+    linkStyle default stroke-width:2px
+`}
+</Mermaid>
+
+在一个 Bundle 对应多个 Lynx Engine 版本的情况下，该 Bundle 的 [`engineVersion`] 必须小于所有 Lynx Engine 的版本。
+
+在一个 Lynx Engine 版本上运行多个 Bundle 的情况下，每个 Bundle 都可以设置不同的 [`engineVersion`]，但是都不能大于 Lynx Engine 的版本
+
+### 版本不兼容处理
+
+当 Bundle 尝试在一个较低版本的 Lynx Engine 上运行时，系统会抛出错误码为 [10204](/api/errors/error-code.mdx#subcode-10204) 的 Fatal 级别错误，并停止渲染流程。这种机制可以防止不兼容版本导致的潜在运行时问题。
+
+### 设置引擎版本
+
+[`engineVersion`] 是一个含有两位版本号的字符串，可以在配置文件中指定：
+
+```js title="lynx.config.js"
+import { defineConfig } from '@lynx-js/rspeedy';
+import { pluginReactLynx } from '@lynx-js/react-rsbuild-plugin';
+
+export default defineConfig({
+  plugins: [
+    pluginReactLynx({
+      engineVersion: '3.2',
+    }),
+  ],
+});
+```
+
+## 升级 Lynx Engine
+
+Lynx Engine 的迭代过程中，会有新增功能，也会有废弃功能，它们的兼容性也由 [`engineVersion`] 来保证。
+
+### 新增功能
+
+一些新增功能**_不会_**对已有的 Bundle 产生影响，但如果 [`engineVersion`] 小于其被引入的版本，则需要在运行时进行判断，例如：
+
+```js
+// Detect if `lynx.newlyAddedMethod` can be called
+if (lynx.newlyAddedMethod) {
+  lynx.newlyAddedMethod();
+}
+```
+
+而一些新增功能完全无法运行在低版本的 Lynx Engine 中，因此它们只有在 [`engineVersion`] 大于或等于对应版本时才会被启用。
+
+### 废弃功能
+
+一些功能也可能在迭代的过程中被废弃，他们的行为可能在设置了更高的 [`engineVersion`] 后发生改变。
+
+- 如果只升级 Lynx Engine 的版本，不升级 Bundle 的 [`engineVersion`]，那么不会有兼容性问题产生
+- 如果同时升级了 Lynx Engine 和 Bundle 的 [`engineVersion`]，需要阅读 CHANGELOG 来确保没有产生预期外的行为变更
+
+## 兼容性表格
+
+Lynx 为每个 API、内置元件及 CSS 属性都提供了兼容性表格，以 [`gap`](/api/css/properties/gap) 属性为例：
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/gap" />
+
+[Bundle]: guide/spec#app-bundle-aka-template-bundle
+[Lynx Engine]: guide/spec#engine
+[`engineVersion`]: api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.targetsdkversion

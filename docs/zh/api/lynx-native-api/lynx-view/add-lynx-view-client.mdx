@@ -1,0 +1,31 @@
+# addLynxViewClient
+
+为 `LynxView` 注册生命周期事件监听；
+
+## 语法
+
+### Android
+
+```java
+public void addLynxViewClient(LynxViewClient client);
+```
+
+### 参数说明
+
+- `client: LynxViewClient`: 客户端实现的结构，并注册给 `LynxView` 实例，用于获取 `LynxView` 生命周期各流程回调；
+
+### iOS
+
+```objc
+- (void)addLifecycleClient:(nonnull id<LynxViewLifecycle>)lifecycleClient;
+```
+
+### 参数说明
+
+- `lifecycleClient: id<LynxViewLifecycle>`: 客户端实现的结构，并注册给 `LynxView` 实例，用于获取 `LynxView` 生命周期各流程回调；
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/add-lynx-view-client" />

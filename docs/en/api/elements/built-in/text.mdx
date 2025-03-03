@@ -1,0 +1,354 @@
+import { AndroidOnly, Deprecated, Go } from '@lynx';
+
+# `<text>`
+
+`<text>` is a built-in component in Lynx used to display text content. It supports specifying text style, binding click event callbacks, and can nest `<text>`, `<image>`, and `<view>` components to achieve relatively complex text and image content presentation.
+
+## Usage
+
+The `<text>` element is different from the `<view>` in layout. It does not support setting typesetting and related properties such as `display`. The `<text>` element has its own layout method. The `<text>` element provides an inline formatting context. In Lynx, except for the elements in the `<text>` element, all other elements are block-level elements. When an element is inside the `<text>` element, the `<text>` element provides an inline formatting context, so that the elements in it have the layout characteristics of an inline element. The elements do not occupy a line alone, but are arranged in the same line as the surrounding text content.
+
+### Nested Text
+
+Nested text refers to text subcomponents within a text component. They can be written as `<text>` and are generally used for setting additional text styles or adding click events.
+
+Unlike text components, nested text only supports some `color/font/background-related` properties and does not support view properties such as `opacity/margin/padding` or paragraph properties like `line-height/text-align`.
+
+:::note
+
+`line-height/text-align` only supports being written on the text component and not on nested text.
+
+:::
+
+<Go
+  img="/assets/doc/inline-text-demo.jpeg"
+  example="text"
+  defaultFile="src/inline_text/index.tsx"
+  defaultEntryFile="dist/inline_text.lynx.bundle"
+  entry="src/inline_text"
+/>
+
+In Lynx, the [CSS inheritance](guide/styling/custom-theming#leveraging-css-inheritance-as-needed) feature is not enabled by default. When defining text styles, note that child nodes will not inherit text-related properties from the parent node. Therefore, you need to explicitly declare the required styles on the child nodes.
+
+```tsx
+// When CSS inheritance is not enabled, the font-size of the parent node will not be applied to the child <text> node.
+<view style={{ fontSize: "20px" }}>
+  <text>hello world</text>
+</view>
+
+// Inline <text> is special. Even when CSS inheritance is not enabled, it will still apply some properties of the parent <text>. To maintain consistency, it is recommended to explicitly override the properties of the parent <text> in the inline <text>.
+<text style={{ color: "red" }}>
+  red
+  <text>red</text>
+  <text style={{ color: "blue" }}>blue</text>
+</text>
+```
+
+### Nested Image
+
+Nested images are text subcomponents and can be written as `<image>`, generally used for mixed text and image layout.
+
+:::note
+
+Currently, the nested image cannot adapt its size automatically, **you must display specify the element size in the `<image>` styles**.
+
+:::
+
+<Go
+  img="/assets/doc/inline-image-demo.png"
+  example="text"
+  defaultFile="src/inline_image/index.tsx"
+  defaultEntryFile="dist/inline_image.lynx.bundle"
+  entry="src/inline_image"
+/>
+
+### Nested View
+
+A `<view>` written inside a text component will have inline characteristics and participate in text layout. It also supports all functionalities of the `<view>` tag, including adding borders, rounded corners, and any other component content inside it.
+
+<Go
+  img="/assets/doc/inline-view-demo.gif"
+  example="text"
+  defaultFile="src/inline_view/index.tsx"
+  defaultEntryFile="dist/inline_view.lynx.bundle"
+  entry="src/inline_view"
+/>
+
+### Inline Truncation
+
+`<inline-truncation>` tag is used to customize the content that needs to be displayed at the end of the text when truncation occurs.
+
+The `<inline-truncation>` tag only supports nesting within the `<text>` tag. Nodes inside `<inline-truncation>` can include `<text>` or `<inline-text>`, `<image>` or `<inline-image>`, and `<view>`. When text truncation occurs, nodes within `<inline-truncation>` will participate in text layout and appear at the end of the overall text content. If the content width of `<inline-truncation>` exceeds the width limit of the outer `<text>`, the content within `<inline-truncation>` will not be displayed, and the display result will be the same as without adding `<inline-truncation>`.
+
+:::tip
+
+- If you need to show ellipsis, add the ellipsis node `<text>...</text>` within `<inline-truncation>`.
+- `<inline-truncation>` does not support setting attributes and styles, nor does it support binding events.
+
+:::
+
+<Go
+  img="/assets/doc/inline-truncation-demo.png"
+  example="text"
+  defaultFile="src/inline_truncation/index.tsx"
+  defaultEntryFile="dist/inline_truncation.lynx.bundle"
+  entry="src/inline_truncation"
+/>
+
+### RTL
+
+The `text` component supports RTL (Right-To-Left) language layout display. By default, the `text` component will determine the text language based on the content and use the corresponding layout method. Developers can also specify the use of RTL layout by setting the `direction` style.
+
+:::tip
+
+When `direction` is set to `rtl` or `lynx-rtl`, `text-align:start` will be converted to `text-align:right`, and similarly, `text-align:end` will be converted to `text-align:left`.
+When `direction` is set to `lynx-rtl`, `text-align:left` will be converted to `text-align:right`, and similarly, `text-align:right` will be converted to `text-align:left`.
+
+:::
+
+<Go
+  img="/assets/doc/text_direction_rtl_demo.jpeg"
+  highlight="{169-239}"
+  example="text"
+  defaultFile="src/text_style/index.tsx"
+  defaultEntryFile="dist/text_style.lynx.bundle"
+  entry="src/text_style"
+/>
+
+## Attributes
+
+Attribute names and values are used to describe the behavior and appearance of components.
+
+### `text-maxline`
+
+```tsx
+// DefaultValue: '-1'
+text-maxline?: number;
+```
+
+Limits the maximum number of lines displayed for the text content.
+
+### `include-font-padding`
+
+```tsx
+// DefaultValue: false
+include-font-padding?: boolean;
+```
+
+Add additional padding for Android text on top and bottom. Enabling this may cause inconsistencies between platforms.
+
+### `tail-color-convert`
+
+```tsx
+// DefaultValue: false
+tail-color-convert?: boolean;
+```
+
+By default, if the text is truncated, the inserted `...` will be displayed with the color specified by the closest inline-text's style. If this attribute is enabled, the color of `...` will be specified by the outermost `text` tag's style.
+
+### `text-single-line-vertical-align`
+
+```tsx
+// DefaultValue: 'normal'
+text-single-line-vertical-align?: 'normal' | 'top' | 'center' | 'bottom';
+```
+
+Used to set vertical alignment for single-line plain text. It can be changed by setting 'top' | 'center' | 'bottom'. It is recommended to use this only when the default font does not meet the center alignment requirements, as it increases text measurement time.
+
+## Events
+
+Frontend can bind corresponding event callbacks to components to listen to runtime behaviors. All [basic events](/api/elements/built-in/view.mdx#events) are supported.
+
+### `bindlayout`
+
+```ts
+bindlayout = (e: LineInfo) => {};
+
+class LineInfo {
+  /**
+   * Start offset of the line relative to the entire text.
+   */
+  start: number;
+  /**
+   * End offset of the line relative to the entire text.
+   */
+  end: number;
+  /**
+   * Number of characters truncated in the line. If not zero, it means the entire text was truncated on this line.
+   */
+  ellipsisCount: number;
+};
+
+{
+  /**
+   * Number of visible text lines after layout.
+   */
+  lineCount: number;
+  /**
+   * Detailed information of each line after layout.
+   */
+  lines: LineInfo[];
+  /**
+   * Dimensions of the text component.
+   */
+  size: {width: number, height: number};
+}
+```
+
+The layout event returns the result information after text layout, including the number of lines of the current text, and the start and end positions of the text in each line relative to the entire text.
+
+## Loading Custom Fonts
+
+You can specify custom font resources using [`@font-face`](api/css/at-rule/font-face) and utilize them with the [`font-family`](api/css/properties/font-family) property.
+The client needs to implement the corresponding font resource loader using [`GenericResourceFetcher`](api/lynx-native-api/resource-fetcher/GenericResourceFetcher) to download web font resources.
+
+### Implementing Android Resource Loader
+
+```java
+public class ExampleGenericResourceFetcher extends LynxGenericResourceFetcher {
+  @Override
+  public void fetchResource(LynxResourceRequest request, LynxResourceCallback<byte[]> callback) {
+    ...
+      //download font file through http
+      byte[] data = new byte[(int) file.length()];
+
+      //notify the font data if success
+      callback.onResponse(LynxResourceResponse.onSuccess(data));
+
+    ...
+  }
+}
+
+//Inject during `LynxView` construction.
+LynxViewBuilder.setGenericResourceFetcher(new ExampleGenericResourceFetcher(context));
+```
+
+### Implementing iOS Resource Loader
+
+```objective-c
+@interface ExampleGenericResourceFetcher : NSObject <LynxGenericResourceFetcher>
+
+- (void)fetchResource:(LynxResourceRequest *)request
+           onComplete:(LynxGenericResourceCompletionBlock)callback;
+
+@end
+
+@implementation ExampleGenericResourceFetcher
+NSURL* url = [NSURL URLWithString:request.url];
+  NSURLRequest* url_request = [NSURLRequest requestWithURL:url
+                                               cachePolicy:NSURLRequestReloadIgnoringCacheData
+                                           timeoutInterval:5];
+
+  [NSURLConnection
+      sendAsynchronousRequest:url_request
+                        queue:[NSOperationQueue mainQueue]
+            completionHandler:^(NSURLResponse* _Nullable response, NSData* _Nullable data,
+                                NSError* _Nullable connectionError) {
+              if (!connectionError) {
+                //notify font data
+                callback(data, nil);
+              } else {
+                callback(data, connectionError);
+              }
+            }];
+
+
+@end
+
+//Inject during `LynxView` construction.
+LynxViewBuilder.genericResourceFetcher = [[ExampleGenericResourceFetcher alloc] init];
+```
+
+## Big Font
+
+The client can use the `FontScale` API to adjust the font scaling after the user changes the font scale in the system settings. This will also trigger the `onFontScaleChanged` event, allowing the front-end to adapt accordingly.
+
+<img src="/assets/doc/big-font-flow.png" width="75%" height="75%" />
+
+### Usage
+
+1. Client-side: Use `LynxViewBuilder.setFontScale()` to set the font size when creating the LynxView. When the font size setting is changed, update the font size with `LynxView.updateFontScale()`.
+
+2. Front-end: `font-size` and `line-height` will zoom in and out according to the set scale.
+   The front-end can obtain the updated `fontScale` from the client by listening to the `onFontScaleChanged` event. It can also be obtained through `globalProps.fontScale`.
+
+A demo for the front-end to listen to `onFontScaleChanged`:
+
+```jsx
+const YourComponent = () => {
+  const [touchCount, setTouchCount] = useState(0);
+
+  useEffect(() => {
+    console.log('hello world card loaded');
+
+    const eventEmitter = getJSModule('GlobalEventEmitter');
+    const listener = (msg) => {
+      console.log('onFontScaleChanged testGlobalEvent:', msg);
+      setTouchCount((prevCount) => prevCount + 1);
+    };
+
+    eventEmitter.addListener('onFontScaleChanged', listener);
+
+    return () => {
+      eventEmitter.removeListener('onFontScaleChanged', listener);
+    };
+  }, []);
+
+  return (
+    <view>
+      <text>touch: {touchCount}</text>
+    </view>
+  );
+};
+```
+
+## Compatibility
+
+### Text-related CSS Properties
+
+| CSS                                                       | text | nested text | nested image | nested view | Description                                                                                                         |
+| --------------------------------------------------------- | ---- | ----------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| [color](api/css/properties/color.mdx)                     | Yes  | Yes         | No           | No          | Supports specifying text color and gradient color effects                                                           |
+| [font-family](api/css/properties/font-family.mdx)         | Yes  | Yes         | No           | No          | Sets custom fonts                                                                                                   |
+| [font-size](api/css/properties/font-size.mdx)             | Yes  | Yes         | No           | No          | Sets the size of the font                                                                                           |
+| [font-style](api/css/properties/font-style.mdx)           | Yes  | Yes         | No           | No          | Sets the style of the font. The style may not be applied if the phone doesn’t have a font with that style           |
+| [font-weight](api/css/properties/font-weight.mdx)         | Yes  | Yes         | No           | No          | Sets the weight of the font. It may not be applied if the custom font only provides the normal type                 |
+| [letter-spacing](api/css/properties/letter-spacing.mdx)   | Yes  | Yes         | No           | No          | Sets the spacing between characters of the text                                                                     |
+| [line-height](api/css/properties/line-height.mdx)         | Yes  | No          | No           | No          | Sets the height of multiple lines of text.                                                                          |
+| [text-align](api/css/properties/text-align.mdx)           | Yes  | No          | No           | No          | Sets text alignment within the text component                                                                       |
+| [text-decoration](api/css/properties/text-decoration.mdx) | Yes  | Yes         | No           | No          | Sets the appearance of text decorations                                                                             |
+| [text-indent](api/css/properties/text-indent.mdx)         | Yes  | No          | No           | No          | Sets the indentation before the first line of text                                                                  |
+| [text-overflow](api/css/properties/text-overflow.mdx)     | Yes  | No          | No           | No          | Sets how overflowed content should be displayed                                                                     |
+| [text-shadow](api/css/properties/text-shadow.mdx)         | Yes  | Yes         | No           | No          | Adds shadow to text. On some Android platforms, shadow may not be drawn if blur-radius is set to 0                  |
+| [text-stroke](api/css/properties/text-stroke.mdx)         | Yes  | Yes         | No           | No          | Specifies the width and color of strokes for text characters                                                        |
+| [vertical-align](api/css/properties/vertical-align.mdx)   | No   | Yes         | Yes          | Yes         | Sets the vertical alignment of child elements. In lower versions, the nested text setting may cause wrapping issues |
+| [white-space](api/css/properties/white-space.mdx)         | Yes  | No          | No           | No          | Sets how to handle whitespace                                                                                       |
+| [word-break](api/css/properties/word-break)               | Yes  | No          | No           | No          | Specifies how words should be broken when reaching the end of the line                                              |
+
+### Other CSS Properties
+
+| CSS                                                   | text | inline-text | inline-image | Description                                                                                 |
+| ----------------------------------------------------- | ---- | ----------- | ------------ | ------------------------------------------------------------------------------------------- |
+| [animation](api/css/properties/animation.mdx)         | Yes  | No          | No           | -                                                                                           |
+| [background](api/css/properties/background.mdx)       | Yes  | Yes         | No           |                                                                                             |
+| [border](api/css/properties/border.mdx)               | Yes  | No          | Yes          | -                                                                                           |
+| [border-radius](api/css/properties/border-radius.mdx) | Yes  | No          | Yes          | -                                                                                           |
+| [box-shadow](api/css/properties/box-shadow.mdx)       | Yes  | No          | No           | -                                                                                           |
+| [direction](api/css/properties/direction.mdx)         | Yes  | No          | No           | -                                                                                           |
+| [display](api/css/properties/display.mdx)             | No   | No          | No           | -                                                                                           |
+| [height](api/css/properties/height.mdx)               | Yes  | No          | Yes          | -                                                                                           |
+| [margin](api/css/properties/margin.mdx)               | Yes  | No          | Yes          | -                                                                                           |
+| [padding](api/css/properties/padding.mdx)             | Yes  | No          | No           | -                                                                                           |
+| [position](api/css/properties/position.mdx)           | Yes  | No          | No           | -                                                                                           |
+| [opacity](api/css/properties/opacity.mdx)             | Yes  | No          | No           | On Android, it may cause overflow: visible to fail. You can use overlap={false} to avoid it |
+| [outline](api/css/properties/height.mdx)              | Yes  | No          | No           | -                                                                                           |
+| [overflow](api/css/properties/overflow.mdx)           | Yes  | No          | No           | -                                                                                           |
+| [top](api/css/properties/top.mdx)                     | Yes  | No          | No           | -                                                                                           |
+| [transform](api/css/properties/transform.mdx)         | Yes  | No          | No           | -                                                                                           |
+| [width](api/css/properties/width.mdx)                 | Yes  | No          | Yes          | -                                                                                           |
+| [z-index](api/css/properties/z-index.mdx)             | Yes  | No          | No           | -                                                                                           |
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="elements/text" />
+````

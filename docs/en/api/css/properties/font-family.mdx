@@ -1,0 +1,51 @@
+---
+id: font-family
+slug: font-family
+title: font-family
+---
+
+## Introduction
+
+The `font-family` CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/font-family/App.tsx"
+  img="/assets/doc/css/font-family.jpg"
+  entry="src/font-family"
+  defaultEntryFile="dist/font-family.lynx.bundle"
+/>
+
+## Syntax
+
+```CSS
+font-family: font1,font2;
+```
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<></>}
+  appliesTo={<>text</>}
+  inherited="yes"
+  animatable="no"
+/>
+
+## Formal syntax
+
+```
+font-family =
+  [ <string> | <custom-ident> ]#
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/font-family" />

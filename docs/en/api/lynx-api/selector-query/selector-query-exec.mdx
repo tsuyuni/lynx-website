@@ -1,0 +1,51 @@
+---
+title: exec()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# SelectorQuery: exec() method
+
+<RuntimeBadge type={'bts'} />
+
+Execute all submitted operations. Note that no node search and UI operations will actually be executed until `exec()` is called.
+
+## Syntax
+
+```ts
+exec(): void;
+```
+
+### Parameters
+
+None.
+
+### Return Value
+
+None (`undefined`).
+
+## Example
+
+Get the position and size of the specified `text` node:
+
+```tsx
+lynx
+  .createSelectorQuery()
+  .select('#my-id')
+  .invoke({
+    method: 'boundingClientRect',
+    success: function (res) {
+      console.log(res);
+    },
+    fail: function (res) {
+      console.log(res.code, res.data);
+    },
+  })
+  .exec();
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/selector-query/exec" />

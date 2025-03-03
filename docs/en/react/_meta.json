@@ -1,0 +1,39 @@
+[
+  {
+    "type": "section-header",
+    "label": "Learn ReactLynx"
+  },
+  "introduction",
+  "thinking-in-reactlynx",
+  "lifecycle",
+  "main-thread-script",
+  "code-splitting",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "Architecting"
+  },
+  "data-fetching",
+  {
+    "type": "dir",
+    "name": "state-management",
+    "label": "State Management",
+    "collapsible": true,
+    "collapsed": true
+  },
+  "routing",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "Extra Topics"
+  },
+  {
+    "type": "custom-link",
+    "label": "nav.api",
+    "link": "/api/react.html"
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "lynx-native-api": {
+    "lynx-view": {
+      "load-template": {
+        "__compat": {
+          "description": "load a lynx template file by LynxView.",
+          "lynx_path": "api/lynx-native-api/lynx-view/load-template",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "2.8"
+            },
+            "ios": {
+              "version_added": "2.8"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

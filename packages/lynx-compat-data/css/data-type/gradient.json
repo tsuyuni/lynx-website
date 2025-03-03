@@ -1,0 +1,68 @@
+{
+  "css": {
+    "data-type": {
+      "gradient": {
+        "__compat": {
+          "description": "<code>&lt;gradient&gt;</code>",
+          "lynx_path": "api/css/data-type/gradient",
+          "spec_url": [
+            "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content"
+          ],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "1.0"
+            },
+            "ios": {
+              "version_added": "1.0"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        },
+        "linear-gradient()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "radial-gradient()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

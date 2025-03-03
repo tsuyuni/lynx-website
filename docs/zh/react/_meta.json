@@ -1,0 +1,39 @@
+[
+  {
+    "type": "section-header",
+    "label": "学习 ReactLynx"
+  },
+  "introduction",
+  "thinking-in-reactlynx",
+  "lifecycle",
+  "main-thread-script",
+  "code-splitting",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "应用架构"
+  },
+  "data-fetching",
+  {
+    "type": "dir",
+    "name": "state-management",
+    "label": "状态管理",
+    "collapsible": true,
+    "collapsed": true
+  },
+  "routing",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "更多内容"
+  },
+  {
+    "type": "custom-link",
+    "label": "nav.api",
+    "link": "/api/react.html"
+  }
+]

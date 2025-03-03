@@ -1,0 +1,384 @@
+{
+  "lynx-api": {
+    "performance-api": {
+      "performance-entry": {
+        "load-bundle-entry": {
+          "LoadBundleEntry": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "entryType": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "name": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "identifier": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "loadBundleStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "loadBundleEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "parseStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "parseEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "loadBackgroundStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "loadBackgroundEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "pipelineStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "pipelineEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "mtsRenderStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "mtsRenderEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "resolveStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "resolveEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "layoutStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "paintingUiOperationExecuteEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "layoutUiOperationExecuteStart": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "layoutUiOperationExecuteEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "paintEnd": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          },
+          "frameworkPipelineTiming": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-entry/load-bundle-entry",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

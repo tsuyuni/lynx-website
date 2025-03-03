@@ -1,0 +1,122 @@
+{
+  "css": {
+    "properties": {
+      "clip-path": {
+        "__compat": {
+          "lynx_path": "api/css/properties/clip-path",
+          "spec_url": ["https://drafts.fxtf.org/css-masking/#the-clip-path"],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "2.13"
+            },
+            "ios": {
+              "version_added": "2.13"
+            },
+            "web": {
+              "version_added": "2.13"
+            }
+          }
+        },
+        "circle()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "2.13"
+              },
+              "ios": {
+                "version_added": "2.13"
+              },
+              "web": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        },
+        "inset()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "2.13"
+              },
+              "ios": {
+                "version_added": "2.13"
+              },
+              "web": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        },
+        "ellipse()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "2.13"
+              },
+              "ios": {
+                "version_added": false
+              },
+              "web": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        },
+        "path()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "2.13"
+              },
+              "ios": {
+                "version_added": "2.13"
+              },
+              "web": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        },
+        "polygon()": {
+          "__compat": {
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": false
+              },
+              "ios": {
+                "version_added": false
+              },
+              "web": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+import { QRCodeSVG } from 'qrcode.react';
+import { PackageManagerTabs, Steps } from '@theme';
+import { Go, PlatformTabs } from '@lynx';
+import * as NextSteps from '@lynx/NextSteps';
+
+# 快速上手
+
+欢迎来到 Lynx 文档，我们将创建一个 Lynx 项目，并且将它运行起来。
+
+## 系统要求
+
+- [Node.js 18](https://nodejs.org/zh-cn) 或更新的版本
+  - 当使用 TypeScript 作为配置文件时，需要使用 Node.js 18.19 或更新的版本
+
+## 安装
+
+<Steps>
+
+### 创建一个 Lynx 项目
+
+在 Lynx 项目中，我们使用 Rspeedy（一个基于 Rspack 的 Lynx 构建工具）来构建源码。
+
+推荐通过 [`create-rspeedy`](https://npmjs.com/create-rspeedy) 来快速创建一个 Lynx 项目，执行：
+
+<PackageManagerTabs command="create rspeedy@latest" />
+
+跟随提示来创建一个 Lynx 项目。
+
+### 准备 Lynx Explorer
+
+Lynx Explorer 是一个可以快速试用 Lynx 的沙盒环境。
+
+<PlatformTabs hashKey="explorer-platform">
+
+<PlatformTabs.Tab platform="ios-simulator">
+
+:::info
+目前我们仅提供 iOS 模拟器的预编译二进制文件。如果你需要在真实 iOS 设备上运行 Lynx Explorer，则需要从源代码构建。请参考[为 iOS 构建 Lynx Explorer](https://github.com/lynx-family/lynx/tree/develop/explorer/darwin/ios) 指南。
+:::
+
+1. **安装 Xcode**
+
+打开 Mac App Store，搜索 [Xcode](https://apps.apple.com/us/app/xcode/id497799835)，点击安装（如果已安装则点击更新）。
+
+2. **下载 LynxExplorer**
+
+<PlatformTabs hashKey="ios-simulator-platform">
+
+<PlatformTabs.Tab platform="macos-arm64">
+
+下载 [`LynxExplorer-arm64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-arm64.app.tar.gz)。
+
+然后，解压下载的压缩包：
+
+```bash
+mkdir -p LynxExplorer-arm64.app/
+tar -zxf LynxExplorer-arm64.app.tar.gz -C LynxExplorer-arm64.app/
+```
+
+3. **在模拟器上安装 LynxExplorer**
+
+打开 Xcode，从 Xcode 菜单中选择 **Open Developer Tool**。点击 **Simulator** 选项以启动一个模拟器，然后将 LynxExplorer-arm64.app 拖入模拟器中完成安装。
+
+</PlatformTabs.Tab>
+
+<PlatformTabs.Tab platform="macos-intel">
+
+下载 [`LynxExplorer-x86_64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-x86_64.app.tar.gz)。
+
+然后，解压下载的压缩包：
+
+```bash
+mkdir -p LynxExplorer-x86_64.app/
+tar -zxf LynxExplorer-x86_64.app.tar.gz -C LynxExplorer-x86_64.app/
+```
+
+3. **在模拟器上安装 LynxExplorer**
+
+打开 Xcode，从 Xcode 菜单中选择 **Open Developer Tool**。点击 **Simulator** 选项以启动一个模拟器，然后将 LynxExplorer-x86_64.app 拖入模拟器中完成安装。
+
+</PlatformTabs.Tab>
+
+</PlatformTabs>
+
+</PlatformTabs.Tab>
+
+<PlatformTabs.Tab platform="android">
+
+扫描二维码从 [GitHub Release](https://github.com/lynx-family/lynx/releases/latest) 下载预编译应用。
+
+<QRCodeSVG value="https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-noasan-release.apk" />
+
+或者，你可以按照[为 Android 构建 Lynx Explorer](https://github.com/lynx-family/lynx/tree/develop/explorer/android) 指南从源代码构建。
+
+</PlatformTabs.Tab>
+
+</PlatformTabs>
+
+### 开始开发
+
+1. 进入 Lynx 项目：
+
+```bash
+cd <project-name>
+```
+
+2. 安装依赖：
+
+<PackageManagerTabs command="install" />
+
+3. 启动开发服务器：
+
+<PackageManagerTabs command="run dev" />
+
+你将会在控制台中看到二维码，使用 Lynx Explorer 扫描二维码来打开页面
+
+4. 进行第一次更改：
+
+在代码编辑器中打开 `src/App.tsx` 文件并进行更改。
+
+你应该会看到 Lynx Explorer 上的 UI 自动更新。
+
+<Go
+  example="hello-world"
+  defaultFile="src/App.tsx"
+  img="/assets/doc/hello-world-showcase-ios.png"
+  defaultEntryFile="dist/main.lynx.bundle"
+/>
+
+<br />
+
+### 调试应用
+
+访问 [Lynx DevTool](https://github.com/lynx-family/lynx-devtool/releases) 下载并打开 Lynx DevTool 桌面应用，使用数据线连接正在运行 Lynx 的设备，开始调试应用。
+
+访问[调试工具](/guide/debugging/lynx-devtool.html)，学习如何调试应用。
+
+</Steps>
+
+## 下一步
+
+以下是我们建议接下来探索的一些内容，你可以按任意顺序阅读它们。
+
+### ReactLynx 框架
+
+ReactLynx 是 Lynx 的官方 React 框架，学习如何用 React 的方式构建 Lynx 页面。
+
+<NextSteps.Root>
+
+<NextSteps.Step
+  href="/guide/start/tutorial-gallery"
+  title="教程：产品双列"
+  description="手把手教你用 Lynx 构建瀑布流产品双列"
+/>
+
+<NextSteps.Step
+  href="/react/thinking-in-reactlynx"
+  title="ReactLynx 思维方式"
+  description="学习 ReactLynx 的编程模型和思维"
+/>
+
+</NextSteps.Root>
+
+### 描绘界面
+
+Lynx 能够让你用熟悉的 Web 技术来构建精美的用户界面，
+学习如何在 Lynx 引擎中描绘界面。
+
+<NextSteps.Root>
+
+<NextSteps.Step
+  href="/guide/ui/elements-components"
+  title="使用元件"
+  description="学习如何在 Lynx 中使用内置元件"
+/>
+
+<NextSteps.Step
+  href="/guide/ui/styling"
+  title="添加样式"
+  description="学习如何在 Lynx 中编写样式"
+/>
+
+</NextSteps.Root>
+
+<br />
+
+<NextSteps.Root>
+
+<NextSteps.Step
+  href="/guide/ui/layout"
+  title="理解布局"
+  description="学习如何在 Lynx 中进行排版"
+/>
+
+<NextSteps.Step
+  href="/guide/ui/scrolling"
+  title="管理滚动"
+  description="学习如何在 Lynx 中使用可滚动元件"
+/>
+
+</NextSteps.Root>
+
+### 集成
+
+Lynx 能够被集成到已有的应用中，学习如何将 Lynx 集成到现有 iOS/Android/Web 应用中。
+
+<NextSteps.Root>
+
+<NextSteps.Step
+  href="/guide/start/integrate-with-existing-apps"
+  title="集成"
+  description="将 Lynx 集成到现有的应用中"
+/>
+
+</NextSteps.Root>

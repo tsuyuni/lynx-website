@@ -1,0 +1,63 @@
+---
+id: border-left-color
+slug: border-left-color
+title: border-left-color
+---
+
+## Introduction
+
+Used to set the color of the left border.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/border-left-color/App.tsx"
+  img="/assets/doc/css/border-color-edge.jpg"
+  defaultEntryFile="dist/border-left-color.lynx.bundle"
+  entry="src/border-left-color"
+/>
+
+## Syntax
+
+```css
+border-left-color: red;
+border-left-color: #ffbb00;
+border-left-color: rgb(255, 0, 0);
+border-left-color: hsla(100%, 50%, 25%, 0.75);
+border-left-color: currentColor;
+border-left-color: transparent;
+```
+
+### Values
+
+- `transparent`
+  The border color is transparent.
+
+- [`<color>`](api/css/data-type/color)
+  The specific color of the border.
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>transparent</>}
+  appliesTo={<>all elements</>}
+  inherited="no"
+  animatable="yes"
+/>
+
+## Formal syntax
+
+```
+transparent | <color>
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/border-left-color" />

@@ -1,0 +1,34 @@
+[
+  {
+    "type": "section-header",
+    "label": "基础"
+  },
+  "cli",
+  "styling",
+  "typescript",
+  "assets",
+  "output",
+  "resolve",
+  "plugin",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "调试"
+  },
+  "build-profiling",
+  "use-rsdoctor",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "更多内容"
+  },
+  {
+    "type": "custom-link",
+    "label": "nav.api",
+    "link": "/api/rspeedy.html"
+  }
+]

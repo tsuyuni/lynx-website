@@ -1,0 +1,54 @@
+{
+  "elements": {
+    "text": {
+      "__compat": {
+        "description": "text",
+        "support": {
+          "android": {
+            "version_added": "1.5"
+          },
+          "ios": {
+            "version_added": "1.5"
+          },
+          "clay_android": {
+            "version_added": "1.5"
+          },
+          "clay_windows": {
+            "version_added": "1.5"
+          },
+          "clay_macos": {
+            "version_added": "1.5"
+          },
+          "web_lynx": {
+            "version_added": true
+          }
+        }
+      },
+      "rests": {
+        "__compat": {
+          "description": "All the rest ",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "clay_android": {
+              "version_added": "1.5"
+            },
+            "clay_windows": {
+              "version_added": "1.5"
+            },
+            "clay_macos": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

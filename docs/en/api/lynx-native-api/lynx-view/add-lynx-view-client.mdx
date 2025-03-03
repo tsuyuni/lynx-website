@@ -1,0 +1,31 @@
+# addLynxViewClient
+
+Register lifecycle event observer for `LynxView`
+
+## Syntax
+
+### Android
+
+```java
+public void addLynxViewClient(LynxViewClient client);
+```
+
+### Parameters
+
+- `client: LynxViewClient`: The structure implemented by the client and registered to the `LynxView` instance is used to obtain the callbacks of each process in the `LynxView` lifecycle;
+
+### iOS
+
+```objc
+- (void)addLifecycleClient:(nonnull id<LynxViewLifecycle>)lifecycleClient;
+```
+
+### Parameters
+
+- `lifecycleClient: id<LynxViewLifecycle>`: The structure implemented by the client and registered to the `LynxView` instance is used to obtain the callbacks of each process in the `LynxView` lifecycle;
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/add-lynx-view-client" />

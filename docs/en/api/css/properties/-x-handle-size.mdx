@@ -1,0 +1,61 @@
+# -x-handle-size
+
+## Introduction
+
+The `-x-handle-size` property specifies the size of the floating marker when copying text, only valid in the selection pseudo-element.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/-x-handle-size/App.tsx"
+  img="/assets/doc/css/-x-handle-size.jpg"
+  defaultEntryFile="dist/-x-handle-size.lynx.bundle"
+  entry="src/-x-handle-size"
+/>
+
+## Syntax
+
+```css
+::selection {
+  -x-handle-size: 5px;
+}
+```
+
+### Values
+
+- [`<length>`](api/css/data-type/length.mdx)<br/>
+  Sets the size of the floating marker
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>0</>}
+  appliesTo={<>text</>}
+  inherited="no"
+  animatable="no"
+/>
+
+## Formal syntax
+
+```
+-x-handle-size = <length>
+```
+
+## Differences from web
+
+- This is a Lynx-specific property.
+
+## Notes
+
+- On Android, it corresponds to the size of the entire floating marker, while on iOS, it corresponds to the diameter of the floating marker's circular ball
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/-x-handle-size" />

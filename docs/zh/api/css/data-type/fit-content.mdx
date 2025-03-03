@@ -1,0 +1,21 @@
+# `<fit-content>`
+
+`fit-content()` 目前只有 width，height 支持该值，布局中取下列两者间的较大值:
+
+- 0
+- 内容最大大小和 `fit-content()` 中指定值的较小值
+
+`fit-content` 等价于 `fit-content(auto)`，auto 指定值与父元素对应轴长度一致。
+
+## 示例
+
+```css
+width: fit-content;
+height: fit-content(200px);
+```
+
+## 版本要求
+
+import { APITable } from '@lynx';
+
+<APITable query="css/data-type/fit-content" />

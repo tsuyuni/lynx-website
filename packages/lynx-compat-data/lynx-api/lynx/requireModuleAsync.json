@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "requireModuleAsync": {
+        "__compat": {
+          "description": "Used to import modules.",
+          "lynx_path": "api/lynx-api/lynx/lynx-require-module-async",
+          "support": {
+            "android": {
+              "version_added": "1.4"
+            },
+            "ios": {
+              "version_added": "1.4"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

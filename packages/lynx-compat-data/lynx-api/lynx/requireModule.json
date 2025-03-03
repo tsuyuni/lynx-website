@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "requireModule": {
+        "__compat": {
+          "description": "Used to import modules and JSON.",
+          "lynx_path": "api/lynx-api/lynx/lynx-require-module",
+          "support": {
+            "android": {
+              "version_added": "1.4"
+            },
+            "ios": {
+              "version_added": "1.4"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

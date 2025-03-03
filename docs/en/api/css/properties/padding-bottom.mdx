@@ -1,0 +1,75 @@
+---
+id: padding-bottom
+slug: padding-bottom
+title: padding-bottom
+---
+
+## Introduction
+
+Sets the height of the padding area on the bottom of an element. Negative values are not allowed for padding.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/padding-bottom/App.tsx"
+  img="/assets/doc/css/padding-bottom.jpg"
+  entry="src/padding-bottom"
+  defaultEntryFile="dist/padding-bottom.lynx.bundle"
+/>
+
+## Syntax
+
+```css
+/* <length> values */
+padding-bottom: 0.5em;
+padding-bottom: 0;
+
+/* <percentage> value */
+padding-bottom: 10%;
+```
+
+### Values
+
+#### `0px`
+
+**Default value**.
+
+#### `<length>`
+
+The size of the padding as a fixed value. Must be nonnegative.
+
+#### `<percentage>`
+
+The size of the padding as a percentage, relative to the inline size (width) of the [containing block](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block).
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>0</>}
+  appliesTo={<>all elements</>}
+  inherited="no"
+  animatable="yes"
+  percentages={<>refer to the width of the containing block</>}
+/>
+
+## Formal syntax
+
+```
+padding-bottom =
+  <length-percentage [0,∞]>
+
+<length-percentage> =
+  <length>      |
+  <percentage>
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/padding-bottom" />

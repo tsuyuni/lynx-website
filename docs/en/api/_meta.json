@@ -1,0 +1,269 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "sidebar.api-index"
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.frameworks"
+  },
+  {
+    "type": "dir",
+    "name": "react",
+    "label": "@lynx-js/react",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.rspeedy.header"
+  },
+  {
+    "type": "dir",
+    "name": "rspeedy",
+    "label": "lynx.config.js",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "react-rsbuild-plugin",
+    "label": "@lynx-js/react-rsbuild-plugin",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "qrcode-rsbuild-plugin",
+    "label": "@lynx-js/qrcode-rsbuild-plugin",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.comp"
+  },
+  {
+    "type": "dir",
+    "name": "elements/built-in",
+    "label": "sidebar.comp.built-in",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.style"
+  },
+  {
+    "type": "dir",
+    "name": "css/properties",
+    "label": "sidebar.style.properties",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "css/at-rule",
+    "label": "sidebar.style.at-rule",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "css/data-type",
+    "label": "sidebar.style.data-type",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "css/selectors"
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "Lynx APIs"
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/event",
+    "label": "Event",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/global",
+    "label": "Global",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/intersection-observer",
+    "label": "IntersectionObserver",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/lynx",
+    "label": "Lynx",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/nodes-ref",
+    "label": "NodesRef",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/main-thread",
+    "label": "MainThread",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/selector-query",
+    "label": "SelectorQuery",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-api/performance-api",
+    "label": "Performance APIs",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.native-api"
+  },
+  {
+    "type": "dir",
+    "name": "lynx-native-api/lynx-view",
+    "label": "LynxView",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "lynx-native-api/lynx-load-meta",
+    "label": "LynxLoadMeta",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "lynx-native-api/lynx-update-meta",
+    "label": "LynxUpdateMeta",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "lynx-native-api/template-bundle",
+    "label": "TemplateBundle",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "lynx-native-api/template-data",
+    "label": "TemplateData",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "lynx-native-api/resource-fetcher",
+    "label": "ResourceFetcher",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "lynx-native-api/lynx-service",
+    "label": "LynxService",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.engine-api"
+  },
+  {
+    "type": "dir",
+    "name": "engine/element-api",
+    "label": "sidebar.engine-api.element-api",
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "sidebar.errors"
+  },
+  {
+    "type:": "file",
+    "name": "errors/lynx-error",
+    "label": "sidebar.errors.lynx-error",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "errors/error-code",
+    "label": "sidebar.errors.error-code",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  }
+]

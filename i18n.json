@@ -1,0 +1,654 @@
+{
+  "edit.cloud-ide": {
+    "en": "Edit on CloudIDE",
+    "zh": "在 CloudIDE 上编辑"
+  },
+  "edit.source": {
+    "en": "View source",
+    "zh": "查看源文件"
+  },
+  "compat-table.native.render": {
+    "en": "Native",
+    "zh": "原生渲染"
+  },
+  "css.animation-props": {
+    "en": "Animation Properties",
+    "zh": "动画属性"
+  },
+  "css.at-rule": {
+    "en": "@ Rule",
+    "zh": "@ 规则"
+  },
+  "css.data-type": {
+    "en": "Data Types",
+    "zh": "数据类型"
+  },
+  "css.layout-animation-props": {
+    "en": "Layout Animation Properties (Deprecated)",
+    "zh": "排版动画属性（废弃）"
+  },
+  "css.layout-props": {
+    "en": "Layout Properties",
+    "zh": "排版属性"
+  },
+  "css.text-props": {
+    "en": "Text Properties",
+    "zh": "文本属性"
+  },
+  "css.ui-props": {
+    "en": "UI Properties",
+    "zh": "UI 属性"
+  },
+  "css-api.property.initial_value": {
+    "en": "Initial value",
+    "zh": "初始值"
+  },
+  "css-api.property.applies_to": {
+    "en": "Applies to",
+    "zh": "适用元素"
+  },
+  "css-api.property.inherited": {
+    "en": "Inherited",
+    "zh": "是否支持继承"
+  },
+  "css-api.property.animatable": {
+    "en": "Animatable",
+    "zh": "是否支持动画"
+  },
+  "css-api.property.percentages": {
+    "en": "Percentages",
+    "zh": "百分比"
+  },
+  "ecosystem.community": {
+    "en": "Lynx Community",
+    "zh": "Lynx 社区"
+  },
+  "ecosystem.contributing-to-docs": {
+    "en": "Contributing to Docs",
+    "zh": "贡献文档"
+  },
+  "ecosystem.host-version": {
+    "en": "Host App Versions",
+    "zh": "宿主 app 版本信息"
+  },
+  "ecosystem.releases": {
+    "en": "Releases",
+    "zh": "Lynx 版本发布"
+  },
+  "event-list.event.always": {
+    "en": "Always",
+    "zh": "必定触发"
+  },
+  "event-list.event.multiple": {
+    "en": "Multiple",
+    "zh": "多次触发"
+  },
+  "event-list.event.sync": {
+    "en": "Synchronize",
+    "zh": "同步事件"
+  },
+  "event-list.status.empty": {
+    "en": "No data is available for this event",
+    "zh": "该事件没有参数"
+  },
+  "extra-reading.title": {
+    "en": "Extra reading",
+    "zh": "拓展阅读"
+  },
+  "frontend.components": {
+    "en": "Rich Components",
+    "zh": "丰富的组件"
+  },
+  "frontend.react": {
+    "en": "Use ReactLynx",
+    "zh": "使用 React 开发"
+  },
+  "frontend.speedy": {
+    "en": "The Speedy Toolchain",
+    "zh": "使用 Speedy 工具链"
+  },
+  "frontend.styling": {
+    "en": "Styling UI",
+    "zh": "编写 UI 样式"
+  },
+  "homepage.hint.reactlynx": {
+    "en": "⚛️ ReactLynx 3",
+    "zh": "⚛️ ReactLynx 3"
+  },
+  "homepage.hint.reactlynx.description": {
+    "en": "New docs only features ReactLynx 3. Legacy RL2 docs still available.",
+    "zh": "新文档专注于 ReactLynx 3。如需要 RL2 请访问旧版文档。"
+  },
+  "homepage.hint.reactlynx.legacy": {
+    "en": "RL2",
+    "zh": "RL2"
+  },
+  "homepage.hint.dev": {
+    "en": "🚧 Local environment",
+    "zh": "🚧 本地环境"
+  },
+  "homepage.hint.dev.description": {
+    "en": "You are currently in a local development environment. Use this for testing and development purposes.",
+    "zh": "你目前处于本地开发环境。请用于测试和开发目的。"
+  },
+  "homepage.hint.prod": {
+    "en": "🎉 Welcome to the new Lynx Docs",
+    "zh": "🎉 欢迎来到新 Lynx 文档"
+  },
+  "homepage.hint.prod.description": {
+    "en": "New Lynx Docs Beta is here! Share feedback in our group. Legacy docs are still available.",
+    "zh": "新版 Lynx 文档 Beta 上线！欢迎在群组反馈。旧版文档仍可访问。"
+  },
+  "homepage.hint.dev.simulate-prod": {
+    "en": "Simulate prod toast",
+    "zh": "模拟生产环境提示"
+  },
+  "homepage.hint.join-group": {
+    "en": "Join Group",
+    "zh": "加群"
+  },
+  "homepage.hint.visit-legacy": {
+    "en": "Legacy Docs",
+    "zh": "旧版官网"
+  },
+  "homepage.preview.whatsnew": {
+    "en": "What's new",
+    "zh": "What's new"
+  },
+  "index.features.title.fast": {
+    "en": "Fast",
+    "zh": "高性能"
+  },
+  "index.features.title.lightweight": {
+    "en": "Lightweight",
+    "zh": "轻量"
+  },
+  "index.features.title.multi-platform": {
+    "en": "Multi-Platform",
+    "zh": "多平台支持"
+  },
+  "index.features.title.productive": {
+    "en": "Productive",
+    "zh": "高效率"
+  },
+  "index.features.title.web-friendly": {
+    "en": "Web Friendly",
+    "zh": "Web Friendly"
+  },
+  "index.introduction.api-doc": {
+    "en": "API Reference",
+    "zh": "API 文档"
+  },
+  "index.introduction.content": {
+    "en": "Powerful Cross-Platform Framework that builds native Apps with Web technologies",
+    "zh": "用 Web 技术栈快速构建 Native 视图的高性能跨端框架"
+  },
+  "index.introduction.quick-start": {
+    "en": "Quick Start",
+    "zh": "快速开始"
+  },
+  "lint.rule.severities.desc": {
+    "en": "It is used to describe the default error level of the latest version of the rule, red is error, orange is warning, if there is empty, it means this rule is not enabled by default",
+    "zh": "用于描述最新版本该规则默认的错误等级，红色为 error，橙色为 warning，没有则代表默认没有开启"
+  },
+  "lint.rule.type.desc": {
+    "en": "Used to describe applicable tools or content, from left to right are ESLint, CSS, React and artifacts analysis",
+    "zh": "用于描述适用的工具或内容, 从左到右依次为 ESLint, CSS, React 和 产物检测"
+  },
+  "lint.rule.version.desc": {
+    "en": "It is used to describe the minimum version of `plugin-static-check` plugin that supports this rule, 🚧 means it is not currently supported or the support is incomplete",
+    "zh": "用于描述 `plugin-static-check` 插件支持该规则的最低版本，🚧 代表目前不支持或支持并不完整"
+  },
+  "lynx-ui.qrcode.recommend": {
+    "en": "Recommend to use",
+    "zh": "建议使用"
+  },
+  "lynx-ui.qrcode.scan": {
+    "en": "to scan and preview",
+    "zh": "扫码预览"
+  },
+  "nav.advanced": {
+    "en": "Advanced",
+    "zh": "进阶"
+  },
+  "guide.get-started": {
+    "en": "Get Started",
+    "zh": "起步"
+  },
+  "guide.get-started.start": {
+    "en": "Welcome!",
+    "zh": "欢迎！"
+  },
+  "guide.get-started.installation": {
+    "en": "Installation",
+    "zh": "安装"
+  },
+  "nav.guide": {
+    "en": "Guide",
+    "zh": "指引"
+  },
+  "nav.blog": {
+    "en": "Blog",
+    "zh": "博客"
+  },
+  "nav.api": {
+    "en": "APIs",
+    "zh": "API"
+  },
+  "nav.ecosystem": {
+    "en": "Ecosystem",
+    "zh": "生态"
+  },
+  "nav.react": {
+    "en": "ReactLynx",
+    "zh": "ReactLynx"
+  },
+  "nav.rspeedy": {
+    "en": "Rspeedy",
+    "zh": "Rspeedy"
+  },
+  "nav.guides": {
+    "en": "Guides",
+    "zh": "指南"
+  },
+  "nav.start": {
+    "en": "Get Started",
+    "zh": "开始"
+  },
+  "nav.contribute": {
+    "en": "Contribute",
+    "zh": "贡献"
+  },
+  "guide.ui": {
+    "en": "Describing the UI",
+    "zh": "描绘界面"
+  },
+  "guide.essential": {
+    "en": "Core",
+    "zh": "核心"
+  },
+  "guide.essential.styling": {
+    "en": "Crafting Design",
+    "zh": "打磨设计"
+  },
+  "guide.essential.interaction": {
+    "en": "Scripting Interactions",
+    "zh": "编写交互"
+  },
+  "guide.essential.layout": {
+    "en": "Understanding Layout",
+    "zh": "理解布局"
+  },
+  "guide.essential.animation": {
+    "en": "Animation",
+    "zh": "动画"
+  },
+  "guide.essential.main-thread": {
+    "en": "Main Thread Programming",
+    "zh": "主线程编程"
+  },
+  "guide.best-practice": {
+    "en": "Engineering",
+    "zh": "工程"
+  },
+  "guide.best-practice.integration": {
+    "en": "Integration",
+    "zh": "集成"
+  },
+  "guide.best-practice.compatibility": {
+    "en": "Compatibility",
+    "zh": "兼容性"
+  },
+  "guide.engineering.debugging": {
+    "en": "Debugging",
+    "zh": "调试"
+  },
+  "guide.engineering.debugging.devtool": {
+    "en": "DevTool",
+    "zh": "调试工具"
+  },
+  "guide.engineering.debugging.handle-errors": {
+    "en": "Handle Errors in Lynx",
+    "zh": "错误处理"
+  },
+  "guide.engineering.performance": {
+    "en": "Performance",
+    "zh": "性能"
+  },
+  "guide.engineering.performance.evaluating-performance": {
+    "en": "Evaluating Performance",
+    "zh": "评估性能"
+  },
+  "guide.engineering.performance.timign-flag": {
+    "en": "Use Timing Flag",
+    "zh": "标记 Timing Flag"
+  },
+  "guide.best-practice.publishing": {
+    "en": "Publishing",
+    "zh": "发布"
+  },
+  "guide.graphics": {
+    "en": "Graphics",
+    "zh": "图形"
+  },
+  "guide.inclusion": {
+    "en": "Ensuring Inclusion",
+    "zh": "确保包容"
+  },
+  "guide.living-spec": {
+    "en": "Terms and Spec",
+    "zh": "术语与规范"
+  },
+  "guide.inclusion.internationalization": {
+    "en": "Internationalization",
+    "zh": "国际化"
+  },
+  "guide.native": {
+    "en": "Native Development",
+    "zh": "客户端能力"
+  },
+  "guide.use.native.modules": {
+    "en": "Use Native Modules (JS Bridge)",
+    "zh": "调用原生模块（如 JS 桥）"
+  },
+  "guide.custom.native.modules": {
+    "en": "Native Modules",
+    "zh": "原生模块"
+  },
+  "guide.custom.native.component": {
+    "en": "Custom Native Element",
+    "zh": "自定义元件"
+  },
+  "guide.custom.native.embeded": {
+    "en": "Embed LynxView to native view",
+    "zh": "原生视图嵌入 LynxView"
+  },
+  "guide.custom.native.extension": {
+    "en": "Native Extension",
+    "zh": "原生拓展"
+  },
+  "guide.architecture": {
+    "en": "Architecture",
+    "zh": "架构"
+  },
+  "guide.architecture.legacy": {
+    "en": "Legacy Architecture",
+    "zh": "历史架构描述"
+  },
+  "guide.architecture.scripting-runtime": {
+    "en": "JavaScript Runtime",
+    "zh": "JavaScript 环境"
+  },
+  "guide.toolchain": {
+    "en": "Toolchain",
+    "zh": "工具链"
+  },
+  "playground.device.android": {
+    "en": "Android Device (ARM)",
+    "zh": "Android 设备 (ARM)"
+  },
+  "playground.device.close": {
+    "en": "Close",
+    "zh": "关闭"
+  },
+  "playground.device.ios-device": {
+    "en": "iOS Device",
+    "zh": "iOS 真机"
+  },
+  "playground.device.ios-simulator": {
+    "en": "iOS Simulator",
+    "zh": "iOS 模拟器"
+  },
+  "playground.download.button": {
+    "en": "DOWNLOAD",
+    "zh": "下载安装文件"
+  },
+  "playground.download.time": {
+    "en": "Created at: ",
+    "zh": "构建时间："
+  },
+  "playground.introduction.title": {
+    "en": "Preview and debugging Lynx pages",
+    "zh": "在这里预览调试 Lynx 页面"
+  },
+  "playground.versions.no-version": {
+    "en": "No other version",
+    "zh": "暂无可用版本"
+  },
+  "playground.versions.others": {
+    "en": "Other Versions",
+    "zh": "其他版本"
+  },
+  "props-list.default": {
+    "en": "Default: ",
+    "zh": "默认值："
+  },
+  "props-list.deprecated": {
+    "en": "Deprecated: ",
+    "zh": "即将废弃："
+  },
+  "props-list.required": {
+    "en": "Required",
+    "zh": "必填"
+  },
+  "showcase.banner.learn": {
+    "en": "Learn More",
+    "zh": "了解更多"
+  },
+  "showcase.banner.start": {
+    "en": "Start",
+    "zh": "开始"
+  },
+  "showcase.buttons.performance": {
+    "en": "Performance Optimization",
+    "zh": "性能优化"
+  },
+  "sidebar.api-index": {
+    "en": "API Reference",
+    "zh": "API 参考"
+  },
+  "sidebar.comp": {
+    "en": "Elements",
+    "zh": "元件"
+  },
+  "sidebar.comp.common": {
+    "en": "Element Commonalities",
+    "zh": "元件共性"
+  },
+  "sidebar.comp.built-in": {
+    "en": "Builtin Elements",
+    "zh": "内置元件"
+  },
+  "sidebar.frameworks": {
+    "en": "Frameworks",
+    "zh": "框架"
+  },
+  "sidebar.style": {
+    "en": "Styling",
+    "zh": "样式"
+  },
+  "sidebar.css": {
+    "en": "CSS",
+    "zh": "CSS"
+  },
+  "sidebar.style.properties": {
+    "en": "Properties",
+    "zh": "属性"
+  },
+  "sidebar.style.at-rule": {
+    "en": "At-rules",
+    "zh": "At 规则"
+  },
+  "sidebar.style.data-type": {
+    "en": "Data types",
+    "zh": "数据类型"
+  },
+  "sidebar.about-dsl.hint": {
+    "en": "About DSL Switcher",
+    "zh": "关于 DSL 选择"
+  },
+  "sidebar.dsl-and-platform.platform.title": {
+    "en": "Target Platforms",
+    "zh": "目标平台"
+  },
+  "sidebar.native-api": {
+    "en": "Lynx Native APIs",
+    "zh": "Lynx 客户端 APIs"
+  },
+  "sidebar.engine-api": {
+    "en": "Lynx Engine Low-level APIs",
+    "zh": "Lynx 引擎底层 API"
+  },
+  "sidebar.engine-api.element-api": {
+    "en": "Element PAPIs",
+    "zh": "Element PAPIs"
+  },
+  "sidebar.lynx-api.dom": {
+    "en": "Element Manipulation",
+    "zh": "节点查找与操作"
+  },
+  "sidebar.react": {
+    "en": "ReactLynx 3",
+    "zh": "ReactLynx 3"
+  },
+  "sidebar.errors": {
+    "en": "Errors in Lynx",
+    "zh": "Lynx 中的错误"
+  },
+  "sidebar.errors.lynx-error": {
+    "en": "LynxError",
+    "zh": "LynxError"
+  },
+  "sidebar.errors.error-property": {
+    "en": "Error Properties",
+    "zh": "错误的属性"
+  },
+  "sidebar.errors.error-code": {
+    "en": "Error Codes",
+    "zh": "错误码"
+  },
+  "style.animation": {
+    "en": "Animations",
+    "zh": "动画"
+  },
+  "style.layout": {
+    "en": "Layout",
+    "zh": "布局"
+  },
+  "style.rtl-support": {
+    "en": "RTL Support",
+    "zh": "RTL 支持"
+  },
+  "style.css-var": {
+    "en": "CSS Variable",
+    "zh": "CSS 变量"
+  },
+  "style.css-inheritance": {
+    "en": "CSS Inheritance",
+    "zh": "CSS 继承"
+  },
+  "style.theming": {
+    "en": "Theming",
+    "zh": "多主题"
+  },
+  "style.appearance": {
+    "en": "Visuals",
+    "zh": "视效"
+  },
+  "style.motion": {
+    "en": "Motion",
+    "zh": "动效"
+  },
+  "style.text": {
+    "en": "Typography",
+    "zh": "文字排版"
+  },
+  "style.overflow-and-scrolling": {
+    "en": "Overflow and Scrolling Behavior",
+    "zh": "溢出与滚动"
+  },
+  "style.application": {
+    "en": "Applying Styles",
+    "zh": "调整样式"
+  },
+  "sidebar.rspeedy.header": {
+    "en": "Compilation Toolchain",
+    "zh": "编译工具链"
+  },
+  "sidebar.speedy": {
+    "en": "Speedy",
+    "zh": "Speedy"
+  },
+  "TaroLynx": {
+    "en": "TaroLynx",
+    "zh": "TaroLynx"
+  },
+  "theme.NotFound.guessyouwant": {
+    "en": "Guess you want",
+    "zh": "猜你想找"
+  },
+  "theme.NotFound.homepage": {
+    "en": "Homepage",
+    "zh": "回到首页"
+  },
+  "theme.NotFound.onCall": {
+    "en": "You can contact Lynx OnCall for the new link.",
+    "zh": "你可以联系 Lynx OnCall 寻求新的链接。"
+  },
+  "theme.NotFound.title": {
+    "en": "Page Not Found",
+    "zh": "你要的文档没有找到"
+  },
+  "tools.title.hint": {
+    "en": "To provide best experience during development",
+    "zh": "赋予每一位开发者无与伦比的体验"
+  },
+  "tools.title.main": {
+    "en": "Tools from Lynx",
+    "zh": "Lynx 为大家提供了这些工具"
+  },
+  "speedy.cli": {
+    "en": "CLI Command",
+    "zh": "CLI Command"
+  },
+  "speedy.configuration": {
+    "en": "Speedy Configuration",
+    "zh": "Speedy Configuration"
+  },
+  "speedy.hooks": {
+    "en": "Speedy Plugin Hooks",
+    "zh": "Speedy Plugin Hooks"
+  },
+  "go.preview": {
+    "en": "Preview",
+    "zh": "预览"
+  },
+  "go.qrcode": {
+    "en": "QRCode",
+    "zh": "二维码"
+  },
+  "go.files": {
+    "en": "Files",
+    "zh": "文件"
+  },
+  "go.scan.message-1": {
+    "en": "Download ",
+    "zh": "请下载 "
+  },
+  "go.scan.message-2": {
+    "en": "and scan the QR code to get started.",
+    "zh": "扫描二维码预览"
+  },
+  "go.qrcode.copy-link": {
+    "en": "Copy Link",
+    "zh": "复制链接"
+  },
+  "go.qrcode.copied": {
+    "en": "Copied",
+    "zh": "已复制"
+  },
+  "go.qrcode.entry": {
+    "en": "Entry",
+    "zh": "入口"
+  }
+}

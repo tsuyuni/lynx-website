@@ -1,0 +1,71 @@
+# setExtraTiming
+
+This interface is used to supplement key performance data before loading the Lynx page, specifically including the following items from [`InitContainerEntry`](api/lynx-api/performance-api/performance-entry/init-container-entry):
+
+- Page open time (`openTime`)
+- Timestamp for the start of preparing the TemplateBundle (`prepareTemplateStart`)
+- Timestamp for the end of preparing the TemplateBundle (`prepareTemplateEnd`)
+- Timestamp for the start of **container** initialization (`containerInitStart`)
+- Timestamp for the end of **container** initialization (`containerInitEnd`)
+
+> In an [App](guide/spec#app), a container is an independent module responsible for managing the lifecycle of [LynxView](guide/spec#lynxview). Its main responsibilities include creating, initializing, configuring, loading content, handling state changes, and destroying LynxView instances.
+
+## Syntax
+
+### Android
+
+```java
+public void setExtraTiming(TimingHandler.ExtraTimingInfo extraTiming);
+```
+
+### Parameters
+
+- `extraTiming: TimingHandler.ExtraTimingInfo`: Used to supplement key performance data before loading the Lynx page. The specific definition of `ExtraTimingInfo` is as follows:
+
+```java
+public static class ExtraTimingInfo {
+    // Page open time, corresponds to openTime in InitContainerEntry.
+    public long mOpenTime = 0;
+    // Timestamp for the start of preparing the TemplateBundle, corresponds to prepareTemplateStart in InitContainerEntry.
+    public long mPrepareTemplateStart = 0;
+    // Timestamp for the end of preparing the TemplateBundle, corresponds to prepareTemplateEnd in InitContainerEntry.
+    public long mPrepareTemplateEnd = 0;
+    // Timestamp for the start of container initialization, corresponds to containerInitStart in InitContainerEntry.
+    public long mContainerInitStart = 0;
+    // Timestamp for the end of container initialization, corresponds to containerInitEnd in InitContainerEntry.
+    public long mContainerInitEnd = 0;
+}
+```
+
+### iOS
+
+```objc
+- (void)setExtraTiming:(LynxExtraTiming* _Nonnull)timing;
+```
+
+### Parameters
+
+- `timing: LynxExtraTiming*`: Used to supplement key performance data before loading the Lynx page. The specific definition of `LynxExtraTiming` is as follows:
+
+```objc
+@interface LynxExtraTiming : NSObject
+
+// Page open time, corresponds to openTime in InitContainerEntry.
+@property(nonatomic, assign) uint64_t openTime;
+// Timestamp for the start of preparing the TemplateBundle, corresponds to prepareTemplateStart in InitContainerEntry.
+@property(nonatomic, assign) uint64_t prepareTemplateStart;
+// Timestamp for the end of preparing the TemplateBundle, corresponds to prepareTemplateEnd in InitContainerEntry.
+@property(nonatomic, assign) uint64_t prepareTemplateEnd;
+// Timestamp for the start of container initialization, corresponds to containerInitStart in InitContainerEntry.
+@property(nonatomic, assign) uint64_t containerInitStart;
+// Timestamp for the end of container initialization, corresponds to containerInitEnd in InitContainerEntry.
+@property(nonatomic, assign) uint64_t containerInitEnd;
+
+@end
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/set-extra-timing" />

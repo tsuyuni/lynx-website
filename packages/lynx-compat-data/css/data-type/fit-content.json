@@ -1,0 +1,30 @@
+{
+  "css": {
+    "data-type": {
+      "fit-content": {
+        "description": "<code>&lt;fit-content&gt;</code>",
+        "__compat": {
+          "lynx_path": "api/css/data-type/fit-content",
+          "spec_url": [
+            "https://drafts.csswg.org/css-sizing-4/#valdef-width-fit-content"
+          ],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "targetSdkVersion 2.0"
+            },
+            "ios": {
+              "version_added": "targetSdkVersion 2.0"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "selector-query": {
+      "exec": {
+        "__compat": {
+          "description": "Execute all submitted operations.",
+          "lynx_path": "api/lynx-api/selector-query/selector-query-exec",
+          "support": {
+            "android": {
+              "version_added": "2.2"
+            },
+            "ios": {
+              "version_added": "2.2"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

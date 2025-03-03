@@ -1,0 +1,70 @@
+{
+  "css": {
+    "data-type": {
+      "color": {
+        "__compat": {
+          "description": "<code>&lt;color&gt;</code>",
+          "lynx_path": "api/css/data-type/color",
+          "spec_url": ["https://drafts.csswg.org/css-values/#colors"],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "1.0"
+            },
+            "ios": {
+              "version_added": "1.0"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        },
+        "rgb": {
+          "__compat": {
+            "description": "<code>rgb()</code> (RGB color model)",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "lynx_path": "api/css/data-type/color#rgb-color-model",
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "hsl": {
+          "__compat": {
+            "description": "<code>hsl()</code> (HSL color model)",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "lynx_path": "api/css/data-type/color#hsl-color-model",
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

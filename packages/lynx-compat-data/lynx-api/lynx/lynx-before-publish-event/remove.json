@@ -1,0 +1,25 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "lynx-before-publish-event": {
+        "remove": {
+          "__compat": {
+            "description": "Remove monitoring of a DOM event.",
+            "lynx_path": "api/lynx-api/lynx/lynx-before-publish-event/before-publish-event-remove",
+            "support": {
+              "android": {
+                "version_added": "2.14"
+              },
+              "ios": {
+                "version_added": "2.14"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

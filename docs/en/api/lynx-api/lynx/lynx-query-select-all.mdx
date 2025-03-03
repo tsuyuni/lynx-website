@@ -1,0 +1,33 @@
+---
+title: querySelectorAll()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: querySelectorAll(selector: string)
+
+<RuntimeBadge type={'mts'} />
+
+Find all elements within the page's child elements that match the specified selector.
+
+## Syntax
+
+```ts
+const elementArray = lynx.querySelectorAll(selector);
+```
+
+### Parameters
+
+#### selector
+
+For a list of supported selectors, see [selector](../selector-query/selector-query-select#selector).
+
+### Return Value
+
+[`MainThread.Element[]`](../main-thread/main-thread-element) or `[]`。
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/querySelectorAll" />

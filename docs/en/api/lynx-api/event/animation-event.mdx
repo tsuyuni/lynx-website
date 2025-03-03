@@ -1,0 +1,92 @@
+# AnimationEvent
+
+:::info
+** If you want to view the Transition event, please click [here](#transition-animation) or scroll to the middle of the page. **
+The event names of Transition and Animation are different, and binding the Animation event to the Transition animation will not trigger.
+:::
+
+## [Animation](../../../api/css/properties/animation.mdx)
+
+### Event List
+
+:::info
+** If you want to view the Transition event, please click [here](#transition-animation) or scroll to the middle of the page. **
+The event names of Transition and Animation are different, and binding the Animation event to the Transition animation will not trigger.
+:::
+
+The events supported are as follows:
+
+| Event Name             | Meaning             |
+| ---------------------- | ------------------- |
+| bindanimationstart     | animation start     |
+| bindanimationcancel    | animation cancel    |
+| bindanimationend       | animation end       |
+| bindanimationiteration | animation iteration |
+
+### Event Parameters
+
+The animation event is implemented by [CustomEvent](./custom-event). When Lynx triggers the js callback function, it will pass a parameter. Assuming the parameter name is `event`, all the parameters of the animation event are in `event.params `, `params` is an object, which is defined as follows in [Animation](../../../api/css/properties/animation.mdx):
+
+| key            | value                    |
+| -------------- | ------------------------ |
+| animation_type | "keyframe-animation"     |
+| animation_name | the name of `@keyframes` |
+
+### Example
+
+```js title="App.jsx"
+import { useCallback } from '@lynx-js/react';
+
+export function App() {
+  const handleAniEnd = useCallback((event) => {
+    console.log(event);
+  }, []);
+  return <view bindanimationend={this.handleAniEnd}></view>;
+}
+```
+
+:::info
+During the animation execution process, if the animated View is unloaded and destroyed, the `animationcancel` event bind to the View will not be triggered because the View no longer exists.
+:::
+
+## [Transition](../../../api/css/properties/transition.mdx)
+
+### Event List
+
+The events are as follows:
+
+| Event Name           | Meaning           |
+| -------------------- | ----------------- |
+| bindtransitionstart  | transition start  |
+| bindtransitioncancel | transition cancel |
+| bindtransitionend    | transition end    |
+
+### Event Parameters
+
+Animation events are implemented through [CustomEvent](./custom-event), all parameters of animation events are in `event.params`, `params` is an object, in [Transition](../../../api/css/properties/transition.mdx) it is defined as follows:
+
+| key            | value                                                                |
+| -------------- | -------------------------------------------------------------------- |
+| animation_type | The type of transition.The value is fixed to `transition-animation`. |
+| animation_name | The value is shown in the table below.                               |
+
+| Table : animation_name value                                                                                                                                                                                                                                                                                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CSS property name. For example, if the animation is a transition transform animation, the value should be "transform". If it's a transition opacity animation, the value should be "opacity", and so on. To see which properties are supported by transition, please refer to [this link](../../../api/css/properties/transition-property.mdx). |
+
+### Demo
+
+```js title="App.jsx"
+import { useCallback } from '@lynx-js/react';
+
+export function App() {
+  const handleTransitionEnd = useCallback((event) => {
+    console.log(event);
+  }, []);
+  return <view bindtransitionend={this.handleTransitionEnd}></view>;
+}
+```
+
+:::info
+During the animation execution, if the animated View is unloaded and destroyed, the `transitioncancel` event bound to the View will not be triggered because the View no longer exists.
+:::

@@ -1,0 +1,33 @@
+---
+title: querySelectorAll()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: querySelectorAll(selector: string)
+
+<RuntimeBadge type={'mts'} />
+
+在页面的子元素中查找所有满足指定选择器的元素。
+
+## 语法
+
+```ts
+const elementArray = lynx.querySelectorAll(selector);
+```
+
+### 参数
+
+#### selector
+
+指定选择器，支持的选择器列表见 [selector](../selector-query/selector-query-select#selector)。
+
+### 返回值
+
+[`MainThread.Element[]`](../main-thread/main-thread-element) 或 `[]`。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/querySelectorAll" />

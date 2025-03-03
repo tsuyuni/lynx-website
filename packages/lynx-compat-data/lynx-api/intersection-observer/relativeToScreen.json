@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "intersection-observer": {
+      "relativeToScreen": {
+        "__compat": {
+          "description": "Specify the screen as the reference node.",
+          "lynx_path": "api/lynx-api/intersection-observer/relative-to-screen",
+          "support": {
+            "android": {
+              "version_added": "2.10"
+            },
+            "ios": {
+              "version_added": "2.10"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

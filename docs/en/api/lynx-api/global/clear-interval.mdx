@@ -1,0 +1,32 @@
+---
+title: clearInterval()
+---
+
+# clearInterval() global function
+
+Cancels the timer set by `setInterval`.
+
+## Syntax
+
+```typescript
+clearInterval(timerId: number): void;
+```
+
+### Parameters
+
+#### timerId
+
+The timer ID returned by `setInterval`.
+** Passing in an ID value other than the one returned by `setInterval` is undefined behavior and may cause problems. **
+
+## Example
+
+## Notices
+
+1. `setTimeout()` and `setInterval()` have a shared pool of ID numbers, so technically `clearTimeout()` and `clearInterval()` are interchangeable. However, for clarity, you should avoid doing so.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/global/clearInterval" />

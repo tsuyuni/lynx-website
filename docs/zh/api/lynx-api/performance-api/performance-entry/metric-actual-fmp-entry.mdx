@@ -1,0 +1,86 @@
+import { RuntimeBadge } from '@lynx';
+
+# MetricActualFmpEntry
+
+<RuntimeBadge type={'bts'} />
+
+Actual Fmp 是衡量页面“真实数据”渲染完成所需时间的关键性能指标。它反映了用户看到页面真实数据的速度。`MetricActualFmpEntry` 是用于描述该指标的数据类型，继承自 [`PerformanceEntry`](../performance-entry)。
+
+你可以通过 [`__lynx_timing_flag="__lynx_timing_actual_fmp"`](guide/performance/timing-flag) 标记重要组件的渲染完成时机，从而产生该指标。
+
+在实际业务渲染中，ActualFmp 的时机如下：
+
+<img src="/assets/doc/performance-metrics-actual-fmp.png" />
+
+根据不同起始点，Lynx 提供了 `actualFmp`、`lynxActualFmp`、`totalActualFmp` 三个指标，在渲染流程中，每个指标的定义如下图：：
+
+<img src="/assets/doc/metric-actual-fmp-entry.png" />
+
+## 示例
+
+该实例展示了如何产生和获取 `MetricActualFmpEntry`。
+
+import { Go } from '@lynx';
+
+<Go
+  example="performance-api"
+  defaultFile="src/actual_fmp_entry/index.tsx"
+  defaultEntryFile="dist/actual_fmp_entry.lynx.bundle"
+  img="/assets/doc/metric-actual-fmp-entry-demo.jpeg"
+  entry="src/actual_fmp_entry"
+  highlight="{12-22,27,34}"
+/>
+
+## 实例属性
+
+### [entryType](api/lynx-api/performance-api/performance-entry#entryType)
+
+```ts
+entryType: string;
+```
+
+性能事件的类型，当前类所有实例的值均固定为 `metric`。
+
+### [name](api/lynx-api/performance-api/performance-entry#name)
+
+```ts
+name: string;
+```
+
+性能事件的具体名称，当前类所有实例的值均固定为 `actualFmp`。
+
+### actualFmp
+
+```ts
+actualFmp: PerformanceMetric;
+```
+
+从准备 [TemplateBundle](api/lynx-native-api/template-bundle) 至带有 `__lynx_timing_flag="__lynx_timing_actual_fmp"` 元件与标签渲染完成的耗时，数据类型为 [`PerformanceMetric`](api/lynx-api/performance-api/performance-metric)。
+
+计算公式为：`actualFmp = PipelineEntry.paintEnd - InitContainerEntry.prepareTemplateStart`。
+
+### lynxActualFmp
+
+```ts
+lynxActualFmp: PerformanceMetric;
+```
+
+从执行 [TemplateBundle](api/lynx-native-api/template-bundle) 至带有 `__lynx_timing_flag="__lynx_timing_actual_fmp"` 元件与标签渲染完成的耗时，数据类型为 [`PerformanceMetric`](api/lynx-api/performance-api/performance-metric)。
+
+计算公式为：`lynxActualFmp = PipelineEntry.paintEnd - LoadBundleEntry.loadBundleStart`。
+
+### totalActualFmp
+
+```ts
+totalActualFmp: PerformanceMetric;
+```
+
+从用户打开页面至带有 `__lynx_timing_flag="__lynx_timing_actual_fmp"` 元件与标签渲染完成的耗时，数据类型为 [`PerformanceMetric`](api/lynx-api/performance-api/performance-metric)。
+
+计算公式为：`totalActualFmp = PipelineEntry.paintEnd - InitContainerEntry.openTime`。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/performance-api/performance-entry/metric-actual-fmp-entry" />

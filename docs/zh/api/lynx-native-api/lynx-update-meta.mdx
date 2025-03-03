@@ -1,0 +1,47 @@
+# LynxUpdateMeta
+
+LynxUpdateMeta 是 LynxView 用于更新模板数据的元数据结构，它将作为 [UpdateData](./lynx-view/update-data.mdx) 的入参，用户可以通过 LynxUpdateMeta 来指定更新所需的诸多参数, 例如模板数据，以及全局 globalProps 等;
+
+## Android:
+
+### 成员
+LynxUpdateMeta 具有如下成员:
+
+- `updateData: TemplateData`: 更新模板的数据内容;
+- `globalProps: TemplateData`: 更新模板的全局 globalProps 内容;
+
+### 构造
+
+在 Android 平台上需要利用 `LynxUpdateMeta.Builder` 来构造 LynxUpdateMeta 对象:
+
+```java
+LynxUpdateMeta.Builder builder = new LynxUpdateMeta.Builder();
+builder.setUpdatedData(data);
+builder.setUpdatedGlobalProps(globalProps);
+LynxUpdateMeta meta = builder.build();
+```
+
+## iOS
+
+### 成员
+
+LynxUpdateMeta 具有如下成员:
+
+- `updateData: TemplateData`: 更新模板的数据内容;
+- `globalProps: TemplateData`: 更新模板的全局 globalProps 内容;
+
+### 构造
+
+在 iOS 平台上按照如下方式构造 LynxLoadMeta 对象：
+
+```objective-c
+LynxUpdateMeta* meta = [LynxUpdateMeta init];
+meta.data = nil;
+meta.globalProps = nil;
+```
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-update-meta" />

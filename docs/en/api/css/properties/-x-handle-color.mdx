@@ -1,0 +1,57 @@
+# -x-handle-color
+
+## Introduction
+
+The `-x-handle-color` property specifies the color of the floating marker when copying text, only valid in the selection pseudo-element.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/-x-handle-color/App.tsx"
+  img="/assets/doc/css/-x-handle-color.jpg"
+  defaultEntryFile="dist/-x-handle-color.lynx.bundle"
+  entry="src/-x-handle-color"
+/>
+
+## Syntax
+
+```css
+::selection {
+  -x-handle-color: blue;
+}
+```
+
+### Values
+
+- [`<color>`](./color.mdx)<br/>
+  Sets the color of the floating marker
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>false</>}
+  appliesTo={<>text</>}
+  inherited="no"
+  animatable="no"
+/>
+
+## Formal syntax
+
+```
+-x-handle-color = <color>
+```
+
+## Differences from web
+
+- This is a Lynx-specific property.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/-x-handle-color" />

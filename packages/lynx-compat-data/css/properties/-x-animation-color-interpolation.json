@@ -1,0 +1,27 @@
+{
+  "css": {
+    "properties": {
+      "-x-animation-color-interpolation": {
+        "__compat": {
+          "lynx_path": "api/css/properties/-x-animation-color-interpolation",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "1.0"
+            },
+            "ios": {
+              "version_added": "1.0"
+            },
+            "web_lynx": {
+              "version_added": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

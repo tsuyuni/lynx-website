@@ -1,0 +1,187 @@
+# LynxService API
+
+import { CodeFold, LegacyCompatTable } from '@lynx';
+import { Steps } from '@theme';
+import { Tab, Tabs } from 'rspress/theme';
+
+## 能力简介
+
+Lynx Service 为 Lynx Engine 提供了宿主特性相关能力，包括图片、日志和 [FetchAPI](/guide/interaction/networking.html#fetch-api) 相关能力。
+不同的接入方对自身的图片库、日志库和网络库有特定的需求，因此 Lynx Engine 通过 LynxService API 对外开放了针对这类场景的自主接入能力。
+
+## 整体设计
+
+Lynx Engine 和 Lynx Service 采用依赖分离设计；从依赖关系上看，Lynx Service 实现了 Lynx Engine 暴露的 LynxService API，而 Lynx Engine 不依赖 Lynx Service。在运行时 Lynx Engine 会通过服务查找机制查找注册的 Lynx Service，并通过 LynxService API 调用。
+
+## LynxService API
+
+LynxService API 是 Lynx Engine 提供的，用于指定 Lynx Service 能力的 API 设计。Lynx Service 需要依照 LynxService API 的要求正确的实现自身，以确定 Lynx Engine 能正确的使用该基础能力。
+
+## 1. 快速接入
+
+Lynx 提供了默认的 Lynx Service 实现，可直接[接入](/guide/start/integrate-with-existing-apps)
+
+## 2. 扩展 Lynx Service
+
+如果有自定义需求，也可以根据自身需求快速实现并注册相关内容。下面将以 log service 为例，介绍如何实现并接入自定义的 Lynx Service：
+
+<Steps>
+
+### 接口实现
+
+<Tabs groupId="lynx-service-api">
+
+<Tab label="iOS">
+
+- 1. 实现 `LynxServiceLogProtocol`
+
+```objective-c title="YourLogService.h"
+#import <Lynx/Lynx Service.h>
+#import <Lynx/LynxServiceLogProtocol.h>
+
+// 实现 LynxServiceLogProtocol
+@interface YourLogService : NSObject <LynxServiceLogProtocol>
+@end
+```
+
+- 2. 通过 `LynxServiceRegister` 宏实现自动注册；
+- 3. 实现 `serviceBizID`，`serviceScope`。这两个方法没有实际意义，后续会被删除；
+- 4. 实现 `serviceType`。需返回该 Service 所实现的类型，详见 Lynx Service.h；
+- 5. (推荐) 实现 `sharedInstance`，成为单例类。基于目前的 Lynx Service 设计，一个类型的 Service 全局只会使用一个实例，建议实现为单例类；
+- 6. 实现 `LynxServiceLogProtocol` 要求的全部接口；
+
+<CodeFold toggle>
+
+```objective-c title="YourLogService.mm"
+#import "YourLogService.h"
+
+[[maybe_unused]] void logWrite(unsigned int level, const char *tag, const char *format) {
+  if (format == NULL) {
+    return;
+  }
+  NSLog(@"[%s] %s", tag == NULL ? "" : tag, format);
+}
+
+// 通过 LynxServiceRegister 宏实现自动注册
+@LynxServiceRegister(LynxLogService);
+
+// 实现 LynxLogService
+@implementation LynxLogService
+
+// 无关属性，后续会删除
++ (NSString*)serviceBizID {
+  return DEFAULT_LYNX_SERVICE;
+}
+
+// 无关属性，后续会删除
++ (Lynx ServiceScope)serviceScope {
+  return Lynx ServiceScopeDefault;
+}
+
+// 返回对应 service type, 实现远行时查找
++ (NSUInteger)serviceType {
+  return kLynxServiceLog;
+}
+
+// 推荐：实现为一个单例
++ (instancetype)sharedInstance {
+  static dispatch_once_t onceToken;
+  static YourLogService *logService;
+  dispatch_once(&onceToken, ^{
+    logService = [[YourLogService alloc] init];
+  });
+  return logService;
+}
+
+// 实现 LynxServiceLogProtocol 要求的全部接口
+- (void *)getWriteFunction {
+  return (void *)lynx::base::logging::logWrite;
+}
+
+@end
+```
+
+</CodeFold>
+
+</Tab>
+
+<Tab label="Android">
+
+实现 `ILynxLogService`：
+
+<CodeFold toggle>
+
+```kotlin title="YourLogService.kt"
+object YourLogService : ILynxLogService {
+  private var logOutputChannel: LogOutputChannelType = LogOutputChannelType.Platform
+
+  override fun logByPlatform(
+    level: Int,
+    tag: String,
+    msg: String,
+  ) {
+    // 具体实现
+  }
+
+  override fun isLogOutputByPlatform(): Boolean = logOutputChannel == LogOutputChannelType.Platform
+
+  override fun getDefaultWriteFunction(): Long = 0
+
+  override fun switchLogToSystem(enableSystemLog: Boolean) {}
+
+  override fun getLogToSystemStatus(): Boolean = false
+}
+```
+</CodeFold>
+
+</Tab>
+
+</Tabs>
+
+<div style={{ height: 30}} />
+
+### 服务注册
+
+<Tabs groupId="lynx-service-api">
+
+<Tab label="iOS">
+
+Lynx Service 在 iOS 中拥有自动注册机制。在实现阶段已经通过 `LynxServiceRegister` 宏，完成了快速自动注册。
+
+如果使用了自己实现的 Lynx Service，请删除 Lynx 提供的[默认实现](/guide/start/integrate-with-existing-apps#platform=ios)。
+
+```diff title="Podfile"
+pod 'LynxService', '3.2.0-alpha.1', :subspecs => [
+      'Image',
+-     'Log',
+      'Http',
+  ]
+```
+
+</Tab>
+
+<Tab label="Android">
+
+将[接入文档](/guide/start/integrate-with-existing-apps#platform=android)里 `LynxServiceCenter` 中的 log service 的实现替换为你的实现
+
+```diff
+- LynxServiceCenter.inst().registerService(ILynxLogService::class.java, LynxLogService)
++ LynxServiceCenter.inst().registerService(ILynxLogService::class.java, YourLogService)
+```
+
+并删除相关依赖
+
+```diff title="build.gradle"
+dependencies {
+-   // integrating log-service
+-   implementation "engineer.lynx.test2:lynx-service-log:0.0.1"
+}
+```
+
+</Tab>
+
+</Tabs>
+
+</Steps>
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-service/lynx-service" />

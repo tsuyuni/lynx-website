@@ -1,0 +1,41 @@
+import { RuntimeBadge } from '@lynx';
+
+# PerformanceObserver
+
+<RuntimeBadge type={'bts'} />
+
+The `PerformanceObserver` is used to observe performance events and receive notifications when [Lynx Engine](guide/spec#engine) generates [performance entries](api/lynx-api/performance-api/performance-entry).
+It must be created through [`lynx.performance.createObserver()`](api/lynx-api/lynx/lynx-performance#createobserver) and bind with a callback function for handling received performance entries upon creation.
+
+## Instance methods
+
+[`PerformanceObserver.observe()`](./performance-observer/observe)
+
+Specify a set of performance entry types to observe and start observing.
+
+[`PerformanceObserver.disconnect()`](./performance-observer/disconnect)
+
+Stop receiving performance entries.
+
+## Examples
+
+### Creating a PerformanceObserver
+
+The following example creates a `PerformanceObserver` watching for [`metric.fcp`](./performance-entry/metric-fcp-entry) and [`pipeline`](./performance-entry/pipeline-entry) entries.
+
+import { Go } from '@lynx';
+
+<Go
+  example="performance-api"
+  defaultFile="src/simple_observe/index.tsx"
+  defaultEntryFile="dist/SimpleObseve.lynx.bundle"
+  img="/assets/doc/simple-observe-demo.jpeg"
+  entry="src/simple_observe"
+  highlight="{11-21,31}"
+/>
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/performance-api/performance-observer" />

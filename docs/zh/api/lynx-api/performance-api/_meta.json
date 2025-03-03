@@ -1,0 +1,34 @@
+[
+  {
+    "type": "dir",
+    "name": "performance-entry",
+    "label": "PerformanceEntry",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "dir",
+    "name": "performance-observer",
+    "label": "PerformanceObserver",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "performance-metric",
+    "label": "PerformanceMetric",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  },
+  {
+    "type": "file",
+    "name": "framework-pipeline-timing",
+    "label": "FrameworkPipelineTiming",
+    "overviewHeaders": [],
+    "collapsible": true,
+    "collapsed": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "globalProps": {
+        "__compat": {
+          "description": "global data set by client.",
+          "lynx_path": "api/lynx-api/lynx/lynx-global-props",
+          "support": {
+            "android": {
+              "version_added": "1.3"
+            },
+            "ios": {
+              "version_added": "1.3"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

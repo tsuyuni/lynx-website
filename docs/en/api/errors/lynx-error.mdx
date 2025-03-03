@@ -1,0 +1,74 @@
+# LynxError
+
+`LynxError` is the structure used to represent an error,
+carrying several properties such as code, level, and error message,
+as well as the getters and setters.
+Developers can utilize the attributes and methods for troubleshooting.
+
+## Android
+
+### Fields
+
+- `mSubCode: int`: six-digit numbers used to identify and categorize errors, one for each error.
+- `mLevel: String`: indicates the severity of the error, could be one of FATAL/ERROR/WARN.
+- `mSummaryMessage: String`: briefly describes the cause of the error.
+- `mErrorType: int`: indicates the type of the error, could be one of JAVA_ERROR/JS_ERROR/NATIVE_ERROR.
+- `mFixSuggestion: String`: suggestions for handling the error. Optional.
+- `mCallStack: String`: stack trace of the error. Optional.
+- `mRootCause: String`: root cause, usually originating from outside Lynx, such as errors reported by apps. Optional.
+- `mCustomInfo: Map<String, Object>`: custom information that may be useful for troubleshooting. Optional.
+
+### Constructors
+
+```java
+public LynxError(int errorCode, String errorMessage)
+
+public LynxError(int errorCode, String errorMessage, String fixSuggestion, String level)
+
+public LynxError(int errorCode, String errorMessage, String fixSuggestion, String level, int errorType)
+```
+
+### Methods
+
+```java
+public int getErrorCode()
+
+public boolean isFatal()
+```
+
+## iOS
+
+### Fields
+
+- `_subCode: NSInteger`: six-digit numbers used to identify and categorize errors, one for each error.
+- `_level: NSString*`: indicates the severity of the error, could be one of FATAL/ERROR/WARN.
+- `_summaryMessage: NSString*`: briefly describes the cause of the error.
+- `_fixSuggestion: NSString*`: suggestions for handling the error. Optional.
+- `_callStack: NSString*`: stack trace of the error. Optional.
+- `_rootCause: NSString*`: root cause, usually originating from outside Lynx, such as errors reported by apps. Optional.
+- `_customInfo: NSDictionary*`: custom information that may be useful for troubleshooting. Optional.
+
+### Initializers
+
+```objective-c
++ (instancetype)lynxErrorWithCode:(NSInteger)code message:(NSString*)errorMsg
+
++ (instancetype)lynxErrorWithCode:(NSInteger)code
+                          message:(NSString*)errorMsg
+                    fixSuggestion:(NSString*)suggestion
+                            level:(NSString*)level
+
++ (instancetype)lynxErrorWithCode:(NSInteger)code
+                          message:(NSString*)errorMsg
+                    fixSuggestion:(NSString*)suggestion
+                            level:(NSString*)level
+                       customInfo:(NSDictionary* _Nullable)customInfo
+```
+
+### Methods
+
+```objective-c
+- (NSInteger)errorCode
+
+- (BOOL)isFatal
+```

@@ -1,0 +1,195 @@
+{
+  "elements": {
+    "image": {
+      "__compat": {
+        "description": "image",
+        "support": {
+          "android": {
+            "version_added": "1.5"
+          },
+          "ios": {
+            "version_added": "1.5"
+          },
+          "clay_android": {
+            "version_added": "1.5"
+          },
+          "clay_windows": {
+            "version_added": "1.5"
+          },
+          "clay_macos": {
+            "version_added": "1.5"
+          },
+          "web_lynx": {
+            "version_added": true
+          }
+        }
+      },
+      "prefetch-width": {
+        "__compat": {
+          "description": "prefetch-width",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "prefetch-height": {
+        "__compat": {
+          "description": "prefetch-height",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "cap-insets": {
+        "__compat": {
+          "description": "cap-insets",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "cap-insets-scale": {
+        "__compat": {
+          "description": "cap-insets-scale",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "loop-count": {
+        "__compat": {
+          "description": "loop-count",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "image-config": {
+        "__compat": {
+          "description": "image-config",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "defer-src-invalidation": {
+        "__compat": {
+          "description": "defer-src-invalidation",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "autoplay": {
+        "__compat": {
+          "description": "autoplay",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "tint-color": {
+        "__compat": {
+          "description": "tint-color",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "rests": {
+        "__compat": {
+          "description": "All the rest ",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "clay_android": {
+              "version_added": "1.5"
+            },
+            "clay_windows": {
+              "version_added": "1.5"
+            },
+            "clay_macos": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

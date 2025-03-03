@@ -1,0 +1,30 @@
+{
+  "lynx-api": {
+    "main-thread": {
+      "Element": {
+        "__compat": {
+          "description": "Represents an element in the main thread.",
+          "lynx_path": "api/lynx-api/main-thread/main-thread-element",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": {
+              "version_added": "2.14"
+            }
+          },
+          "support": {
+            "android": {
+              "version_added": "2.14"
+            },
+            "ios": {
+              "version_added": "2.14"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

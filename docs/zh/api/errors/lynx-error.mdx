@@ -1,0 +1,72 @@
+# LynxError
+
+`LynxError` 是用于表示错误的数据结构, 拥有错误码、级别、信息等属性，以及对应的获取和设置函数。
+开发者可以利用这些属性和方法来排查问题。
+
+## Android
+
+### 变量
+
+- `mSubCode: int`: 用于识别并分类错误的六位数字，每种错误都会有一个。
+- `mLevel: String`: 标识错误的严重程度，可能是 FATAL/ERROR/WARN 中的一种。
+- `mSummaryMessage: String`: 简要描述错误原因。
+- `mErrorType: int`: 标识错误的类型，可能是 JAVA_ERROR/JS_ERROR/NATIVE_ERROR 中的一种。
+- `mFixSuggestion: String`: 处理该错误的建议，可能为空。
+- `mCallStack: String`: 错误的代码调用堆栈，可能为空。
+- `mRootCause: String`: 错误的根本原因，常见于 Lynx 外部发现的错误，例如应用报告出的错误，可能为空。
+- `mCustomInfo: Map<String, Object>`: 一些可能对错误排查有用的自定义信息，可能为空。
+
+### 构造函数
+
+```java
+public LynxError(int errorCode, String errorMessage)
+
+public LynxError(int errorCode, String errorMessage, String fixSuggestion, String level)
+
+public LynxError(int errorCode, String errorMessage, String fixSuggestion, String level, int errorType)
+```
+
+### 方法
+
+```java
+public int getErrorCode()
+
+public boolean isFatal()
+```
+
+## iOS
+
+### 变量
+
+- `_subCode: NSInteger`: 用于识别并分类错误的六位数字，每种错误都会有一个。
+- `_level: NSString*`: 标识错误的严重程度，可能是 FATAL/ERROR/WARN 中的一种。
+- `_summaryMessage: NSString*`: 简要描述错误原因。
+- `_fixSuggestion: NSString*`: 处理该错误的建议，可能为空。
+- `_callStack: NSString*`: 错误的代码调用堆栈，可能为空。
+- `_rootCause: NSString*`: 错误的根本原因，常见于 Lynx 外部发现的错误，例如应用报告出的错误，可能为空。
+- `_customInfo: NSDictionary*`: 一些可能对错误排查有用的自定义信息，可能为空。
+
+### 初始化函数
+
+```objective-c
++ (instancetype)lynxErrorWithCode:(NSInteger)code message:(NSString*)errorMsg
+
++ (instancetype)lynxErrorWithCode:(NSInteger)code
+                          message:(NSString*)errorMsg
+                    fixSuggestion:(NSString*)suggestion
+                            level:(NSString*)level
+
++ (instancetype)lynxErrorWithCode:(NSInteger)code
+                          message:(NSString*)errorMsg
+                    fixSuggestion:(NSString*)suggestion
+                            level:(NSString*)level
+                       customInfo:(NSDictionary* _Nullable)customInfo
+```
+
+### 方法
+
+```objective-c
+- (NSInteger)errorCode
+
+- (BOOL)isFatal
+```

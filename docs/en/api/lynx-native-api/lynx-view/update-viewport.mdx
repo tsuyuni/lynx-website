@@ -1,0 +1,39 @@
+# updateViewport
+
+The client updates the `LynxView` view size;
+
+## Syntax
+
+### Android
+
+```java
+public void updateViewport(int widthMeasureSpec, int heightMeasureSpec)
+```
+
+### Parameters
+
+- `widthMeasureSpec: int`: current `LynxView` width;
+- `heightMeasureSpec: int`: current `LynxView` height;
+
+### iOS
+
+```objc
+- (void)updateViewportWithPreferredLayoutWidth:(CGFloat)preferredLayoutWidth
+                        preferredLayoutHeight:(CGFloat)preferredLayoutHeight;
+
+- (void)updateViewportWithPreferredLayoutWidth:(CGFloat)preferredLayoutWidth
+                         preferredLayoutHeight:(CGFloat)preferredLayoutHeight
+                                    needLayout:(BOOL)needLayout;
+```
+
+### Parameters
+
+- `preferredLayoutWidth: CGFloat`: current `LynxView` width;
+- `preferredLayoutHeight: CGFloat`: current `LynxView` height;
+- `needLayout: BOOL`: whether layout needs to be triggered;
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/update-viewport" />

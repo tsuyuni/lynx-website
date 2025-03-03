@@ -1,0 +1,42 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "performance": {
+        "lynx.performance": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/lynx/lynx-performance",
+            "support": {
+              "android": {
+                "version_added": "2.3"
+              },
+              "ios": {
+                "version_added": "2.3"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "createObserver()": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/lynx/lynx-performance",
+            "support": {
+              "android": {
+                "version_added": "3.1"
+              },
+              "ios": {
+                "version_added": "3.1"
+              },
+              "web_lynx": {
+                "version_added": "1.0"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

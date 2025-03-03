@@ -1,0 +1,34 @@
+[
+  {
+    "id": "huxpro",
+    "name": "Xuan Huang",
+    "name_zh": "黄玄",
+    "title": "Software Engineer",
+    "title_zh": "软件工程师",
+    "image": "https://github.com/huxpro.png",
+    "socials": {
+      "x": {
+        "username": "huxpro",
+        "link": "https://x.com/huxpro"
+      },
+      "github": {
+        "username": "huxpro",
+        "link": "https://github.com/huxpro"
+      }
+    }
+  },
+  {
+    "id": "minalwws",
+    "name": "Wei Li",
+    "name_zh": "李伟",
+    "title": "Software Engineer",
+    "title_zh": "软件工程师",
+    "image": "https://github.com/minalwws.png",
+    "socials": {
+      "github": {
+        "username": "minalwws",
+        "link": "https://github.com/minalwws"
+      }
+    }
+  }
+]

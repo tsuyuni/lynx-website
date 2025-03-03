@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "selector-query": {
+      "selectAll": {
+        "__compat": {
+          "description": "Select all nodes that match the specified CSS selector under the root node specified by `SelectorQuery`.",
+          "lynx_path": "api/lynx-api/selector-query/selector-query-select-all",
+          "support": {
+            "android": {
+              "version_added": "2.8"
+            },
+            "ios": {
+              "version_added": "2.8"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "lynx-native-api": {
+    "lynx-update-meta": {
+      "__compat": {
+        "description": "MetaData of LynxEngine updateProcess",
+        "lynx_path": "api/lynx-native-api/lynx-update-meta",
+        "spec_url": [],
+        "status": {
+          "deprecated": false,
+          "experimental": false
+        },
+        "support": {
+          "android": {
+            "version_added": "2.8"
+          },
+          "ios": {
+            "version_added": "2.8"
+          }
+        }
+      }
+    }
+  }
+}

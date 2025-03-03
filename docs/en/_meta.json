@@ -1,0 +1,21 @@
+[
+  {
+    "text": "nav.guide",
+    "link": "/guide/start/quick-start",
+    "activeMatch": "/guide/"
+  },
+  {
+    "text": "nav.api",
+    "link": "/api/index",
+    "activeMatch": "/api/"
+  },
+  {
+    "text": "nav.blog",
+    "link": "/blog/index",
+    "activeMatch": "/blog/"
+  },
+  {
+    "text": "nav.contribute",
+    "link": "https://github.com/lynx-family/lynx"
+  }
+]

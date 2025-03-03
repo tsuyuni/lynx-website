@@ -1,0 +1,100 @@
+import { Go } from '@lynx';
+
+# transition-property
+
+## 介绍
+
+用于设置过渡动画的属性类型。
+
+## 使用示例
+
+<Go
+  example="css-api"
+  img="/assets/doc/css/transition-property.gif"
+  defaultEntryFile="dist/transition-property.lynx.bundle"
+  entry="src/transition-property"
+  defaultFile="src/transition-property/App.tsx"
+  entry="src/transition-property"
+/>
+
+## 语法
+
+```css
+/* Keyword values */
+transition-property: none;
+transition-property: all;
+
+/* <custom-ident> values */
+transition-property: test_05;
+transition-property: -specific;
+transition-property: sliding-vertically;
+
+/* Multiple values */
+transition-property: test1, animation4;
+transition-property: all, height, color;
+transition-property:;
+```
+
+### 取值
+
+- opacity
+  透明度
+- width
+  宽度
+- height
+  高度
+- background-color
+  背景色
+- visibility
+  显示属性
+- top
+  上位置
+- right
+  右位置
+- bottom
+  下位置
+- left
+  左位置
+- transform
+  矩阵变换
+- all
+  上述所有属性
+- none
+  无任何属性
+- color
+  文字颜色 text color
+
+## 形式定义
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>空值</>}
+  appliesTo={<>所有元件</>}
+  inherited="no"
+  animatable="no"
+/>
+
+## 形式语法
+
+```
+transition-property:opacity|width|height|background-color|visibility|top|right|left|bottom|transform|all|none;
+```
+
+## 与 Web 的区别
+
+- 仅支持上述动画属性。
+
+## 扩展阅读
+
+- [transition-delay](./transition-delay.mdx)
+- [transition-duration](./transition-duration.mdx)
+- [transition](./transition.mdx)
+- [transition-timing-function](./transition-timing-function.mdx)
+- [CSS 动画事件](../../lynx-api/event/animation-event.mdx)
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/transition-property" />

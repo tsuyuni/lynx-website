@@ -1,0 +1,27 @@
+{
+  "lynx-api": {
+    "performance-api": {
+      "performance-observer": {
+        "disconnect": {
+          "disconnect()": {
+            "__compat": {
+              "description": "",
+              "lynx_path": "api/lynx-api/performance-api/performance-observer/observe",
+              "support": {
+                "android": {
+                  "version_added": "3.1"
+                },
+                "ios": {
+                  "version_added": "3.1"
+                },
+                "web_lynx": {
+                  "version_added": false
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

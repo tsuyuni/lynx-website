@@ -1,0 +1,34 @@
+# 性能 API
+
+import { RuntimeBadge } from '@lynx';
+
+<RuntimeBadge type={'bts'} />
+
+性能 API (Performance APIs) 是一组用于精确测量 Lynx 应用性能的工具，帮助开发者定位加载、渲染等环节的耗时瓶颈。
+
+## 概念和用法
+
+Lynx 应用希望在页面加载、元素渲染、用户交互等关键阶段都能保持快速响应。为此性能 API 提供了许多内置指标来描述页面渲染时各个阶段的关键时刻，帮助开发者提高页面性能。使用它们需要了解以下核心概念：
+
+- 入口对象
+
+  [`lynx.performance`](api/lynx-api/lynx/lynx-performance) 是性能监控系统的入口对象，可以使用该对象创建性能观察器。它仅能在应用的[后台运行环境](guide/spec#background-thread-runtime)中访问。
+
+- 性能观察器
+
+  [`PerformanceObserver`](api/lynx-api/performance-api/performance-observer) 接口用于监听各种类型的性能事件。
+
+- 性能事件
+
+  性能事件由 [`PerformanceEntry`](api/lynx-api/performance-api/performance-entry) 表示。`PerformanceEntry` 包含基础信息：事件名称 `name` 和事件类型 `entryType`。所有的性能事件（如应用程序初始化耗时、页面加载耗时）都继承自了 `PerformanceEntry` 接口并扩展了更多属性。
+
+<center>
+  <img width="60%" src="/assets/doc/performance-api.png" />
+</center>
+
+## 教程和指南
+
+以下指南帮助理解性能 API 的关键概念及功能：
+
+- [评估性能](guide/performance/evaluating-performance)
+- [性能标记](guide/performance/timing-flag)

@@ -1,0 +1,150 @@
+[
+  {
+    "text": "pluginReactLynx",
+    "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynx",
+    "collapsed": true,
+    "collapsible": true,
+    "items": [
+      {
+        "text": "compat",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.compat",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "customCSSInheritanceList",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.customcssinheritancelist",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "debugInfoOutside",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.debuginfooutside",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "defaultDisplayLinear",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.defaultdisplaylinear",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "defineDCE",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.definedce",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableAccessibilityElement",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enableaccessibilityelement",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableCSSInheritance",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enablecssinheritance",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableCSSInvalidation",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enablecssinvalidation",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableCSSSelector",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enablecssselector",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableICU",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enableicu",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableNewGesture",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enablenewgesture",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableParallelElement",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enableparallelelement",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "enableRemoveCSSScope",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.enableremovecssscope",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "experimental_isLazyBundle",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.experimental_islazybundle",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "firstScreenSyncTiming",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.firstscreensynctiming",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "jsx",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.jsx",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "pipelineSchedulerConfig",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.pipelineschedulerconfig",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "removeDescendantSelectorScope",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.removedescendantselectorscope",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "shake",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.shake",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      },
+      {
+        "text": "targetSdkVersion",
+        "link": "api/rspeedy/react-rsbuild-plugin.pluginreactlynxoptions.targetsdkversion",
+        "collapsed": false,
+        "collapsible": false,
+        "items": []
+      }
+    ]
+  }
+]

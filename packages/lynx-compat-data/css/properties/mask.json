@@ -1,0 +1,33 @@
+{
+  "css": {
+    "properties": {
+      "mask": {
+        "__compat": {
+          "description": "The mask CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.",
+          "lynx_path": "api/css/properties/mask",
+          "mdn_url": "https://developer.mozilla.org/zh-CN/docs/Web/CSS/mask",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "notes": "mask-type, mask-composite are not supported",
+              "version_added": "2.13",
+              "partial_implementation": true
+            },
+            "ios": {
+              "notes": "mask-type, mask-composite are not supported",
+              "version_added": "2.13",
+              "partial_implementation": true
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

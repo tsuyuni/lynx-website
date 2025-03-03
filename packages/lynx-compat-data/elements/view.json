@@ -1,0 +1,935 @@
+{
+  "elements": {
+    "view": {
+      "__compat": {
+        "description": "view",
+        "support": {
+          "android": {
+            "version_added": "1.5"
+          },
+          "ios": {
+            "version_added": "1.5"
+          },
+          "clay_android": {
+            "version_added": "1.5"
+          },
+          "clay_windows": {
+            "version_added": "1.5"
+          },
+          "clay_macos": {
+            "version_added": "1.5"
+          },
+          "web_lynx": {
+            "version_added": true
+          }
+        }
+      },
+      "name": {
+        "__compat": {
+          "description": "",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      },
+      "flatten": {
+        "__compat": {
+          "description": "",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "ios-platform-accessibility-id": {
+        "__compat": {
+          "description": "",
+          "support": {
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "ios-enable-simultaneous-touch": {
+        "__compat": {
+          "description": "",
+          "support": {
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      },
+      "accessibility": {
+        "__compat": {
+          "description": "accessibility related attributes",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        },
+        "nested_value_1": {
+          "__compat": {
+            "description": "<code>accessibility-element</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_2": {
+          "__compat": {
+            "description": "<code>accessibility-label</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_3": {
+          "__compat": {
+            "description": "<code>accessibility-trait</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_4": {
+          "__compat": {
+            "description": "<code>accessibility-elements</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_5": {
+          "__compat": {
+            "description": "<code>accessibility-elements-a11y</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_6": {
+          "__compat": {
+            "description": "<code>accessibility-elements-hidden</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_7": {
+          "__compat": {
+            "description": "<code>accessibility-elements-focus</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_8": {
+          "__compat": {
+            "description": "<code>a11y-id</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_9": {
+          "__compat": {
+            "description": "<code>ios-platform-accessibility-id</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": false
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      },
+      "event-related-attributes": {
+        "__compat": {
+          "description": "event related attributes",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        },
+        "nested_value_1": {
+          "__compat": {
+            "description": "<code>user-interaction-enabled</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_2": {
+          "__compat": {
+            "description": "<code>native-interaction-enabled</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_3": {
+          "__compat": {
+            "description": "<code>block-native-event</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_4": {
+          "__compat": {
+            "description": "<code>block-native-areas</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_5": {
+          "__compat": {
+            "description": "<code>consume-slide-event</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_6": {
+          "__compat": {
+            "description": "<code>event-through</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_7": {
+          "__compat": {
+            "description": "<code>enable-touch-pseudo-propagation</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_8": {
+          "__compat": {
+            "description": "<code>hit-slop</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_9": {
+          "__compat": {
+            "description": "<code>ignore-focus</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_10": {
+          "__compat": {
+            "description": "<code>ios-enable-simultaneous-touch </code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      },
+      "events": {
+        "__compat": {
+          "description": "events",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true,
+              "partial_implementation": true
+            }
+          }
+        },
+        "nested_value_1": {
+          "__compat": {
+            "description": "<code>touchstart</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_2": {
+          "__compat": {
+            "description": "<code>touchmove</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_3": {
+          "__compat": {
+            "description": "<code>touchend</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_4": {
+          "__compat": {
+            "description": "<code>touchcancel</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_5": {
+          "__compat": {
+            "description": "<code>tap</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_6": {
+          "__compat": {
+            "description": "<code>longpress</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_7": {
+          "__compat": {
+            "description": "<code>layoutchange</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_8": {
+          "__compat": {
+            "description": "<code>uiappear</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_9": {
+          "__compat": {
+            "description": "<code>uidisappear</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_10": {
+          "__compat": {
+            "description": "<code>animationstart</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_11": {
+          "__compat": {
+            "description": "<code>animationend</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_12": {
+          "__compat": {
+            "description": "<code>animationcancel</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_13": {
+          "__compat": {
+            "description": "<code>animationiteration</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_14": {
+          "__compat": {
+            "description": "<code>transitionstart</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_15": {
+          "__compat": {
+            "description": "<code>transitionend</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_16": {
+          "__compat": {
+            "description": "<code>transitioncancel</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        }
+      },
+      "methods": {
+        "__compat": {
+          "description": "methods",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true,
+              "partial_implementation": true
+            }
+          }
+        },
+        "nested_value_1": {
+          "__compat": {
+            "description": "<code>boundingClientRect</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": true
+              }
+            }
+          }
+        },
+        "nested_value_2": {
+          "__compat": {
+            "description": "<code>takeScreenshot</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "nested_value_3": {
+          "__compat": {
+            "description": "<code>requestAccessibilityFocus</code>",
+            "status": {
+              "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "1.0"
+              },
+              "ios": {
+                "version_added": "1.0"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      },
+      "rests": {
+        "__compat": {
+          "description": "All the rest ",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "clay_android": {
+              "version_added": "1.5"
+            },
+            "clay_windows": {
+              "version_added": "1.5"
+            },
+            "clay_macos": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

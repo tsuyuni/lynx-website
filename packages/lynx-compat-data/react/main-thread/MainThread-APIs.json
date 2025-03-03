@@ -1,0 +1,50 @@
+{
+  "react": {
+    "main-thread": {
+      "MainThread-APIs": {
+        "__compat": {
+          "description": "APIs available on the main thread.",
+          "lynx_path": "api/react/main-thread",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": true
+          },
+          "support": {
+            "android": {
+              "version_added": "2.14"
+            },
+            "ios": {
+              "version_added": "2.14"
+            },
+            "lynx_web": {
+              "version_added": false
+            }
+          }
+        },
+        "runOnBackground": {
+          "__compat": {
+            "description": "runOnBackground: Create a value that can be shared between main thread scripts.",
+            "lynx_path": "api/react/main-thread",
+            "spec_url": [],
+            "status": {
+              "deprecated": false,
+              "experimental": true
+            },
+            "support": {
+              "android": {
+                "version_added": "2.16"
+              },
+              "ios": {
+                "version_added": "2.16"
+              },
+              "lynx_web": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+---
+title: registerModule()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: registerModule() static method
+
+<RuntimeBadge type={'bts'} />
+
+获取一个可以在当前 LynxView 中共享使用的 JavaScript 对象。
+
+## 语法
+
+```ts
+registerModule: <Module>(name: string, module: Module) => void;
+```
+
+### 参数
+
+#### name
+
+需要注册的对象名。
+
+#### module
+
+需要注册的对象。
+
+### 返回值
+
+无（`undefined`）。
+
+## 示例
+
+### 在 JS 中获取共享对象
+
+Use the [`lynx.getJSModule`] method to get a registered module:
+
+```js
+const fooModule = {};
+lynx.registerModule('foo', fooModule);
+lynx.getJSModule('foo') === fooModule; // true
+```
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/registerModule" />

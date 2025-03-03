@@ -1,0 +1,50 @@
+---
+title: getElementById()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# getElementById()
+
+<RuntimeBadge type={'bts'} />
+
+## 介绍
+
+`getElementById` 是一个用于在当前文档中根据指定 id 寻找元素的方法。这个方法通过 id 选择器作为参数，返回对应元素的节点引用。
+
+## 语法
+
+```js
+let element = lynx.getElementById(id);
+```
+
+### 参数
+
+#### id
+
+String 类型，需要获取的元素的 id 选择器。
+
+### 返回值
+
+返回一个 NodeRef: 如果找到对应元素，则返回该元素的引用；若无对应元素，返回 null
+
+## 示例
+
+```js
+let ele = lynx.getElementById('id');
+```
+
+::: tip
+
+`getElementById` 未能选中节点的原因可能是：
+
+- ID 选择器不正确
+- ID 选择器的值依赖复杂 JS 表达式，导致 ID 选择器的值无法在首屏得到，此时若 getElementById 的时机过早 (如在 ComponentDidMount)，则可能找不到节点
+
+:::
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/getElementById" />

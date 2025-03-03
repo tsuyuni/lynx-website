@@ -1,0 +1,50 @@
+{
+  "lynx-api": {
+    "main-thread": {
+      "MainThread-APIs": {
+        "__compat": {
+          "description": "APIs available on the main thread.",
+          "lynx_path": "api/lynx-api/main-thread/main-thread",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": true
+          },
+          "support": {
+            "android": {
+              "version_added": "2.14"
+            },
+            "ios": {
+              "version_added": "2.14"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        },
+        "`requestAnimationFrame`": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/main-thread/main-thread",
+            "spec_url": [],
+            "status": {
+              "deprecated": false,
+              "experimental": true
+            },
+            "support": {
+              "android": {
+                "version_added": "2.16"
+              },
+              "ios": {
+                "version_added": "2.16"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

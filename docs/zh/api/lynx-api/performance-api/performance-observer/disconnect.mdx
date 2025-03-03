@@ -1,0 +1,42 @@
+import { RuntimeBadge } from '@lynx';
+
+# PerformanceObserver: disconnect() method
+
+<RuntimeBadge type={'bts'} />
+
+停止接收性能事件。
+
+## 语法
+
+```ts
+disconnect(): void
+```
+
+### 参数
+
+无
+
+### 返回值
+
+无 (`undefined`)
+
+## 示例
+
+以下示例展示了停止 `PerformanceObserver`，不再接收任何更多的性能事件。
+
+import { Go } from '@lynx';
+
+<Go
+  example="performance-api"
+  defaultFile="src/performance_observer_disconnect/index.tsx"
+  defaultEntryFile="dist/performance_observer_disconnect.lynx.bundle"
+  img="/assets/doc/performance-observer-disconnect-demo.jpeg"
+  entry="src/performance_observer_disconnect"
+  highlight="{8-22}"
+/>
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/performance-api/performance-observer/disconnect" />

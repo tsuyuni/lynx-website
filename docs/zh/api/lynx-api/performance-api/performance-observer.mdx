@@ -1,0 +1,41 @@
+import { RuntimeBadge } from '@lynx';
+
+# PerformanceObserver
+
+<RuntimeBadge type={'bts'} />
+
+`PerformanceObserver` 用于观察性能事件，并在 [Lynx Engine](guide/spec#engine) 产生性能事件 ([`PerformanceEntry`](./performance-entry)) 时收到通知。
+它必须通过 [`lynx.performance.createObserver()`](api/lynx-api/lynx/lynx-performance#createobserver) 创建，并在创建时绑定一个回调函数用于处理接收到的性能事件。
+
+## 实例方法
+
+[`PerformanceObserver.observe()`](./performance-observer/observe)
+
+指定要观察的性能事件类型集合并开始观察。
+
+[`PerformanceObserver.disconnect()`](./performance-observer/disconnect)
+
+停止接收性能事件。
+
+## 示例
+
+### 创建一个 PerformanceObserver
+
+该实例展示了如何创建一个 `PerformanceObserver` 并监听 [`metric.fcp`](./performance-entry/metric-fcp-entry) 和 [`pipeline`](./performance-entry/pipeline-entry) 事件。
+
+import { Go } from '@lynx';
+
+<Go
+  example="performance-api"
+  defaultFile="src/simple_observe/index.tsx"
+  defaultEntryFile="dist/SimpleObseve.lynx.bundle"
+  img="/assets/doc/simple-observe-demo.jpeg"
+  entry="src/simple_observe"
+  highlight="{11-21,31}"
+/>
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/performance-api/performance-observer" />

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "file",
+    "name": "view",
+    "label": "<view>"
+  },
+  {
+    "type": "file",
+    "name": "text",
+    "label": "<text>"
+  },
+  {
+    "type": "file",
+    "name": "image",
+    "label": "<image>"
+  },
+  {
+    "type": "file",
+    "name": "scroll-view",
+    "label": "<scroll-view>"
+  },
+  {
+    "type": "file",
+    "name": "list",
+    "label": "<list>"
+  },
+  {
+    "type": "file",
+    "name": "page",
+    "label": "<page>"
+  }
+]

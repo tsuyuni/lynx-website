@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "intersection-observer": {
+      "relativeTo": {
+        "__compat": {
+          "description": "Specify a reference node. The reference node is specified by id.",
+          "lynx_path": "api/lynx-api/intersection-observer/relative-to",
+          "support": {
+            "android": {
+              "version_added": "1.5"
+            },
+            "ios": {
+              "version_added": "1.5"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

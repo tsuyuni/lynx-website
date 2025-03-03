@@ -1,0 +1,63 @@
+export const isImgType = (fileName: string) => {
+  const imgTypes = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
+  return imgTypes.some((type) => fileName.endsWith(type));
+};
+
+export const isAssetFileType = (fileName: string) => {
+  const assetExtension = [
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.gif',
+    '.webp',
+    '.mp4',
+    '.avi',
+    '.pdf',
+    '.tif',
+    '.psd',
+    '.zip',
+    '.tar',
+    '.tgz',
+    '.ttf',
+    '.woff',
+    '.woff2',
+    '.eot',
+    '.svg',
+    '.ico',
+  ];
+  return assetExtension.some((type) => fileName.endsWith(type));
+};
+
+export const getFileCodeLanguage = (fileName: string) => {
+  const fileType = fileName.split('.').pop();
+  if (fileType === 'mjs') {
+    return 'js';
+  }
+  return fileType || 'txt';
+};
+
+export const getHighlightLines = (meta: string) => {
+  let highlightMeta = '';
+  let highlightLines: number[] = [];
+  if (meta) {
+    const highlightReg = /{[\d,-]*}/i;
+    highlightMeta = highlightReg.exec(meta)?.[0] || '';
+    if (highlightMeta) {
+      highlightLines = highlightMeta
+        .replace(/[{}]/g, '')
+        .split(',')
+        .map((item) => {
+          const [start, end] = item.split('-');
+          if (end) {
+            return Array.from(
+              { length: Number(end) - Number(start) + 1 },
+              (_, i) => i + Number(start),
+            );
+          }
+          return Number(start);
+        })
+        .flat();
+    }
+  }
+  return highlightLines;
+};

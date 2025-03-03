@@ -1,0 +1,33 @@
+# CustomEvent
+
+表示自定义事件对象，继承自 [`Event`](./event)，用于描述元件自定义的状态变化，比如 [`scroll`](../../elements/built-in/scroll-view.mdx#bindscroll)。
+
+该事件对象包含元件自定义的一些状态信息，开发者可以通过它了解元件的状态变化。
+
+## 实例属性
+
+:::info
+自定义事件对象的属性有两种，一种是 [`params`](#params)，一种是 [`detail`](#detail)，后续 [`params`](#params) 会被废弃掉，推荐使用 [`detail`](#detail)。
+:::
+
+### params
+
+```ts
+params: object;
+```
+
+表示元件自定义的一些状态信息。
+
+### detail
+
+```ts
+detail: object;
+```
+
+表示元件自定义的一些状态信息。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/event/CustomEvent" />

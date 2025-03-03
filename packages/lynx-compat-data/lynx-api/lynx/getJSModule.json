@@ -1,0 +1,28 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "getJSModule": {
+        "__compat": {
+          "description": "",
+          "lynx_path": "api/lynx-api/lynx/lynx-get-js-module",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "2.4"
+            },
+            "ios": {
+              "version_added": "2.4"
+            },
+            "web_lynx": {
+              "version_added": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

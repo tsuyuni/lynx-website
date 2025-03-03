@@ -1,0 +1,23 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "reportError": {
+        "__compat": {
+          "description": "Used to report a JavaScript Error.",
+          "lynx_path": "api/lynx-api/lynx/lynx-report-error",
+          "support": {
+            "android": {
+              "version_added": "2.3"
+            },
+            "ios": {
+              "version_added": "2.3"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

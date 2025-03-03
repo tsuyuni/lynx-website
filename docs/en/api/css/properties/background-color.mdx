@@ -1,0 +1,72 @@
+---
+id: background-color
+slug: background-color
+title: background-color
+---
+
+## Introduction
+
+The `background-color` CSS property sets the background color of an element.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/background-color/App.tsx"
+  img="/assets/doc/css/background-color.jpg"
+  defaultEntryFile="dist/background-color.lynx.bundle"
+  entry="src/background-color"
+/>
+
+## Syntax
+
+```css
+/* Keyword values */
+background-color: red;
+
+/* Hexadecimal value */
+background-color: #bbff00;
+
+/* RGB value */
+background-color: rgb(255, 255, 128);
+
+/* HSLA value */
+background-color: hsla(50, 33%, 25%, 0.75);
+```
+
+### Values
+
+- [`<color>`](api/css/data-type/color.mdx) <br/>
+  The uniform color of the background.
+
+- Default value **transparent** <br />
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>transparent</>}
+  appliesTo={<>all elements</>}
+  inherited="no"
+  animatable="yes"
+/>
+
+## Formal Syntax
+
+```
+<bg-color> = <rgb()> | <rgba()> | <hsl()> | <hsla()> | <hex-color> | <named-color>
+```
+
+## Difference between web
+
+- Not support special keywords like `currentcolor`
+- Not support global keywords like `inherit`、`initial`
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/background-color" />

@@ -1,0 +1,71 @@
+# setExtraTiming
+
+该接口用于补充加载 Lynx 页面前的关键性能数据，具体包括 [`InitContainerEntry`](api/lynx-api/performance-api/performance-entry/init-container-entry) 中的以下内容：
+
+- 页面打开时间 (`openTime`)
+- 准备 TemplateBundle 的起始时间戳 (`prepareTemplateStart`)
+- 准备 TemplateBundle 的结束时间戳 (`prepareTemplateEnd`)
+- **容器**初始化的起始时间戳 (`containerInitStart`)
+- **容器**初始化的结束时间戳 (`containerInitEnd`)
+
+> 在[应用程序](guide/spec#app)中，容器是一个独立的模块，它负责管理 [LynxView](guide/spec#lynxview) 的生命周期。其主要职责包括创建、初始化、配置、加载内容、处理状态变化及销毁 LynxView 实例等。
+
+## 语法
+
+### Android
+
+```java
+public void setExtraTiming(TimingHandler.ExtraTimingInfo extraTiming);
+```
+
+### 参数说明
+
+- `extraTiming: TimingHandler.ExtraTimingInfo`：用于补充加载 Lynx 页面前的关键性能数据。`ExtraTimingInfo` 类型的具体定义如下：
+
+```java
+public static class ExtraTimingInfo {
+    // 页面打开时间，对应 InitContainerEntry 中的 openTime。
+    public long mOpenTime = 0;
+    // 准备 TemplateBundle 的起始时间戳，对应 InitContainerEntry 中的 prepareTemplateStart。
+    public long mPrepareTemplateStart = 0;
+    // 准备 TemplateBundle 的结束时间戳，对应 InitContainerEntry 中的 prepareTemplateEnd。
+    public long mPrepareTemplateEnd = 0;
+    // 容器初始化的起始时间戳，对应 InitContainerEntry 中的 containerInitStart。
+    public long mContainerInitStart = 0;
+    // 容器初始化的结束时间戳，对应 InitContainerEntry 中的 containerInitEnd。
+    public long mContainerInitEnd = 0;
+}
+```
+
+### iOS
+
+```objc
+- (void)setExtraTiming:(LynxExtraTiming* _Nonnull)timing;
+```
+
+### 参数说明
+
+- `timing: LynxExtraTiming*`：用于补充加载 Lynx 页面前的关键性能数据。`LynxExtraTiming` 类型的具体定义如下：
+
+```objc
+@interface LynxExtraTiming : NSObject
+
+// 页面打开时间，对应 InitContainerEntry 中的 openTime。
+@property(nonatomic, assign) uint64_t openTime;
+// 准备 TemplateBundle 的起始时间戳，对应 InitContainerEntry 中的 prepareTemplateStart。
+@property(nonatomic, assign) uint64_t prepareTemplateStart;
+// 准备 TemplateBundle 的结束时间戳，对应 InitContainerEntry 中的 prepareTemplateEnd。
+@property(nonatomic, assign) uint64_t prepareTemplateEnd;
+// 容器初始化的起始时间戳，对应 InitContainerEntry 中的 containerInitStart。
+@property(nonatomic, assign) uint64_t containerInitStart;
+// 容器初始化的结束时间戳，对应 InitContainerEntry 中的 containerInitEnd。
+@property(nonatomic, assign) uint64_t containerInitEnd;
+
+@end
+```
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/set-extra-timing" />

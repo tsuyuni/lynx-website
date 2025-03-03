@@ -1,0 +1,28 @@
+{
+  "lynx-api": {
+    "lynx": {
+      "setSharedData": {
+        "__compat": {
+          "description": "设置同 LynxGroup 的页面间的共享数据。",
+          "lynx_path": "api/lynx-api/lynx/lynx-set-shared-data",
+          "spec_url": [],
+          "status": {
+            "deprecated": false,
+            "experimental": false
+          },
+          "support": {
+            "android": {
+              "version_added": "1.6"
+            },
+            "ios": {
+              "version_added": "1.6"
+            },
+            "web_lynx": {
+              "version_added": false
+            }
+          }
+        }
+      }
+    }
+  }
+}

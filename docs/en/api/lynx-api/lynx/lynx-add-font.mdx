@@ -1,0 +1,52 @@
+---
+title: addFont()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: addFont() static method
+
+<RuntimeBadge type={'bts'} />
+
+Used for dynamically adding fonts.
+
+## Syntax
+
+```ts
+export interface FontFace {
+  'font-family': string;
+  'src': string;
+}
+
+addFont(fontFace: FontFace, callback?: () => void): void;
+```
+
+### Parameter
+
+#### fontFace
+
+The font to be added.
+
+#### callback
+
+The callback after adding the font.
+
+## Example
+
+```ts
+lynx.addFont(
+  {
+    'font-family': 'CustomFont',
+    src: 'url("xxx")',
+  },
+  () => {
+    console.log('load font');
+  },
+);
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/addFont" />

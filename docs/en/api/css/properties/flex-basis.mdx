@@ -1,0 +1,81 @@
+---
+id: flex-basis
+slug: flex-basis
+title: flex-basis
+---
+
+## Introduction
+
+The `flex-basis` CSS property sets the initial main size of a flex item. In case both `flex-basis` (other than `auto`) and [`width`](./width.mdx) or [`height`](./height.mdx) in case of [`flex-direction: column`](./flex-direction.mdx) are set for an element, `flex-basis` has priority.
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  defaultFile="src/flex-basis/App.tsx"
+  img="/assets/doc/css/flex-basis.jpg"
+  entry="src/flex-basis"
+  defaultEntryFile="dist/flex-basis.lynx.bundle"
+/>
+
+## Syntax
+
+```css
+/* Specify <'width'> */
+flex-basis: 10em;
+flex-basis: 3px;
+flex-basis: 50%;
+flex-basis: auto;
+```
+
+### Values
+
+- `auto`
+
+  **Default value**. refer to [`width`](./width.mdx) and [`height`](./height.mdx).
+
+- `<length>`
+
+  sets an absolute value.
+
+- `<percentage>`
+
+  sets a percentage of the width or height of a containing block's content area.
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={
+    <>
+      <code>auto</code>
+    </>
+  }
+  appliesTo={<>flex items</>}
+  inherited="no"
+  animatable="yes"
+  percentages={<>refer to containing block's content area</>}
+/>
+
+## Formal syntax
+
+```
+flex-basis = auto | <length-percentage [0,∞]>
+
+<length-percentage> =
+  <length>      |
+  <percentage>
+```
+
+## Difference with the web
+
+- Not under [`box-sizing`](./box-sizing.mdx) influence.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/flex-basis" />

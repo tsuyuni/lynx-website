@@ -1,0 +1,47 @@
+# LynxUpdateMeta
+
+LynxUpdateMeta is the metadata structure used by LynxView to update template data. It will serve as the input parameter for [UpdateData](./lynx-view/update-data.mdx). Users can specify various parameters required for the update through LynxUpdateMeta, such as template data and globalProps, among others.
+
+## Android:
+
+### Field
+LynxUpdateMeta has the following members:
+
+- `updateData: TemplateData`: The content of the data to update the template;
+- `globalProps: TemplateData`: The globalProps content for updating the template;
+
+### Construction
+
+On the Android platform, you need to use LynxUpdateMeta.Builder to construct a LynxUpdateMeta object:
+
+```java
+LynxUpdateMeta.Builder builder = new LynxUpdateMeta.Builder();
+builder.setUpdatedData(data);
+builder.setUpdatedGlobalProps(globalProps);
+LynxUpdateMeta meta = builder.build();
+```
+
+## iOS
+
+### Field
+
+LynxUpdateMeta has the following members:
+
+- `updateData: TemplateData`: The content of the data to update the template;
+- `globalProps: TemplateData`: The globalProps content for updating the template;
+
+### Construction
+
+On the iOS platform, construct the LynxLoadMeta object as follows:
+
+```objective-c
+LynxUpdateMeta* meta = [LynxUpdateMeta init];
+meta.data = nil;
+meta.globalProps = nil;
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-update-meta" />

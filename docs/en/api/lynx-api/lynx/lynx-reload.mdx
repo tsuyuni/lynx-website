@@ -1,0 +1,43 @@
+---
+title: reload()
+---
+
+import { RuntimeBadge } from '@lynx';
+
+# lynx: reload() static method
+
+<RuntimeBadge type={'bts'} />
+
+Reloads the current page, like the Refresh button.
+
+## Syntax
+
+```ts
+reload(value: object, callback: () => void): void;
+```
+
+### Parameters
+
+#### value
+
+The new initial data the page reloading uses.
+
+#### callback
+
+The callback function when page reloading finishes.
+
+### Return Value
+
+None(`undefined`).
+
+## Notices
+
+1. The `lynx.reload()` method will not trigger the frontend `DataProcessor` function;
+2. `__globalProps`, `SystemInfo` and JS global variables will remain unchanged;
+3. `lynx.reload()` will trigger the `componentWillUnmount`/`onDetach` callbacks of all current frontend components; and recreate new custom components.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/reload" />

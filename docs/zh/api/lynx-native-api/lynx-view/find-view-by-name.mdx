@@ -1,0 +1,31 @@
+# findViewByIdName
+
+根据 `name` 属性查找 `UIView`
+
+## 语法
+
+### Android
+
+```java
+public View findViewByName(String name);
+```
+
+### 参数说明
+
+- `name: String`: 前端在布局文件中指定的视图的 name 属性；
+
+### iOS
+
+```objc
+- (nullable UIView*)viewWithName:(nonnull NSString*)name;
+```
+
+### 参数说明
+
+- `name: NSString*`：前端在布局文件中指定的视图的 name 属性；
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/find-view-by-name" />

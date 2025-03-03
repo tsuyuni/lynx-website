@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "id": "cspell-lynx-website-config",
+  "name": "cspell check for lynx website",
+  "language": "en",
+  "words": ["huxpro", "minalwws"],
+  "maxNumberOfProblems": 1000,
+  "useGitignore": true,
+  "ignorePaths": [
+    "*.snap",
+    "node_modules",
+    "__snapshots__",
+    "package-lock.json",
+    "coverage/**",
+    "dist/**",
+    "dist.*/**",
+    "temp/**",
+    "CHANGELOG.md",
+    "package.json",
+    ".cspell.json",
+    "cspell.json",
+    ".vscode/**",
+    "**/docs-contribution-guide/**"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "lynx-words",
+      "path": "./.cspell/dictionary.txt",
+      "description": "lynx words",
+      "addWords": true
+    },
+    {
+      "name": "developer-id",
+      "path": "./.cspell/developer-id.txt",
+      "description": "developer id",
+      "addWords": true
+    }
+  ],
+  "allowCompoundWords": true,
+  "dictionaries": ["lynx-words", "softwareTerms", "typescript", "node"],
+  "noConfigSearch": true,
+  "ignoreWords": []
+}

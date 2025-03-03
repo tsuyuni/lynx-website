@@ -1,0 +1,68 @@
+---
+title: fetch
+---
+
+import { RuntimeBadge } from '@lynx';
+
+<RuntimeBadge type={'bts'} />
+
+## Syntax
+
+```typescript
+fetch(resource);
+fetch(resource, options);
+```
+
+### Parameters
+
+#### resource
+
+This defines the resource that you wish to fetch. This can either be:
+
+- A string or any other object with stringify API — including a URL object — that provides the URL of the resource you want to fetch.
+
+- A `Request` object.
+
+#### options
+
+A `RequestInit` object containing any custom settings that you want to apply to the request.
+
+## Example
+
+```typescript
+const request = new Request('https://jsonplaceholder.typicode.com/todos/1');
+const response = await fetch(request);
+console.log(await response.json());
+```
+
+## Compatibility
+
+:::Caution Differences from Web
+
+- Client environment are different from Web, Lynx does not support Web-only features like: [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)、redirect、keepalive related APIs
+
+- Streaming/FormData/Blob related APIs are not supported
+
+:::
+
+:::Warning Web Platform Compatibility
+
+Web Platform supports Fetch API using Browser's Fetch implementation, it follows the same rules as the web.
+
+:::
+
+import { APITable } from '@lynx';
+
+<APITable query="lynx-api/fetch/fetch" />
+
+### Headers
+
+<APITable query="lynx-api/fetch/Headers" />
+
+### Request
+
+<APITable query="lynx-api/fetch/Request" />
+
+### Response
+
+<APITable query="lynx-api/fetch/Response" />
