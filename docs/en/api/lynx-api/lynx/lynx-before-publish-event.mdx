@@ -4,21 +4,21 @@ title: BeforePublishEvent
 
 # BeforePublishEvent
 
-`lynx.beforePublishEvent` is used to register/remove listening for a certain `DOM` event.
+`lynx.beforePublishEvent` is used to register/remove listening for an element event.
 
 ## Instance methods
 
 [`BeforePublishEvent.add()`](./lynx-before-publish-event/before-publish-event-add.mdx)
 
-Register a listener for a `DOM` event.
+Register a listener for an element event.
 
 [`BeforePublishEvent.remove()`](./lynx-before-publish-event/before-publish-event-remove.mdx)
 
-Remove listening for a `DOM` event.
+Remove listening for an element event.
 
 ## Example
 
-Register/remove listening for a certain `DOM` event.
+Register/remove listening for a certain element event.
 
 ```tsx
 //Register to listen for the tap event
@@ -30,7 +30,7 @@ lynx.beforePublishEvent.remove('tap', this.handleTap);
 
 ## Precautions
 
-Since this is an aspect interface on the `JS` side, the `DOM` element needs to be bound to the corresponding event and triggered, so that the aspect interface can listen to the `DOM` event.
+Since this is an aspect interface on the background thread, the element element needs to be bound to the corresponding event and triggered, so that the aspect interface can listen to the element event.
 
 ## Compatibility
 

@@ -7,7 +7,7 @@ import { AndroidOnly, Deprecated, Go } from '@lynx';
 
 ## 使用指南
 
-`<text>` 元件在布局上和 `<view>` 不同，不支持设置 `display` 等排版及相关属性，`<text>` 内部有自身的布局方式。`<text>` 元件提供行内格式化上下文。在 Lynx 里，除了在 `<text>` 元件内的元素，其他元素都是块级元素。当元素处于 `<text>` 元件内部时，`<text>` 元件如同提供了一个行内格式化上下文（Inline formatting context），使得其中的元素具有类似行内元素的布局特性，元素不会独占一行，而是与周围文本内容在同一行内排列。
+`<text>` 元件在布局上和 `<view>` 不同，不支持设置 `display` 等排版及相关属性，`<text>` 内部有自身的布局方式。`<text>` 元件提供行内格式化上下文。在 Lynx 里，除了在 `<text>` 元件内的元件，其他元件都是块级元件。当元件处于 `<text>` 元件内部时，`<text>` 元件如同提供了一个行内格式化上下文（Inline formatting context），使得其中的元件具有类似行内元件的布局特性，元件不会独占一行，而是与周围文本内容在同一行内排列。
 
 ### 嵌套 text
 
@@ -51,7 +51,7 @@ import { AndroidOnly, Deprecated, Go } from '@lynx';
 
 :::note
 
-目前嵌套 image 无法自适应图片大小，**必须在 `<image>` 的样式中显示指定元素大小**。
+目前嵌套 image 无法自适应图片大小，**必须在 `<image>` 的样式中显示指定元件大小**。
 
 :::
 
@@ -332,7 +332,7 @@ const YourComponent = () => {
 | [text-overflow](api/css/properties/text-overflow.mdx)     | 是   | 否        | 否         | 否        | 设置如何提示用户存在隐藏的溢出内容                                              |
 | [text-shadow](api/css/properties/text-shadow.mdx)         | 是   | 是        | 否         | 否        | 为文字添加阴影 ，某些 Android 平台上，blur-radius 的值为 0 时，阴影可能无法绘制 |
 | [text-stroke](api/css/properties/text-stroke.mdx)         | 是   | 是        | 否         | 否        | 指定了文字的笔画宽度和颜色                                                      |
-| [vertical-align](api/css/properties/vertical-align.mdx)   | 否   | 是        | 是         | 是        | 设置子元素的垂直对齐方式                                                        |
+| [vertical-align](api/css/properties/vertical-align.mdx)   | 否   | 是        | 是         | 是        | 设置子元件的垂直对齐方式                                                        |
 | [white-space](api/css/properties/white-space.mdx)         | 是   | 否        | 否         | 否        | 设置如何处理空格                                                                |
 | [word-break](api/css/properties/word-break)               | 是   | 否        | 否         | 否        | 用于指定怎样在单词内断行                                                        |
 

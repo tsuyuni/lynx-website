@@ -4,7 +4,7 @@
       "lynx-before-publish-event": {
         "remove": {
           "__compat": {
-            "description": "Remove monitoring of a DOM event.",
+            "description": "Remove monitoring of an element event.",
             "lynx_path": "api/lynx-api/lynx/lynx-before-publish-event/before-publish-event-remove",
             "support": {
               "android": {

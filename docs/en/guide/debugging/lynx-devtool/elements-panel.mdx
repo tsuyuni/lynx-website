@@ -1,10 +1,10 @@
 # Elements Panel
 
-The **Elements** panel allows you to inspect and modify DOM elements.
+The **Elements** panel allows you to inspect and modify element and element tree.
 
 ## Overview
 
-The **Elements** panel provides a powerful interface for inspecting and manipulating the DOM. You can select specific DOM nodes using the DOM tree and use other tools to make modifications.
+The **Elements** panel provides a powerful interface for inspecting and manipulating the element and the element tree. You can select specific element using the element tree and use other tools to make modifications.
 
 The **Elements** panel also includes tabs for the following related tools:
 
@@ -61,9 +61,9 @@ After closing, it will be displayed as follows:
   style={{ margin: '40px' }}
 />
 
-At this time, if a node that can generate UI is selected in the Elements panel (not all nodes on the DOM tree will eventually generate UI), the Lynx page on the mobile phone will highlight the corresponding UI.
+At this time, if an element that can generate UI is selected in the Elements panel (not all nodes on the element tree will eventually generate platform UI), the Lynx page on the mobile phone will highlight the corresponding element.
 
-## View DOM Nodes
+## View Element Nodes
 
 ### Inspect Nodes
 
@@ -83,22 +83,22 @@ At this time, if a node that can generate UI is selected in the Elements panel (
      style={{ marginTop: '20px' }}
    />
 
-3. Now, the corresponding `<image></image>` node is highlighted in the DOM tree.
+3. Now, the corresponding `<image></image>` node is highlighted in the element tree.
    <img
      src="./assets/elements/elements-click2.png"
      alt="Click Inspect"
      style={{ marginTop: '20px' }}
    />
 
-### Navigate the DOM Tree with a keyboard
+### Navigate the Element Tree with a keyboard
 
-After selecting a node in the DOM tree, you can use the keyboard to browse the DOM tree.
+After selecting a node in the element tree, you can use the keyboard to browse the element tree.
 
 1.  After clicking on the **Inspect** icon in the upper left corner of the developer tools, click on the input box in the middle of the Lynx page preview window.
 
           <img src="./assets/elements/elements-key1.png" width="600" style={{ margin: '20px'}}/>
 
-    Now, the `<input>` node is selected in the DOM tree.
+    Now, the `<input>` node is selected in the element tree.
 
 2.  Press the Up arrow key twice. `<view class="input-card-url__light">` has been selected.
 
@@ -116,17 +116,17 @@ After selecting a node in the DOM tree, you can use the keyboard to browse the D
 
 6.  Press the right arrow key. At this time, the `<view class="input-card-url__light">` node will be expanded.
 
-## Edit the DOM
+## Edit the Element
 
-You can dynamically modify the DOM and see how these changes affect the Lynx page.
+You can dynamically modify the element and see how these changes affect the Lynx page.
 
 ### Edit Content
 
-To modify the content of a node, double-click on the corresponding content in the DOM tree.
+To modify the content of a node, double-click on the corresponding content in the element tree.
 
 As shown above:
 
-1. After clicking on the **Inspect** icon, click on the text **Lynx Explorer** in the Lynx page preview window. Now the `<text class="home-title__light">...</text>` node is selected in the DOM tree.
+1. After clicking on the **Inspect** icon, click on the text **Lynx Explorer** in the Lynx page preview window. Now the `<text class="home-title__light">...</text>` node is selected in the element tree.
 
    <img
      src="./assets/elements/text-modify1.png"
@@ -136,7 +136,7 @@ As shown above:
 
 2. Press the right arrow key on the keyboard to expand the `<text class="home-title__light">...</text>` node.
 
-3. Press the down arrow key on the keyboard, and the `<raw-text text="Lynx Explorer"><raw-text>` node is selected in the DOM tree.
+3. Press the down arrow key on the keyboard, and the `<raw-text text="Lynx Explorer"><raw-text>` node is selected in the element tree.
 
 4. Double-click on the **Lynx Explorer** on `<raw-text>`.
 
@@ -148,7 +148,7 @@ As shown above:
      style={{ margin: '20px' }}
    />
 
-6. Press the Enter key, and you can see that the text change has taken effect both in the DOM tree and on the left preview window.
+6. Press the Enter key, and you can see that the text change has taken effect both in the element tree and on the left preview window.
    <img
      src="./assets/elements/text-modify3.png"
      width="600"
@@ -159,7 +159,7 @@ As shown above:
 
 To modify attributes, double-click on the attribute name or value. Follow the instructions below to learn how to modify the style attribute of a node.
 
-1. Select the `<view clip-radius="true" flatten="false" style="height:100px">` node in the DOM tree that you want to modify.
+1. Select the `<view clip-radius="true" flatten="false" style="height:100px">` node in the element tree that you want to modify.
 
    <img
      src="./assets/elements/style-modify1.png"
@@ -177,7 +177,7 @@ To modify attributes, double-click on the attribute name or value. Follow the in
      style={{ margin: '20px' }}
    />
 
-4. Press the Enter key, and you can see that the width change of the view has taken effect both in the DOM tree and on the left preview window.
+4. Press the Enter key, and you can see that the width change of the view has taken effect both in the element tree and on the left preview window.
    <img
      src="./assets/elements/style-modify3.png"
      width="600"
@@ -190,7 +190,7 @@ To modify attributes, double-click on the attribute name or value. Follow the in
 
 1. Click on the **Inspect** icon, and click on the text **Lynx Explorer** in the preview window.
 
-2. The `<text class="home-title__light">...</text>` node is selected in the DOM tree.
+2. The `<text class="home-title__light">...</text>` node is selected in the element tree.
 
 3. At this time, you can see that the **Styles** tab shows all the styles applied to the currently selected node.
 
@@ -205,7 +205,7 @@ To modify attributes, double-click on the attribute name or value. Follow the in
 
 If you want to change or add CSS declarations to an element, use the **Styles** tab.
 
-1. Selected `<view clip-radius="true"...>...</text>` in the DOM tree.
+1. Selected `<view clip-radius="true"...>...</text>` in the element tree.
 
 2. On the right side of the **Styles** tab, click on the top `element.style`.
 
@@ -216,7 +216,7 @@ If you want to change or add CSS declarations to an element, use the **Styles** 
      style={{ marginTop: '20px' }}
    />
 
-4. Press the Enter key again. At this time, whether it is the UI effect on the preview window or the DOM tree, the style change has taken effect.
+4. Press the Enter key again. At this time, whether it is the UI effect on the preview window or the element tree, the style change has taken effect.
    {' '}
    <img
      src="./assets/elements/css-style-modify2.png"
@@ -231,7 +231,7 @@ If you want to change or add CSS declarations to an element, use the **Styles** 
 
    <img src="./assets/elements/box-model.png" style={{ marginTop: '20px' }} />
 
-3. Click Go button, then corresponding `<view ...>...</view>` node is selected in the DOM tree.
+3. Click Go button, then corresponding `<view ...>...</view>` node is selected in the element tree.
 
 4. Click on the box model in the **Styles** tab on the right side, and click one by one from the inside to the outside, you can see that the left preview window is highlighted one by one in turn. Using content-box as an example, as shown in the image below:
    <img src="./assets/elements/box-model2.png" style={{ marginTop: '20px' }} />

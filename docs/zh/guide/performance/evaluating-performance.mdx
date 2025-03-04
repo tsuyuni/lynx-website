@@ -24,7 +24,7 @@
 
 ![首屏直出的首屏渲染流程](/assets/doc/first-render-without-network.png '首屏直出的首屏渲染流程')
 
-反之如果你的页面如下图所示需要依赖其他数据，比如通过网络请求（Network Request）获取的数据才能“真正”完成渲染。那么你需要[标记 Lynx 流水线](guide/performance/timing-flag)，关注与重要数据、元素相关的 _ActualFMP_。因为当 FCP 与 TTI 完成时展现的画面很可能是没有意义的，比如加载动画或骨架屏。
+反之如果你的页面如下图所示需要依赖其他数据，比如通过网络请求（Network Request）获取的数据才能“真正”完成渲染。那么你需要[标记 Lynx 流水线](guide/performance/timing-flag)，关注与重要数据、元件相关的 _ActualFMP_。因为当 FCP 与 TTI 完成时展现的画面很可能是没有意义的，比如加载动画或骨架屏。
 
 ![带网络请求的首屏渲染流程图](/assets/doc/first-render-with-network.png '带网络请求的首屏渲染流程')
 

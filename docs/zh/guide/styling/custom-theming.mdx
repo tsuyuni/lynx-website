@@ -2,11 +2,11 @@ import { Go } from '@lynx';
 
 # 多主题
 
-Lynx 支持了较丰富的 [CSS 属性](api/css/properties)，配合 [CSS 选择器](api/css/selectors)、[CSS 变量](api/css/properties/css-variable)以及 CSS 继承能力，可轻松实现多样化的主题样式，为用户界面提供一致且优雅的外观和风格。通过定义和管理不同的主题变量，开发者可以方便地切换不同的配色方案、字体风格以及其他视觉元素，确保用户获得最佳的视觉体验和互动感受。
+Lynx 支持了较丰富的 [CSS 属性](api/css/properties)，配合 [CSS 选择器](api/css/selectors)、[CSS 变量](api/css/properties/css-variable)以及 CSS 继承能力，可轻松实现多样化的主题样式，为用户界面提供一致且优雅的外观和风格。通过定义和管理不同的主题变量，开发者可以方便地切换不同的配色方案、字体风格以及其他视觉元件，确保用户获得最佳的视觉体验和互动感受。
 
 ## 使用 CSS 后代选择器切换主题
 
-与 Web 开发类似，利用后代选择器可以通过切换父级元素的 class，来影响其所有后代节点的样式，从而实现多种主题样式的切换。
+与 Web 开发类似，利用后代选择器可以通过切换父级元件的 class，来影响其所有后代节点的样式，从而实现多种主题样式的切换。
 
 ### 定义 CSS 主题
 
@@ -239,6 +239,6 @@ export function App() {
 
 ### CSS 继承的功能局限
 
-1. `position:fixed` 的元素永远只继承 page 的属性。
+1. `position:fixed` 的元件永远只继承 page 的属性。
 2. 不支持关键字 "inherit"
 3. 除了默认可继承属性外，只有类型为枚举或者布尔值的 CSS 属性支持自定义继承。

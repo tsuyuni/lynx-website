@@ -2,7 +2,7 @@
 
 ## 介绍
 
-`order` 属性规定了容器中的子元素在布局时的顺序。元素按照 `order` 属性的值的增序进行布局。拥有相同 `order` 属性值的元素按照它们在源代码中出现的顺序进行布局。
+`order` 属性规定了容器中的子元件在布局时的顺序。元件按照 `order` 属性的值的增序进行布局。拥有相同 `order` 属性值的元件按照它们在源代码中出现的顺序进行布局。
 
 ## 使用示例
 
@@ -28,7 +28,7 @@ order: -5;
 
 - `<number>`
 
-[`<number>`](api/css/data-type/number.mdx) 表示子元素所在的次序组。**默认值**为 `0`。
+[`<number>`](api/css/data-type/number.mdx) 表示子元件所在的次序组。**默认值**为 `0`。
 
 ## 形式定义
 
@@ -42,7 +42,7 @@ import { PropertyDefinition } from '@/components/PropertyDefinition';
       <a href="/api/css/properties/position.mdx">
         <code>position: absolute/fixed/sticky</code>
       </a>
-      孩子元素
+      孩子元件
     </>
   }
   inherited="否"
@@ -52,7 +52,7 @@ import { PropertyDefinition } from '@/components/PropertyDefinition';
 ## 与 Web 的区别
 
 1. 不支持在 [`position: absolute/fixed/sticky`](./position.mdx) flex and grid container children 上使用。
-2. Lynx 中 `order` 的使用不会影响元素的渲染顺序，而 Web 会。
+2. Lynx 中 `order` 的使用不会影响元件的渲染顺序，而 Web 会。
 
 ## 兼容性
 

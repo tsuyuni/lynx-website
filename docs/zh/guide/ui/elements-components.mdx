@@ -4,36 +4,36 @@ import { Go, CodeFold } from '@lynx';
 
 一个 Lynx 页面中可能包含了文字、图片不同的视觉要素，通过不同的布局方式，来呈现出不同的页面样式。本节希望帮助大家了解如何构建最基本的视图。
 
-## 元件：界面的基础构建单元
+## 元素标签：界面的基础构建单元
 
-Lynx 通过标记语言来定义内容和结构，其最基础的单元是一个元件。元件的概念类似 [HTML 中的元素](https://developer.mozilla.org/en-US/docs/Glossary/Element)，元件可以用来包围不同部分的内容，使其以某种方式呈现或者工作。
+Lynx 通过标记语言来定义内容和结构，其最基础的单元是一个[元素标签](guide/spec.html#element-tag)。元素标签的概念类似 [HTML 元素](https://developer.mozilla.org/en-US/docs/Glossary/Element)，元素标签可以用来包围不同部分的内容，使其以某种方式呈现或者工作。
 
-与 HTML 不同的是，Lynx 中使用一些其独有的元件如 [`<view>`](api/elements/built-in/view)、[`<text>`](api/elements/built-in/text) 和 [`<image>`](api/elements/built-in/image)，来展示不同的内容。
+与 HTML 不同的是，Lynx 中使用一些其独有的元素标签，如 [`<view>`](api/elements/built-in/view)、[`<text>`](api/elements/built-in/text) 和 [`<image>`](api/elements/built-in/image)，来展示不同的内容。
 例如，在 Lynx 中，下面的源代码可以用于展示一段文字：
 
 ```html
 <text>Hello Lynx</text>
 ```
 
-### 元件的构成
+### 元素标签的构成
 
-元件的基本用法与 [HTML 元素](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content#anatomy_of_an_html_element)非常类似：
+元素标签的基本用法与 [HTML 元素](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content#anatomy_of_an_html_element)非常类似：
 
 <img src="/assets/doc/elements_tags.png" width="100%" height="40%" />
 
-每一个元件都由以下几个部分组成：
+每一个元素标签都由以下几个部分组成：
 
-1. **开始标签**：包含元件的名称（本例为 text），及一对包围名称的尖括号。表示元件从这里开始。
-2. **结束标签**：与开始标签相似，只是其在元素名之前包含了一个正斜杠。这表示元件到这里结束。
-3. **内容**：元件的内容，对于 `<text>` 元件来说就是所输入的文本本身。
+1. **开始标签**：包含元素标签的名称（本例为 text），及一对包围名称的尖括号。表示元素标签从这里开始。
+2. **结束标签**：与开始标签相似，只是其在元素名之前包含了一个正斜杠。这表示元素标签到这里结束。
+3. **内容**：元素标签的内容，对于 `<text>` 元素标签来说就是所输入的文本本身。
 
-开始标签、结束标签与内容相结合，便是一个完整的元件。
+开始标签、结束标签与内容相结合，便是一个完整的元素标签。
 
 ### 属性
 
-每个元件都有自己的属性（Attribute），可以通过在元件标签中添加属性名和属性值来设置，用于描述其行为和外观。
+每个元素标签都有自己的属性（Attribute），可以通过在元素标签标签中添加属性名和属性值来设置，用于描述其行为和外观。
 
-例如，每个元件上可以使用 [`style`](api/elements/built-in/view#style)、[`class`](api/elements/built-in/view#class) 等属性来设置背景、圆角、阴影样式，支持部分 CSS 语法。下面的代码可以设置一个元素的背景色为红色：
+例如，每个元素标签上可以使用 [`style`](api/elements/built-in/view#style)、[`class`](api/elements/built-in/view#class) 等属性来设置背景、圆角、阴影样式，支持部分 CSS 语法。下面的代码可以设置一个元素的背景色为红色：
 
 ```html
 <text style="background:red;">Hello Lynx</text>
@@ -41,21 +41,21 @@ Lynx 通过标记语言来定义内容和结构，其最基础的单元是一个
 
 本例中，`style` 是属性名，`background:red` 是属性值。
 
-更多属性可以查看[元件 API 参考](api/elements/built-in/view)。
+更多属性可以查看 [API 参考](api/elements/built-in/view)。
 
-### 空元件
+### 空元素标签
 
-有些元件没有内容，例如 `<image>` 元件：
+有些元素标签没有内容，例如 `<image>` 元素标签：
 
 ```html
 <image src="assets/logo.png" />
 ```
 
-它没有使用 `</image>` 结束标签，元件里也没有内容。这是因为 `<image>` 元件使用属性 `src` 而非通过内容来达到展示图片的目的。
+它没有使用 `</image>` 结束标签，元素标签里也没有内容。这是因为 `<image>` 元素标签使用属性 `src` 而非通过内容来达到展示图片的目的。
 
-### 嵌套元件
+### 嵌套元素标签
 
-元素可以被嵌套在其他元件中。例如，多个 `<text>` 元件可以被嵌套在一个 `<view>` 元件中：
+元素标签可以被嵌套在其他元素标签中。例如，多个 `<text>` 元素标签可以被嵌套在一个 `<view>` 元素标签中：
 
 ```html
 <view>
@@ -66,9 +66,8 @@ Lynx 通过标记语言来定义内容和结构，其最基础的单元是一个
 
 ### 元件树
 
-这种元件嵌套的方式，天然的被组织成了一种树状结构，可以更形象地描述元件之间的层级关系，我们称之为[元件树](guide/spec.html#element-tree)。
-
-在源代码中的元件树会在运行时被 Lynx 引擎解析，翻译成不同平台各自原生渲染系统可以识别的视图树，我们依赖这种树结构来构建和管理更加复杂的界面。
+在源代码中的元素标签会在运行时被 Lynx 引擎解析，翻译成用于渲染的[元件](guide/spec.html#element)。
+嵌套的元素标签会形成由元件组成的一棵树，我们称之为[元件树](guide/spec.html#element-tree)，我们依赖这种树结构来构建和管理更加复杂的界面。
 
 <img src="/assets/doc/elements_tree.png" width="100%" height="30%" />
 

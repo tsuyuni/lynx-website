@@ -10,7 +10,7 @@ Lynx 提供了丰富的动效功能，使得开发者能够在 Lynx 中构建出
 
 如果你需要对布局或样式在发生变化时平滑地应用新的属性值，可以使用过渡动画。
 
-过渡动画提供了一种在更改 CSS 属性时控制动画速度的方法。与属性更改立即生效不同，你可以让属性的更改在一段时间内逐渐发生。例如，当你将一个元素的颜色从白色变为黑色时，通常该更改是瞬间完成的。而启用过渡动画后，变化将在一个符合加速曲线的时间间隔内发生，这一切都可以进行自定义。
+过渡动画提供了一种在更改 CSS 属性时控制动画速度的方法。与属性更改立即生效不同，你可以让属性的更改在一段时间内逐渐发生。例如，当你将一个元件的颜色从白色变为黑色时，通常该更改是瞬间完成的。而启用过渡动画后，变化将在一个符合加速曲线的时间间隔内发生，这一切都可以进行自定义。
 
 过渡动画具有自动触发、非重复播放、简单易用的特点，可以通过复合 [`transition`](../../api/css/properties/transition) 来定义动画属性和时长，也可以使用单条形式的 [`transition-property`](../../api/css/properties/transition-property) 和 [`transition-duration`](../../api/css/properties/transition-duration) 等来指定。
 
@@ -30,7 +30,7 @@ Lynx 提供了丰富的动效功能，使得开发者能够在 Lynx 中构建出
 
 如果你需要多组样式配置按序列过渡的效果，可以使用关键帧动画。
 
-关键帧动画通过 CSS 中的 [`@keyframes`](../../api/css/at-rule/keyframes) 规则定义，指定动画各个阶段的样式变化；并使用 [`animation`](../../api/css/properties/animation) 属性可以将定义好的动画应用到元素上，并设置动画名称、持续时间、延迟、播放次数等参数。
+关键帧动画通过 CSS 中的 [`@keyframes`](../../api/css/at-rule/keyframes) 规则定义，指定动画各个阶段的样式变化；并使用 [`animation`](../../api/css/properties/animation) 属性可以将定义好的动画应用到元件上，并设置动画名称、持续时间、延迟、播放次数等参数。
 
 关键帧动画相较过渡动画更为灵活和可控，允许你指定过程以及更细粒度的时间曲线，可以在 CSS 中定义 [`@keyframes`](../../api/css/at-rule/keyframes)，然后通过复合 `animation` 属性来指定，也可以使用单条形式的 [`animation-name`](../../api/css/properties/animation-name)、[`animation-duration`](../../api/css/properties/animation-duration) 等属性进行定义。
 

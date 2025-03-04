@@ -44,11 +44,11 @@ select(selector: string): NodesRef;
 ```
 
 - Attribute 选择器（注意自定义组件的 `props` 不属于 `attribute`，因此无法使用 `attribute` 选择器匹配自定义组件的 `props`）
-  - `[attribute]`：表示带有以 attr 命名的属性的元素。
-  - `[attribute=value]`：表示带有以 attr 命名的属性，且属性值为 value 的元素。
-  - `[attribute*=value]`：表示带有以 attr 命名的属性，且属性值至少包含一个 value 值的元素。
-  - `[attribute^=value]`：表示带有以 attr 命名的属性，且属性值是以 value 开头的元素。
-  - `[attribute$=value]`：表示带有以 attr 命名的属性，且属性值是以 value 结尾的元素。
+  - `[attribute]`：表示带有以 attr 命名的属性的元件。
+  - `[attribute=value]`：表示带有以 attr 命名的属性，且属性值为 value 的元件。
+  - `[attribute*=value]`：表示带有以 attr 命名的属性，且属性值至少包含一个 value 值的元件。
+  - `[attribute^=value]`：表示带有以 attr 命名的属性，且属性值是以 value 开头的元件。
+  - `[attribute$=value]`：表示带有以 attr 命名的属性，且属性值是以 value 结尾的元件。
 
 ```tsx
 // '[src]'
@@ -67,7 +67,7 @@ select(selector: string): NodesRef;
 
 ##### 组合器
 
-- 子元素组合器 `>`
+- 子元件组合器 `>`
 
   - 查找父节点的直接子节点。
 
@@ -116,7 +116,7 @@ console.log(nodesRef); // always returning a valid NodesRef object
 
 特殊字符可能会被解析为 CSS 选择器或组合器的一部分。
 
-例如，`select('#m.x')` 会被解析为查找同时具有 `id=m` 和 `class=x` 属性的元素，而不是查找 `id` 为 `m.x` 的元素。
+例如，`select('#m.x')` 会被解析为查找同时具有 `id=m` 和 `class=x` 属性的元件，而不是查找 `id` 为 `m.x` 的元件。
 
 ## 问题排查
 

@@ -2,7 +2,7 @@ import { Go } from '@lynx';
 
 # Direct Manipulation of Elements
 
-In daily development, modern front-end frameworks handle most DOM tree and node property updates for us. However, there are times when you need to manipulate elements directly, such as controlling media players, manipulating view behavior, getting element information, or directly modifying styles.
+In daily development, modern front-end frameworks handle most element tree and node property updates for us. However, there are times when you need to manipulate elements directly, such as controlling media players, manipulating view behavior, getting element information, or directly modifying styles.
 
 These functionalities are typically implemented by components on the client side, and you need to access them through element references.
 
@@ -33,7 +33,7 @@ const nodeRef = useRef<NodesRef>(null);
 <text ref={nodeRef} />;
 ```
 
-However, note that in Lynx, the type of node reference is [`NodesRef`], which is different from React. If you want to learn more about using references, you can refer to [Manipulating the DOM with Refs](https://react.dev/learn/manipulating-the-dom-with-refs).
+However, note that in Lynx, the type of node reference is [`NodesRef`], which is different from React. If you want to learn more about using references, you can refer to [Manipulating the Element with Refs](https://react.dev/learn/manipulating-the-dom-with-refs).
 
 ### Manipulating an Element via Its Reference
 

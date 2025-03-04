@@ -2,7 +2,7 @@ import { Go } from '@lynx';
 
 # 直接操作节点
 
-在日常开发中，现代前端框架已经帮我们处理了大部分 DOM 树和节点属性的更新。不过有时你还是需要直接操作节点，比如控制媒体播放器、操作视图行为、获取节点信息或直接修改样式。
+在日常开发中，现代前端框架已经帮我们处理了大部分元件树和节点属性的更新。不过有时你还是需要直接操作节点，比如控制媒体播放器、操作视图行为、获取节点信息或直接修改样式。
 
 这些功能通常由元件在客户端实现，你需要通过节点引用来访问它们。
 
@@ -33,7 +33,7 @@ const nodeRef = useRef<NodesRef>(null);
 <scroll-view ref={scrollRef} />;
 ```
 
-不过要注意，在 Lynx 中节点引用的类型是 [`NodesRef`]，这一点和 React 有所不同。如果你想了解更多关于引用的使用技巧，可以参考 [Manipulating the DOM with Refs](https://react.dev/learn/manipulating-the-dom-with-refs)。
+不过要注意，在 Lynx 中节点引用的类型是 [`NodesRef`]，这一点和 React 有所不同。如果你想了解更多关于引用的使用技巧，可以参考 [Manipulating the Element with Refs](https://react.dev/learn/manipulating-the-dom-with-refs)。
 
 ### 通过节点引用操作节点
 

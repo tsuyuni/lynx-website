@@ -2,11 +2,11 @@
 
 ## 介绍
 
-在[相对布局](guide/ui/layout/relative-layout.mdx)中，用于设置布局加速。使用同级元素间定位的时候，建议开启此属性，同时同级元素只会向上依赖。
+在[相对布局](guide/ui/layout/relative-layout.mdx)中，用于设置布局加速。使用同级元件间定位的时候，建议开启此属性，同时同级元件只会向上依赖。
 
-当这个属性为 `true` 时，relative 性能较高，但是不能处理元素中位置有任何有循环依赖的情况。
+当这个属性为 `true` 时，relative 性能较高，但是不能处理元件中位置有任何有循环依赖的情况。
 当这个属性为 `false` 时，relative 性能较差，可以支持竖直方向，水平方向分别处理依赖关系。
-比如如果页面中，有 `1`，`2` 两元素，`1` 的宽度由 `2` 决定，`2` 的高度由 `1` 决定，这种情况，`relative-layout-once` 为 `true` 就无法处理，而 `relative-layout-once` 为 `false` 则可以处理。
+比如如果页面中，有 `1`，`2` 两元件，`1` 的宽度由 `2` 决定，`2` 的高度由 `1` 决定，这种情况，`relative-layout-once` 为 `true` 就无法处理，而 `relative-layout-once` 为 `false` 则可以处理。
 
 ## 语法
 

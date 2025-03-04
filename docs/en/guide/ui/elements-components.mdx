@@ -4,35 +4,35 @@ import { Go, CodeFold } from '@lynx';
 
 A Lynx page may contain various visual elements such as text and images, presented in different layouts to create diverse page styles. This section aims to help everyone understand how to construct the most basic views.
 
-## Element: UI Building Blocks
+## Element tag: UI Building Blocks
 
-Lynx defines content and structure using a markup language, with the most basic unit being an element. The concept of an element is similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Glossary/Element), which can be used to encapsulate different parts of the content to present or operate in a specific manner.
+Lynx defines content and structure using a markup language, with the most basic unit being an [element tag](guide/spec.html#element-tag). The concept of an element tag is similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Glossary/Element), which can be used to encapsulate different parts of the content to present or operate in a specific manner.
 
-Unlike HTML, Lynx uses some unique elements such as [`<view>`](api/elements/built-in/view), [`<text>`](api/elements/built-in/text), and [`<image>`](api/elements/built-in/image) to display different content. For example, in Lynx, the following source code can be used to display a piece of text:
+Unlike HTML, Lynx uses some unique element tags such as [`<view>`](api/elements/built-in/view), [`<text>`](api/elements/built-in/text), and [`<image>`](api/elements/built-in/image) to display different content. For example, in Lynx, the following source code can be used to display a piece of text:
 
 ```html
 <text>Hello Lynx</text>
 ```
 
-### Anatomy of an Element
+### Anatomy of an Element tag
 
-The basic usage of elements is very similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content#anatomy_of_an_html_element):
+The basic usage of element tags is very similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content#anatomy_of_an_html_element):
 
 <img src="/assets/doc/elements_tags.png" width="100%" height="40%" />
 
-Each element consists of the following parts:
+Each element tag consists of the following parts:
 
-1. **Start tag**: Includes the name of the element (in this case, text) surrounded by angle brackets, indicating where the element begins.
-2. **End tag**: Similar to the start tag but includes a forward slash before the element's name, indicating where the element ends.
-3. **Content**: The content of the element, which for the `<text>` element is the text itself.
+1. **Start tag**: Includes the name of the element tag (in this case, text) surrounded by angle brackets, indicating where the element tag begins.
+2. **End tag**: Similar to the start tag but includes a forward slash before the element tag's name, indicating where the element tag ends.
+3. **Content**: The content of the element tag, which for the `<text>` element tag is the text itself.
 
-Combining the start tag, end tag, and content forms a complete element.
+Combining the start tag, end tag, and content forms a complete element tag.
 
 ### Attributes
 
-Each element has its own attributes that can be set by adding attribute names and values within the element's tag to describe its behavior and appearance.
+Each element tag has its own attributes that can be set by adding attribute names and values within the element tag's tag to describe its behavior and appearance.
 
-For example, each element can use attributes such as [`style`](api/elements/built-in/view#style) and [`class`](api/elements/built-in/view#class) to set background, border-radius, shadow styles, and support some CSS syntax. The following code sets the background color of an element to red:
+For example, each element tag can use attributes such as [`style`](api/elements/built-in/view#style) and [`class`](api/elements/built-in/view#class) to set background, border-radius, shadow styles, and support some CSS syntax. The following code sets the background color of an element tag to red:
 
 ```html
 <text style="background:red;">Hello Lynx</text>
@@ -40,21 +40,21 @@ For example, each element can use attributes such as [`style`](api/elements/buil
 
 In this example, `style` is the attribute name, and `background:red` is the attribute value.
 
-For more attributes, refer to the [Element PAPI reference](api/elements/built-in/view).
+For more attributes, refer to the [API Reference](api/elements/built-in/view).
 
-### Empty Elements
+### Empty Element tags
 
-Some elements do not have content, such as the `<image>` element:
+Some element tags do not have content, such as the `<image>` element tag:
 
 ```html
 <image src="assets/logo.png" />
 ```
 
-It does not use an `</image>` end tag, nor does it have any content inside because the `<image>` element uses an attribute `src` to display an image rather than content.
+It does not use an `</image>` end tag, nor does it have any content inside because the `<image>` element tag uses an attribute `src` to display an image rather than content.
 
-### Nested Elements
+### Nested Element tags
 
-Elements can be nested within other elements. For example, multiple `<text>` elements can be nested inside a `<view>` element:
+Element tags can be nested within other element tags. For example, multiple `<text>` element tags can be nested inside a `<view>` element tag:
 
 ```html
 <view>
@@ -65,9 +65,7 @@ Elements can be nested within other elements. For example, multiple `<text>` ele
 
 ### Element Tree
 
-This nesting of elements naturally forms a tree structure, which visually describes the hierarchical relationship between elements, known as the [Element Tree](guide/spec.html#element-tree).
-
-The element tree in the source code will be parsed by the Lynx engine at runtime and translated into view trees recognizable by the native rendering systems of different platforms. We rely on this tree structure to build and manage more complex interfaces.
+The element tags in the source code will be parsed by the Lynx engine at runtime and translated into [elements](guide/spec.html#element) for rendering. Nested element tags will form a tree composed of elements, which we refer to as the [element tree](guide/spec.html#element-tree). We rely on this tree structure to build and manage more complex interfaces.
 
 <img src="/assets/doc/elements_tree.png" width="100%" height="30%" />
 

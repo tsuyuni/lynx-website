@@ -2,13 +2,13 @@
 
 ## 介绍
 
-z-index 属性设定了一个元素及其后代元素或 flex 项目的 z-order。当元素之间重叠的时候，z-index 较大的元素会覆盖较小的元素在上层进行显示。
+z-index 属性设定了一个元件及其后代元件或 flex 项目的 z-order。当元件之间重叠的时候，z-index 较大的元件会覆盖较小的元件在上层进行显示。
 
 :::info 常见问题
 
-如果想生成 [stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) 可以给元素增加 z-index: 0，例如给 scroll-view 添加 z-index: 0 可以避免子元素不跟随滑动
+如果想生成 [stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context) 可以给元件增加 z-index: 0，例如给 scroll-view 添加 z-index: 0 可以避免子元件不跟随滑动
 
-不建议在 list 直接子元素使用 z-index，可能影响 list 复用，如果在 list item 里面使用可以将 item 作为 stacking context
+不建议在 list 直接子元件使用 z-index，可能影响 list 复用，如果在 list item 里面使用可以将 item 作为 stacking context
 
 :::
 
@@ -36,7 +36,7 @@ z-index: -1;
 ### 取值
 
 - [`<number>`](api/css/data-type/number)
-  表示此元素的堆叠顺序。
+  表示此元件的堆叠顺序。
 
 - 默认值
   **auto**

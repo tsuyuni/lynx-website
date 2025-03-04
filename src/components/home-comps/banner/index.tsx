@@ -30,7 +30,7 @@ export const Banner: React.FC = () => {
         {desc[lang]} <span className={styles['lynx-text']}>Lynx</span>
         {tailText[lang]}
       </p>
-      <Button text={btnText[lang]} href={`guide/start/quick-start`} />
+      <Button text={btnText[lang]} href={`guide/start/quick-start.html`} />
       <DotPattern
         className={cn(
           '[mask-image:radial-gradient(450px_200px_ellipse_at_center,white,transparent)]',

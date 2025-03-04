@@ -356,9 +356,9 @@ const adjustScrollbar = (scrollTop: number, scrollHeight: number) => {
 :::
 
 :::details list-item 的 estimated-main-axis-size-px
-你可能注意到了这个属性 [estimated-main-axis-size-px](api/elements/built-in/list.html#estimated-main-axis-size-px)。这个属性能够在 `<list>` 中的元素尚未渲染时，估算出它们在主轴上的大小。这在我们添加滚动条时非常有用，因为我们需要知道滚动条需要多长才能覆盖所有的元素。
+你可能注意到了这个属性 [estimated-main-axis-size-px](api/elements/built-in/list.html#estimated-main-axis-size-px)。这个属性能够在 `<list>` 中的元件尚未渲染时，估算出它们在主轴上的大小。这在我们添加滚动条时非常有用，因为我们需要知道滚动条需要多长才能覆盖所有的元件。
 
-当然 `<list>` 也可以支持自动排版，你可以把这个属性去掉，看看效果如何——你的滚动条会自动调整长度，随着元素从预设高度变成真实高度而变化。
+当然 `<list>` 也可以支持自动排版，你可以把这个属性去掉，看看效果如何——你的滚动条会自动调整长度，随着元件从预设高度变成真实高度而变化。
 
 ```tsx title="src/AddNiceScrollbar/Gallery.tsx" {5}
 ...

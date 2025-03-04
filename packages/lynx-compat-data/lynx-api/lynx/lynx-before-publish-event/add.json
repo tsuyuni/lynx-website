@@ -4,7 +4,7 @@
       "lynx-before-publish-event": {
         "add": {
           "__compat": {
-            "description": "Register to listen for a DOM event.",
+            "description": "Register to listen for an element event.",
             "lynx_path": "api/lynx-api/lynx/lynx-before-publish-event/before-publish-event-add",
             "support": {
               "android": {

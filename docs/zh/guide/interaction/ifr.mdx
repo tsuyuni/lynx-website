@@ -60,33 +60,53 @@ Lynx 支持“首帧直出”，这意味着你的页面可以在被加载时直
 下面的视频被放慢到 0.3x 速度以便于观察。
 :::
 
-<div style={{ display: 'flex', flexDirection: 'row',  gap: '10px', justifyContent: 'start' }}>
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-    <p>无“首帧直出”</p>
-    <video
-      playbackRate={0.1}
-      muted
-      autoPlay
-      loop
-      playsInline
-      controls
-      src="/assets/ifr_fib_with_blank.mp4"
-      style={{ maxWidth: "40vw", maxHeight: '50vh' }}
-    />
-  </div>
-
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
-    <p>Lynx —— “首帧直出”</p>
-    <video
-      muted
-      autoPlay
-      loop
-      playsInline
-      controls
-      src="/assets/ifr_fib.mp4"
-      style={{ maxWidth: "40vw", maxHeight: '50vh' }}
-    />
-  </div>
-</div>
+<table>
+  <tr style={{ textAlign: 'center' }}>
+    <td>
+      <span>其他跨平台解决方案</span>
+    </td>
+    <td>
+      <span>Lynx</span>
+    </td>
+  </tr>
+  <tr style={{ textAlign: 'center' }}>
+    <td>
+      <span>**无“首帧直出”**</span>
+    </td>
+    <td>
+      <span>**首帧直出**</span>
+    </td>
+  </tr>
+  <tr>
+    <td style={{ paddingRight: '10px' }}>
+      <video
+        ref={function (videoRef) {
+          if (videoRef) videoRef.playbackRate = 0.3;
+        }}
+        muted
+        autoPlay
+        loop
+        playsInline
+        controls
+        src="/assets/ifr_fib_with_blank.mp4"
+        style={{ maxWidth: '40vw', maxHeight: '50vh' }}
+      />
+    </td>
+    <td style={{ paddingRight: '10px' }}>
+      <video
+        ref={function (videoRef) {
+          if (videoRef) videoRef.playbackRate = 0.3;
+        }}
+        muted
+        autoPlay
+        loop
+        playsInline
+        controls
+        src="/assets/ifr_fib.mp4"
+        style={{ maxWidth: '40vw', maxHeight: '50vh' }}
+      />
+    </td>
+  </tr>
+</table>
 
 可以看出，无“首帧直出”时，打开 App 会呈现“启动画面（Splash Screen）→ 白屏 → 页面内容”的变化过程，而 Lynx 的“首帧直出”在启动画面结束之后的过渡更为自然，用户体验更佳。

@@ -4,13 +4,13 @@ title: Element
 
 # Element
 
-`MainThread.Element` 代表一个元素。你可以在主线程脚本中访问或修改元素的属性。
+`MainThread.Element` 代表一个元件。你可以在主线程脚本中访问或修改元件的属性。
 
 ## 实例方法
 
 ### `Element.getAttribute()`
 
-获取元素的指定属性值。如果元素没有指定属性，返回 `undefined`。
+获取元件的指定属性值。如果元件没有指定属性，返回 `undefined`。
 
 ```ts
 const value = element.getAttribute(attrName);
@@ -18,7 +18,7 @@ const value = element.getAttribute(attrName);
 
 ### `Element.getAttributeNames()`
 
-获取元素的属性名的数组。
+获取元件的属性名的数组。
 
 ```ts
 const nameArray = element.getAttributeNames();
@@ -34,7 +34,7 @@ const result = await element.invoke(methodName, params?);
 
 ### `Element.setAttribute()`
 
-设定元素的指定属性。
+设定元件的指定属性。
 
 ```ts
 element.setAttribute(attrName, value);
@@ -42,7 +42,7 @@ element.setAttribute(attrName, value);
 
 ### `Element.setStyleProperty()`
 
-设定元素的指定样式。样式名需为 [kebab-case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case)。
+设定元件的指定样式。样式名需为 [kebab-case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case)。
 
 ```ts
 element.setStyleProperty(styleName, value);
@@ -50,7 +50,7 @@ element.setStyleProperty(styleName, value);
 
 ### `Element.setStyleProperties()`
 
-使用可以包含多个“样式名: 样式值”记录的对象设定元素的指定样式。样式名需为 [kebab-case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case)。
+使用可以包含多个“样式名: 样式值”记录的对象设定元件的指定样式。样式名需为 [kebab-case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case)。
 
 ```ts
 element.setStyleProperties(styleProperties);
@@ -58,7 +58,7 @@ element.setStyleProperties(styleProperties);
 
 ### `Element.querySelector()`
 
-在元素的子元素中查找第一个满足指定选择器的元素。返回一个 `MainThread.Element`。如果没有满足要求的元素，返回 `null`。支持的选择器列表见 [selector](../selector-query/selector-query-select#selector)。
+在元件的子元件中查找第一个满足指定选择器的元件。返回一个 `MainThread.Element`。如果没有满足要求的元件，返回 `null`。支持的选择器列表见 [selector](../selector-query/selector-query-select#selector)。
 
 ```ts
 const element = element.querySelector(selector);
@@ -66,7 +66,7 @@ const element = element.querySelector(selector);
 
 ### `Element.querySelectorAll()`
 
-在元素的子元素中查找所有满足指定选择器的元素。返回一个 `MainThread.Element` 的数组。如果没有满足要求的元素，返回空数组。支持的选择器列表见 [selector](../selector-query/selector-query-select#selector)。
+在元件的子元件中查找所有满足指定选择器的元件。返回一个 `MainThread.Element` 的数组。如果没有满足要求的元件，返回空数组。支持的选择器列表见 [selector](../selector-query/selector-query-select#selector)。
 
 ```ts
 const elementArray = element.querySelectorAll(selector);

@@ -45,7 +45,7 @@ CSS Variable 是一个名称以两个连字符 (`-`) 开头的属性，如 `--fo
 ```
 
 :::info
-CSS Variable 可以定义在 `:root` 选择器中表示可以对全局生效，也可以定义在单独的选择器中表示对应用的元素及其子元素生效。
+CSS Variable 可以定义在 `:root` 选择器中表示可以对全局生效，也可以定义在单独的选择器中表示对应用的元件及其子元件生效。
 :::
 
 ### 引用 CSS 变量
@@ -90,10 +90,10 @@ CSS Variable 可以定义在 `:root` 选择器中表示可以对全局生效，�
 
 #### CSS Variable 作用域
 
-跟普通属性一样，CSS 变量的继承，优先级同样遵循 CSS 级联规则。一个元素上没有定义 CSS 变量，该变量的值会继承其父元素。按照层叠关系向上查找。最终查找到根元素，也即前面例子中用到的: root 选择器所定义的变量。因此，变量的作用域就是它所在的选择器的有效范围。
+跟普通属性一样，CSS 变量的继承，优先级同样遵循 CSS 级联规则。一个元件上没有定义 CSS 变量，该变量的值会继承其父元件。按照层叠关系向上查找。最终查找到根元件，也即前面例子中用到的: root 选择器所定义的变量。因此，变量的作用域就是它所在的选择器的有效范围。
 
 :::info
-由于 CSS Variable 定义在选择器中，作用范围与选择器一致，当选择器应用于某个元素时，选择器上的 CSS 变量也会应用于该元素。
+由于 CSS Variable 定义在选择器中，作用范围与选择器一致，当选择器应用于某个元件时，选择器上的 CSS 变量也会应用于该元件。
 :::
 
 ```html
@@ -143,15 +143,15 @@ CSS Variable 可以定义在 `:root` 选择器中表示可以对全局生效，�
 
 对于上面的例子，`var(--main-bg-color)` 变量的值分别为：
 
-- 对于 `class="three"` 的元素：blue;
-- 对于 `class="four"` 的元素：red;
+- 对于 `class="three"` 的元件：blue;
+- 对于 `class="four"` 的元件：red;
 
 ### 修改 CSS 变量的值
 
 #### 通过 JavaScript API 修改
 
 你也可以通过在 JS 侧采用 API 来修改 `css-variable` 的值：
-通过 [`lynx.getElementById().setProperty`](api/lynx-api/lynx/lynx-get-element-by-id) 方法获取某个元素节点，修改该节点上 `css-var` 的值：
+通过 [`lynx.getElementById().setProperty`](api/lynx-api/lynx/lynx-get-element-by-id) 方法获取某个元件节点，修改该节点上 `css-var` 的值：
 
 ```javascript
 // 一次性修改一个 CSS 变量
