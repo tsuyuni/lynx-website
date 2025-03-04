@@ -11,6 +11,7 @@ import {
   Features,
   MeteorsBackground,
   ShowCase,
+  Footer,
 } from '@/components/home-comps';
 import { SUBSITES_CONFIG } from '../shared-route-config';
 import AfterNavTitle from './AfterNavTitle';
@@ -32,6 +33,7 @@ function Layout() {
     <BaseLayout
       afterNavTitle={<AfterNavTitle />}
       beforeSidebar={<BeforeSidebar />}
+      bottom={<Footer />}
     />
   );
 }

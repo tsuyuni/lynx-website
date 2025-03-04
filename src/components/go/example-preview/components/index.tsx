@@ -26,6 +26,7 @@ import {
   IconHandle,
 } from '@douyinfe/semi-icons';
 import { IconGithub, IconCopyLink } from '../utils/icon';
+import { isSupportWebExplorer } from '../utils/tool';
 import { useTreeController } from '../hooks/use-tree-controller';
 
 import s from './index.module.scss';
@@ -82,22 +83,18 @@ export const ExampleContent: FC<ExampleContentProps> = ({
   const [showFileTree, setShowFileTree] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [previewType, setPreviewType] = useState(
-    previewImage
-      ? PreviewType.Preview
-      : defaultWebPreviewFile
-        ? PreviewType.Web
-        : PreviewType.QRCode,
+    previewImage ? PreviewType.Preview : PreviewType.QRCode,
   );
-  const { isFullPreview, hasPreview } = useMemo(() => {
+  const { hasPreview, hasWebPreview } = useMemo(() => {
     const count =
       Number(Boolean(previewImage)) +
       Number(Boolean(currentEntry)) +
       Number(Boolean(defaultWebPreviewFile));
     return {
-      isFullPreview: count >= 2,
       hasPreview: count >= 1,
+      hasWebPreview: isSupportWebExplorer() && Boolean(defaultWebPreviewFile),
     };
-  }, [previewImage, currentEntry]);
+  }, [previewImage, currentEntry, defaultWebPreviewFile]);
   const [tmpCurrentFileName, setTmpCurrentFileName] = useState('');
   const t = useI18n();
   const lang = useLang();
@@ -123,13 +120,14 @@ export const ExampleContent: FC<ExampleContentProps> = ({
     }
     return false;
   };
+  const showCodeTab = entryData && entryData?.length > 1;
   return (
     <div className={s.box}>
       <div className={s.container} ref={containerRef}>
         <div className={s.content}>
           <div className={s['code-wrap']}>
             <div className={s['code-tab-container']}>
-              {entryData && entryData?.length > 1 && (
+              {showCodeTab && (
                 <div
                   className={s['code-tab']}
                   ref={(tabsRef) => {
@@ -182,7 +180,9 @@ export const ExampleContent: FC<ExampleContentProps> = ({
                   </Tabs>
                 </div>
               )}
-              <div className={s['code-view-container']}>
+              <div
+                className={`${s['code-view-container']} ${showCodeTab ? s['code-view-container-tab-show'] : ''}`}
+              >
                 <CodeView
                   currentFileName={currentFileName}
                   currentFile={currentFile}
@@ -193,184 +193,189 @@ export const ExampleContent: FC<ExampleContentProps> = ({
             </div>
           </div>
 
-          {hasPreview && showPreview && (
-            <Resizable
-              enable={{
-                top: false,
-                right: false,
-                bottom: false,
-                topLeft: false,
-                topRight: false,
-                bottomLeft: false,
-                bottomRight: false,
-                left: true,
-              }}
-              defaultSize={{
-                width: 280,
-              }}
-              minWidth={200}
-              maxWidth={600}
-              handleStyle={{
-                left: {
-                  left: '-8px',
-                  width: '8px',
-                },
-              }}
-              handleNode={{
-                left: (
-                  <div
+          <Resizable
+            style={{
+              display: hasPreview && showPreview ? 'block' : 'none',
+            }}
+            enable={{
+              top: false,
+              right: false,
+              bottom: false,
+              topLeft: false,
+              topRight: false,
+              bottomLeft: false,
+              bottomRight: false,
+              left: true,
+            }}
+            defaultSize={{
+              width: 280,
+            }}
+            minWidth={200}
+            maxWidth={600}
+            handleStyle={{
+              left: {
+                left: '-8px',
+                width: '8px',
+              },
+            }}
+            handleNode={{
+              left: (
+                <div
+                  style={{
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}
+                >
+                  <IconHandle
+                    style={{ fontSize: '12px', marginLeft: '-2px' }}
+                  />
+                </div>
+              ),
+            }}
+          >
+            <div className={s['preview-wrap']}>
+              <div className="w-full h-full flex flex-col items-center">
+                {
+                  <RadioGroup
+                    onChange={(e) => setPreviewType(e.target.value)}
+                    value={previewType}
+                    type="button"
                     style={{
-                      height: '100%',
                       display: 'flex',
-                      alignItems: 'center',
+                      width: '100%',
+                      justifyContent: 'center',
                     }}
                   >
-                    <IconHandle
-                      style={{ fontSize: '12px', marginLeft: '-2px' }}
-                    />
-                  </div>
-                ),
-              }}
-            >
-              <div className={s['preview-wrap']}>
-                <div className="w-full h-full flex flex-col items-center">
-                  {
-                    <RadioGroup
-                      onChange={(e) => setPreviewType(e.target.value)}
-                      value={previewType}
-                      type="button"
-                      style={{
-                        display: 'flex',
-                        width: '100%',
-                        justifyContent: 'center',
-                      }}
+                    {initState ? (
+                      <>
+                        {previewImage && (
+                          <Radio value={PreviewType.Preview}>
+                            {t('go.preview')}
+                          </Radio>
+                        )}
+                        {hasWebPreview && (
+                          <Radio value={PreviewType.Web}>Web</Radio>
+                        )}
+                        {currentEntry && (
+                          <Radio value={PreviewType.QRCode}>
+                            {t('go.qrcode')}
+                          </Radio>
+                        )}
+                      </>
+                    ) : (
+                      <div style={{ width: '100%', height: '32px' }}></div>
+                    )}
+                  </RadioGroup>
+                }
+                {previewType === PreviewType.QRCode && currentEntry && (
+                  <div className={s.qrcode} style={{ minHeight: '0px' }}>
+                    <Typography.Text
+                      size="small"
+                      type="tertiary"
+                      style={{ margin: '28px 12px', textAlign: 'center' }}
                     >
-                      {initState ? (
-                        <>
-                          {previewImage && (
-                            <Radio value={PreviewType.Preview}>
-                              {t('go.preview')}
-                            </Radio>
-                          )}
-                          {defaultWebPreviewFile && (
-                            <Radio value={PreviewType.Web}>Web</Radio>
-                          )}
-                          {currentEntry && (
-                            <Radio value={PreviewType.QRCode}>
-                              {t('go.qrcode')}
-                            </Radio>
-                          )}
-                        </>
-                      ) : (
-                        <div style={{ width: '100%', height: '32px' }}></div>
-                      )}
-                    </RadioGroup>
-                  }
-                  {previewType === PreviewType.QRCode && currentEntry && (
-                    <div className={s.qrcode} style={{ minHeight: '0px' }}>
+                      {t('go.scan.message-1')}
+                      <Typography.Text
+                        link={{
+                          href: lang
+                            ? `/${lang}/guide/start/quick-start.html`
+                            : '/guide/start/quick-start.html',
+                          target: '_blank',
+                        }}
+                        size="small"
+                        underline
+                      >
+                        Lynx Explorer
+                      </Typography.Text>
+                      {t('go.scan.message-2')}
+                    </Typography.Text>
+                    <div className={s['qrcode-svg']}>
+                      <QRCodeSVG value={currentEntryFileUrl} />
+                    </div>
+                    <div style={{ marginBottom: '32px' }}>
+                      <CopyToClipboard
+                        onCopy={() => {
+                          Toast.success(t('go.qrcode.copied'));
+                        }}
+                        text={currentEntryFileUrl}
+                      >
+                        <Button
+                          type="tertiary"
+                          style={{ fontSize: '12px' }}
+                          icon={<IconCopyLink style={{ fontSize: '16px' }} />}
+                        >
+                          {t('go.qrcode.copy-link')}
+                        </Button>
+                      </CopyToClipboard>
+                    </div>
+                    <div className={s['qrcode-entry']}>
                       <Typography.Text
                         size="small"
                         type="tertiary"
-                        style={{ margin: '28px 12px', textAlign: 'center' }}
+                        style={{ marginRight: '12px', flexShrink: 0 }}
                       >
-                        {t('go.scan.message-1')}
-                        <Typography.Text
-                          link={{
-                            href: lang
-                              ? `/${lang}/guide/start/quick-start.html`
-                              : '/guide/start/quick-start.html',
-                            target: '_blank',
-                          }}
-                          size="small"
-                          underline
-                        >
-                          Lynx Explorer
-                        </Typography.Text>
-                        {t('go.scan.message-2')}
+                        {t('go.qrcode.entry')}
                       </Typography.Text>
-                      <div className={s['qrcode-svg']}>
-                        <QRCodeSVG value={currentEntryFileUrl} />
-                      </div>
-                      <div style={{ marginBottom: '32px' }}>
-                        <CopyToClipboard
-                          onCopy={() => {
-                            Toast.success(t('go.qrcode.copied'));
-                          }}
-                          text={currentEntryFileUrl}
-                        >
-                          <Button
-                            type="tertiary"
-                            style={{ fontSize: '12px' }}
-                            icon={<IconCopyLink style={{ fontSize: '16px' }} />}
-                          >
-                            {t('go.qrcode.copy-link')}
-                          </Button>
-                        </CopyToClipboard>
-                      </div>
-                      <div className={s['qrcode-entry']}>
-                        <Typography.Text
-                          size="small"
-                          type="tertiary"
-                          style={{ marginRight: '12px', flexShrink: 0 }}
-                        >
-                          {t('go.qrcode.entry')}
-                        </Typography.Text>
-                        <Select
-                          style={{ width: '100%', maxWidth: '200px' }}
-                          value={currentEntry}
-                          onChange={(v) => setCurrentEntry(v as string)}
-                        >
-                          {entryFiles.map((file) => (
-                            <Select.Option key={file.name} value={file.name}>
-                              {file.name}
-                            </Select.Option>
-                          ))}
-                        </Select>
-                      </div>
+                      <Select
+                        style={{ width: '100%', maxWidth: '200px' }}
+                        value={currentEntry}
+                        onChange={(v) => setCurrentEntry(v as string)}
+                      >
+                        {entryFiles.map((file) => (
+                          <Select.Option key={file.name} value={file.name}>
+                            {file.name}
+                          </Select.Option>
+                        ))}
+                      </Select>
                     </div>
-                  )}
-                  {previewType === PreviewType.Preview && previewImage && (
-                    <div
-                      className="w-full h-full flex items-center justify-center"
-                      style={{ minHeight: '0px' }}
-                    >
-                      {isVideo(previewImage) ? (
-                        <video
-                          muted
-                          loop
-                          playsInline
-                          autoPlay
-                          style={{
-                            maxWidth: '100%',
-                            maxHeight: '100%',
-                            objectFit: 'contain',
-                          }}
-                        >
-                          <source src={previewImage} />
-                        </video>
-                      ) : (
-                        <img
-                          src={previewImage}
-                          alt=""
-                          style={{
-                            maxWidth: '100%',
-                            maxHeight: '100%',
-                            objectFit: 'contain',
-                          }}
-                        />
-                      )}
-                    </div>
-                  )}
-                  {defaultWebPreviewFile && (
-                    <WebIframe
-                      show={previewType === PreviewType.Web}
-                      src={defaultWebPreviewFile}
-                    />
-                  )}
-                </div>
+                  </div>
+                )}
+                {previewImage && (
+                  <div
+                    className="w-full h-full flex items-center justify-center"
+                    style={{
+                      minHeight: '0px',
+                      display:
+                        previewType === PreviewType.Preview ? 'flex' : 'none',
+                    }}
+                  >
+                    {isVideo(previewImage) ? (
+                      <video
+                        muted
+                        loop
+                        playsInline
+                        autoPlay
+                        style={{
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          objectFit: 'contain',
+                        }}
+                      >
+                        <source src={previewImage} />
+                      </video>
+                    ) : (
+                      <img
+                        src={previewImage}
+                        alt=""
+                        style={{
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          objectFit: 'contain',
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+                {hasWebPreview && (
+                  <WebIframe
+                    show={previewType === PreviewType.Web}
+                    src={defaultWebPreviewFile || ''}
+                  />
+                )}
               </div>
-            </Resizable>
-          )}
+            </div>
+          </Resizable>
         </div>
         <div className={s.footer}>
           <Space

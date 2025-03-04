@@ -1,92 +1,63 @@
 # AnimationEvent
 
-:::info
-** If you want to view the Transition event, please click [here](#transition-animation) or scroll to the middle of the page. **
-The event names of Transition and Animation are different, and binding the Animation event to the Transition animation will not trigger.
-:::
+Represents the animation event object, inherited from [CustomEvent](./custom-event), used to describe the state changes of the animation in its life cycle, such as start, end, etc.
 
-## [Animation](../../../api/css/properties/animation.mdx)
+The event object contains information such as the type and name of the animation.
 
-### Event List
+## Instance property
 
-:::info
-** If you want to view the Transition event, please click [here](#transition-animation) or scroll to the middle of the page. **
-The event names of Transition and Animation are different, and binding the Animation event to the Transition animation will not trigger.
-:::
+### detail
 
-The events supported are as follows:
-
-| Event Name             | Meaning             |
-| ---------------------- | ------------------- |
-| bindanimationstart     | animation start     |
-| bindanimationcancel    | animation cancel    |
-| bindanimationend       | animation end       |
-| bindanimationiteration | animation iteration |
-
-### Event Parameters
-
-The animation event is implemented by [CustomEvent](./custom-event). When Lynx triggers the js callback function, it will pass a parameter. Assuming the parameter name is `event`, all the parameters of the animation event are in `event.params `, `params` is an object, which is defined as follows in [Animation](../../../api/css/properties/animation.mdx):
-
-| key            | value                    |
-| -------------- | ------------------------ |
-| animation_type | "keyframe-animation"     |
-| animation_name | the name of `@keyframes` |
-
-### Example
-
-```js title="App.jsx"
-import { useCallback } from '@lynx-js/react';
-
-export function App() {
-  const handleAniEnd = useCallback((event) => {
-    console.log(event);
-  }, []);
-  return <view bindanimationend={this.handleAniEnd}></view>;
+```ts
+detail: {
+  animation_type: string,
+  animation_name: string,
+  new_animator: boolean,
 }
 ```
 
-:::info
-During the animation execution process, if the animated View is unloaded and destroyed, the `animationcancel` event bind to the View will not be triggered because the View no longer exists.
-:::
+Represents some basic information of the animation to which the event belongs.
 
-## [Transition](../../../api/css/properties/transition.mdx)
+- `animation-type`: The type of the animation. If it is a keyframe animation, this value is `keyframe-animation`; if it is a transition animation, this value is `transition-animation`.
+- `animation-name`: The name of the animation. If it is a keyframe animation, it is the name of [`@keyframes`](../../css/at-rule/keyframes.mdx) in CSS; if it is a transition animation, it is the name of [`transition-property`](../../css/properties/transition-property.mdx) in CSS.
+- `new_animator`: The default value is `true`.
 
-### Event List
-
-The events are as follows:
-
-| Event Name           | Meaning           |
-| -------------------- | ----------------- |
-| bindtransitionstart  | transition start  |
-| bindtransitioncancel | transition cancel |
-| bindtransitionend    | transition end    |
-
-### Event Parameters
-
-Animation events are implemented through [CustomEvent](./custom-event), all parameters of animation events are in `event.params`, `params` is an object, in [Transition](../../../api/css/properties/transition.mdx) it is defined as follows:
-
-| key            | value                                                                |
-| -------------- | -------------------------------------------------------------------- |
-| animation_type | The type of transition.The value is fixed to `transition-animation`. |
-| animation_name | The value is shown in the table below.                               |
-
-| Table : animation_name value                                                                                                                                                                                                                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CSS property name. For example, if the animation is a transition transform animation, the value should be "transform". If it's a transition opacity animation, the value should be "opacity", and so on. To see which properties are supported by transition, please refer to [this link](../../../api/css/properties/transition-property.mdx). |
-
-### Demo
-
-```js title="App.jsx"
-import { useCallback } from '@lynx-js/react';
-
-export function App() {
-  const handleTransitionEnd = useCallback((event) => {
-    console.log(event);
-  }, []);
-  return <view bindtransitionend={this.handleTransitionEnd}></view>;
-}
-```
+## AnimationEvent type
 
 :::info
-During the animation execution, if the animated View is unloaded and destroyed, the `transitioncancel` event bound to the View will not be triggered because the View no longer exists.
+During the animation execution process, if the animation node is uninstalled and destroyed, the [`animationcancel`](#animationcancel) and [`transitioncancel`](#transitioncancel) events on the node will not be triggered.
 :::
+
+### animationstart
+
+Indicates the start of keyframe animation playback.
+
+### animationend
+
+Indicates the end of keyframe animation playback.
+
+### animationcancel
+
+Indicates that the keyframe animation playback is canceled.
+
+### animationiteration
+
+Indicates the number of keyframe animation playback iterations.
+
+### transitionstart
+
+Indicates the start of the transition animation playback.
+
+### transitionend
+
+Indicates the end of the transition animation playback.
+
+### transitioncancel
+
+Indicates that the transition animation playback is canceled.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/event/AnimationEvent" />

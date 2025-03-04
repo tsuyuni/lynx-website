@@ -38,11 +38,11 @@ source 'https://cdn.cocoapods.org/'
 platform :ios, '9.0'
 
 target 'YourTarget' do
-  pod 'Lynx', '3.2.0-alpha.1', :subspecs => [
+  pod 'Lynx', '3.2.0-rc.0', :subspecs => [
     'Framework',
   ]
 
-  pod 'PrimJS', '2.11.1-alpha.2', :subspecs => ['quickjs', 'napi']
+  pod 'PrimJS', '2.11.1-rc.0', :subspecs => ['quickjs', 'napi']
 end
 ```
 
@@ -57,20 +57,20 @@ Get the latest version of Lynx Service from Cocoapods. Then add Lynx Service to 
 
 <CodeFold height={360} toggle>
 
-```ruby title="Podfile" {13-18,20-22}
+```ruby title="Podfile" {13-17,20-21}
 source 'https://cdn.cocoapods.org/'
 
 platform :ios, '9.0'
 
 target 'YourTarget' do
-  pod 'Lynx', '3.2.0-alpha.1', :subspecs => [
+  pod 'Lynx', '3.2.0-rc.0', :subspecs => [
     'Framework',
   ]
 
-  pod 'PrimJS', '2.11.1-alpha.2', :subspecs => ['quickjs', 'napi']
+  pod 'PrimJS', '2.11.1-rc.0', :subspecs => ['quickjs', 'napi']
 
   # integrate image-service, log-service, and http-service
-  pod 'LynxService', '3.2.0-alpha.1', :subspecs => [
+  pod 'LynxService', '3.2.0-rc.0', :subspecs => [
       'Image',
       'Log',
       'Http',

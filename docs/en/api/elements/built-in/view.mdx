@@ -64,7 +64,15 @@ Used to apply inline styles to elements.
 class?: string;
 ```
 
-It is used to specify one or more class names for an element, which can be used in CSS to apply styles.
+Used to specify one or more class names for an element, which can be used in CSS to apply styles.
+
+### `data-*`
+
+```ts
+data-*?: any;
+```
+
+Used to specify additional information for the element, which can be obtained in [Event](../../lynx-api/event/event.mdx#target).
 
 ### `flatten` <AndroidOnly/>
 
@@ -472,7 +480,7 @@ It belongs to the [touch event](../../lynx-api/event/touch-event), which is trig
 ### `layoutchange`
 
 ```ts
-layoutchange: LayoutChangeEvent;
+layoutchange: LayoutChangeDetailEvent;
 ```
 
 It belongs to [custom event](../../lynx-api/event/custom-event), which is triggered when the target node layout is completed, and returns the position information of the target node relative to the LynxView viewport coordinate system.
@@ -480,7 +488,7 @@ It belongs to [custom event](../../lynx-api/event/custom-event), which is trigge
 ### `uiappear`
 
 ```ts
-uiappear: UIAppearanceEvent;
+uiappear: UIAppearanceDetailEvent;
 ```
 
 It belongs to [custom event](../../lynx-api/event/custom-event), which is triggered when the target node appears on the screen.
@@ -488,7 +496,7 @@ It belongs to [custom event](../../lynx-api/event/custom-event), which is trigge
 ### `uidisappear`
 
 ```ts
-uidisappear: UIAppearanceEvent;
+uidisappear: UIAppearanceDetailEvent;
 ```
 
 It belongs to [custom event](../../lynx-api/event/custom-event), which is triggered when the target node disappears from the screen.

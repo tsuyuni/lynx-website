@@ -13,8 +13,16 @@ import { Tab, Tabs } from 'rspress/theme';
 ```ts
 declare const SystemInfo: {
   /**
-   * The version of the Lynx SDK.
+   * The version of the Lynx Engine.
+   *
    * @example '3.2'
+   */
+  readonly engineVersion: string;
+
+  /**
+   * The version of the Lynx Engine.
+   * @example '3.2'
+   * @deprecated Use `SystemInfo.engineVersion` instead
    */
   readonly lynxSdkVersion: string;
 
@@ -53,11 +61,17 @@ declare const SystemInfo: {
 
 ### 属性
 
-#### lynxSdkVersion
+#### engineVersion
 
-当前 Lynx 版本号，格式为 `major.minor`。
+当前 Lynx Engine 版本号，格式为 `major.minor`。
 
-例如：`3.0`。
+例如：`3.2`。
+
+#### ~~lynxSdkVersion~~
+
+当前 Lynx Engine 版本号，格式为 `major.minor`。
+
+例如：`3.2`。
 
 #### osVersion
 

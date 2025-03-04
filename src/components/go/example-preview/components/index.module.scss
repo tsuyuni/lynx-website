@@ -43,7 +43,14 @@
         border-radius: 0;
       }
       pre.code {
-        min-height: 520px;
+        min-height: 567px;
+      }
+    }
+    .code-view-container-tab-show {
+      :global {
+        pre.code {
+          min-height: 520px;
+        }
       }
     }
   }
@@ -146,7 +153,14 @@
         width: 100% !important;
       }
       pre.code {
-        min-height: 324px !important;
+        min-height: 371px !important;
+      }
+    }
+    .code-view-container-tab-show {
+      :global {
+        pre.code {
+          min-height: 324px !important;
+        }
       }
     }
     .code-wrap {

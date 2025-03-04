@@ -24,13 +24,35 @@
             }
           }
         },
-        "`SystemInfo.lynxSdkVersion`": {
+        "SystemInfo.engineVersion": {
           "__compat": {
-            "description": "Current Lynx sdk version.",
+            "description": "",
             "lynx_path": "api/lynx-api/global/system-info",
             "spec_url": [],
             "status": {
               "deprecated": false,
+              "experimental": false
+            },
+            "support": {
+              "android": {
+                "version_added": "3.2"
+              },
+              "ios": {
+                "version_added": "3.2"
+              },
+              "web_lynx": {
+                "version_added": false
+              }
+            }
+          }
+        },
+        "SystemInfo.lynxSdkVersion": {
+          "__compat": {
+            "description": "",
+            "lynx_path": "api/lynx-api/global/system-info",
+            "spec_url": [],
+            "status": {
+              "deprecated": true,
               "experimental": false
             },
             "support": {

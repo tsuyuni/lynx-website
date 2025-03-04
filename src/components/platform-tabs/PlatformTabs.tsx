@@ -236,10 +236,16 @@ export const PlatformTabs = ({
     availablePlatforms.includes(option.id),
   );
 
-  // Find the active tab content
-  const activeTabContent = React.Children.toArray(children).find((child) => {
+  const tabContent = React.Children.toArray(children).map((child) => {
+    if (!React.isValidElement(child)) return null;
     return (
-      React.isValidElement(child) && child.props.platform === activePlatform
+      <div
+        style={{
+          display: child.props.platform === activePlatform ? 'block' : 'none',
+        }}
+      >
+        {child.props.children}
+      </div>
     );
   });
 
@@ -250,7 +256,7 @@ export const PlatformTabs = ({
         selected={activePlatform}
         onSelect={setActivePlatform}
       />
-      {activeTabContent}
+      {tabContent}
     </div>
   );
 };

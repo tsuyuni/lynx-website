@@ -155,6 +155,10 @@
     "en": "What's new",
     "zh": "What's new"
   },
+  "homepage.footer.license": {
+    "en": "Except as otherwise noted, this work is licensed under a Creative Commons Attribution 4.0 International License, and code samples are licensed under the Apache License 2.0.",
+    "zh": "除非另有说明，本项目采用知识共享署名 4.0 国际许可协议进行许可，代码示例采用 Apache License 2.0 许可协议进行许可。"
+  },
   "index.features.title.fast": {
     "en": "Fast",
     "zh": "高性能"

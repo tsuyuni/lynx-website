@@ -1,125 +1,63 @@
 # AnimationEvent
 
-:::info
-** 若想查看 Transition 事件，请点击[这里](#transition-动画)或者拉到页面中部。**
-Transition 和 Animation 的事件名称不同，将 Animation 事件绑定到 Transition 动画上将不会触发。
-:::
+表示动画事件对象，继承自 [CustomEvent](./custom-event)，用于描述动画在其生命周期中的状态变化，比如开始、结束等。
 
-## [Animation 动画](../../../api/css/properties/animation.mdx)
+该事件对象包含动画的类型、名称等信息。
 
-### 事件列表
+## 实例属性
 
-:::info
-** 若想查看 Transition 事件，请点击[这里](#transition-动画)或者拉到页面中部。**
-Transition 和 Animation 的事件名称不同，将 Animation 事件绑定到 Transition 动画上将不会触发。
-:::
+### detail
 
-支持的事件如下：
-
-| 事件名                 | 含义     |
-| ---------------------- | -------- |
-| bindanimationstart     | 动画开始 |
-| bindanimationcancel    | 动画取消 |
-| bindanimationend       | 动画结束 |
-| bindanimationiteration | 动画迭代 |
-
-### 参数解释
-
-动画事件是通过[自定义事件](./custom-event)实现的，Lynx 触发回调函数时会传递一个参数，假设名为 `event`，则动画事件的所有参数都在 `event.params` 里，`params` 是一个 object，在 [Animation 动画](../../../api/css/properties/animation.mdx)里它的定义如下：
-
-| key            | value                                             |
-| -------------- | ------------------------------------------------- |
-| animation_type | "keyframe-animation"                              |
-| animation_name | animation 动画的名字,就是 CSS 里`@keyframe`的名字 |
-
-### 使用示例
-
-```js title="App.jsx"
-import { useCallback } from '@lynx-js/react';
-
-export function App() {
-  const handleTransitionEnd = useCallback((event) => {
-    console.log(event);
-  }, []);
-  return <view bindtransitionend={this.handleTransitionEnd}></view>;
+```ts
+detail: {
+  animation_type: string,
+  animation_name: string,
+  new_animator: boolean,
 }
 ```
 
-:::info
-在动画执行过程中，若做动画的 View 被卸载销毁，由于 View 都不存在了，绑定在该 View 上的 `animationcancel` 事件将不会触发。
-:::
+表示该事件所属动画的一些基础信息。
 
-## [Transition 动画](../../../api/css/properties/transition.mdx)
+- `animation-type`: 该动画的类型。如果是关键帧动画，这个值为 `keyframe-animation`；如果是过渡动画，这个值为 `transition-animation`。
+- `animation-name`: 该动画的名称。如果是关键帧动画，就是 CSS 里 [`@keyframes`](../../css/at-rule/keyframes.mdx) 的名字；如果是过渡动画，就是 CSS 里 [`transition-property`](../../css/properties/transition-property.mdx) 的名字。
+- `new_animator`: 默认值，为 `true`。
 
-### 事件列表
-
-支持的事件如下：
-
-| 事件名               | 含义     |
-| -------------------- | -------- |
-| bindtransitionstart  | 动画开始 |
-| bindtransitioncancel | 动画取消 |
-| bindtransitionend    | 动画结束 |
-
-### 参数解释
-
-动画事件是通过[自定义事件](./custom-event)实现的，动画事件的所有参数都在 `event.params` 里，`params` 是一个 object，在 [Transition 动画](../../../api/css/properties/transition.mdx)里它的定义如下：
-
-| key            | value                                                |
-| -------------- | ---------------------------------------------------- |
-| animation_type | transition 动画的类型,值固定为`transition-animation` |
-| animation_name | 值见下面附表。                                       |
-
-| 附表：animation_name 的值                                                                                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CSS属性名。如transition transform动画则该值为transform，transition opacity动画则该值为opacity，以此类推。transition支持哪些属性见[这里](../../../api/css/properties/transition-property.mdx)。 |
-
-### 使用示例
-
-```js title="App.jsx"
-import { useCallback } from '@lynx-js/react';
-
-export function App() {
-  const handleTransitionEnd = useCallback((event) => {
-    console.log(event);
-  }, []);
-  return <view bindtransitionend={this.handleTransitionEnd}></view>;
-}
-```
+## AnimationEvent 的类型
 
 :::info
-在动画执行过程中，若做动画的 View 被卸载销毁，由于 View 都不存在了，绑定在该 View 上的 `transitioncancel` 事件将不会触发。
+在动画执行过程中，若做动画的节点被卸载销毁，则该节点上的 [`animationcancel`](#animationcancel) 以及 [`transitioncancel`](#transitioncancel) 事件将不会触发。
 :::
 
-## layout 动画（Deprecated）
+### animationstart
 
-### 事件列表
+表示关键帧动画播放开始。
 
-layout 动画支持的事件如下：
+### animationend
 
-| 事件名             | 含义     |
-| ------------------ | -------- |
-| bindanimationstart | 动画开始 |
-| bindanimationend   | 动画结束 |
+表示关键帧动画播放结束。
 
-### 参数解释
+### animationcancel
 
-动画事件是通过[自定义事件](./custom-event)实现的，动画事件的所有参数都在 `event.params` 里，`params` 是一个 object，在 layout 动画里它的定义如下：
+表示关键帧动画播放被取消。
 
-| key            | value                                                        |
-| -------------- | ------------------------------------------------------------ |
-| animation_type | layout 动画的类型,具体定义见下面附表                         |
-| finished       | 仅`iOS`有,仅`bindanimationend`有。具体解释见下面的 INFO 框。 |
+### animationiteration
 
-:::info
-对于 iOS 平台的 layout 动画：iOS 切后台/锁屏时会把动画从 layer 上 detach，此时也会触发 animationend 事件。
-因此增加一个参数 `event.params.finished`，用来判断 layout 动画是正常结束还是异常结束。
-:::
+表示关键帧动画播放次数迭代。
 
-layout 动画事件 `animation_type` 参数取值附表：
+### transitionstart
 
-| animation_type 的值     |
-| ----------------------- |
-| layout-animation-create |
-| layout-animation-update |
-| layout-animation-delete |
+表示过渡动画播放开始。
+
+### transitionend
+
+表示过渡动画播放结束。
+
+### transitioncancel
+
+表示过渡动画播放被取消。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/event/AnimationEvent" />
