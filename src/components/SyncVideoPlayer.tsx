@@ -1,5 +1,5 @@
-import type { CSSProperties } from 'react';
-import { type FC } from 'react';
+import type { CSSProperties, SyntheticEvent } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 
 interface SyncVideoPlayerProps {
   videos: {
@@ -23,6 +23,57 @@ export const SyncVideoPlayer: FC<SyncVideoPlayerProps> = ({
   style = {},
   playbackRate = 1,
 }) => {
+  const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+
+  useEffect(() => {
+    videoRefs.current = videoRefs.current.slice(0, videos.length);
+  }, [videos]);
+
+  const handleVideoRef = (el: HTMLVideoElement | null, index: number) => {
+    if (el) {
+      videoRefs.current[index] = el;
+      el.playbackRate = playbackRate;
+    }
+  };
+
+  const syncVideos = (targetTime?: number) => {
+    const videos = videoRefs.current.filter(Boolean);
+    if (videos.length === 0) return;
+
+    const mainVideo = videos[0];
+    const time =
+      typeof targetTime === 'number' ? targetTime : mainVideo.currentTime;
+
+    for (const [index, video] of videos.entries()) {
+      if (index === 0) continue;
+      if (Math.abs(video.currentTime - time) > 0.1) {
+        video.currentTime = time;
+      }
+    }
+  };
+
+  const togglePlayPause = () => {
+    const videos = videoRefs.current.filter(Boolean);
+    if (videos.length === 0) return;
+
+    if (isPlaying) {
+      for (const video of videos) {
+        video.pause();
+      }
+    } else {
+      Promise.all(videos.map((video) => video.play())).catch(console.error);
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  const handleTimeUpdate = (event: SyntheticEvent<HTMLVideoElement>) => {
+    const newTime = (event.target as HTMLVideoElement).currentTime;
+    setCurrentTime(newTime);
+    syncVideos(newTime);
+  };
+
   return (
     <div
       style={{
@@ -52,6 +103,7 @@ export const SyncVideoPlayer: FC<SyncVideoPlayerProps> = ({
               }}
             >
               <video
+                ref={(el) => handleVideoRef(el, index)}
                 src={video.src}
                 style={{
                   width: '100%',
@@ -61,10 +113,13 @@ export const SyncVideoPlayer: FC<SyncVideoPlayerProps> = ({
                   display: 'block',
                 }}
                 autoPlay={autoPlay}
-                muted={muted}
+                muted={index === 0 ? muted : true}
                 controls={controls}
                 loop={loop}
                 playsInline
+                onPlay={() => !isPlaying && setIsPlaying(true)}
+                onPause={() => isPlaying && setIsPlaying(false)}
+                onTimeUpdate={index === 0 ? handleTimeUpdate : undefined}
               />
             </div>
             {video.title && (
