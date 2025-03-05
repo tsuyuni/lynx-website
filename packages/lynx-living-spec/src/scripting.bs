@@ -39,7 +39,7 @@ Native developers can implement JavaScript FFI based on Node-API.
 ### <dfn for=Scripting>JavaScript Interface</dfn> (or <dfn for=Scripting>JSI</dfn>)
 JavaScript Interface(JSI) is an interface that allows JavaScript to hold a reference to host platform object and vice-versa. Native developers can implement JavaScript FFI based on JSI.
 
-### <dfn for=Scripting>PrimJS API</dfn> (or or <dfn for=Scripting>PAPI</dfn>)
+### <dfn for=Scripting>PrimJS API</dfn> (or <dfn for=Scripting>PAPI</dfn>)
 The PrimJS API is the API provided by PrimJS for native developers to implement JavaScript FFI.
 It offers a special HostRef that can be created and held at high performance.
 This HostRef is not an Object in JavaScript, and script developers cannot manipulate the HostRef directly; they can only pass it as a parameter to the FFI.

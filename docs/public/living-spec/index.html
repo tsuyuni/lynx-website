@@ -1489,7 +1489,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 47d87adb7, updated Tue Feb 18 17:18:43 2025 -0800" name="generator">
-  <meta content="02f24c64b1911f76262982bf907c25991f350451" name="revision">
+  <meta content="5eb127a8164b2a01e8060ae8faa5e8bd4811d5da" name="revision">
   <meta content="dark light" name="color-scheme">
 <style>/* Boilerplate: style-autolinks */
 .css.css, .property.property, .descriptor.descriptor {
@@ -2170,7 +2170,7 @@ Parts of this work may be from another specification document.  If so, those par
        <ol class="toc">
         <li><a href="#node-api-or-n-api"><span class="secno">4.3.1</span> <span class="content"><span>Node-API</span> (or <span>N-API</span>)</span></a>
         <li><a href="#javascript-interface-or-jsi"><span class="secno">4.3.2</span> <span class="content"><span>JavaScript Interface</span> (or <span>JSI</span>)</span></a>
-        <li><a href="#primjs-api-or-or-papi"><span class="secno">4.3.3</span> <span class="content"><span>PrimJS API</span> (or or <span>PAPI</span>)</span></a>
+        <li><a href="#primjs-api-or-papi"><span class="secno">4.3.3</span> <span class="content"><span>PrimJS API</span> (or <span>PAPI</span>)</span></a>
        </ol>
       <li>
        <a href="#scripting-runtime-enviroment"><span class="secno">4.4</span> <span class="content">Scripting Runtime Enviroment</span></a>
@@ -2528,7 +2528,7 @@ JavaScript FFI here refers to the mechanism by which JavaScript calls to Native.
 Native developers can implement JavaScript FFI based on Node-API. 
    <h4 class="heading settled" data-level="4.3.2" id="javascript-interface-or-jsi"><span class="secno">4.3.2. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-javascript-interface">JavaScript Interface</dfn> (or <dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-jsi">JSI</dfn>)</span><a class="self-link" href="#javascript-interface-or-jsi"></a></h4>
     JavaScript Interface(JSI) is an interface that allows JavaScript to hold a reference to host platform object and vice-versa. Native developers can implement JavaScript FFI based on JSI. 
-   <h4 class="heading settled" data-level="4.3.3" id="primjs-api-or-or-papi"><span class="secno">4.3.3. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-primjs-api">PrimJS API</dfn> (or or <dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-papi">PAPI</dfn>)</span><a class="self-link" href="#primjs-api-or-or-papi"></a></h4>
+   <h4 class="heading settled" data-level="4.3.3" id="primjs-api-or-papi"><span class="secno">4.3.3. </span><span class="content"><dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-primjs-api">PrimJS API</dfn> (or <dfn class="dfn-paneled" data-dfn-for="Scripting" data-dfn-type="dfn" data-noexport id="scripting-papi">PAPI</dfn>)</span><a class="self-link" href="#primjs-api-or-papi"></a></h4>
     The PrimJS API is the API provided by PrimJS for native developers to implement JavaScript FFI.
 It offers a special HostRef that can be created and held at high performance.
 This HostRef is not an Object in JavaScript, and script developers cannot manipulate the HostRef directly; they can only pass it as a parameter to the FFI. 

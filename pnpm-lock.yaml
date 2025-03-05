@@ -129,6 +129,9 @@ importers:
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
+      rsbuild-plugin-open-graph:
+        specifier: ^1.0.2
+        version: 1.0.2(@rsbuild/core@1.2.3)
       tailwindcss:
         specifier: ^3.4.13
         version: 3.4.17(ts-node@10.9.2(@types/node@18.19.68)(typescript@5.7.3))
@@ -182,8 +185,8 @@ importers:
         specifier: 0.3.0
         version: 0.3.0(@types/react@18.3.18)
       '@lynx-example/css':
-        specifier: 0.3.0
-        version: 0.3.0(@types/react@18.3.18)
+        specifier: 0.3.1
+        version: 0.3.1(@types/react@18.3.18)
       '@lynx-example/css-api':
         specifier: 0.3.0
         version: 0.3.0(@types/react@18.3.18)
@@ -875,8 +878,8 @@ packages:
     resolution: {integrity: sha512-U4Nvn7Kn26WqTDPZ6O6hX3xg7Gfm1z1bAJOMR1stYnpXv8vkE9Cpy3Hrv/d2K3+zt8QhxmTNlcMvqRLBMNa0iA==}
     engines: {node: '>=18'}
 
-  '@lynx-example/css@0.3.0':
-    resolution: {integrity: sha512-bdFZ5/3nGUrVgqz0z8bnyc9sp0jhG7Gj2R/gszLPEkNmG26m9WLCXQGK959a1y91TVDI+l7uNgeVfvKht9ik2g==}
+  '@lynx-example/css@0.3.1':
+    resolution: {integrity: sha512-5ayJfNcoIw9qM1BbPlqGnR3h8UrgzUlBW/igxuFRr3PgEmZ2lhpVDXPLcVBcblY6kc9FTxZ1pcjE9/ebAd+n3A==}
 
   '@lynx-example/element-manipulation@0.3.0':
     resolution: {integrity: sha512-/zM8P3NzqQcn9I+sqvWPQG31AwAitmzsosiTSE3vIugf5foBHOM97vM9OHGl5HHTMUycXM9vAGgQae8trN5DRw==}
@@ -4210,6 +4213,14 @@ packages:
   roughjs@4.6.6:
     resolution: {integrity: sha512-ZUz/69+SYpFN/g/lUlo2FXcIjRkSu3nDarreVdGGndHEBJ6cXPdKguS8JGxwj5HA5xIbVKSmLgr5b3AWxtRfvQ==}
 
+  rsbuild-plugin-open-graph@1.0.2:
+    resolution: {integrity: sha512-JGBMM9T7GNX47Y3jiSJkhoK2rT1bb7+TOO6yYpMHW+/3PLD9i0vv2S4qfdskTnVo8kTNEAYzTZrd+k+XuWxcNA==}
+    peerDependencies:
+      '@rsbuild/core': 0.x || 1.x || ^1.0.1-beta.0
+    peerDependenciesMeta:
+      '@rsbuild/core':
+        optional: true
+
   rspack-plugin-virtual-module@0.1.13:
     resolution: {integrity: sha512-VC0HiVHH6dtGfTgfpbDgVTt6LlYv+uAg9CWGWAR5lBx9FbKPEZeGz7iRUUP8vMymx+PGI8ps0u4a25dne0rtuQ==}
 
@@ -5622,7 +5633,7 @@ snapshots:
       - '@lynx-js/types'
       - '@types/react'
 
-  '@lynx-example/css@0.3.0(@types/react@18.3.18)':
+  '@lynx-example/css@0.3.1(@types/react@18.3.18)':
     dependencies:
       '@lynx-js/react': 0.105.0(@types/react@18.3.18)
     transitivePeerDependencies:
@@ -9915,6 +9926,10 @@ snapshots:
       path-data-parser: 0.1.0
       points-on-curve: 0.2.0
       points-on-path: 0.2.1
+
+  rsbuild-plugin-open-graph@1.0.2(@rsbuild/core@1.2.3):
+    optionalDependencies:
+      '@rsbuild/core': 1.2.3
 
   rspack-plugin-virtual-module@0.1.13:
     dependencies:

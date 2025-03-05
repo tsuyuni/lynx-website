@@ -1,6 +1,7 @@
 import * as path from 'node:path';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import type { RspressPlugin, SidebarGroup } from '@rspress/shared';
+import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
 import { defineConfig } from 'rspress/config';
 import {
   SHARED_DOC_FILES,
@@ -20,7 +21,21 @@ export default defineConfig({
   lang: 'en',
   globalStyles: path.join(__dirname, 'src', 'styles', 'global.css'),
   builderConfig: {
-    plugins: [pluginSvgr()],
+    plugins: [
+      pluginOpenGraph({
+        title: 'Lynx',
+        type: 'website',
+        url: 'https://lynxjs.org/',
+        image: 'https://lynxjs.org/og-image.png',
+        description:
+          'Empower the web community and invite more to build cross-platform apps',
+        twitter: {
+          site: '@LynxJS_org',
+          card: 'summary_large_image',
+        },
+      }),
+      pluginSvgr(),
+    ],
     source: {
       alias: {
         '@site': path.join(__dirname),
