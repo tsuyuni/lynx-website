@@ -205,3 +205,8 @@ $overview-index-color-dark: #f9f9f9;
     }
   }
 }
+
+:lang(cn) em {
+  // for italic
+  padding-right: 0.1em;
+}

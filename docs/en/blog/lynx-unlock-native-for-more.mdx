@@ -3,7 +3,7 @@ date: 2025-03-05
 sidebar: false
 ---
 
-import { BlogAvatar, Go, SyncVideoPlayer } from '@lynx';
+import { BlogAvatar, Go, VideoList } from '@lynx';
 
 _March 5th, 2025_
 
@@ -70,7 +70,7 @@ One of Lynx's most notable architectural decisions is its **statically-enforced 
 
 1. [_Main-Thread Scripting (MTS)_](/react/main-thread-script.html): A small, statically scheduled piece of code, privileged to run on the main thread, handles high-priority events and gestures—making it ideal for implementing silky-smooth, highly responsive interfaces that feels native.
 
-<SyncVideoPlayer
+<VideoList
   videos={[
     {
       src: '/assets/killers/ifr.mp4',
@@ -87,7 +87,7 @@ One of Lynx's most notable architectural decisions is its **statically-enforced 
 Do you notice how instant the _IFR_ feels and how snappy the _MTS_ is?
 Let's **slow them down by 4x** so we can take a closer look!
 
-<SyncVideoPlayer
+<VideoList
   videos={[
     {
       src: '/assets/killers/ifr.mp4',

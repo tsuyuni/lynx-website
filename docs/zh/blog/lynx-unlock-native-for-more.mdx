@@ -3,7 +3,7 @@ date: 2025-03-05
 sidebar: false
 ---
 
-import { BlogAvatar, Go, SyncVideoPlayer } from '@lynx';
+import { BlogAvatar, Go, VideoList } from '@lynx';
 
 _2025 年 3 月 5 日_
 
@@ -13,7 +13,7 @@ _2025 年 3 月 5 日_
 
 今天，我们很高兴向大家介绍 **Lynx** _全家桶_——一套帮助 Web 开发者复用现有经验，通过一份代码同时构建移动端原生界面与 Web 端界面的技术方案。Lynx 专为多样化、富交互的场景打造，得以在 TikTok 这样量级的应用中支撑那些生动且吸引人的界面。它有着高性能、多功能的渲染引擎、性能优先的双线程 UI 编程范式、以及基于 Rust 的现代工具链等诸多特性。
 
-我们非常感谢跨平台开发领域的先贤们，并希望通过**开源** Lynx 进一步推动这个领域的发展，让更多的开发者能够以更高效、更自由的方式开发应用。
+我们非常感谢跨平台开发领域先驱们的探索与积累，并希望通过**开源** Lynx 进一步推动这个领域的发展，让更多的开发者能够以更高效、更自由的方式开发应用。
 
 ## 规模化、高效地交付原生体验
 
@@ -70,7 +70,7 @@ Lynx 最具代表性的架构决策之一是**静态强制划分**用户脚本�
 
 1. [_主线程脚本 (Main Thread Script，MTS)_](/react/main-thread-script.html)：它是一小段静态调度的代码，被授予在主线程运行的权力，用于处理高优的事件和手势行为，非常适合那些要求极致跟手、快速响应的场景，以实现原生交互触感。
 
-<SyncVideoPlayer
+<VideoList
   videos={[
     {
       src: '/assets/killers/ifr.mp4',
@@ -88,7 +88,7 @@ Lynx 最具代表性的架构决策之一是**静态强制划分**用户脚本�
 **_放慢 4 倍_**
 ，再看一遍：
 
-<SyncVideoPlayer
+<VideoList
   videos={[
     {
       src: '/assets/killers/ifr.mp4',

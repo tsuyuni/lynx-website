@@ -70,3 +70,9 @@ public boolean getMsg()
 ```
 
 以 `NSDictionary` 的形式返回错误信息，通过关键字 `LynxErrorUserInfoKeyMessage` 可以从该 `NSDictionary` 中查询到 JSON 字符串形式的错误信息，该错误信息包含错误码、错误子码、错误描述、错误级别、修复建议等。
+
+## 兼容性
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="errors/lynx-error" />

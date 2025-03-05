@@ -149,6 +149,8 @@
 
 a[href*='guide/spec'] {
   font-style: italic;
+  // for italic
+  padding-right: 0.1em;
   position: relative;
   text-decoration: none;
   color: var(--rp-c-text-1);

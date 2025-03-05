@@ -71,3 +71,9 @@ Determine if the error level is `Fatal`. `LynxError` has three levels: `Fatal`, 
 ```
 
 Return an `NSDictionary` from which the error information can be queried using the key `LynxErrorUserInfoKeyMessage`. The error information is a JSON string that includes the code, subcode, error message, level, fix suggestion, etc.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="errors/lynx-error" />

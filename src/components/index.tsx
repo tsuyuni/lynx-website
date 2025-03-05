@@ -48,7 +48,7 @@ export {
 // Status Badges shorthand
 export { Deprecated, Experimental, Required } from './api-badge';
 
-export { SyncVideoPlayer } from './SyncVideoPlayer';
+export { VideoList } from './VideoList';
 
 // Callout (Note, Warning, Danger, Tip, Info)
 export {
