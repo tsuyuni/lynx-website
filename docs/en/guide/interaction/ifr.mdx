@@ -1,4 +1,4 @@
-import { Details, PlatformTabs, Go } from '@lynx';
+import { Details, PlatformTabs, Go, SyncVideoPlayer } from '@lynx';
 
 # Instant First-Frame Rendering (IFR)
 
@@ -58,53 +58,18 @@ Your end users may easily notice the difference brought by "Instant First-Frame 
 Video below is slowed down to 0.3x speed for better observation.
 :::
 
-<table>
-  <tr style={{ textAlign: 'center' }}>
-    <td>
-      <span>Other cross-platform solutions</span>
-    </td>
-    <td>
-      <span>Lynx</span>
-    </td>
-  </tr>
-  <tr style={{ textAlign: 'center' }}>
-    <td>
-      <span>**No IFR**</span>
-    </td>
-    <td>
-      <span>**IFR**</span>
-    </td>
-  </tr>
-  <tr>
-    <td style={{ paddingRight: '10px' }}>
-      <video
-        ref={function (videoRef) {
-          if (videoRef) videoRef.playbackRate = 0.3;
-        }}
-        muted
-        autoPlay
-        loop
-        playsInline
-        controls
-        src="/assets/ifr_fib_with_blank.mp4"
-        style={{ maxWidth: '40vw', maxHeight: '50vh' }}
-      />
-    </td>
-    <td style={{ paddingRight: '10px' }}>
-      <video
-        ref={function (videoRef) {
-          if (videoRef) videoRef.playbackRate = 0.3;
-        }}
-        muted
-        autoPlay
-        loop
-        playsInline
-        controls
-        src="/assets/ifr_fib.mp4"
-        style={{ maxWidth: '40vw', maxHeight: '50vh' }}
-      />
-    </td>
-  </tr>
-</table>
+<SyncVideoPlayer
+  videos={[
+    {
+      src: '/assets/ifr_fib_with_blank.mp4',
+      title: 'Other cross-platform solutions (No IFR)',
+    },
+    {
+      src: '/assets/ifr_fib.mp4',
+      title: 'Lynx (IFR)',
+    },
+  ]}
+  playbackRate={0.3}
+/>
 
 It can be seen that when there is no "Instant First-Frame Rendering", opening the App will present the change process of "Splash Screen → White Screen → Content", while Lynx's "Instant First-Frame Rendering" makes the transition after the splash screen ends more natural and provides a better user experience.

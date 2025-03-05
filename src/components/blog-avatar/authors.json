@@ -1,10 +1,28 @@
 [
   {
+    "id": "lynx",
+    "name": "The Lynx Team",
+    "name_zh": "Lynx 团队",
+    "title": "lynxjs.org",
+    "title_zh": "lynxjs.org",
+    "image": "https://github.com/lynx-family.png",
+    "socials": {
+      "x": {
+        "username": "lynxjs_org",
+        "link": "https://x.com/lynxjs_org"
+      },
+      "github": {
+        "username": "lynx-family",
+        "link": "https://github.com/lynx-family/"
+      }
+    }
+  },
+  {
     "id": "huxpro",
     "name": "Xuan Huang",
     "name_zh": "黄玄",
-    "title": "Software Engineer",
-    "title_zh": "软件工程师",
+    "title": "Architect @ Lynx",
+    "title_zh": "Lynx · 架构师",
     "image": "https://github.com/huxpro.png",
     "socials": {
       "x": {

@@ -1,23 +1,35 @@
-import React from 'react';
-import styles from './index.module.less';
-import cls from 'classnames';
 import case0src from '@assets/home/home-s-case-0.webp';
 import case1src from '@assets/home/home-s-case-1.webp';
-import case2src from '@assets/home/home-s-case-2.webp';
+import case0video from '@assets/killers/ifr.mp4';
+import case1video from '@assets/killers/mts.mp4';
+import cls from 'classnames';
+import styles from './index.module.less';
 
-type CaseKey = 'case-0' | 'case-1' | 'case-2';
+type CaseKey = 'case-0' | 'case-1';
 
 export const MobileShow = ({ preview }: { preview: CaseKey }) => {
   const caseList = {
-    'case-0': case0src,
-    'case-1': case1src,
-    'case-2': case2src,
+    'case-0': { image: case0src, video: case0video },
+    'case-1': { image: case1src, video: case1video },
   };
 
   return (
-    <div className={styles['mobile-show-frame']}>
-      <div className={cls(styles['preview'])}>
-        <img src={caseList[preview]} />
+    <div className={styles.mobileShowFrame}>
+      <div className={cls(styles.preview)}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={caseList[preview].image}
+          aria-label={`Case ${preview.split('-')[1]} preview`}
+        >
+          <source src={caseList[preview].video} type="video/mp4" />
+          <img
+            src={caseList[preview].image}
+            alt={`Case ${preview.split('-')[1]} preview`}
+          />
+        </video>
       </div>
     </div>
   );

@@ -24,9 +24,9 @@ export { Badge } from 'rspress/theme';
 export {
   APIBadge,
   PlatformBadge,
+  RuntimeBadge,
   StatusBadge,
   VersionBadge,
-  RuntimeBadge,
 } from './api-badge';
 // Platform Badges shorthand
 export {
@@ -47,6 +47,8 @@ export {
 } from './api-badge';
 // Status Badges shorthand
 export { Deprecated, Experimental, Required } from './api-badge';
+
+export { SyncVideoPlayer } from './SyncVideoPlayer';
 
 // Callout (Note, Warning, Danger, Tip, Info)
 export {

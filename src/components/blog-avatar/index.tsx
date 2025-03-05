@@ -1,5 +1,4 @@
-import React, { useMemo } from 'react';
-import originListData from './authors.json';
+import IconX from '@assets/x-logo.svg?react';
 import {
   IconGithubLogo,
   IconGitlabLogo,
@@ -7,9 +6,10 @@ import {
   IconUserCircle,
 } from '@douyinfe/semi-icons';
 import { Avatar, Space } from '@douyinfe/semi-ui';
+import { useMemo } from 'react';
 import { useLang } from 'rspress/runtime';
+import originListData from './authors.json';
 import styles from './index.module.less';
-import IconX from '@assets/x-logo.svg?react';
 
 const brandSpList = {
   github: {
@@ -82,7 +82,15 @@ const HoverCard = ({ author }: { author: (typeof originListData)[0] }) => {
 
 const BlogAvatar = ({ list }: { list: string[] }) => {
   const filteredAuthors = useMemo(() => {
-    return originListData.filter((author) => list.includes(author.id));
+    // Create a map of authors by id for O(1) lookup
+    const authorMap = new Map(
+      originListData.map((author) => [author.id, author]),
+    );
+
+    // Map the list order to authors, filtering out any invalid ids
+    return list
+      .map((id) => authorMap.get(id))
+      .filter((author): author is (typeof originListData)[0] => author != null);
   }, [list]);
 
   if (filteredAuthors.length === 0) {
