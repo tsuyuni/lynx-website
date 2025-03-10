@@ -1,0 +1,468 @@
+# `<image>`
+
+import {
+  AndroidOnly,
+  IOSOnly,
+  Required,
+  Deprecated,
+  Go,
+  PlatformTabs,
+} from '@lynx';
+
+Used to display different types of images, including web images, static resources, and locally stored images.
+
+:::tip
+
+This feature depends on the image loading service provided by [Lynx Service](guide/start/integrate-with-existing-apps).
+
+:::
+
+## Usage Guide
+
+`<image>` is an [empty element](guide/ui/elements-components.html#empty-elements) and no longer supports child nodes.
+
+:::note
+
+To display the image correctly, the non-empty [src](api/elements/built-in/image.html#required-src) attribute must be set, and at least one of the following must be provided:
+
+- A [width](api/css/properties/width.html) and [height](api/css/properties/width.html) greater than 0
+- [auto-size](api/elements/built-in/image.html#auto-size)
+
+:::
+
+The following examples show how the `<image>` element is used in different scenarios.
+
+### Displaying images with different cropping/scaling modes
+
+Supports controlling the image cropping/scaling mode using [mode](api/elements/built-in/image.html#mode).
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/image_basic_demo.png"
+  example="image"
+  defaultFile="src/App.tsx"
+  highlight="{30-42}"
+/>
+
+### Adding borders, rounded corners, and backgrounds to the image
+
+You can set the image's borders, rounded corners, and background colors using CSS styles.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/image_style_demo.png"
+  highlight="{44-73}"
+  example="image"
+  defaultFile="src/App.tsx"
+/>
+
+### Adding special drawing effects to the image
+
+Supports special drawing effects like Gaussian blur.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/image_filter_demo.png"
+  highlight="{75-89}"
+  example="image"
+  defaultFile="src/App.tsx"
+/>
+
+### Adapting to the original image aspect ratio
+
+Use [auto-size](api/elements/built-in/image.html#auto-size) to automatically adjust the `<image>` size to match the original image aspect ratio.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/image_auto_demo.png"
+  highlight="{18-28}"
+  example="image"
+  defaultFile="src/App.tsx"
+/>
+
+### Listening to image load success/failure
+
+You can bind [events](api/elements/built-in/image.html#events) to listen for the image load state.
+
+<Go highlight="{91-111}" example="image" defaultFile="src/App.tsx" />
+
+## Properties
+
+### `src` <Required /> {#required-src}
+
+```tsx
+src: string;
+```
+
+Specifies the image [URL](https://developer.mozilla.org/en-US/docs/Glossary/URL) to display.
+
+::: note
+
+For front-end built-in resources, please refer to [static resource handling](../../../rspeedy/assets.md) for configuration, or the image may not display correctly after deployment.
+
+:::
+
+### `mode`
+
+```tsx
+// DefaultValue: 'scaleToFill'
+mode?: 'scaleToFill' | 'aspectFit' | 'aspectFill';
+```
+
+Specifies the image cropping/scaling mode:
+
+- `scaleToFill` (default): The image is stretched to fill the `<image>` element without maintaining its aspect ratio.
+- `aspectFit`: Scales the image to maintain its aspect ratio, ensuring the entire image is visible.
+- `aspectFill`: Scales the image to maintain its aspect ratio, causing the shorter side to fill the `<image>` element, which may crop part of the image.
+
+### `placeholder`
+
+```tsx
+placeholder?: string;
+```
+
+Specifies the path to the placeholder image. The usage and limitations are the same as for the `src` attribute.
+
+### `blur-radius`
+
+```tsx
+// DefaultValue: '0px'
+blur-radius?: string;
+```
+
+Specifies the Gaussian blur radius for the image.
+
+### `prefetch-width/prefetch-height`
+
+```tsx
+// DefaultValue: '0px'
+prefetch-width/prefetch-height?: string;
+```
+
+Allows initiating a request when the image has a width/height of 0. This is typically used when preloading images. It's recommended to set the sizes to match the actual layout width/height.
+
+### `cap-insets`
+
+```tsx
+// DefaultValue: '0px 0px 0px 0px'
+cap-insets?: string;
+```
+
+Specifies the 9patch image scaling area with four values representing the top, right, bottom, and left edges. Values must be specific numbers and do not support percentages or decimals.
+
+```tsx
+// Specifies the pixel range starting from [14 * ${cap-insets-scale}, imageWidth - 14 * ${cap-insets-scale}] for stretching the image.
+cap-insets="0px 14px 0 14px"
+```
+
+:::note
+
+Using `cap-insets` does not require the original image to be a [9patch](https://developer.android.com/studio/write/draw9patch) image.
+
+:::
+
+### `cap-insets-scale`
+
+```tsx
+// DefaultValue: 1
+cap-insets-scale?: number;
+```
+
+Works with `cap-insets` to adjust the pixel positions when stretching the image.
+
+### `loop-count`
+
+```tsx
+// DefaultValue: 0
+loop-count?: number;
+```
+
+Specifies the number of times to play an animated image. The default is to loop indefinitely.
+
+### `image-config` <AndroidOnly />
+
+```tsx
+// DefaultValue: 'ARGB_8888'
+image-config?: 'RGB_565' | 'ARGB_8888';
+```
+
+Specifies the image data format. There are two options:
+
+- `ARGB_8888`: Each pixel uses 32 bits of memory, including an alpha channel for transparency.
+- `RGB_565`: Each pixel uses 16 bits of memory, which reduces memory usage but loses transparency.
+
+::: note
+
+This affects the actual memory size of the bitmap on Android.
+
+For an image with a resolution of 1024x768, the memory size used would be calculated as: (1024 _ 768 _ pixel bits / 8) bytes.
+:::
+
+### `auto-size`
+
+```tsx
+// DefaultValue: false
+auto-size?: boolean;
+```
+
+When set to `true` and the `<image>` element has no width or height, the size of the `<image>` will be automatically adjusted to match the image's original dimensions after the image is successfully loaded, ensuring that the aspect ratio is maintained.
+
+### `defer-src-invalidation`
+
+```tsx
+// DefaultValue: false
+defer-src-invalidation?: boolean;
+```
+
+When set to `true`, the `<image>` will only clear the previously displayed image resource after a new image has successfully loaded.
+
+The default behavior is to clear the image resource before starting a new load.
+
+This can resolve flickering issues when the image `src` is switched and reloaded. It is not recommended to enable this in scenarios where there is node reuse in views like lists.
+
+### `autoplay`
+
+```tsx
+// DefaultValue: true
+autoplay?: boolean;
+```
+
+Specifies whether the animated image should start playing automatically once it is loaded. The default is to autoplay.
+
+### `tint-color`
+
+```tsx
+tint-color?: string;
+```
+
+Changes the color of all non-transparent pixels to the `tint-color` specified. The value is a [color](api/css/data-type/color.html).
+
+## Events
+
+Frontend can bind corresponding event callbacks to listen for runtime behaviors of the element, as shown below.
+
+### `bindload`
+
+Triggered when the image request succeeds, outputting the image's width and height.
+
+```tsx
+bindload = (e: ImageLoadEvent) => {};
+
+interface ImageLoadEvent {
+  detail: {
+    width: number;
+    height: number;
+  };
+}
+```
+
+### `binderror`
+
+Triggered when the image request fails, outputting the error message and code.
+
+```tsx
+binderror = (e: ImageErrorEvent) => {};
+
+interface ImageErrorEvent {
+  detail: {
+    errMsg: string; // Error message
+    error_code: number;
+    lynx_categorized_code: number;
+  };
+}
+```
+
+## Methods
+
+Frontend can invoke component methods via the [SelectorQuery](api/lynx-api/nodes-ref/nodes-ref-invoke.html) API.
+
+### `startAnimate`
+
+```ts
+
+lynx.createSelectorQuery()
+     .select('#gifs')
+     .invoke({
+      method: 'startAnimate'，
+    })
+    .exec();
+
+```
+
+Restarts the animation. The animation progress and loop-count are both reset.
+
+### `pauseAnimation`
+
+```ts
+
+lynx.createSelectorQuery()
+     .select('#gifs')
+     .invoke({
+      method: 'pauseAnimation'，
+    })
+    .exec();
+
+```
+
+Pauses the animation, without resetting the loop-count.
+
+### `resumeAnimation`
+
+```ts
+
+lynx.createSelectorQuery()
+     .select('#gifs')
+     .invoke({
+      method: 'resumeAnimation'，
+    })
+    .exec();
+
+```
+
+Resumes the animation, without resetting the loop-count.
+
+### `stopAnimation`
+
+```ts
+
+lynx.createSelectorQuery()
+     .select('#gifs')
+     .invoke({
+      method: 'stopAnimation'，
+    })
+    .exec();
+
+```
+
+Stops the animation, resetting the loop-count.
+
+## Advanced Features
+
+### Request URL Redirection Mapping
+
+#### Feature Description
+
+By implementing a URL redirection mechanism, developers can intercept specific image URLs and map them to specific resource paths. This ability is useful for the following scenarios:
+
+- Improving static resource loading speed
+- Supporting custom image protocol access schemes
+- Protecting sensitive resource access paths
+
+#### Implementation Principle
+
+This feature is implemented based on the [MediaResourceFetcher](api/lynx-native-api/resource-fetcher/MediaResourceFetcher.html) interface, with the core process divided into two stages:
+
+1. **Resource Type Detection** (`isLocalResource`)
+
+   - Determines if the request URL matches the custom protocol
+   - Returns a boolean indicating whether to handle it locally
+
+2. **Path Conversion** (`shouldRedirectUrl`)
+
+   - Parses the original URL
+   - Converts it into a valid resource path
+   - Returns the final accessible URL address
+
+The following example shows how to map a URL like `http://localhost/xxx` to an app's built-in resource path:
+
+<PlatformTabs hashKey="platform">
+<PlatformTabs.Tab platform="ios">
+
+```objective-c
+/// Local resource handler header
+#import <LynxMediaResourceFetcher/LynxMediaResourceFetcher.h>
+
+@interface LocalMediaFetcher : NSObject <LynxMediaResourceFetcher>
+
+- (NSString *)shouldRedirectUrl:(LynxResourceRequest *)request;
+
+- (LynxResourceOptionalBool)isLocalResource:(NSURL *)url;
+
+@end
+```
+
+```objective-c
+/// Local resource handler implementation
+#import "LocalMediaFetcher.h"
+
+@implementation LocalMediaFetcher
+
+/**
+ * Resource path conversion method
+ * @param request Resource request object
+ * @return Local file path or empty string
+ */
+- (NSString *)shouldRedirectUrl:(LynxResourceRequest *)request {
+  NSURL *url = [NSURL URLWithString:request.url];
+  NSString *fileType = [url pathExtension];
+  NSString *fileName = [[url URLByDeletingPathExtension] lastPathComponent];
+  NSString *subdir = [[[url URLByDeletingLastPathComponent] absoluteString] stringByReplacingOccurrencesOfString:@"http://localhost" withString:@""];
+  NSString *path = [[NSBundle mainBundle] pathForResource:fileName ofType:fileType inDirectory:subdir];
+  return path ? [NSString stringWithFormat:@"file://%@", path] : @"";
+}
+
+/**
+ * Local resource detection method
+ * @param url The original request URL
+ * @return LynxResourceOptionalBoolTrue indicates the request needs redirection
+ */
+- (LynxResourceOptionalBool)isLocalResource:(NSURL *)url {
+    return [url.absoluteString hasPrefix:@"http://localhost"] ?
+           LynxResourceOptionalBoolTrue :
+           LynxResourceOptionalBoolFalse;
+}
+
+@end
+```
+
+</PlatformTabs.Tab>
+
+<PlatformTabs.Tab platform="android">
+
+```java
+import com.lynx.tasm.resourceprovider.LynxResourceRequest
+import com.lynx.tasm.resourceprovider.media.LynxMediaResourceFetcher
+import com.lynx.tasm.resourceprovider.media.OptionalBool
+
+/**
+ * Custom media resource handler
+ *
+ * @property protocol The protocol to intercept "http://localhost"
+ * @property scheme The target resource protocol "asset://"
+ */
+class LocalMediaFetcher : LynxMediaResourceFetcher() {
+
+    /**
+     * Determines if the resource is local
+     * @param url The original request URL
+     * @return OptionalBool.TRUE indicates the request needs redirection
+     */
+    override fun isLocalResource(url: String?): OptionalBool {
+        return if (url?.startsWith("http://localhost") == true) {
+            OptionalBool.TRUE
+        } else {
+            OptionalBool.FALSE
+        }
+    }
+
+    /**
+     * Performs URL redirection
+     * @param request The resource request object
+     * @return The converted valid resource path
+     */
+    override fun shouldRedirectUrl(request: LynxResourceRequest?): String {
+        return request?.url?.replace(
+            oldValue = "http://localhost",
+            newValue = "asset://",
+            ignoreCase = true
+        ) ?: ""
+    }
+}
+```
+
+</PlatformTabs.Tab>
+</PlatformTabs>
+
+> Full API reference: [MediaResourceFetcher Documentation](api/lynx-native-api/resource-fetcher/MediaResourceFetcher.html)
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="elements/image" />

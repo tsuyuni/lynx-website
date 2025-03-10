@@ -1,0 +1,82 @@
+import { Go } from '@lynx';
+
+# transition-property
+
+## Introduction
+
+The transition-property CSS property sets the CSS properties to which a transition effect should be applied.
+
+## Examples
+
+<Go
+  example="css-api"
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/css/transition-property.gif"
+  defaultEntryFile="dist/transition-property.lynx.bundle"
+  defaultFile="src/transition-property/App.tsx"
+  entry="src/transition-property"
+/>
+
+## Syntax
+
+```css
+/* Keyword values */
+transition-property: none;
+transition-property: all;
+
+/* <custom-ident> values */
+transition-property: test_05;
+transition-property: -specific;
+transition-property: sliding-vertically;
+
+/* Multiple values */
+transition-property: test1, animation4;
+transition-property: all, height, color;
+transition-property:;
+```
+
+### Values
+
+- opacity
+- width
+- height
+- background-color
+- visibility
+- top
+- right
+- bottom
+- left
+- transform
+- all
+- none
+- color
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>empty value</>}
+  appliesTo={<>all elements</>}
+  inherited="no"
+  animatable="no"
+/>
+
+## Formal syntax
+
+```
+transition-property:opacity|width|height|background-color|visibility|top|right|left|bottom|transform|all|none;
+```
+
+## More
+
+- [transition-delay](./transition-delay.mdx)
+- [transition-duration](./transition-duration.mdx)
+- [transition](./transition.mdx)
+- [transition-timing-function](./transition-timing-function.mdx)
+- [Animation Event](../../lynx-api/event/animation-event.mdx)
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/transition-property" />

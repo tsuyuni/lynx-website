@@ -1,0 +1,35 @@
+[
+  {
+    "type": "section-header",
+    "label": "Basic"
+  },
+  "cli",
+  "styling",
+  "typescript",
+  "assets",
+  "output",
+  "resolve",
+  "plugin",
+  "upgrade",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "Debug"
+  },
+  "build-profiling",
+  "use-rsdoctor",
+  {
+    "type": "divider"
+  },
+  {
+    "type": "section-header",
+    "label": "Extra Topics"
+  },
+  {
+    "type": "custom-link",
+    "label": "nav.api",
+    "link": "/api/rspeedy.html"
+  }
+]

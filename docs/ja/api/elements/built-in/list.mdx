@@ -1,0 +1,803 @@
+import { AndroidOnly, IOSOnly, KnownBug, Required, Go } from '@lynx';
+
+import { Tab, Tabs } from 'rspress/theme';
+
+import data from 'virtual-jwt';
+
+# `<list>`
+
+## Introduction
+
+`<list>` is a high-performance scrollable container that enhances rendering performance through lazy loading and reduces memory pressure by implementing recycling and reuse. It supports both horizontal and vertical scrolling, as well as multi-column, grid, and waterfall layouts. `<list>` is commonly used for implementing infinite scrolling in feed streams and similar scenarios.
+
+## Usage Guide
+
+### Implementing Single-Column Layout
+
+**1. Set `<list>` width and height**: The width and height of `<list>` represent the size of its visible area, so they need to be fixed values and cannot be expanded by internal content. Only child nodes visible in the visible area will be rendered.
+
+**2. Set scroll direction and layout form**: Set the attribute [`scroll-orientation`](#scroll-orientation) to specify the layout and scroll direction, and set [`list-type`](#list-type) and [`span-count`](#span-count) to specify the layout form.
+
+**3. Configure child nodes**: Use the `<list-item>` tag as a direct child node of `<list>` , and set [`item-key`](#item-key) and [`key`](#key) for `<list-item>`, ensuring they are consistent.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-base.gif"
+  example="list"
+  defaultFile="src/base/index.tsx"
+  defaultEntryFile="dist/base.lynx.bundle"
+  highlight="{11-13,23-26}"
+/>
+
+### Implementing Multi-Column Layout
+
+**1. Set layout type and column count**: Set the layout type [`list-type`](#list-type) to `"flow" (grid layout)` or `"waterfall" (waterfall layout)`, and set [`span-count`](#span-count) >= 2.
+
+**2. Implement full-span child nodes in multi-column layout**: Set the [`full-span`](#full-span) attribute for `<list-item/>` to make it occupy a full row or column in the layout.
+
+Grid Layout Example
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-flow.gif"
+  example="list"
+  defaultFile="src/flow/index.tsx"
+  defaultEntryFile="dist/flow.lynx.bundle"
+  entry="src/flow"
+  highlight="{14-15,24}"
+/>
+
+Waterfall Layout Example
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-waterfall.gif"
+  example="list"
+  defaultFile="src/waterfall/index.tsx"
+  defaultEntryFile="dist/waterfall.lynx.bundle"
+  entry="src/waterfall"
+  highlight="{14-15}"
+/>
+
+## Attributes
+
+### `list-type` <Required/> \{#required-list-type}
+
+```tsx
+list-type: 'single' | 'flow' | 'waterfall'
+```
+
+Controls the layout type of the `<list>` component, which needs to be used in conjunction with [`span-count`](#span-count).
+
+| Value       | Description                       |
+| ----------- | --------------------------------- |
+| `single`    | Single-column/row layout          |
+| `flow`      | Multi-column/row grid layout      |
+| `waterfall` | Multi-column/row waterfall layout |
+
+:::note
+
+Since `<list>` supports both horizontal and vertical orientations, if it is vertically oriented, the main axis is vertical and the cross axis is horizontal. Taking `scroll-orientation` as `vertical` as an example, the `single` method is relatively easy to understand as it occupies a single row. Therefore, the focus is on explaining the `waterfall` and `flow` layouts:
+
+- Similarities
+  - Both `waterfall` and `flow` determine the width of child nodes based on the width of `<list>` and `span-count`.
+- Differences
+  - `waterfall`: Content is continuously filled, with child node elements filling from top to bottom into the shortest column, achieving visual continuity and dynamism. It is typically used for child nodes of varying sizes.
+  - `flow`: The grid layout fully reflects its regularity, with the `top` of adjacent child nodes in the left and right columns being consistent. It is typically used for child nodes of uniform size.
+
+:::
+
+### `span-count` <Required/> \{#required-span-count}
+
+```tsx
+span-count: number
+```
+
+Sets the number of columns or rows for the `<list>` component layout.
+
+### `scroll-orientation` <Required/> \{#required-scroll-orientation}
+
+```tsx
+// DefaultValue: "vertical"
+scroll-orientation?: 'vertical' ｜ 'horizontal'
+```
+
+Sets the scrolling direction and layout direction of the `<list>` component.
+
+### `item-key` <Required/> \{#required-item-key}
+
+```tsx
+// DefaultValue: null
+item-key: string
+
+<list-item item-key="item"/>
+```
+
+The `item-key` attribute is a required attribute on `<list-item>`.
+
+:::note
+
+Developers need to set a unique `item-key` for each `<list>` child node. It is used to help `<list>` identify which `<list>` child nodes have changed, been added, or removed. Therefore, developers need to ensure the correct setting of `item-key`. Incorrect settings may lead to disorder and flickering issues.
+
+:::
+
+### `key` <Required/> \{#required-key}
+
+```tsx
+// DefaultValue: null
+key: string
+
+<list-item
+  item-key="item-0"
+  key="item-0"
+/>
+```
+
+Use the `key` attribute to help the framework identify which elements have changed, been added, or removed.
+
+:::note
+
+In the list scenario, `key` and `item-key` should remain consistent.
+
+:::
+
+### `enable-scroll`
+
+```tsx
+// DefaultValue: true
+enable-scroll?: boolean
+```
+
+Indicates whether the `<list>` component is allowed to scroll.
+
+### `enable-nested-scroll`
+
+```tsx
+// DefaultValue: true
+enable-nested-scroll?: boolean
+```
+
+Indicates whether `<list>` can achieve nested scrolling with other scrollable containers. When enabled, the inner container scrolls first, followed by the outer container.
+
+### `list-main-axis-gap`
+
+```tsx
+// DefaultValue: null
+list-main-axis-gap?: ${number}px | ${number}rpx
+
+<list
+  style={{listMainAxisGap:'10px'}}
+/>
+```
+
+Specifies the spacing of `<list>` child nodes in the main axis direction, which needs to be written in the style.
+
+### `list-cross-axis-gap`
+
+```tsx
+// DefaultValue: null
+list-cross-axis-gap?: ${number}px | ${number}rpx
+
+<list
+  style={{listCrossAxisGap:'10px'}}
+/>
+```
+
+Specifies the spacing of `<list>` child nodes in the cross axis direction, which needs to be written in the style.
+
+### `sticky`
+
+```tsx
+// DefaultValue: false
+sticky?: boolean
+```
+
+Declared on the `<list>` component to control whether the `<list>` component as a whole is allowed to be sticky at the top or bottom.
+
+### `sticky-offset`
+
+```tsx
+// DefaultValue: 0
+sticky-offset?: number
+```
+
+The offset distance from the top or bottom of `<list>` for sticky positioning, in `px`.
+
+### `sticky-top`
+
+```tsx
+// DefaultValue: false
+sticky-top?: boolean
+```
+
+Declared on the `<list-item>` child node to control whether the node will be sticky at the top.
+
+### `sticky-bottom`
+
+```tsx
+// DefaultValue: false
+sticky-bottom?: boolean
+```
+
+Declared on the `<list-item>` child node to control whether the node will be sticky at the bottom.
+
+### `initial-scroll-index`
+
+```tsx
+// DefaultValue: 0
+initial-scroll-index?: number
+```
+
+Specifies the node position to which `<list>` automatically scrolls after rendering, effective only once.
+
+### `need-visible-item-info`
+
+```tsx
+// DefaultValue: false
+need-visible-item-info?: boolean
+```
+
+Controls whether the scroll event callback parameters include the position information of the currently rendering node. The scroll events include: [`scroll`](#scroll), [`scrolltoupper`](#scrolltoupper), [`scrolltolower`](#scrolltolower).
+
+Scroll event callback parameter format:
+
+```tsx
+interface ListScrollInfo {
+  // Horizontal scroll offset since the last scroll, in px
+  deltaX: number;
+  // Vertical scroll offset since the last scroll, in px
+  deltaY: number;
+  // Current horizontal scroll offset, in px
+  scrollLeft: number;
+  // Current vertical scroll offset, in px
+  scrollTop: number;
+  // Current content area width, in px
+  scrollWidth: number;
+  // Current content area height, in px
+  scrollHeight: number;
+  // `<list>` width, in px
+  listWidth: number;
+  // `<list>` height, in px
+  listHeight: number;
+  // Scroll event source
+  eventSource: ListEventSource;
+  // Position information of the currently rendering node
+  attachedCells: [
+    {
+      id: number; // Node id
+      itemKey: string; // Node item-key
+      index: number; // Node index in list
+      left: number; // Node left boundary position relative to list, in px
+      top: number; // Node top boundary position relative to list, in px
+      right: number; // Node right boundary position relative to list, in px
+      bottom: number; // Node bottom boundary position relative to list, in px
+    },
+  ];
+}
+```
+
+### `upper-threshold-item-count`
+
+```tsx
+// DefaultValue: 0
+upper-threshold-item-count?: number
+```
+
+Triggers a [`scrolltoupper`](#scrolltoupper) event once when the number of remaining displayable child nodes at the top of `<list>` is less than [`upper-threshold-item-count`](#upper-threshold-item-count) for the first time.
+
+### `lower-threshold-item-count`
+
+```tsx
+// DefaultValue: 0
+lower-threshold-item-count?: number
+```
+
+Triggers a [`scrolltolower`](#scrolltolower) event once when the number of remaining displayable child nodes at the bottom of `<list>` is less than [`lower-threshold-item-count`](#lower-threshold-item-count) for the first time.
+
+### `scroll-event-throttle`
+
+```tsx
+// DefaultValue: 200
+scroll-event-throttle?: number
+```
+
+Sets the time interval for the `<list>` callback [`scroll`](#scroll) event, in milliseconds (ms). By default, the scroll event is called back every 200 ms.
+
+### `item-snap`
+
+```tsx
+// defaultValue: undefined
+'item-snap'?: ListItemSnapAlignment;
+
+interface ListItemSnapAlignment {
+  factor: number;
+  offset: number;
+}
+```
+
+Controls the paginated scrolling effect of `<list>`.
+
+Pagination parameters
+
+- `factor`: The parameter for paginated positioning, with a range of `[0, 1]`
+  - A value of `0` means the paginated scrolling `<list>` child node aligns with the top of `<list>`
+  - A value of `1` means the paginated scrolling `<list>` child node aligns with the bottom of `<list>`
+- `offset`: Additional offset parameter added on top of `factor`
+
+### `need-layout-complete-info`
+
+Controls whether the [`layoutcomplete`](#layoutcomplete) event includes the node layout information before and after this `layout`, the `<list>` Diff information that triggered this layout, and the current `<list>` scroll state information.
+
+```tsx
+export interface LayoutCompleteEvent extends BaseEvent<'layoutcomplete', {}> {
+  detail: {
+    'layout-id': number;
+    // Enable need-layout-complete-info
+    scrollInfo: ListScrollInfo;
+    // Enable need-layout-complete-info
+    diffResult?: {
+      insertions: number[];
+      move_from: number[];
+      move_to: number[];
+      removals: number[];
+      update_from: number[];
+      update_to: number[];
+    };
+    // Enable need-layout-complete-info
+    visibleCellsAfterUpdate?: ListItemInfo[];
+    // Enable need-layout-complete-info
+    visibleCellsBeforeUpdate?: ListItemInfo[];
+  };
+}
+```
+
+### `layout-id`
+
+```tsx
+// defaultValue: -1
+layout-id?: number
+```
+
+Used to mark the unique identifier for this data source update, which will be returned in the [`layoutcomplete`](#layoutcomplete) event callback.
+
+### `preload-buffer-count`
+
+```tsx
+// DefaultValue: 0
+preload-buffer-count?: number
+```
+
+This attribute controls the number of nodes outside `<list>` that are preloaded.
+
+:::note
+
+- The larger the value of `preload-buffer-count`, the more off-screen nodes can be preloaded, but it will also increase the memory usage of `<list>`.
+
+- The recommended value for `preload-buffer-count` is the number of nodes that fill one screen of `<list>`.
+
+- Only effective when `list-type='single'/'flow'`.
+
+:::
+
+### `scroll-bar-enable` <IOSOnly/>
+
+```tsx
+// DefaultValue: true
+scroll-bar-enable?: boolean
+```
+
+Indicates whether the `<list>` component scroll bar is displayed.
+
+### `reuse-identifier`
+
+```tsx
+// DefaultValue: null
+reuse-identifier: string
+
+<list>
+  <list-item
+    reuse-identifier="type1"
+  >
+  <list-item
+    reuse-identifier="type2"
+  >
+</list>
+```
+
+Sets the reuse id for `<list-item>`. When rendering child nodes, the `<list>` component reuses `<list-item>` based on the `reuse-identifier` attribute value. Only `<list-item>` with the same `reuse-identifier` attribute value will be reused.
+
+By default, developers do not need to provide a `reuse-identifier`, as the framework determines it during the compilation phase. For example, when `<list-item>` is within a loop (e.g., `Array.prototype.map`), since they have the same form and position during the compilation phase, we generate the same `reuse-identifier` for them, allowing this group of `<list-item>` to be reused with each other.
+
+:::note
+
+Use case: `<list-item>` with significant structural differences perform poorly when reused. Therefore, it is recommended to set different `reuse-identifier` values for them to avoid mutual reuse.
+
+:::
+
+### `full-span`
+
+```tsx
+// DefaultValue: false
+full-span?: boolean
+<list>
+  <list-item full-span={true}/>
+</list>
+```
+
+The `full-span` attribute is used to indicate that a `<list-item>` occupies a full row or column.
+
+### `estimated-main-axis-size-px`
+
+```tsx
+// DefaultValue: -1
+estimated-main-axis-size-px?: number
+<list-item
+  estimated-main-axis-size-px={100}
+/>
+```
+
+Specifies the placeholder size in the main axis direction for `<list-item>` before it is fully rendered, in `px`. If not set, the default value is the size of `<list>` in the main axis direction.
+
+:::note
+
+It is strongly recommended that developers set `estimated-main-axis-size-px` to a value close to the actual size of the child nodes.
+
+:::
+
+## Events
+
+Front-end developers can bind corresponding event callbacks to components to monitor runtime behavior. The usage is as follows.
+
+### `scroll`
+
+```tsx
+bindscroll?: EventHandler<ListScrollEvent>;
+
+interface ListScrollEvent {
+  // Horizontal scroll offset since the last scroll, in px
+  deltaX: number;
+  // Vertical scroll offset since the last scroll, in px
+  deltaY: number;
+  // Current horizontal scroll offset, in px
+  scrollLeft: number;
+  // Current vertical scroll offset, in px
+  scrollTop: number;
+  // Current content area width, in px
+  scrollWidth: number;
+  // Current content area height, in px
+  scrollHeight: number;
+  // `<list>` width, in px
+  listWidth: number;
+  // `<list>` height, in px
+  listHeight: number;
+  // Scroll event source
+  eventSource: ListEventSource;
+  // Position information of the currently rendering node
+  attachedCells: [
+    {
+      "id": number,        // Node id
+      "itemKey": string,   // Node item-key
+      "index": number,     // Node index in list
+      "left": number,      // Node left boundary position relative to list, in px
+      "top": number,       // Node top boundary position relative to list, in px
+      "right": number,     // Node right boundary position relative to list, in px
+      "bottom": number,    // Node bottom boundary position relative to list, in px
+    },
+  ];
+}
+
+enum ListEventSource {
+  DIFF = 0,
+  LAYOUT = 1,
+  SCROLL = 2,
+}
+```
+
+`<list>` scroll event.
+
+:::note
+
+- The frequency of scroll event triggers can be controlled by [`scroll-event-throttle`](#scroll-event-throttle).
+
+- If `<list>` enables [`need-visible-item-info`](#need-visible-item-info), the callback parameters will include the position information of the currently rendering child nodes.
+
+:::
+
+### scrolltoupper
+
+```tsx
+bindscrolltoupper?: EventHandler<ListScrollEvent>;
+```
+
+Callback triggered when scrolling to the top of `<list>`. The trigger position of this callback can be controlled by [`upper-threshold-item-count`](#upper-threshold-item-count).
+
+### scrolltolower
+
+```tsx
+bindscrolltolower?: EventHandler<ListScrollEvent>;
+```
+
+Callback triggered when scrolling to the bottom of `<list>`. The trigger position of this callback can be controlled by [`lower-threshold-item-count`](#lower-threshold-item-count).
+
+### `scrollstatechange`
+
+```tsx
+bindscrollstatechange?: EventHandler<ListScrollStateChangeEvent>;
+
+interface ScrollStateChangeEvent extends CustomEvent {
+  detail: {
+    // The scroll state of this slide, value description
+    //   1 - Stationary
+    //   2 - Dragging
+    //   3 - Inertial scrolling
+    //   4 - Smooth animation scrolling
+    state: number;
+  };
+}
+```
+
+Callback triggered when the scroll state of `<list>` changes. The `state` field in the event parameter's `detail` indicates the scroll state: `1` for stationary, `2` for dragging, and `3` for inertial scrolling, `4` for smooth animation scrolling.
+
+### `layoutcomplete`
+
+```tsx
+bindlayoutcomplete?: EventHandler<ListLayoutFinishEvent>;
+
+interface LayoutCompleteEvent extends BaseEvent<'layoutcomplete', {}> {
+  detail: {
+    'layout-id': number;
+    // Enable need-layout-complete-info
+    scrollInfo: ListScrollInfo;
+    // Enable need-layout-complete-info
+    diffResult?: {
+      insertions: number[];
+      move_from: number[];
+      move_to: number[];
+      removals: number[];
+      update_from: number[];
+      update_to: number[];
+    };
+    // Enable need-layout-complete-info
+    visibleCellsAfterUpdate?: ListItemInfo[];
+    // Enable need-layout-complete-info
+    visibleCellsBeforeUpdate?: ListItemInfo[];
+  };
+}
+
+interface ListItemInfo {
+  // Child node height
+  height: number;
+  // Child node width
+  width: number;
+  // Child node itemKey
+  itemKey: string;
+  // Whether the child node is in rendering state
+  isBinding: boolean;
+  // X coordinate position of the child node relative to the entire scroll area
+  originX: number;
+  // Y coordinate position of the child node relative to the entire scroll area
+  originY: number;
+  // Whether the child node has been updated
+  updated: boolean;
+}
+```
+
+Callback triggered after `<list>` layout is complete.
+
+### `snap`
+
+```tsx
+bindsnap?: EventHandler<ListSnapEvent>;
+
+interface ListSnapEvent extends common.BaseEvent<'snap', {}> {
+  detail: {
+    // The index of the node that will be paginated to
+    position: number;
+    // Current horizontal scroll offset, in px
+    currentScrollLeft: number;
+    // Current vertical scroll offset, in px
+    currentScrollTop: number;
+    // Target horizontal scroll offset for pagination, in px
+    targetScrollLeft: number;
+    // Target vertical scroll offset for pagination, in px
+    targetScrollTop: number;
+  };
+};
+```
+
+Callback when pagination scrolling is about to occur.
+
+## Methods
+
+### `scrollToPosition`
+
+```tsx
+this.createSelectorQuery()
+  .select('#id_of_list')
+  .invoke({
+    method: 'scrollToPosition',
+    params: {
+      position: 10,
+      offset: 100,
+      alignTo: 'top',
+      smooth: true,
+    },
+    success: function (res) {},
+    fail: function (res) {},
+  })
+  .exec();
+```
+
+Scroll the `<list>` component to the specified position. Parameter description:
+
+| Parameter | Type    | Default | Required | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| :-------- | :------ | :------ | :------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| position  | number  | None    | Yes      | Specifies the index of the node to scroll to, with a range of `[0, data source count)`                                                                                                                                                                                                                                                                                                                                                                      |
+| offset    | number  | None    | No       | After applying `alignTo` alignment, continue scrolling the `offset` length                                                                                                                                                                                                                                                                                                                                                                                  |
+| alignTo   | string  | null    | Yes      | The position of the target node in the view after scrolling. <br/><br/>`"bottom"`: Scroll until the node is fully visible in `<list>`, and the bottom of the node aligns with the bottom of `<list>`<br/><br/>`"top"`: Scroll until the node is fully visible in `<list>`, and the top of the node aligns with the top of `<list>`<br/><br/>`"middle"`: Scroll until the node is fully visible in `<list>`, and the node is vertically centered in `<list>` |
+| smooth    | boolean | false   | No       | Whether there is animation during the scrolling process                                                                                                                                                                                                                                                                                                                                                                                                     |
+
+### `autoScroll`
+
+```tsx
+this.createSelectorQuery()
+  .select('#id_of_list')
+  .invoke({
+    method: 'autoScroll',
+    params: {
+      rate: string, //  The distance scrolled per second, supports positive and negative. Distance supports units "px/rpx/ppx" default->null (iOS value must be greater than 1/screen.scale px)
+      start: bool, //  Start/pause auto-scrolling default->false
+      autoStop: bool, // Whether to automatically stop when reaching the bottom default->true
+    },
+    success: function (res) {},
+    fail: function (res) {},
+  })
+  .exec();
+```
+
+Trigger `<list>` auto-scrolling. Parameter description:
+
+| Parameter | Type   | Default | Required | Description                                                                                   |
+| :-------- | :----- | :------ | :------- | :-------------------------------------------------------------------------------------------- |
+| rate      | string | None    | null     | The distance scrolled per second, supports positive and negative, can set units: `px/rpx/ppx` |
+| start     | bool   | None    | false    | Start or pause auto-scrolling, `true`: start auto-scrolling, `false`: pause auto-scrolling    |
+| autoStop  | bool   | None    | true     | Whether to automatically stop when reaching the bottom                                        |
+
+### `getVisibleCells`
+
+```tsx
+lynx
+  .createSelectorQuery()
+  .select('#id_of_list')
+  .invoke({
+    method: 'getVisibleCells',
+    success(res) {
+      console.log('succ ');
+    },
+    fail(res) {
+      console.log('err ');
+    },
+  })
+  .exec();
+```
+
+Get information about all currently displayed `<list>` child nodes. The returned information is as follows:
+
+```tsx
+attachedCells: [
+  {
+    id: number, // Node id
+    itemKey: string, // Node item-key
+    index: number, // Node index in list
+    left: number, // Node left boundary position relative to list, in px
+    top: number, // Node top boundary position relative to list, in px
+    right: number, // Node right boundary position relative to list, in px
+    bottom: number, // Node bottom boundary position relative to list, in px
+  },
+];
+```
+
+### `scrollBy`
+
+```tsx
+lynx
+  .createSelectorQuery()
+  .select('#id_of_list')
+  .invoke({
+    method: 'scrollBy',
+    params: {
+      offset: number,
+    },
+    success(res) {
+      console.log('succ ');
+    },
+    fail(res) {
+      console.log('err ');
+    },
+  })
+  .exec();
+```
+
+Continue scrolling the distance specified by `offset` based on the existing offset, in `px`. The returned information is as follows:
+
+```tsx
+{
+  "consumedX" : number,  // Distance scrolled horizontally, in px
+  "consumedY" : number,  // Distance scrolled vertically, in px
+  "unconsumedX" : number,  // Distance not scrolled horizontally, in px
+  "unconsumedY" : number,  // Distance not scrolled vertically, in px
+}
+```
+
+## More Features
+
+### Implement Sticky Nodes
+
+In the `<list>` component, you can achieve sticky top or sticky bottom node effects by setting the [`sticky-top`](#sticky-top) or [`sticky-bottom`](#sticky-bottom) attributes on `<list-item>`.
+
+Ensure that the [`sticky`](#sticky) attribute of the `<list>` component is set to `true` to allow child nodes to be sticky. You can also set the [`sticky-offset`](#sticky-offet) to determine the sticky position.
+
+```tsx
+<list
+  className="list-container"
+  sticky={true}
+  sticky-offset={50}
+  list-type="single"
+  span-count={1}
+  scroll-orientation="vertical"
+>
+```
+
+Set the [`sticky-top`](#sticky-top) or [`sticky-bottom`](#sticky-bottom) attributes on `<list-item>` to make the node sticky top or sticky bottom when scrolling. Since sticky nodes must be a full row item, you also need to set the [`full-span`](#full-span) attribute for the node.
+
+```tsx
+<list-item
+  className="sticky-top-item"
+  full-span={true}
+  sticky-top={true}
+  item-key={`list-item-${index}`}
+  key={`list-item-${index}`}
+/>
+```
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-sticky.gif"
+  example="list"
+  defaultFile="src/sticky/index.tsx"
+  defaultEntryFile="dist/sticky.lynx.bundle"
+  entry="src/sticky"
+  highlight="{16,25-26}"
+/>
+
+### Implement Load More Data on Scroll to Bottom
+
+In the `<list>` component, you can implement the feature to load more nodes by listening to the event of scrolling to the bottom.
+
+Ensure that the [`lower-threshold-item-count`](#lower-threshold-item-count) attribute of the `<list>` component is set to an appropriate value to trigger the load more event when scrolling close to the bottom. You also need to bind the [`scrolltolower`](#scrolltolower) event to listen to the action of scrolling to the bottom and load more data in the callback.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-loadmore.gif"
+  example="list"
+  defaultFile="src/loadmore/index.tsx"
+  defaultEntryFile="dist/loadmore.lynx.bundle"
+  entry="src/loadmore"
+  highlight="{44-47}"
+/>
+
+### Implement Paginated Scrolling
+
+In `<list>` , you can implement paginated scrolling effects by setting the [`item-snap`](#item-snap) attribute.
+
+Set the `factor` to determine the parameter for paginated scrolling positioning, with a range of `[0, 1]`. `0` means `<list-item>` aligns with the top of `<list>`, and `1` means `<list-item>` aligns with the bottom of `<list>`. You can also set `offset` to add a scrolling offset on top of factor.
+
+<Go
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/list-oss-item-snap.gif"
+  example="list"
+  defaultFile="src/itemsnap/index.tsx"
+  defaultEntryFile="dist/itemsnap.lynx.bundle"
+  entry="src/itemsnap"
+  highlight="{20}"
+/>
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="elements/list" />

@@ -1,0 +1,176 @@
+---
+id: mask
+title: mask
+---
+
+## Introduction
+
+The `mask` CSS shorthand property hides an element (partially or fully) by masking or clipping the image at specific points.
+
+## Constituent properties
+
+This property is a shorthand for the following CSS properties:
+
+- mask-clip
+- mask-image
+- mask-origin
+- mask-position
+- mask-repeat
+- mask-size
+
+## Syntax
+
+```css
+/* Keyword values */
+mask: none;
+
+/* Image values */
+mask: url(mask.png); /* Pixel image used as mask */
+
+/* Combined values */
+mask: url(mask.png) 40px 20px; /* Pixel image used as mask positioned 40px from the top and 20px from the left */
+mask: url(mask.png) 0 0/50px 50px; /* Pixel image used as mask with a width and height of 50px */
+mask: url(mask.png) repeat-x; /* Pixel image used as horizontally repeated mask */
+mask: url(mask.png) stroke-box; /* Pixel image used as mask extending to the box enclosed by the stroke */
+
+/* Multiple masks */
+mask:
+  url(masks.png) left / 16px repeat-y,
+  /* Pixel image is used as a mask on the left-hand side with a width of 16px */
+    url(masks.png) right / 16px repeat-y; /* Pixel image is used as a mask on the right-hand side with a width of 16px */
+```
+
+### Values
+
+#### `<mask-reference>`
+
+Sets the mask image source. See [mask-image](./mask-image).
+
+#### `<position>`
+
+Sets the position of the mask image. See [mask-position]().
+
+#### `<bg-size>`
+
+Sets the size of the mask image. See [mask-size]().
+
+#### `<repeat-style>`
+
+Sets the repetition of the mask image. See [mask-repeat]().
+
+#### `<geometry-box>`
+
+If only one `<geometry-box` value is given, it sets both [mask-origin]() and [mask-clip](). If two `<geometry-box>` values are present, then the first sets mask-origin and the second sets [mask-clip]().
+
+#### `<geometry-box> | no-clip`
+
+Sets the area that is affected by the mask image. See [mask-clip]().
+
+## Formal definition
+
+|                              |                                                                                                                                                                                                                                                                                                                  |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Initial values**           | as each of the properties of the shorthand: <br/> <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}> <li> [mask-image](./mask-image): none</li> <li>mask-repeat: repeat</li><li>mask-position: center</li><li>mask-clip: border-box</li><li>mask-origin: border-box</li><li>mask-size: auto</li></ul> |
+| **Applies to**               | Views only. It may work on some other elements, but it is recommended that only use it on <code>&lt;view&gt;</code>                                                                                                                                                                                              |
+| **Inherited**                | No                                                                                                                                                                                                                                                                                                               |
+| **Percentages**              | as each of the properties of the shorthand: <br/> <ul style={{ listStyleType:"disc", paddingLeft: "1.5rem"}}><li> mask-position: refer to size of mask painting area minus size of mask layer image (see the text for background-position)</li></ul>                                                             |
+| **Creates stacking context** | yes                                                                                                                                                                                                                                                                                                              |
+
+## Formal Syntax
+
+```html
+mask =
+<mask-layer
+  >#
+
+  <mask-layer>
+    =
+    <mask-reference>
+      ||
+      <position>
+        [ /
+        <bg-size>
+          ]? ||
+          <repeat-style>
+            ||
+            <box>
+              || [
+              <geometry-box>
+                | no-clip ]
+
+                <mask-reference>
+                  = none |
+                  <image>
+                    <position>
+                      = [ left | center | right ] || [ top | center | bottom ] |
+                      [ left | center | right |
+                      <length-percentage>
+                        ] [ top | center | bottom |
+                        <length-percentage>
+                          ]? | [ [ left | right ]
+                          <length-percentage>
+                            ] && [ [ top | bottom ]
+                            <length-percentage>
+                              ]
+
+                              <bg-size>
+                                = [
+                                <length-percentage [0,∞]>
+                                  | auto ]{1,2} | cover | contain
+
+                                  <repeat-style>
+                                    = repeat-x | repeat-y | [ repeat | space |
+                                    round | no-repeat ]{1,2}
+
+                                    <image>
+                                      =
+                                      <url>
+                                        |
+                                        <gradient>
+                                          <url>
+                                            = url(
+                                            <string>
+                                              <url-modifier
+                                                >* )
+
+                                                <box>
+                                                  = border-box | padding-box |
+                                                  content-box</box
+                                                ></url-modifier
+                                              ></string
+                                            ></url
+                                          ></gradient
+                                        ></url
+                                      ></image
+                                    ></repeat-style
+                                  ></length-percentage
+                                ></bg-size
+                              ></length-percentage
+                            ></length-percentage
+                          ></length-percentage
+                        ></length-percentage
+                      ></position
+                    ></image
+                  ></mask-reference
+                ></geometry-box
+              ></box
+            ></repeat-style
+          ></bg-size
+        ></position
+      ></mask-reference
+    ></mask-layer
+  ></mask-layer
+>
+```
+
+## Difference with the Web
+
+1. `mask-type` not supported in Lynx.
+2. `mask-image` not support [SVG]() reference.
+3. only support border-box, padding-box and content-box.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/mask" />

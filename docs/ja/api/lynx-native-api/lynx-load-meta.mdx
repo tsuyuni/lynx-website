@@ -1,0 +1,88 @@
+# LynxMetaData
+
+`LynxLoadMeta` is the metadata structure used by `LynxView` to load templates. It will be used as the input parameter of [loadTemplate](./lynx-view/load-template.mdx). Users can use `LynxLoadMeta` to specify many parameters of loading templates, such as specifying template content, template initial data, and other additional configuration information;
+
+## Android:
+
+### Field
+
+- `url: String `: Template file path;
+- `binaryData: byte[]`: The binary file data of the template;
+- `bundle: TemplateBundle`: [TemplateBundle](./template-bundle) object parsed in advance by the template's binary file data;
+- `initialData: TemplateData`: Initial data specified by the client during the first screen loading process;
+- `loadOptions: EnumSet<LynxLoadOption>`: Additional configuration information when loading templates;
+
+:::info
+
+url, binaryData, bundle are the required parameters for template loading. You can pass only one or all of them. The priority relationship is as follows:
+bundle > binaryData > url
+
+:::
+
+:::info
+
+loadOptions is additional configuration information when loading a template. Currently the following configuration items are supported:
+
+- **RECYCLE_TEMPLATE_BUNDLE**: After LynxView uses url or binaryData to load the template, it supports returning a TemplateBundle to the calling business party through LynxViewClient;
+- **DUMP_ELEMENT**: When LynxView loads a Bundle, copy the ElementBundle to the TemplateBundle and pass it back through the LynxViewClient;
+
+:::
+
+### Construction
+
+To construct a `LynxLoadMeta` object on the `Android` platform, you need to use `LynxLoadMeta.Builder`:
+
+```java
+LynxLoadMeta.Builder builder = new LynxLoadMeta.Builder();
+builder.setUrl();
+builder.setBinaryData();
+builder.setTemplateBundle();
+builder.setInitialData();
+builder.addLoadOption();
+LynxLoadMeta meta = builder.build();
+```
+
+## iOS
+
+### Field
+
+- `url: NSString*`: Template file path;
+- `binaryData: NSData*`: The binary file data of the template;
+- `templateBundle: LynxTemplateBundle*`: [TemplateBundle](./template-bundle) object parsed in advance by the template's binary file data;
+- `initialData: LynxTemplateData*`: Initial data specified by the client during the first screen loading process;
+- `loadOptions: LynxLoadOption`: Additional configuration information when loading templates;
+
+:::info
+
+url, binaryData, bundle are the required parameters for template loading. You can pass only one or all of them. The priority relationship is as follows:
+bundle > binaryData > url
+
+:::
+
+:::info
+
+loadOptions is additional configuration information when loading a template. Currently the following configuration items are supported:
+
+- **RECYCLE_TEMPLATE_BUNDLE**: After LynxView uses url or binaryData to load the template, it supports returning a TemplateBundle to the calling business party through LynxViewClient;
+- **DUMP_ELEMENT**: When LynxView loads a Bundle , copy the ElementBundle to the TemplateBundle and pass it back through the LynxViewClient;
+
+:::
+
+### Construction
+
+On the iOS platform, you can construct a LynxLoadMeta object as follows:
+
+```objective-c
+LynxLoadMeta* meta = [LynxLoadMeta init];
+meta.url = @"";
+meta.binaryData = nil;
+meta.templateBundle = nil;
+meta.initialData = nil;
+meta.loadOption = LynxLoadOptionDumpElement | LynxLoadOptionRecycleTemplateBundle;
+```
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-load-meta" />

@@ -1,0 +1,88 @@
+---
+id: filter
+slug: filter
+title: filter
+---
+
+## Introduction
+
+The `filter` CSS property applies graphical effects like blur or color shift to an element.
+
+:::info
+
+Currently only the `grayscale` and `blur` functions are supported.
+
+If you use `opacity`, you can directly set properties for the view, [link](./opacity.mdx)
+
+Views with the `grayscale` attribute added on Android will create off-screen buffer on the GPU. A large number of off-screen buffer will cause rendering performance to decrease. It is recommended to replace `filter: grayscale(0)` with `filter: none` to remove off-screen caching when grayscale is not needed.
+
+:::
+
+:::info Android blur (OS Version \< 12)
+
+When using blur, you can add `blur-sampling` property (an int value) to the node to set the downsampling ratio to improve performance.
+
+Setting the blur area may cause performance issues if content is updated all the time.
+
+For higher blur efficiency, it is recommended that the actual size of the blur-radius should not exceed 25, that is, the maximum write 25ppx or 25/density px.
+
+:::
+
+## Examples
+
+import { Go } from '@lynx';
+
+<Go
+  example="css-api"
+  entry="src/filter"
+  defaultFile="src/filter/App.tsx"
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/css/filter.jpg"
+  defaultEntryFile="dist/filter.lynx.bundle"
+  entry="src/filter"
+/>
+
+## Syntax
+
+```css
+filter: grayscale(100%);
+filter: blur(5px);
+```
+
+## Formal definition
+
+import { PropertyDefinition } from '@/components/PropertyDefinition';
+
+<PropertyDefinition
+  initialValue={<>none</>}
+  appliesTo={<>all elements</>}
+  inherited="no"
+  animatable="yes"
+/>
+
+## Formal Syntax
+
+```
+filter = <filter-function>
+
+<filter-function> =
+  <blur()>         |
+  <grayscale()>    |
+
+
+<blur()> =
+  blur( <length>? )
+
+<grayscale()> =
+  grayscale( [ <percentage> ]? )
+
+```
+
+## Difference between web
+
+Different number of functions supported
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/filter" />

@@ -1,0 +1,47 @@
+---
+id: perspective
+title: perspective
+slug: perspective
+---
+
+:::info
+
+- Different from Web, the Perspective property in Lynx takes effect on the current node, while in Web, the Perspective property takes effect on child nodes.
+- This inconsistency is a historical legacy issue that we are currently resolving.
+
+:::
+
+## Introduction
+
+The perspective CSS property determines the distance between the z=0 plane and the user in order to give a 3D-positioned element some perspective.
+
+## Syntax
+
+```css
+/* Keyword value */
+perspective: auto;
+
+/* <length> values */
+perspective: 20px;
+perspective: 3.5em;
+```
+
+- `auto`
+  Default value
+
+- `[<length>]`
+  specifies the observer's distance from the `z=0` plane
+
+```
+perspective = auto | <length [0,∞]>
+```
+
+## Demo
+
+![](https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/750.gif)
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="css/properties/perspective" />

@@ -1,0 +1,31 @@
+# LoadTemplate
+
+Using [`LynxLoadMeta`](../lynx-load-meta.mdx) to render `LynxView`, it is the main entrance for the client to load `Lynx` templates.
+
+## Syntax
+
+### Android
+
+```java
+void loadTemplate(@NonNull LynxLoadMeta meta);
+```
+
+### Parameters
+
+- `meta: LynxLoadMeta`: Lynx template loads metadata, and developers use this data structure to specify optional data loaded by the template.
+
+### iOS
+
+```objc
+- (void)loadTemplate:(nonnull LynxLoadMetadata*)meta;
+```
+
+### Parameters
+
+- `meta: LynxLoadMetadata*`: Lynx template loads metadata, and developers use this data structure to specify optional data loaded by the template.
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/load-template" />

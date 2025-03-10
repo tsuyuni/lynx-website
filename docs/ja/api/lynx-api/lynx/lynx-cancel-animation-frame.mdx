@@ -1,0 +1,31 @@
+---
+title: cancelAnimationFrame()
+---
+
+# lynx: cancelAnimationFrame() static method
+
+Cancel a [`requestAnimationFrame`] callback.
+
+## Syntax
+
+```ts
+cancelAnimationFrame: (requestID: number) => void;
+```
+
+### Parameters
+
+#### requestID
+
+The return value of the [`requestAnimationFrame`] that needs to be cancelled.
+
+### Return Value
+
+None (`undefined`).
+
+[`requestAnimationFrame`]: ./lynx-request-animation-frame.mdx
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/cancelAnimationFrame" />

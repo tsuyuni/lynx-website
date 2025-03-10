@@ -1,0 +1,31 @@
+# findUIByName
+
+Find `LynxUI` nodes based on the `name` attribute;
+
+## Syntax
+
+### Android
+
+```java
+public LynxBaseUI findUIByName(String name);
+```
+
+### Parameters
+
+- `name: String`: The name attribute of the view specified by the front end in the layout file;
+
+### iOS
+
+```objc
+- (nullable LynxUI*)uiWithName:(nonnull NSString*)name;
+```
+
+### Parameters
+
+- `name: NSString*`: The name attribute of the view specified by the front end in the layout file;
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-native-api/lynx-view/find-ui-by-name" />

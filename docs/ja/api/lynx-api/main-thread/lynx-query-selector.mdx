@@ -1,0 +1,29 @@
+---
+title: lynx.querySelector()
+---
+
+# lynx: querySelector(selector: string)
+
+Find the first element within the page's child elements that matches the specified selector.
+
+## Syntax
+
+```ts
+const element = lynx.querySelector(selector);
+```
+
+### Parameters
+
+#### selector
+
+For a list of supported selectors, see [selector](../selector-query/selector-query-select#selector).
+
+### Return Value
+
+[`MainThread.Element`](../main-thread/main-thread-element) or `null`。
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/lynx/querySelector" />

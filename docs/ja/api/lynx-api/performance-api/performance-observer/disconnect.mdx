@@ -1,0 +1,40 @@
+import { RuntimeBadge } from '@lynx';
+
+# PerformanceObserver: disconnect() method
+
+Stop receiving performance events.
+
+## Syntax
+
+```ts
+disconnect();
+```
+
+### Parameters
+
+None
+
+### Return Value
+
+None (`undefined`)
+
+## Examples
+
+The following example disconnects the `PerformanceObserver` to disable receiving any more performance events.
+
+import { Go } from '@lynx';
+
+<Go
+  example="performance-api"
+  defaultFile="src/performance_observer_disconnect/index.tsx"
+  defaultEntryFile="dist/performance_observer_disconnect.lynx.bundle"
+  img="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/performance-observer-disconnect-demo.jpeg"
+  entry="src/performance_observer_disconnect"
+  highlight="{8-22}"
+/>
+
+## Compatibility
+
+import { LegacyCompatTable } from '@lynx';
+
+<LegacyCompatTable metadata="lynx-api/performance-api/performance-observer/disconnect" />

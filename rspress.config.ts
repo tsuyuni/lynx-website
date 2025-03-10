@@ -92,6 +92,18 @@ export default defineConfig({
           text: '📝 Edit this page on GitHub',
         },
       },
+      {
+        lang: 'ja',
+        title: 'Lynx',
+        description:
+          'Web コミュニティを強化し、多くの人々がクロスプラットフォームアプリを開発できるようにする',
+        label: '日本語',
+        editLink: {
+          docRepoBaseUrl:
+            'https://github.com/lynx-family/lynx-website/tree/main/docs',
+          text: '📝 GitHub でこのページを編集する',
+        },
+      },
     ],
     socialLinks: [
       {
