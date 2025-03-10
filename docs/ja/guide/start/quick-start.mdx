@@ -11,81 +11,80 @@ import * as NextSteps from '@lynx/NextSteps';
   `}
 </style>
 
-# Quick Start
+# クイックスタート
 
-Welcome to the Lynx documentation! We will create a Lynx project and start developing.
+Lynx のドキュメントへようこそ! Lynx プロジェクトを作成し、開発を始めましょう。
 
-## System Requirements
+## システム要求
 
-- [Node.js 18](https://nodejs.org/en) or later.
-  - Requires Node.js 18.19 when using TypeScript as configuration.
+- [Node.js 18](https://nodejs.org/en) 以降
+  - TypeScript を使用する場合は Node.js 18.19 が必要です。
 
-## Installation
+## インストール
 
 <Steps>
 
-### Create a new Lynx project
+### Lynx プロジェクトを作成する
 
-We use Rspeedy(a Rspack-based Lynx build tool) to build a Lynx project.
+Lynx プロジェクトの構築には Rspeedy（Rspack ベースの Lynx ビルドツール）を使用します。
 
-It is recommended to start a new project using [`create-rspeedy`](https://npmjs.org/package/create-rspeedy),
-which sets up everything automatically for you. To create a project, run:
+[`create-rspeedy`](https://npmjs.org/package/create-rspeedy)を用いてプロジェクトを開始することで、自動セットアップが可能です。プロジェクトを作成するには、以下のコマンドを実行します。
 
 <PackageManagerTabs command="create rspeedy@latest" />
 
-After the prompts, `create-rspeedy` will create a folder with your project name.
+このコマンドの後、 `create-rspeedy` でプロジェクト名のフォルダが作成されます。
 
-### Prepare Lynx Explorer
+### Lynx Explorer を用意する
 
-Lynx Explorer is a sandbox for trying out Lynx quickly.
+Lynx Explorer は Lynx を素早く試すためのサンドボックス環境です。
 
 <PlatformTabs hashKey="explorer-platform">
 
 <PlatformTabs.Tab platform="ios-simulator">
 
 :::info
-We currently only provides pre-built binaries for iOS simulator. If you need to run Lynx Explorer on a real iOS device, you'll need to build it from source. Please refer to the [Build Lynx Explorer for iOS](https://github.com/lynx-family/lynx/tree/develop/explorer/darwin/ios) guide.
+現在、iOS シミュレータ用のプリビルドバイナリのみ提供しています。実際の iOS デバイスで Lynx Explorer を実行する場合は、ソースからビルドする必要があります。[Build Lynx Explorer for iOS](https://github.com/lynx-family/lynx/tree/develop/explorer/darwin/ios)を参照してください。
 :::
 
-1. **Install Xcode**
+1. **Xcode をインストール**
 
-Open up the Mac App Store, search for [Xcode](https://apps.apple.com/us/app/xcode/id497799835), and click Install (or Update if you have it already).
+Mac App Store を開いて[Xcode](https://apps.apple.com/us/app/xcode/id497799835)を検索し、インストール（または更新）をクリックします。
 
-2. **<div id="download-lynx-explorer,ios-simulator-platform=macos-arm64,explorer-platform=ios-simulator">Download LynxExplorer</div>**
+2. **<div id="download-lynx-explorer,ios-simulator-platform=macos-arm64,explorer-platform=ios-simulator">LynxExplorer をダウンロード</div>**
 
 <PlatformTabs hashKey="ios-simulator-platform">
 
 <PlatformTabs.Tab platform="macos-arm64">
 
-Download [`LynxExplorer-arm64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-arm64.app.tar.gz).
+[`LynxExplorer-arm64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-arm64.app.tar.gz)をダウンロードします。
 
-Then, extract the downloaded archive:
+続いて、ダウンロードしたアーカイブを展開します:
 
 ```bash
 mkdir -p LynxExplorer-arm64.app/
 tar -zxf LynxExplorer-arm64.app.tar.gz -C LynxExplorer-arm64.app/
 ```
 
-3. **Install LynxExplorer on Simulator**
+3. **LynxExplorer をシミュレータにインストール**
 
-Open Xcode, choose **Open Developer Tool** from the Xcode menu. Click the **Simulator** to launch one. Drag "LynxExplorer-arm64.app" into it.
+XCode を開き、Xcode メニューから **Open Developer Tool** を選択します。**Simulator** をクリックして起動し、"LynxExplorer-arm64.app" をドラッグアンドドロップします。
 
 </PlatformTabs.Tab>
 
 <PlatformTabs.Tab platform="macos-intel">
 
-Download [`LynxExplorer-x86_64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-x86_64.app.tar.gz).
+[`LynxExplorer-x86_64.app.tar.gz`](https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-x86_64.app.tar.gz)をダウンロードします。
 
-Then, extract the downloaded archive:
+続いて、ダウンロードしたアーカイブを展開します:
 
 ```bash
 mkdir -p LynxExplorer-x86_64.app/
 tar -zxf LynxExplorer-x86_64.app.tar.gz -C LynxExplorer-x86_64.app/
 ```
 
-3. **Install LynxExplorer on Simulator**
+3. **LynxExplorer をシミュレータにインストール**
 
-Open Xcode, choose **Open Developer Tool** from the Xcode menu. Click the **Simulator** to launch one. Drag "LynxExplorer-x86_64.app" into it.
+XCode を開き、Xcode メニューから **Open Developer Tool** を選択します。**Simulator** をクリックして起動し、"LynxExplorer-x86_64.app" をドラッグアンドドロップします。
 
 </PlatformTabs.Tab>
 
@@ -95,42 +94,42 @@ Open Xcode, choose **Open Developer Tool** from the Xcode menu. Click the **Simu
 
 <PlatformTabs.Tab platform="android">
 
-Scan the QR code to download the pre-built app from the [GitHub Release](https://github.com/lynx-family/lynx/releases/latest).
+QR コードをスキャンして、[GitHub Release](https://github.com/lynx-family/lynx/releases/latest)からプリビルドアプリをダウンロードしてください。
 
 <QRCodeSVG
   style={{ border: '2px solid #fff' }}
   value="https://github.com/lynx-family/lynx/releases/latest/download/LynxExplorer-noasan-release.apk"
 />
 
-Or, you may built from source following [Build Lynx Explorer for Android](https://github.com/lynx-family/lynx/tree/develop/explorer/android) guide.
+[Build Lynx Explorer for Android](https://github.com/lynx-family/lynx/tree/develop/explorer/android)に従ってソースからビルドすることもできます。
 
 </PlatformTabs.Tab>
 
 </PlatformTabs>
 
-### Start developing
+### 開発を始める
 
-1. Entry the created project:
+1. プロジェクトのディレクトリに移動:
 
 ```bash
 cd <project-name>
 ```
 
-2. Install the NPM dependencies with package manager:
+2. パッケージマネージャを用いて NPM パッケージの依存関係をインストール:
 
 <PackageManagerTabs command="install" />
 
-3. To start the development server, run:
+3. 開発用サーバを起動:
 
 <PackageManagerTabs command="run dev" />
 
-You will see a QR code showing up in the terminal, scan with your Lynx Explorer App.
+ターミナルに表示される QR コードを Lynx Explorer アプリでスキャンしてください。
 
-4. Make your first change
+4. コードに変更を加える
 
-Open the `src/App.tsx` file in your code editor and make a change.
+コードエディタで `src/App.tsx` ファイルを開いて変更を加えてください。
 
-You should see the UI on your Lynx Explorer being updated automatically.
+Lynx Explorer 上で UI が自動的に更新されるのが確認できます。
 
 <Go
   example="hello-world"
@@ -141,53 +140,53 @@ You should see the UI on your Lynx Explorer being updated automatically.
 
 <br />
 
-### Debugging
+### デバッグを行う
 
-Visit [Lynx DevTool](https://github.com/lynx-family/lynx-devtool/releases) to download and open the Lynx DevTool desktop application. Use a USB cable to connect the debugging device, and start debugging.
+[Lynx DevTool](https://github.com/lynx-family/lynx-devtool/releases)から Lynx DevTool デスクトップアプリケーションをダウンロードして開きます。デバッグ対象のデバイスを USB ケーブルで接続し、デバッグを開始します。
 
-Visit [Debugging](/guide/debugging/lynx-devtool.html), learn how to debug your Lynx app.
+[Debugging](/guide/debugging/lynx-devtool.html)を参照して、Lynx アプリのデバッグ方法を学びます。
 
 </Steps>
 
-## Next steps
+## 次のステップ
 
-Here are a few things that we recommend exploring next. You can read them in any order.
+次のステップに進むために、いくつかのリソースを紹介します。どの順番で読んでも問題ありません。
 
 ### ReactLynx
 
-ReactLynx is the official React framework designed specifically for Lynx, offering a familiar and idiomatic React development experience.
+ReactLynx は、Lynx 用に設計された公式の React フレームワークで、開発者が使い慣れている React の開発体験を提供します。
 
 <NextSteps.Root>
 <NextSteps.Step
   href="/guide/start/tutorial-gallery"
-  title="Tutorial"
-  description="Step-by-step walkthrough of building a Gallery page with Lynx"
+  title="チュートリアル"
+  description="Lynx でギャラリーページを構築する手順を紹介します"
 />
 
 <NextSteps.Step
   href="/react/thinking-in-reactlynx"
-  title="Thinking in ReactLynx"
-  description="Learn how to thinking in the ReactLynx framework"
+  title="ReactLynx の考え方"
+  description="ReactLynx を用いる上での考え方を学びます"
 />
 </NextSteps.Root>
 
-### Describing UI
+### UI の記述
 
-Lynx makes it easy to create rich UI using familiar Web technology.
-Learn how to describe UI in the Lynx engine.
+Lynx は、おなじみの Web 技術を使用してリッチな UI を作成することができます。
+Lynx エンジンで UI を記述する方法を学びましょう。
 
 <NextSteps.Root>
 
 <NextSteps.Step
   href="/guide/ui/elements-components"
-  title="Elements"
-  description="Checkout the builtin elements that Lynx have"
+  title="要素とコンポーネント"
+  description="Lynx で使用できる要素とコンポーネントを学びます"
 />
 
 <NextSteps.Step
   href="/guide/ui/styling"
-  title="Styling"
-  description="Learn how to apply different styles in Lynx"
+  title="スタイリング"
+  description="Lynx でスタイリングを行う方法を学びます"
 />
 
 </NextSteps.Root>
@@ -198,28 +197,28 @@ Learn how to describe UI in the Lynx engine.
 
 <NextSteps.Step
   href="/guide/ui/layout"
-  title="Layout"
-  description="Layout your elements and Components"
+  title="レイアウト"
+  description="要素とコンポーネントを配置します"
 />
 
 <NextSteps.Step
   href="/guide/ui/scrolling"
-  title="Scrolling"
-  description="Learn how to use scrollable elements in Lynx"
+  title="スクロール"
+  description="Lynx でスクロールを実装する方法を学びます"
 />
 
 </NextSteps.Root>
 
-### Integration
+### アプリケーションとの統合
 
-Learn how to integrate Lynx with existing iOS/Android/Web Apps.
+Lynx を既存の iOS/Android/Web アプリケーションと統合する方法を学びます。
 
 <NextSteps.Root>
 
 <NextSteps.Step
   href="/guide/start/integrate-with-existing-apps"
-  title="Integration"
-  description="Integrate Lynx with existing Apps"
+  title="アプリケーションとの統合"
+  description="Lynx を既存のアプリケーションと統合する方法を学びます"
 />
 
 </NextSteps.Root>
