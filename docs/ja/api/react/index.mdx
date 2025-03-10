@@ -10,52 +10,52 @@ import \* as Lynx from '@lynx';
 
 # @lynx-js/react
 
-Welcome to the API reference for `@lynx-js/react`, the package that provides the ReactLynx framework. For an introduction to ReactLynx, please visit the [ReactLynx Guides](../../react/index.mdx).
+`@lynx-js/react` の API リファレンスへようこそ。`@lynx-js/react` は ReactLynx フレームワークを提供するパッケージです。ReactLynx についての紹介は、[ReactLynx ガイド](../../react/index.mdx) を参照してください。
 
 ## React APIs
 
-ReactLynx is based on the React 17 API. You can expect the React APIs provided by `@lynx-js/react` to be fully compatible with React 17 or [Preact](https://preactjs.com/guide/v10/switching-to-preact/).
+ReactLynx は React 17 の API に基づいています。`@lynx-js/react` が提供する React API は、React 17 または [Preact](https://preactjs.com/guide/v10/switching-to-preact/) と完全に互換性があります。
 
-Here is an overview of the APIs provided by ReactLynx. These APIs will behave consistently with those described in the [official React reference](https://react.dev/reference/react) unless otherwise specified. We will also highlight any special considerations for using them on the Lynx platform.
+以下は ReactLynx が提供する API の概要です。これらの API は、特に指定されていない限り、[公式 React リファレンス](https://react.dev/reference/react) で説明されているものと一貫して動作します。また、Lynx プラットフォームでの使用に関する特別な事項は強調して表示されています。
 
-:::details Why is it based on compatibility with React 17?
+:::details なぜ React 17 と互換性を持たせているのか？
 React officially entered the "concurrent" era starting with [React 18](https://react.dev/blog/2022/03/29/react-v18). Concurrent React features, represented by APIs such as `useTransition` and `useDeferredValue`, have very strict requirements for the scheduling method and concurrency model of the execution environment—including dependencies on or overwriting of browser Web APIs, dependencies on the new architecture of React Native, and more. Lynx has its own characteristics and considerations in architectural evolution, so we chose React 17 as the foundation for ReactLynx, evolving into the Lynx system while retaining the React programming model.
 
 At the same time, we will continue to pay attention to subsequent React advancements, such as [React 19](https://react.dev/blog/2024/04/25/react-19) and [React Compiler](https://react.dev/learn/react-compiler), and attempt to integrate the parts that do not depend on the concurrent architecture into the ReactLynx system.
 :::
 
-## Documents
+## ドキュメント
 
-| Document                                                   | Description |
-| ---------------------------------------------------------- | ----------- |
-| [built-in-macros](/api/react/Document.built-in-macros.mdx) | -           |
-| [directives](/api/react/Document.directives.mdx)           | -           |
+| Document                                                   | 説明 |
+| ---------------------------------------------------------- | ---- |
+| [built-in-macros](/api/react/Document.built-in-macros.mdx) | -    |
+| [directives](/api/react/Document.directives.mdx)           | -    |
 
-## Classes
+## クラス
 
-| Class                                               | Description                                                                                                                                                                                                                                                       |
-| --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Component](/api/react/Class.Component.mdx)         | -                                                                                                                                                                                                                                                                 |
-| [MainThreadRef](/api/react/Class.MainThreadRef.mdx) | A `MainThreadRef` is a ref that can only be accessed on the main thread. It is used to preserve states between main thread function calls. The data saved in `current` property of the `MainThreadRef` can be read and written in multiple main thread functions. |
-| [PureComponent](/api/react/Class.PureComponent.mdx) | -                                                                                                                                                                                                                                                                 |
+| クラス                                              | 説明                                                                                                                                                                                                                                                       |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Component](/api/react/Class.Component.mdx)         | -                                                                                                                                                                                                                                                          |
+| [MainThreadRef](/api/react/Class.MainThreadRef.mdx) | `MainThreadRef` は、メインスレッドでのみアクセスできる ref です。メインスレッド関数呼び出し間で状態を保持するために使用されます。`MainThreadRef` の `current` プロパティに保存されたデータは、複数のメインスレッド関数で読み取りおよび書き込みができます。 |
+| [PureComponent](/api/react/Class.PureComponent.mdx) | -                                                                                                                                                                                                                                                          |
 
-## Interfaces
+## インターフェース
 
-| Interface                                                                   | Description                                                                                        |
+| インターフェース                                                            | 説明                                                                                               |
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| [DataProcessorDefinition](/api/react/Interface.DataProcessorDefinition.mdx) | Definition of DataProcessor(s)                                                                     |
+| [DataProcessorDefinition](/api/react/Interface.DataProcessorDefinition.mdx) | データプロフェッサの定義                                                                           |
 | [InitData](/api/react/Interface.InitData.mdx)                               | The interface you can extends so that the `defaultDataProcessor` returning value can be customized |
 | [InitDataRaw](/api/react/Interface.InitDataRaw.mdx)                         | The interface you can extends so that the `defaultDataProcessor` parameter can be customized       |
 | [Lynx](/api/react/Interface.Lynx.mdx)                                       | APIs under `lynx` global variable that added by ReactLynx.                                         |
 | [Root](/api/react/Interface.Root.mdx)                                       | The default root exported by `@lynx-js/react` for you to render a JSX                              |
 
-## Variables
+## 変数
 
-| Variable                             | Description                                                  |
-| ------------------------------------ | ------------------------------------------------------------ |
-| [root](/api/react/Variable.root.mdx) | The default and only root of ReactLynx for you to render JSX |
+| 変数                                 | 説明                                                                  |
+| ------------------------------------ | --------------------------------------------------------------------- |
+| [root](/api/react/Variable.root.mdx) | ReactLynx で JSX をレンダリングするための、デフォルトかつ唯一のルート |
 
-## Functions
+## 関数
 
 | Function                                                                         | Description                                                                                                                                                                                      |
 | -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- | ------------------------------------------------------------ | ------------------------- |
@@ -87,14 +87,14 @@ At the same time, we will continue to pay attention to subsequent React advancem
 | [useSyncExternalStore](/api/react/Function.useSyncExternalStore.mdx)             | -                                                                                                                                                                                                |
 | [withInitDataInState](/api/react/Function.withInitDataInState.mdx)               | Higher-Order Component (HOC) that injects `initData` into the state of the given class component.                                                                                                |
 
-## Components
+## コンポーネント
 
 | Function                                                     | Description                                                                                                                                                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [InitDataConsumer](/api/react/Function.InitDataConsumer.mdx) | The [Consumer](https://react.dev/reference/react/createContext#consumer) Component that provide `initData`. This should be used with [InitDataProvider](/api/react/Function.InitDataProvider.mdx) |
 | [InitDataProvider](/api/react/Function.InitDataProvider.mdx) | The [Provider](https://react.dev/reference/react/createContext#provider) Component that provide `initData`, you must wrap your JSX inside it                                                      |
 
-## Directives
+## ディレクティブ
 
 | Document                                         | Description |
 | ------------------------------------------------ | ----------- |
