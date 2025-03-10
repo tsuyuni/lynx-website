@@ -1,103 +1,128 @@
 {
   "edit.cloud-ide": {
     "en": "Edit on CloudIDE",
-    "zh": "在 CloudIDE 上编辑"
+    "zh": "在 CloudIDE 上编辑",
+    "ja": "CloudIDE で編集"
   },
   "edit.source": {
     "en": "View source",
-    "zh": "查看源文件"
+    "zh": "查看源文件",
+    "ja": "ソースを表示"
   },
   "compat-table.native.render": {
     "en": "Native",
-    "zh": "原生渲染"
+    "zh": "原生渲染",
+    "ja": "ネイティブ"
   },
   "css.animation-props": {
     "en": "Animation Properties",
-    "zh": "动画属性"
+    "zh": "动画属性",
+    "ja": "アニメーションプロパティ"
   },
   "css.at-rule": {
     "en": "@ Rule",
-    "zh": "@ 规则"
+    "zh": "@ 规则",
+    "ja": "@ ルール"
   },
   "css.data-type": {
     "en": "Data Types",
-    "zh": "数据类型"
+    "zh": "数据类型",
+    "ja": "データ型"
   },
   "css.layout-animation-props": {
     "en": "Layout Animation Properties (Deprecated)",
-    "zh": "排版动画属性（废弃）"
+    "zh": "排版动画属性（废弃）",
+    "ja": "レイアウトアニメーションプロパティ（非推奨）"
   },
   "css.layout-props": {
     "en": "Layout Properties",
-    "zh": "排版属性"
+    "zh": "排版属性",
+    "ja": "レイアウトプロパティ"
   },
   "css.text-props": {
     "en": "Text Properties",
-    "zh": "文本属性"
+    "zh": "文本属性",
+    "ja": "テキストプロパティ"
   },
   "css.ui-props": {
     "en": "UI Properties",
-    "zh": "UI 属性"
+    "zh": "UI 属性",
+    "ja": "UI プロパティ"
   },
   "css-api.property.initial_value": {
     "en": "Initial value",
-    "zh": "初始值"
+    "zh": "初始值",
+    "ja": "初期値"
   },
   "css-api.property.applies_to": {
     "en": "Applies to",
-    "zh": "适用元素"
+    "zh": "适用元素",
+    "ja": "適用対象"
   },
   "css-api.property.inherited": {
     "en": "Inherited",
-    "zh": "是否支持继承"
+    "zh": "是否支持继承",
+    "ja": "継承"
   },
   "css-api.property.animatable": {
     "en": "Animatable",
-    "zh": "是否支持动画"
+    "zh": "是否支持动画",
+    "ja": "アニメーション"
   },
   "css-api.property.percentages": {
     "en": "Percentages",
-    "zh": "百分比"
+    "zh": "百分比",
+    "ja": "パーセンテージ"
   },
   "ecosystem.community": {
     "en": "Lynx Community",
-    "zh": "Lynx 社区"
+    "zh": "Lynx 社区",
+    "ja": "Lynx コミュニティ"
   },
   "ecosystem.contributing-to-docs": {
     "en": "Contributing to Docs",
-    "zh": "贡献文档"
+    "zh": "贡献文档",
+    "ja": "ドキュメントへのコントリビューション"
   },
   "ecosystem.host-version": {
     "en": "Host App Versions",
-    "zh": "宿主 app 版本信息"
+    "zh": "宿主 app 版本信息",
+    "ja": "ホストアプリのバージョン"
   },
   "ecosystem.releases": {
     "en": "Releases",
-    "zh": "Lynx 版本发布"
+    "zh": "Lynx 版本发布",
+    "ja": "リリース"
   },
   "event-list.event.always": {
     "en": "Always",
-    "zh": "必定触发"
+    "zh": "必定触发",
+    "ja": "常に"
   },
   "event-list.event.multiple": {
     "en": "Multiple",
-    "zh": "多次触发"
+    "zh": "多次触发",
+    "ja": "複数"
   },
   "event-list.event.sync": {
     "en": "Synchronize",
-    "zh": "同步事件"
+    "zh": "同步事件",
+    "ja": "同期"
   },
   "event-list.status.empty": {
     "en": "No data is available for this event",
-    "zh": "该事件没有参数"
+    "zh": "该事件没有参数",
+    "ja": "このイベントにはデータがありません"
   },
   "extra-reading.title": {
     "en": "Extra reading",
-    "zh": "拓展阅读"
+    "zh": "拓展阅读",
+    "ja": "追加の読み物"
   },
   "frontend.components": {
     "en": "Rich Components",
-    "zh": "丰富的组件"
+    "zh": "丰富的组件",
+    "ja": "リッチコンポーネント"
   },
   "frontend.react": {
     "en": "Use ReactLynx",
@@ -106,7 +131,8 @@
   },
   "frontend.speedy": {
     "en": "The Speedy Toolchain",
-    "zh": "使用 Speedy 工具链"
+    "zh": "使用 Speedy 工具链",
+    "ja": "Speedy ツールチェーンを使用する"
   },
   "frontend.styling": {
     "en": "Styling UI",
@@ -114,27 +140,33 @@
   },
   "homepage.hint.reactlynx": {
     "en": "⚛️ ReactLynx 3",
-    "zh": "⚛️ ReactLynx 3"
+    "zh": "⚛️ ReactLynx 3",
+    "ja": "⚛️ ReactLynx 3"
   },
   "homepage.hint.reactlynx.description": {
     "en": "New docs only features ReactLynx 3. Legacy RL2 docs still available.",
-    "zh": "新文档专注于 ReactLynx 3。如需要 RL2 请访问旧版文档。"
+    "zh": "新文档专注于 ReactLynx 3。如需要 RL2 请访问旧版文档。",
+    "ja": "新しいドキュメントは ReactLynx 3 向けです。RL2 のドキュメントは引き続き利用可能です。"
   },
   "homepage.hint.reactlynx.legacy": {
     "en": "RL2",
-    "zh": "RL2"
+    "zh": "RL2",
+    "ja": "RL2"
   },
   "homepage.hint.dev": {
     "en": "🚧 Local environment",
-    "zh": "🚧 本地环境"
+    "zh": "🚧 本地环境",
+    "ja": "🚧 ローカル環境"
   },
   "homepage.hint.dev.description": {
     "en": "You are currently in a local development environment. Use this for testing and development purposes.",
-    "zh": "你目前处于本地开发环境。请用于测试和开发目的。"
+    "zh": "你目前处于本地开发环境。请用于测试和开发目的。",
+    "ja": "現在ローカル開発環境にいます。これはテストと開発目的で使用してください。"
   },
   "homepage.hint.prod": {
     "en": "🎉 Welcome to the new Lynx Docs",
-    "zh": "🎉 欢迎来到新 Lynx 文档"
+    "zh": "🎉 欢迎来到新 Lynx 文档",
+    "ja": "🎉 新しい Lynx ドキュメントへようこそ"
   },
   "homepage.hint.prod.description": {
     "en": "New Lynx Docs Beta is here! Share feedback in our group. Legacy docs are still available.",
@@ -142,19 +174,23 @@
   },
   "homepage.hint.dev.simulate-prod": {
     "en": "Simulate prod toast",
-    "zh": "模拟生产环境提示"
+    "zh": "模拟生产环境提示",
+    "ja": "本番環境をシミュレートする際のヒント"
   },
   "homepage.hint.join-group": {
     "en": "Join Group",
-    "zh": "加群"
+    "zh": "加群",
+    "ja": "グループに参加"
   },
   "homepage.hint.visit-legacy": {
     "en": "Legacy Docs",
-    "zh": "旧版官网"
+    "zh": "旧版官网",
+    "ja": "ドキュメント(Legacy)"
   },
   "homepage.preview.whatsnew": {
     "en": "What's new",
-    "zh": "What's new"
+    "zh": "What's new",
+    "ja": "What's new"
   },
   "homepage.footer.license": {
     "en": "Except as otherwise noted, this work is licensed under a Creative Commons Attribution 4.0 International License, and code samples are licensed under the Apache License 2.0.",
@@ -162,27 +198,33 @@
   },
   "index.features.title.fast": {
     "en": "Fast",
-    "zh": "高性能"
+    "zh": "高性能",
+    "ja": "高速"
   },
   "index.features.title.lightweight": {
     "en": "Lightweight",
-    "zh": "轻量"
+    "zh": "轻量",
+    "ja": "軽量"
   },
   "index.features.title.multi-platform": {
     "en": "Multi-Platform",
-    "zh": "多平台支持"
+    "zh": "多平台支持",
+    "ja": "マルチプラットフォーム"
   },
   "index.features.title.productive": {
     "en": "Productive",
-    "zh": "高效率"
+    "zh": "高效率",
+    "ja": "生産性"
   },
   "index.features.title.web-friendly": {
     "en": "Web Friendly",
-    "zh": "Web Friendly"
+    "zh": "Web Friendly",
+    "ja": "Web Friendly"
   },
   "index.introduction.api-doc": {
     "en": "API Reference",
-    "zh": "API 文档"
+    "zh": "API 文档",
+    "ja": "API リファレンス"
   },
   "index.introduction.content": {
     "en": "Powerful Cross-Platform Framework that builds native Apps with Web technologies",
@@ -190,7 +232,8 @@
   },
   "index.introduction.quick-start": {
     "en": "Quick Start",
-    "zh": "快速开始"
+    "zh": "快速开始",
+    "ja": "クイックスタート"
   },
   "lint.rule.severities.desc": {
     "en": "It is used to describe the default error level of the latest version of the rule, red is error, orange is warning, if there is empty, it means this rule is not enabled by default",
@@ -206,7 +249,8 @@
   },
   "lynx-ui.qrcode.recommend": {
     "en": "Recommend to use",
-    "zh": "建议使用"
+    "zh": "建议使用",
+    "ja": "推奨"
   },
   "lynx-ui.qrcode.scan": {
     "en": "to scan and preview",
@@ -214,7 +258,8 @@
   },
   "nav.advanced": {
     "en": "Advanced",
-    "zh": "进阶"
+    "zh": "进阶",
+    "ja": "高度な"
   },
   "guide.get-started": {
     "en": "Get Started",
@@ -281,7 +326,8 @@
   },
   "guide.essential": {
     "en": "Core",
-    "zh": "核心"
+    "zh": "核心",
+    "ja": "コア"
   },
   "guide.essential.styling": {
     "en": "Crafting Design",
@@ -290,7 +336,8 @@
   },
   "guide.essential.interaction": {
     "en": "Scripting Interactions",
-    "zh": "编写交互"
+    "zh": "编写交互",
+    "ja": "インタラクションの記述"
   },
   "guide.essential.layout": {
     "en": "Understanding Layout",
@@ -304,11 +351,13 @@
   },
   "guide.essential.main-thread": {
     "en": "Main Thread Programming",
-    "zh": "主线程编程"
+    "zh": "主线程编程",
+    "ja": "メインスレッドプログラミング"
   },
   "guide.best-practice": {
     "en": "Engineering",
-    "zh": "工程"
+    "zh": "工程",
+    "ja": "ベストプラクティス"
   },
   "guide.best-practice.integration": {
     "en": "Integration",
@@ -317,11 +366,13 @@
   },
   "guide.best-practice.compatibility": {
     "en": "Compatibility",
-    "zh": "兼容性"
+    "zh": "兼容性",
+    "ja": "互換性"
   },
   "guide.engineering.debugging": {
     "en": "Debugging",
-    "zh": "调试"
+    "zh": "调试",
+    "ja": "デバッグ"
   },
   "guide.engineering.debugging.devtool": {
     "en": "DevTool",
@@ -340,7 +391,8 @@
   },
   "guide.engineering.performance.evaluating-performance": {
     "en": "Evaluating Performance",
-    "zh": "评估性能"
+    "zh": "评估性能",
+    "ja": "パフォーマンスの評価"
   },
   "guide.engineering.performance.timign-flag": {
     "en": "Use Timing Flag",
@@ -354,20 +406,23 @@
   },
   "guide.graphics": {
     "en": "Graphics",
-    "zh": "图形"
+    "zh": "图形",
+    "ja": "グラフィックス"
   },
   "guide.inclusion": {
     "en": "Ensuring Inclusion",
-    "zh": "确保包容"
+    "zh": "确保包容",
+    "ja": "包括性の確保"
   },
   "guide.living-spec": {
     "en": "Terms and Spec",
-    "zh": "术语与规范"
+    "zh": "术语与规范",
+    "ja": "用語と仕様"
   },
   "guide.inclusion.internationalization": {
     "en": "Internationalization",
     "zh": "国际化",
-    "ja": "多言語対応"
+    "ja": "国際化"
   },
   "guide.native": {
     "en": "Native Development",
@@ -376,23 +431,28 @@
   },
   "guide.use.native.modules": {
     "en": "Use Native Modules (JS Bridge)",
-    "zh": "调用原生模块（如 JS 桥）"
+    "zh": "调用原生模块（如 JS 桥）",
+    "ja": "ネイティブモジュールの使用 (JS Bridge)"
   },
   "guide.custom.native.modules": {
     "en": "Native Modules",
-    "zh": "原生模块"
+    "zh": "原生模块",
+    "ja": "ネイティブモジュール"
   },
   "guide.custom.native.component": {
     "en": "Custom Native Element",
-    "zh": "自定义元件"
+    "zh": "自定义元件",
+    "ja": "カスタムネイティブ要素"
   },
   "guide.custom.native.embeded": {
     "en": "Embed LynxView to native view",
-    "zh": "原生视图嵌入 LynxView"
+    "zh": "原生视图嵌入 LynxView",
+    "ja": "LynxView の埋め込み"
   },
   "guide.custom.native.extension": {
     "en": "Native Extension",
-    "zh": "原生拓展"
+    "zh": "原生拓展",
+    "ja": "ネイティブの拡張"
   },
   "guide.architecture": {
     "en": "Architecture",
@@ -411,15 +471,18 @@
   },
   "guide.toolchain": {
     "en": "Toolchain",
-    "zh": "工具链"
+    "zh": "工具链",
+    "ja": "ツールチェーン"
   },
   "playground.device.android": {
     "en": "Android Device (ARM)",
-    "zh": "Android 设备 (ARM)"
+    "zh": "Android 设备 (ARM)",
+    "ja": "Android デバイス (ARM)"
   },
   "playground.device.close": {
     "en": "Close",
-    "zh": "关闭"
+    "zh": "关闭",
+    "ja": "閉じる"
   },
   "playground.device.ios-device": {
     "en": "iOS Device",
@@ -626,7 +689,8 @@
   },
   "sidebar.rspeedy.header": {
     "en": "Compilation Toolchain",
-    "zh": "编译工具链"
+    "zh": "编译工具链",
+    "ja": "コンパイルツールチェーン"
   },
   "sidebar.speedy": {
     "en": "Speedy",
