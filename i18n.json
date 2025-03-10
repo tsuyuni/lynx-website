@@ -101,7 +101,8 @@
   },
   "frontend.react": {
     "en": "Use ReactLynx",
-    "zh": "使用 React 开发"
+    "zh": "使用 React 开发",
+    "ja": "ReactLynx を使用する"
   },
   "frontend.speedy": {
     "en": "The Speedy Toolchain",
@@ -217,27 +218,33 @@
   },
   "guide.get-started": {
     "en": "Get Started",
-    "zh": "起步"
+    "zh": "起步",
+    "ja": "はじめに"
   },
   "guide.get-started.start": {
     "en": "Welcome!",
-    "zh": "欢迎！"
+    "zh": "欢迎！",
+    "ja": "ようこそ！"
   },
   "guide.get-started.installation": {
     "en": "Installation",
-    "zh": "安装"
+    "zh": "安装",
+    "ja": "インストール"
   },
   "nav.guide": {
     "en": "Guide",
-    "zh": "指引"
+    "zh": "指引",
+    "ja": "ガイド"
   },
   "nav.blog": {
     "en": "Blog",
-    "zh": "博客"
+    "zh": "博客",
+    "ja": "ブログ"
   },
   "nav.api": {
     "en": "APIs",
-    "zh": "API"
+    "zh": "API",
+    "ja": "API"
   },
   "nav.ecosystem": {
     "en": "Ecosystem",
@@ -245,7 +252,8 @@
   },
   "nav.react": {
     "en": "ReactLynx",
-    "zh": "ReactLynx"
+    "zh": "ReactLynx",
+    "ja": "ReactLynx"
   },
   "nav.rspeedy": {
     "en": "Rspeedy",
@@ -253,19 +261,23 @@
   },
   "nav.guides": {
     "en": "Guides",
-    "zh": "指南"
+    "zh": "指南",
+    "ja": "ガイド"
   },
   "nav.start": {
     "en": "Get Started",
-    "zh": "开始"
+    "zh": "开始",
+    "ja": "はじめに"
   },
   "nav.contribute": {
     "en": "Contribute",
-    "zh": "贡献"
+    "zh": "贡献",
+    "ja": "コントリビューション"
   },
   "guide.ui": {
     "en": "Describing the UI",
-    "zh": "描绘界面"
+    "zh": "描绘界面",
+    "ja": "UI の記述"
   },
   "guide.essential": {
     "en": "Core",
@@ -273,7 +285,8 @@
   },
   "guide.essential.styling": {
     "en": "Crafting Design",
-    "zh": "打磨设计"
+    "zh": "打磨设计",
+    "ja": "デザインの作成"
   },
   "guide.essential.interaction": {
     "en": "Scripting Interactions",
@@ -281,11 +294,13 @@
   },
   "guide.essential.layout": {
     "en": "Understanding Layout",
-    "zh": "理解布局"
+    "zh": "理解布局",
+    "ja": "レイアウトの理解"
   },
   "guide.essential.animation": {
     "en": "Animation",
-    "zh": "动画"
+    "zh": "动画",
+    "ja": "アニメーション"
   },
   "guide.essential.main-thread": {
     "en": "Main Thread Programming",
@@ -297,7 +312,8 @@
   },
   "guide.best-practice.integration": {
     "en": "Integration",
-    "zh": "集成"
+    "zh": "集成",
+    "ja": "アプリケーション統合"
   },
   "guide.best-practice.compatibility": {
     "en": "Compatibility",
@@ -309,15 +325,18 @@
   },
   "guide.engineering.debugging.devtool": {
     "en": "DevTool",
-    "zh": "调试工具"
+    "zh": "调试工具",
+    "ja": "開発ツール"
   },
   "guide.engineering.debugging.handle-errors": {
     "en": "Handle Errors in Lynx",
-    "zh": "错误处理"
+    "zh": "错误处理",
+    "ja": "エラー処理"
   },
   "guide.engineering.performance": {
     "en": "Performance",
-    "zh": "性能"
+    "zh": "性能",
+    "ja": "パフォーマンス"
   },
   "guide.engineering.performance.evaluating-performance": {
     "en": "Evaluating Performance",
@@ -325,11 +344,13 @@
   },
   "guide.engineering.performance.timign-flag": {
     "en": "Use Timing Flag",
-    "zh": "标记 Timing Flag"
+    "zh": "标记 Timing Flag",
+    "ja": "タイミングフラグの使用"
   },
   "guide.best-practice.publishing": {
     "en": "Publishing",
-    "zh": "发布"
+    "zh": "发布",
+    "ja": "リリース"
   },
   "guide.graphics": {
     "en": "Graphics",
@@ -345,11 +366,13 @@
   },
   "guide.inclusion.internationalization": {
     "en": "Internationalization",
-    "zh": "国际化"
+    "zh": "国际化",
+    "ja": "多言語対応"
   },
   "guide.native": {
     "en": "Native Development",
-    "zh": "客户端能力"
+    "zh": "客户端能力",
+    "ja": "ネイティブ開発"
   },
   "guide.use.native.modules": {
     "en": "Use Native Modules (JS Bridge)",
@@ -373,15 +396,18 @@
   },
   "guide.architecture": {
     "en": "Architecture",
-    "zh": "架构"
+    "zh": "架构",
+    "ja": "アーキテクチャ"
   },
   "guide.architecture.legacy": {
     "en": "Legacy Architecture",
-    "zh": "历史架构描述"
+    "zh": "历史架构描述",
+    "ja": "アーキテクチャ(Legacy)"
   },
   "guide.architecture.scripting-runtime": {
     "en": "JavaScript Runtime",
-    "zh": "JavaScript 环境"
+    "zh": "JavaScript 环境",
+    "ja": "JavaScript ランタイム"
   },
   "guide.toolchain": {
     "en": "Toolchain",
@@ -397,19 +423,23 @@
   },
   "playground.device.ios-device": {
     "en": "iOS Device",
-    "zh": "iOS 真机"
+    "zh": "iOS 真机",
+    "ja": "iOS デバイス"
   },
   "playground.device.ios-simulator": {
     "en": "iOS Simulator",
-    "zh": "iOS 模拟器"
+    "zh": "iOS 模拟器",
+    "ja": "iOS シミュレータ"
   },
   "playground.download.button": {
     "en": "DOWNLOAD",
-    "zh": "下载安装文件"
+    "zh": "下载安装文件",
+    "ja": "ダウンロード"
   },
   "playground.download.time": {
     "en": "Created at: ",
-    "zh": "构建时间："
+    "zh": "构建时间：",
+    "ja": "作成日時："
   },
   "playground.introduction.title": {
     "en": "Preview and debugging Lynx pages",
@@ -417,31 +447,38 @@
   },
   "playground.versions.no-version": {
     "en": "No other version",
-    "zh": "暂无可用版本"
+    "zh": "暂无可用版本",
+    "ja": "利用可能なバージョンはありません"
   },
   "playground.versions.others": {
     "en": "Other Versions",
-    "zh": "其他版本"
+    "zh": "其他版本",
+    "ja": "他のバージョン"
   },
   "props-list.default": {
     "en": "Default: ",
-    "zh": "默认值："
+    "zh": "默认值：",
+    "ja": "デフォルト："
   },
   "props-list.deprecated": {
     "en": "Deprecated: ",
-    "zh": "即将废弃："
+    "zh": "即将废弃：",
+    "ja": "非推奨："
   },
   "props-list.required": {
     "en": "Required",
-    "zh": "必填"
+    "zh": "必填",
+    "ja": "必須"
   },
   "showcase.banner.learn": {
     "en": "Learn More",
-    "zh": "了解更多"
+    "zh": "了解更多",
+    "ja": "詳細を見る"
   },
   "showcase.banner.start": {
     "en": "Start",
-    "zh": "开始"
+    "zh": "开始",
+    "ja": "開始"
   },
   "showcase.buttons.performance": {
     "en": "Performance Optimization",
@@ -449,11 +486,13 @@
   },
   "sidebar.api-index": {
     "en": "API Reference",
-    "zh": "API 参考"
+    "zh": "API 参考",
+    "ja": "API リファレンス"
   },
   "sidebar.comp": {
     "en": "Elements",
-    "zh": "元件"
+    "zh": "元件",
+    "ja": "要素"
   },
   "sidebar.comp.common": {
     "en": "Element Commonalities",
@@ -461,23 +500,28 @@
   },
   "sidebar.comp.built-in": {
     "en": "Builtin Elements",
-    "zh": "内置元件"
+    "zh": "内置元件",
+    "ja": "組み込み要素"
   },
   "sidebar.frameworks": {
     "en": "Frameworks",
-    "zh": "框架"
+    "zh": "框架",
+    "ja": "フレームワーク"
   },
   "sidebar.style": {
     "en": "Styling",
-    "zh": "样式"
+    "zh": "样式",
+    "ja": "スタイリング"
   },
   "sidebar.css": {
     "en": "CSS",
-    "zh": "CSS"
+    "zh": "CSS",
+    "ja": "CSS"
   },
   "sidebar.style.properties": {
     "en": "Properties",
-    "zh": "属性"
+    "zh": "属性",
+    "ja": "プロパティ"
   },
   "sidebar.style.at-rule": {
     "en": "At-rules",
@@ -485,11 +529,13 @@
   },
   "sidebar.style.data-type": {
     "en": "Data types",
-    "zh": "数据类型"
+    "zh": "数据类型",
+    "ja": "データ型"
   },
   "sidebar.about-dsl.hint": {
     "en": "About DSL Switcher",
-    "zh": "关于 DSL 选择"
+    "zh": "关于 DSL 选择",
+    "ja": "DSL スイッチャーについて"
   },
   "sidebar.dsl-and-platform.platform.title": {
     "en": "Target Platforms",
@@ -513,15 +559,18 @@
   },
   "sidebar.react": {
     "en": "ReactLynx 3",
-    "zh": "ReactLynx 3"
+    "zh": "ReactLynx 3",
+    "ja": "ReactLynx 3"
   },
   "sidebar.errors": {
     "en": "Errors in Lynx",
-    "zh": "Lynx 中的错误"
+    "zh": "Lynx 中的错误",
+    "ja": "Lynx のエラー"
   },
   "sidebar.errors.lynx-error": {
     "en": "LynxError",
-    "zh": "LynxError"
+    "zh": "LynxError",
+    "ja": "LynxError"
   },
   "sidebar.errors.error-property": {
     "en": "Error Properties",
@@ -581,11 +630,13 @@
   },
   "sidebar.speedy": {
     "en": "Speedy",
-    "zh": "Speedy"
+    "zh": "Speedy",
+    "ja": "Speedy"
   },
   "TaroLynx": {
     "en": "TaroLynx",
-    "zh": "TaroLynx"
+    "zh": "TaroLynx",
+    "ja": "TaroLynx"
   },
   "theme.NotFound.guessyouwant": {
     "en": "Guess you want",
@@ -593,7 +644,8 @@
   },
   "theme.NotFound.homepage": {
     "en": "Homepage",
-    "zh": "回到首页"
+    "zh": "回到首页",
+    "ja": "ホームページ"
   },
   "theme.NotFound.onCall": {
     "en": "You can contact Lynx OnCall for the new link.",
@@ -629,15 +681,18 @@
   },
   "go.qrcode": {
     "en": "QRCode",
-    "zh": "二维码"
+    "zh": "二维码",
+    "ja": "QRコード"
   },
   "go.files": {
     "en": "Files",
-    "zh": "文件"
+    "zh": "文件",
+    "ja": "ファイル"
   },
   "go.scan.message-1": {
     "en": "Download ",
-    "zh": "请下载 "
+    "zh": "请下载 ",
+    "ja": "ダウンロード "
   },
   "go.scan.message-2": {
     "en": "and scan the QR code to get started.",
@@ -645,11 +700,13 @@
   },
   "go.qrcode.copy-link": {
     "en": "Copy Link",
-    "zh": "复制链接"
+    "zh": "复制链接",
+    "ja": "リンクをコピー"
   },
   "go.qrcode.copied": {
     "en": "Copied",
-    "zh": "已复制"
+    "zh": "已复制",
+    "ja": "コピーしました"
   },
   "go.qrcode.entry": {
     "en": "Entry",
