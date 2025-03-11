@@ -38,31 +38,39 @@ function Layout() {
   );
 }
 
-const enSuffix = ' Native for More';
-const enWords = ['Unlock', 'Render', 'Toward', 'Ship'];
-const zhWords = ['迈向', '更快的', '更多平台的', '更多人的'];
-const zhSuffix = '原生体验';
-const jaSuffix = 'ネイティブ体験を';
-const jaWords = ['更なる', '高速な', '多くの基盤で', 'より多くの人に'];
+const i18nWords = {
+  en: ['Unlock', 'Render', 'Toward', 'Ship'],
+  zh: ['迈向', '更快的', '更多平台的', '更多人的'],
+  ja: ['更なる', '高速な', '多くの基盤で', 'より多くの人に'],
+};
+
+const i18nSuffix = {
+  en: ' Native for More',
+  zh: '原生体验',
+  ja: 'ネイティブ体験を',
+};
 
 function HomeLayout() {
   const { pathname } = useLocation();
-  const isZh = pathname.startsWith('/zh/');
-  const isEn = pathname.startsWith('/en/');
-  const { page } = usePageData();
+  const {
+    page,
+    siteData: { lang: defalutLang },
+  } = usePageData();
+  const lang = (
+    pathname.replace(/^\/(.+)\/.*$/, '$1') === '/index.html'
+      ? defalutLang
+      : pathname.replace(/^\/(.+)\/.*$/, '$1')
+  ) as 'en' | 'zh' | 'ja';
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState(
-    isZh
-      ? `${zhWords[0]}${zhSuffix}`
-      : isEn
-        ? `${enWords[0]}${enSuffix}`
-        : `${jaWords[0]}${jaSuffix}`,
-  );
+  const [text, setText] = useState(`${i18nWords[lang][0]}${i18nSuffix[lang]}`);
   const [delta, setDelta] = useState(200);
   const [isPaused, setIsPaused] = useState(false);
 
-  const routePath = useMemo(() => page.routePath.replace('/ja/', '/'), [page]);
+  const routePath = useMemo(
+    () => page.routePath.replace(`/${lang}/`, '/'),
+    [page],
+  );
 
   useBlogBtnDom(routePath);
 
@@ -84,8 +92,8 @@ function HomeLayout() {
     // Add negative margin to h1 span to avoid text wrapping
     h1Ele.style.margin = '0 -100px';
 
-    const words = isZh ? zhWords : isEn ? enWords : jaWords;
-    const suffix = isZh ? zhSuffix : isEn ? enSuffix : jaSuffix;
+    const words = i18nWords[lang];
+    const suffix = i18nSuffix[lang];
 
     const currentWord = words[currentWordIndex];
     const currentLength = text.replace(suffix, '').length;
@@ -122,7 +130,7 @@ function HomeLayout() {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
       setDelta(140);
     }
-  }, [currentWordIndex, isDeleting, text, isPaused, isZh, isEn]);
+  }, [currentWordIndex, isDeleting, text, isPaused, lang]);
 
   // Reset animation when language changes or when returning to home page
   useEffect(() => {
@@ -134,15 +142,9 @@ function HomeLayout() {
       setIsDeleting(false);
       setIsPaused(false);
       setDelta(200);
-      setText(
-        isZh
-          ? `${zhWords[0]}${zhSuffix}`
-          : isEn
-            ? `${enWords[0]}${enSuffix}`
-            : `${jaWords[0]}${jaSuffix}`,
-      );
+      setText(`${i18nWords[lang][0]}${i18nSuffix[lang]}`);
     }
-  }, [isZh, isEn, page]); // Watch both language and path changes
+  }, [lang, page]); // Watch both language and path changes
 
   useEffect(() => {
     const isHomePage = routePath === '/';
