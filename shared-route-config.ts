@@ -80,18 +80,22 @@ const SHARED_DOC_TITLES = {
   'quick-start': {
     en: 'Quick Start',
     zh: '快速上手',
+    ja: 'クイックスタート',
   },
   'integrate-with-existing-apps': {
     en: 'Integrate with Existing Apps',
     zh: '接入现有应用',
+    ja: '既存アプリケーションとの統合',
   },
   'tutorial-gallery': {
     en: 'Tutorial: Product Gallery',
     zh: '教程：产品列表',
+    ja: 'チュートリアル：製品ギャラリー',
   },
   'tutorial-product-detail': {
     en: 'Tutorial: Product Detail',
     zh: '教程：产品详情',
+    ja: 'チュートリアル：製品詳細',
   },
 } as const;
 
@@ -135,7 +139,7 @@ export function getUrlPathPrefix(pathname: string, sharedPaths: string[]) {
  */
 export function getLangPrefix(lang: string) {
   // The constant here must match the configured lang in rspress.config.ts.
-  return lang === 'en' ? '' : `/${lang}`;
+  return lang === 'ja' ? '' : `/${lang}`;
 }
 
 /**
@@ -158,7 +162,7 @@ export const createSharedRouteSidebar = (
   // Generate sidebar items from shared doc titles
   const sidebarItems = Object.entries(SHARED_DOC_TITLES).map(
     ([filename, texts]) => ({
-      text: texts[lang === 'zh' ? 'zh' : 'en'],
+      text: texts[lang as 'en' | 'zh' | 'ja'],
       link: `${fullPrefix}/${filename}`,
     }),
   );
@@ -166,7 +170,7 @@ export const createSharedRouteSidebar = (
   // Define shared sidebar sections with localized text
   const sharedSections: SidebarData = [
     {
-      text: lang === 'zh' ? '开始' : 'Get Started',
+      text: lang === 'zh' ? '开始' : lang === 'en' ? 'Get Started' : 'はじめる',
       items: sidebarItems,
       collapsible: true,
       // Collapse section if not currently viewing pages under shared root

@@ -1,3 +1,4 @@
+import { JapaneseYen } from 'lucide-react';
 import { useCallback, useEffect, useMemo } from 'react';
 import { useLang, useNavigate, usePageData } from 'rspress/runtime';
 
@@ -8,18 +9,21 @@ const config = {
     text: {
       zh: '阅读 Lynx 的开篇博客',
       en: 'Read the Introductory Blog of Lynx',
+      ja: 'Lynx の紹介ブログを読む',
     },
   },
   '/react/': {
     text: {
       zh: 'ReactLynx',
       en: 'ReactLynx',
+      ja: 'ReactLynx',
     },
   },
   '/rspeedy/': {
     text: {
       zh: 'Rspeedy',
       en: 'Rspeedy',
+      ja: 'Rspeedy',
     },
   },
 };
@@ -27,13 +31,15 @@ const config = {
 const useBlogBtnDom = (src: string) => {
   const { page } = usePageData();
   const navigate = useNavigate();
-  const lang = useLang() as 'en' | 'zh';
+  const lang = useLang() as 'en' | 'zh' | 'ja';
 
   const handleInteraction = useCallback(() => {
     navigate(
       lang === 'en'
         ? '/blog/lynx-unlock-native-for-more'
-        : '/zh/blog/lynx-unlock-native-for-more',
+        : lang === 'zh'
+          ? '/zh/blog/lynx-unlock-native-for-more'
+          : '/ja/blog/lynx-unlock-native-for-more',
     );
   }, [navigate, lang]);
 

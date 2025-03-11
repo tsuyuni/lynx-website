@@ -18,8 +18,8 @@ const maxDegree = 6;
 const featuresConfig: Record<
   FeaturesConfigKey,
   Array<{
-    title: { en: string; zh: string };
-    desc: { en: string; zh: string };
+    title: { en: string; zh: string; ja: string };
+    desc: { en: string; zh: string; ja: string };
     class?: string;
     isRowSet?: boolean | number;
     iconClass?: string;
@@ -36,10 +36,12 @@ const featuresConfig: Record<
       title: {
         en: 'Write Once, Render Anywhere',
         zh: '一次编写，多端渲染',
+        ja: '一度書けば、どこでもレンダリング可能',
       },
       desc: {
         en: 'Enjoy native rendering on Android, iOS, and Web, or pixel-perfect consistency across mobile and desktop via our custom renderer.',
         zh: '享受 Android， iOS， Web 原生渲染，或选择在移动和桌面端达到像素级一致的自渲染。',
+        ja: 'Android、iOS、Web でネイティブレンダリングを行うことも、カスタムレンダラを使ってモバイルとデスクトップでピクセルパーフェクトな一貫性を保つこともできます。',
       },
       actions: [
         {
@@ -75,10 +77,12 @@ const featuresConfig: Record<
       title: {
         en: 'Performance at Scale',
         zh: '高性能，规模化',
+        ja: 'スケーリングのパフォーマンス',
       },
       desc: {
         en: 'Achieve instant launch and silky UI responsiveness via our multithreaded engine, whether standalone or embedded.',
         zh: '基于多线程引擎，带来瞬时启动和丝滑交互体验，无论是单页还是嵌入场景。',
+        ja: 'スタンドアロンでも埋め込みでも、マルチスレッドエンジンにより瞬時の起動と滑らかな UI の応答を実現します。',
       },
       customRender: <WriteOnceRunAllPlatform />,
     },
@@ -88,10 +92,12 @@ const featuresConfig: Record<
       title: {
         en: 'Web-Inspired Design',
         zh: 'Web 启发',
+        ja: 'Web にインスパイアされたデザイン',
       },
       desc: {
         en: 'Leverage your existing knowledge of CSS and React. We designed Lynx with the web knowledge and libraries in mind.',
         zh: '延续 Web 开发范式，继续使用熟悉的 CSS 和 React 等技术，复用知识与生态。',
+        ja: 'CSS や React の知識が活用できます。Lynx は Web の知識とライブラリを考慮して設計されています。',
       },
       customRender: <Moon />,
     },
@@ -103,10 +109,12 @@ const featuresConfig: Record<
       title: {
         en: 'Aligned with React 17+',
         zh: '对齐 React 17+',
+        ja: 'React 17+ に対応',
       },
       desc: {
         en: 'Built on battle-tested open-source implementations, it fully supports functional components, Hooks, and Context—the same set of modern React APIs.',
         zh: '基于成熟的开源实现并有测试保障，完整支持函数式组件、Hooks、Context 等现代 React API。',
+        ja: '実績のあるオープンソースの実装をベースにしており、関数コンポーネント、Hooks、Context などのモダンな React API を完全にサポートしています。',
       },
       actions: [
         {
@@ -127,10 +135,12 @@ const featuresConfig: Record<
       title: {
         en: 'Made for Lynx',
         zh: '为 Lynx 量身定做',
+        ja: 'Lynx 用に作られた',
       },
       desc: {
         en: "Dual-threaded React tailor-made for Lynx, carrying over Lynx's instant launch and silky UI responsiveness.",
         zh: '基于 Lynx 量身定做的双线程 React，延续 Lynx 的瞬时启动和丝滑交互。',
+        ja: 'Lynx に特化したデュアルスレッド React で、Lynx の瞬時の起動と滑らかな UI の応答を引き継ぎます。',
       },
     },
     {
@@ -138,10 +148,12 @@ const featuresConfig: Record<
       title: {
         en: 'Compatible with React Ecosystem',
         zh: 'React 生态兼容',
+        ja: 'React エコシステムとの互換性',
       },
       desc: {
         en: 'With Jotai and Zustand for state management, TanStack Query for data fetching, Fast Refresh and DevTools for React components, everything you need is here.',
         zh: 'Jotai、Zustand 等状态管理、TanStack Query 数据请求、Fast Refresh 热更新和 React 开发工具，应有尽有。',
+        ja: '状態管理には Jotai と Zustand、データ取得には TanStack Query、React コンポーネントのための Fast Refresh と DevTools など、必要なものはすべて揃っています。',
       },
       actions: [
         {
@@ -170,10 +182,12 @@ const featuresConfig: Record<
       title: {
         en: 'Rstack-based',
         zh: '基于 Rstack',
+        ja: 'Rstack に基づく',
       },
       desc: {
         en: 'Using Rspack and Rsbuild to bring you the ultimate development experience.',
         zh: '享受 Rstack 带来的极致开发体验。',
+        ja: 'Rspack と Rsbuild を使って、究極の開発体験を提供します。',
       },
     },
     {
@@ -181,10 +195,12 @@ const featuresConfig: Record<
       title: {
         en: 'Batteries Included',
         zh: '开箱即用',
+        ja: '電池付属',
       },
       desc: {
         en: 'Out-of-the-box integration with the most practical building features in the ecosystem.',
         zh: '集成生态中最实用的构建功能。',
+        ja: 'エコシステムで最も実用的なビルド機能をボックスから出しています。',
       },
     },
     {
@@ -192,10 +208,12 @@ const featuresConfig: Record<
       title: {
         en: 'Easy to Configure',
         zh: '易于配置',
+        ja: '簡単に設定',
       },
       desc: {
         en: 'Start with zero configuration and everything is configurable.',
         zh: '以零配置启动，然后一切皆可配置。',
+        ja: 'ゼロ構成から始め、すべてが設定可能です。',
       },
     },
   ],
@@ -203,7 +221,7 @@ const featuresConfig: Record<
 
 const Features = ({ src = '/' }: { src?: string }) => {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
-  const lang = useLang() as 'en' | 'zh';
+  const lang = useLang() as 'en' | 'zh' | 'ja';
   const configKey = (
     src.startsWith('/react/')
       ? '/react/'

@@ -42,20 +42,27 @@ const enSuffix = ' Native for More';
 const enWords = ['Unlock', 'Render', 'Toward', 'Ship'];
 const zhWords = ['迈向', '更快的', '更多平台的', '更多人的'];
 const zhSuffix = '原生体验';
+const jaSuffix = 'ネイティブ体験を';
+const jaWords = ['更なる', '高速な', '多くの基盤で', 'より多くの人に'];
 
 function HomeLayout() {
   const { pathname } = useLocation();
   const isZh = pathname.startsWith('/zh/');
+  const isEn = pathname.startsWith('/en/');
   const { page } = usePageData();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState(
-    isZh ? `${zhWords[0]}${zhSuffix}` : `${enWords[0]}${enSuffix}`,
+    isZh
+      ? `${zhWords[0]}${zhSuffix}`
+      : isEn
+        ? `${enWords[0]}${enSuffix}`
+        : `${jaWords[0]}${jaSuffix}`,
   );
   const [delta, setDelta] = useState(200);
   const [isPaused, setIsPaused] = useState(false);
 
-  const routePath = useMemo(() => page.routePath.replace('/zh/', '/'), [page]);
+  const routePath = useMemo(() => page.routePath.replace('/ja/', '/'), [page]);
 
   useBlogBtnDom(routePath);
 
@@ -77,8 +84,8 @@ function HomeLayout() {
     // Add negative margin to h1 span to avoid text wrapping
     h1Ele.style.margin = '0 -100px';
 
-    const words = isZh ? zhWords : enWords;
-    const suffix = isZh ? zhSuffix : enSuffix;
+    const words = isZh ? zhWords : isEn ? enWords : jaWords;
+    const suffix = isZh ? zhSuffix : isEn ? enSuffix : jaSuffix;
 
     const currentWord = words[currentWordIndex];
     const currentLength = text.replace(suffix, '').length;
@@ -115,7 +122,7 @@ function HomeLayout() {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
       setDelta(140);
     }
-  }, [currentWordIndex, isDeleting, text, isPaused, isZh]);
+  }, [currentWordIndex, isDeleting, text, isPaused, isZh, isEn]);
 
   // Reset animation when language changes or when returning to home page
   useEffect(() => {
@@ -127,9 +134,15 @@ function HomeLayout() {
       setIsDeleting(false);
       setIsPaused(false);
       setDelta(200);
-      setText(isZh ? `${zhWords[0]}${zhSuffix}` : `${enWords[0]}${enSuffix}`);
+      setText(
+        isZh
+          ? `${zhWords[0]}${zhSuffix}`
+          : isEn
+            ? `${enWords[0]}${enSuffix}`
+            : `${jaWords[0]}${jaSuffix}`,
+      );
     }
-  }, [isZh, page]); // Watch both language and path changes
+  }, [isZh, isEn, page]); // Watch both language and path changes
 
   useEffect(() => {
     const isHomePage = routePath === '/';

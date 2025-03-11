@@ -18,7 +18,7 @@ export default defineConfig({
   description:
     'Empower the web community and invite more to build cross-platform apps',
   icon: 'https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/lynx-dark-logo.svg',
-  lang: 'en',
+  lang: 'ja',
   globalStyles: path.join(__dirname, 'src', 'styles', 'global.css'),
   builderConfig: {
     plugins: [
