@@ -57,9 +57,9 @@ function HomeLayout() {
     siteData: { lang: defalutLang },
   } = usePageData();
   const lang = (
-    pathname.replace(/^\/(.+)\/.*$/, '$1') === '/index.html'
-      ? defalutLang
-      : pathname.replace(/^\/(.+)\/.*$/, '$1')
+    pathname.match(/^\/(en|zh|ja)\//)
+      ? pathname.replace(/^\/(.+)\/.*/, '$1')
+      : defalutLang
   ) as 'en' | 'zh' | 'ja';
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);

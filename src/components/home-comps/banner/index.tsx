@@ -15,7 +15,7 @@ const desc = {
 const btnText = {
   zh: '快速开始',
   en: 'Quick Start',
-  ja: 'クイックスタート',
+  ja: 'Quick Start',
 };
 
 const tailText = {
