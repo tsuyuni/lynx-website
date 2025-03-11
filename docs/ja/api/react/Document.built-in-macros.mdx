@@ -9,20 +9,20 @@ import * as Lynx from '@lynx';
 
 [react](/api/react/index.mdx) / built-in-macros
 
-# Built-in Macros
+# 組み込みマクロ
 
-The `@lynx-js/react` package processes built-in macro definitions such as `__BACKGROUND__` and `__MAIN_THREAD__`. During compilation, code blocks with `false` conditions are automatically removed.
+`@lynx-js/react` パッケージは、`__BACKGROUND__` や `__MAIN_THREAD__` などの組み込みマクロ定義を処理します。コンパイル時に、`false` 条件を持つコードブロックは自動的に削除されます。
 
 ## `__BACKGROUND__`
 
-- Type: `boolean`
-- Purpose: Controls code execution in background thread environment. Used to determine which code segments should be preserved in background thread code after compilation.
+- 型: `boolean`
+- 目的: バックグラウンドスレッド環境でのコード実行を制御します。コンパイル後のバックグラウンドスレッドコードに保持すべきコードセグメントを指定するために使用します。
 
-### Usage Examples
+### 使用例
 
-#### In Function Components
+#### 関数コンポーネントでの使用
 
-Here's an example using the `App` component:
+`App` コンポーネントを使用した例を以下に示します。
 
 ```tsx
 import { noop } from 'lodash-es';
@@ -43,9 +43,9 @@ function App() {
 }
 ```
 
-After compilation, this code is transformed into:
+コンパイル後、このコードは次のように変換されます。
 
-- Background thread code (`background.js` in the compilation intermediate directory):
+- バックグラウンドスレッド (コンパイル中間ディレクトリ内の `background.js`):
 
 ```tsx
 function App() {
@@ -60,7 +60,7 @@ function App() {
 }
 ```
 
-- Main thread code (`main-thread.js` in the compilation intermediate directory):
+- メインスレッド (コンパイル中間ディレクトリ内の `main-thread.js`):
 
 ```tsx
 function App() {
@@ -71,9 +71,9 @@ function App() {
 }
 ```
 
-#### In Class Components
+#### クラスコンポーネントでの使用
 
-Here's an example using the `Conversations` component:
+`Conversations` コンポーネントを使用した例を以下に示します。
 
 ```tsx
 import { AppLoggerFactory } from '../utils/appLoggerFactory';
@@ -94,9 +94,9 @@ class Conversations extends Component<Props, State> {
 }
 ```
 
-After compilation, this code is transformed into:
+コンパイル後、このコードは次のように変換されます。
 
-- Background thread code (`background.js` in the compilation intermediate directory):
+- バックグラウンドスレッド (コンパイル中間ディレクトリ内の `background.js`):
 
 ```tsx
 class Conversations extends Component<Props, State> {
@@ -113,7 +113,7 @@ class Conversations extends Component<Props, State> {
 }
 ```
 
-- Main thread code (`main-thread.js` in the compilation intermediate directory):
+- メインスレッド (コンパイル中間ディレクトリ内の `main-thread.js`):
 
 ```tsx
 class Conversations extends Component<Props, State> {
@@ -131,14 +131,14 @@ class Conversations extends Component<Props, State> {
 
 ## `__MAIN_THREAD__`
 
-- Type: `boolean`
-- Purpose: Controls code execution in main thread environment. Used to determine which code segments should be preserved in main thread code during compilation.
+- 型: `boolean`
+- 目的: メインスレッド環境でのコード実行を制御します。コンパイル後のメインスレッドコードに保持すべきコードセグメントを指定するために使用します。 
 
-### Usage Examples
+### 使用例
 
-#### In Function Components
+#### 関数コンポーネントでの使用
 
-Here's an example using the `App` component:
+`App` コンポーネントを使用した例を以下に示します。
 
 ```tsx
 import { noop } from 'lodash-es';
@@ -159,9 +159,9 @@ function App() {
 }
 ```
 
-After compilation, this code is transformed into:
+コンパイル後、このコードは次のように変換されます。
 
-- Background thread code (`background.js` in the compilation intermediate directory):
+- バックグラウンドスレッド (コンパイル中間ディレクトリ内の `background.js`):
 
 ```tsx
 function App() {
@@ -176,7 +176,7 @@ function App() {
 }
 ```
 
-- Main thread code (`main-thread.js` in the compilation intermediate directory):
+- メインスレッド (コンパイル中間ディレクトリ内の `main-thread.js`):
 
 ```tsx
 function App() {
@@ -187,9 +187,9 @@ function App() {
 }
 ```
 
-#### In Class Components
+#### クラスコンポーネントでの使用
 
-Here's an example using the `Conversations` component:
+`Conversations` コンポーネントを使用した例を以下に示します。
 
 ```tsx
 import { AppLoggerFactory } from '../utils/appLoggerFactory';
@@ -210,9 +210,9 @@ class Conversations extends Component<Props, State> {
 }
 ```
 
-After compilation, this code is transformed into:
+コンパイル後、このコードは次のように変換されます。
 
-- Background thread code (`background.js` in the compilation intermediate directory):
+- バックグラウンドスレッド (コンパイル中間ディレクトリ内の `background.js`):
 
 ```tsx
 class Conversations extends Component<Props, State> {
@@ -229,7 +229,7 @@ class Conversations extends Component<Props, State> {
 }
 ```
 
-- Main thread code (`main-thread.js` in the compilation intermediate directory):
+- メインスレッド (コンパイル中間ディレクトリ内の `main-thread.js`):
 
 ```tsx
 class Conversations extends Component<Props, State> {
