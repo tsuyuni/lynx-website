@@ -9,13 +9,13 @@ import * as Lynx from '@lynx';
 
 [react](/api/react/index.mdx) / directives
 
-# Directives
+# ディレクティブ
 
 ## `'background only'`
 
-The `'background only'` directive allows you to mark functions that will only be executed on the background thread. In other threads, the function body of the marked function will be removed.
+`'background only'` ディレクティブを使用すると、バックグラウンドスレッドでのみ実行される関数をマークできます。他のスレッドでは、マークされた関数の本体が削除されます。
 
-To mark a function as background only, simply add the `'background only'` directive at the first line of the function body:
+関数をバックグラウンドのみの実行としてマークするには、関数本体の最初の行に `'background only'` ディレクティブを追加します。
 
 ```ts
 function bgOnlyAction(pureCallback) {
@@ -24,15 +24,15 @@ function bgOnlyAction(pureCallback) {
 }
 ```
 
-In the main thread portion of the generated output, this function will be replaced as follows:
+生成された出力のメインスレッド部分では、この関数は次のように置き換えられます。
 
 ```ts
 function bgOnlyAction(pureCallback) {}
 ```
 
-Typically, code with side effects should only be executed in the background thread, such as event listeners, JSB calls, etc. Marking such functions as `'background only'` can significantly reduce the bundle size.
+通常、イベントリスナーや JSB の呼び出しのような副作用のあるコードはバックグラウンドスレッドでのみ実行されるべきです。このような関数を `'background only'` としてマークすることで、バンドルサイズを大幅に削減できます。
 
-One way to use `'background only'` is in conjunction with custom hooks. For example, `useFirstRender` is a user-defined hook used to execute some logic when a component is first rendered. We want to use it to listen for events. The event listening logic should not and cannot be executed on the main thread. In this case, we can use the `'background only'` directive to mark this function, removing the event listening logic from the main thread.
+`'background only'` を使用する方法の一つとして、カスタムフックとの組み合わせがあります。例えば、以下の `useFirstRender` は、コンポーネントが最初にレンダリングされたときにロジックを実行するためのユーザー定義フックであり、イベントをリッスンするために使用されますが、イベントリスニングのロジックはメインスレッドで実行するべきではありません。このような場合に、`'background only'` ディレクティブを使用して関数をマークし、イベントリスニングのロジックをメインスレッドから削除します。
 
 ```ts
 import {useFirstRender} from './useFirstRender';
@@ -53,11 +53,11 @@ function Foo({ prop } ){
 }
 ```
 
-It is not only the code marked as `'background only'` that will be removed in other threads; ReactLynx will by default remove certain parts of the code, including the parameters of `useEffect`, `useLayoutEffect`, and some event handlers, among others. For these parts, you do not need to mark the corresponding functions as `'background only'`. For more details, refer to [Dual Runtime Code Splitting](react/thinking-in-reactlynx).
+他のスレッドで削除されるのは、`'background only'` としてマークされたコードだけではありません。デフォルトで、`useEffect`、`useLayoutEffect` のパラメータや、イベントハンドラなどのコードの一部が削除されます。これらの部分については、対応する関数を `'background only'` としてマークする必要はありません。詳細については、[デュアルランタイムコード分割](react/thinking-in-reactlynx) を参照してください。
 
 ## `'main thread'`
 
-The `'main thread'` directive allows you to mark main thread functions. Main thread functions are part of the [Main Thread Script](react/main-thread-script) system and can only be executed on the main thread. They are primarily used for smooth animations and gesture handling.
+`'main thread'` ディレクティブを使用すると、メインスレッド関数をマークできます。メインスレッド関数は [メインスレッドスクリプト](react/main-thread-script) システムの一部であり、メインスレッドでのみ実行できます。主にスムーズなアニメーションやジェスチャの処理のために使用されます。
 
 To convert a background thread function into a main thread function, simply add the `'main thread'` directive at the first line of the function:
 
