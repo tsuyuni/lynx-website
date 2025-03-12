@@ -11,18 +11,18 @@ import * as Lynx from '@lynx';
 
 # 組み込みマクロ
 
-`@lynx-js/react` パッケージは、`__BACKGROUND__` や `__MAIN_THREAD__` などの組み込みマクロ定義を処理します。コンパイル時に、`false` 条件を持つコードブロックは自動的に削除されます。
+`@lynx-js/react` では、`__BACKGROUND__` や `__MAIN_THREAD__` などの組み込みマクロ定義が使用できます。コンパイル時に、`false` 条件を持つコードブロックは自動的に削除されます。
 
 ## `__BACKGROUND__`
 
 - 型: `boolean`
-- 目的: バックグラウンドスレッド環境でのコード実行を制御します。コンパイル後のバックグラウンドスレッドコードに保持すべきコードセグメントを指定するために使用します。
+- 目的: バックグラウンドスレッドでのコード実行を制御します。コンパイル後のバックグラウンドスレッドコードに保持するコードセグメントを指定するために使用します。
 
 ### 使用例
 
 #### 関数コンポーネントでの使用
 
-`App` コンポーネントを使用した例を以下に示します。
+`App` コンポーネントでの例を以下に示します。
 
 ```tsx
 import { noop } from 'lodash-es';
@@ -73,7 +73,7 @@ function App() {
 
 #### クラスコンポーネントでの使用
 
-`Conversations` コンポーネントを使用した例を以下に示します。
+`Conversations` コンポーネントでの例を以下に示します。
 
 ```tsx
 import { AppLoggerFactory } from '../utils/appLoggerFactory';
@@ -132,13 +132,13 @@ class Conversations extends Component<Props, State> {
 ## `__MAIN_THREAD__`
 
 - 型: `boolean`
-- 目的: メインスレッド環境でのコード実行を制御します。コンパイル後のメインスレッドコードに保持すべきコードセグメントを指定するために使用します。 
+- 目的: メインスレッドでのコード実行を制御します。コンパイル後のメインスレッドコードに保持するコードセグメントを指定するために使用します。 
 
 ### 使用例
 
 #### 関数コンポーネントでの使用
 
-`App` コンポーネントを使用した例を以下に示します。
+`App` コンポーネントでの例を以下に示します。
 
 ```tsx
 import { noop } from 'lodash-es';
@@ -189,7 +189,7 @@ function App() {
 
 #### クラスコンポーネントでの使用
 
-`Conversations` コンポーネントを使用した例を以下に示します。
+`Conversations` コンポーネントでの例を以下に示します。
 
 ```tsx
 import { AppLoggerFactory } from '../utils/appLoggerFactory';
