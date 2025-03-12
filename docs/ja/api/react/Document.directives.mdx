@@ -59,7 +59,7 @@ function Foo({ prop } ){
 
 `'main thread'` ディレクティブを使用すると、メインスレッド関数をマークできます。メインスレッド関数は [メインスレッドスクリプト](react/main-thread-script) システムの一部であり、メインスレッドでのみ実行できます。主にスムーズなアニメーションやジェスチャの処理のために使用されます。
 
-To convert a background thread function into a main thread function, simply add the `'main thread'` directive at the first line of the function:
+バックグラウンドスレッド関数をメインスレッド関数に変換するには、関数の最初の行に `'main thread'` ディレクティブを追加します。
 
 ```tsx {7}
 import { MainThread } from '@lynx-js/types';
@@ -80,17 +80,18 @@ export default function App() {
 }
 ```
 
-A main thread function will automatically capture external variables from the background thread when defined, such as `red` in the example above.
+メインスレッド関数は、上記の `red` の例のように、バックグラウンドスレッドから外部変数を自動的にキャプチャします。
 
-When using a main thread function as an event handler, the main thread function accepts an `event` parameter that contains basic information about the event. The `event.target` and `event.currentTarget` parameters differ from those in regular event handlers; they are [`MainThread.Element`](api/lynx-api/main-thread/main-thread-element) objects. This object allows you to conveniently synchronize the retrieval and setting of node properties, such as using [`setStyleProperty()`] in the example.
+メインスレッド関数をイベントハンドラとして使用する際、メインスレッド関数はイベントに関する基本情報を含む `event` パラメータを受け取ります。このとき、`event.target` および `event.currentTarget` は通常のイベントハンドラとは異なり、[`MainThread.Element`](api/lynx-api/main-thread/main-thread-element) オブジェクトとなります。このオブジェクトを使用することで、上記の [`setStyleProperty()`] の例のように、ノードプロパティの取得と設定を同期的に行うことができます。
 
-Some important notes:
 
-- Main thread functions can and must only run on the main thread. Main thread functions can call each other.
-- Captured variables need to be passed between threads using `JSON.stringify()`, so they must be serializable to JSON.
-- Main thread functions can only execute after TTI (Time to Interactive). This means they cannot execute during the initial screen load.
-- Main thread functions do not support nested definitions.
-- The constructor, getter, and setter of class components do not support being specified as main thread functions.
-- You cannot modify variables captured from the external scope within a main thread function.
+注意事項:
+
+- メインスレッド関数はメインスレッドでのみ実行できます。メインスレッド関数は互いに呼び出すことができます。
+- キャプチャされた変数はスレッド間で `JSON.stringify()` を使用して受け渡されるため、これらの変数は JSON にシリアライズ可能である必要があります。
+- メインスレッド関数は TTI (Time to Interactive) 後にのみ実行でき、初期画面ロード中には実行できません。
+- メインスレッド関数は、ネストされた定義をサポートしません。
+- クラスコンポーネントのコンストラクタ、ゲッタ、セッタは、メインスレッド関数として指定できません。
+- 外部スコープからキャプチャされた変数をメインスレッド関数内で変更することはできません。
 
 [`setStyleProperty()`]: api/lynx-api/main-thread/main-thread-element.html#elementsetstyleproperty
