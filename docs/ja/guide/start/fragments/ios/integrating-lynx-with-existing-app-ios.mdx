@@ -1,21 +1,18 @@
-### Integrate Lynx with Existing Apps (iOS)
+### Lynx を既存のアプリケーションに統合する（iOS）
 
 import { Info, CodeFold } from '@lynx';
 import { Steps } from '@theme';
 import { Tab, Tabs } from 'rspress/theme';
 
 <Info title="Lynx for iOS">
-  - This article assumes that you are familiar with the basic concepts of native
-  iOS application development. - You can refer to the project:
-  [integrating-lynx-demo-projects](https://github.com/lynx-family/integrating-lynx-demo-projects/tree/release/3.1)
-  for all the code mentioned below.
+  - この記事は、ネイティブ iOS アプリケーション開発の基本的な概念に精通していることを前提としています。以下で言及されているコードについては、[integrating-lynx-demo-projects](https://github.com/lynx-family/integrating-lynx-demo-projects/tree/release/3.1) を参照してください。
 </Info>
 
-## 1. Dependency configuration
+## 1. 依存関係の構成
 
-Using [Cocoapods](https://cocoapods.org/) can easily integrate Lynx into your application
+[Cocoapods](https://cocoapods.org/) を使用することで、Lynx をアプリケーションに簡単に統合できます。
 
-<Info title="Recommended Versions">
+<Info title="推奨されるバージョン">
 
 - Cocoapods: >= 1.11.3
 - Ruby: >= 2.6.10
@@ -24,13 +21,13 @@ Using [Cocoapods](https://cocoapods.org/) can easily integrate Lynx into your ap
 
 <Steps>
 
-### Configuring Deps
+### 依存関係の追加
 
 1. **Lynx**
 
-The core capabilities of [Lynx Engine](/guide/spec.html#engine) include basic capabilities such as parsing [Bundle](/guide/spec.html#lynx-bundle-or-bundle), style parsing, layout, and rendering views
-
-Get the latest version of Lynx from Cocoapods. Then add Lynx to your Podfile:
+[Lynx Engine](/guide/spec.html#engine) のコア機能には、[Bundle](/guide/spec.html#lynx-bundle-or-bundle) のパース、スタイルのパース、レイアウト、ビューのレンダリングなどの基本的な機能が含まれます。
+  
+Cocoapods から Lynx の最新バージョンを取得し、Podfile に Lynx を追加します：
 
 <CodeFold height={360} toggle>
 
@@ -52,10 +49,10 @@ end
 
 2. **Lynx Service**
 
-Lynx Service includes `LynxImageService`, `LynxLogService`, etc. It aims to provide the ability to strongly correlate some host App features, allowing the App to inject custom Services at runtime, or use the default implementation provided by the official. For example, `LynxImageService` is implemented using the [SDWebImage](https://github.com/SDWebImage/SDWebImage) image library by default. Apps that do not integrate SDWebImage components can rely on other image libraries to implement Image Service.
-Lynx provides standard native Image, Log, and Http service capabilities, which can be quickly accessed and used by the access party;
+Lynx Service は `LynxImageService` や `LynxLogService` などを含みます。これにより、アプリがカスタムサービスをランタイムで注入したり、公式提供のデフォルト実装を使用したりすることができ、ホストアプリの機能と強く結びつくことができます。たとえば、`LynxImageService` はデフォルトで [SDWebImage](https://github.com/SDWebImage/SDWebImage) イメージライブラリを用いて実装されています。SDWebImage コンポーネントを統合していないアプリは、他のイメージライブラリを使用してイメージサービスを実装できます。
+Lynx は標準のネイティブイメージ、ログ、HTTP サービス機能を提供するため、これらに迅速にアクセスして使用できます。
 
-Get the latest version of Lynx Service from Cocoapods. Then add Lynx Service to your Podfile:
+Cocoapods から Lynx Service の最新バージョンを取得し、Podfile に Lynx Service を追加します：
 
 <CodeFold height={360} toggle>
 
@@ -86,13 +83,13 @@ end
 
 </CodeFold>
 
-### Install Dependencies
+### 依存関係のインストール
 
-Run `pod install` to install dependencies, then open your Xcode project. Additionally, make sure to disable the Sandbox Scripting capability.
+依存関係をインストールするために、ターミナルでプロジェクトのディレクトリに移動し、`pod install` を実行します。その後、Xcode プロジェクトを開いてください。この際、サンドボックススクリプト機能を無効にすることを忘れないでください。
 
 :::note
 
-In order to disable the **Sandbox scripting**, in Xcode click on your app, then on **build settings**. Filter for **script** and set the **User Script Sandboxing** to **NO**.
+**サンドボックススクリプト** を無効にするには、Xcode でアプリをクリックし、**build settings** をクリックします。**script** を検索し、**User Script Sandbox** を **NO** に設定します。
 
 <img
   height="180px"
@@ -103,11 +100,11 @@ In order to disable the **Sandbox scripting**, in Xcode click on your app, then 
 
 </Steps>
 
-## 2. Lynx Environment Initialization
+## 2. Lynx 環境の初期化
 
 <Steps>
 
-### LynxEnv Initialization
+### LynxEnv の初期化
 
 LynxEnv provides a global initialization interface for the Lynx Engine. Please ensure that the initialization of LynxEnv occurs before any interface call of the Lynx Engine.
 For example, it can be initialized in `AppDelegate`

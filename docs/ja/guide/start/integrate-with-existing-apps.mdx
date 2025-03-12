@@ -5,7 +5,7 @@ import IntegratingLynxIOS from './fragments/ios/integrating-lynx-with-existing-a
 import IntegratingLynxAndroid from './fragments/android/integrating-lynx-with-existing-app-android.mdx';
 import IntegratingLynxWeb from './fragments/web/integrating-lynx-with-web.mdx';
 
-<style jsx>
+<style>
   {`
     .rspress-doc-footer {
       display: none;
@@ -13,35 +13,32 @@ import IntegratingLynxWeb from './fragments/web/integrating-lynx-with-web.mdx';
   `}
 </style>
 
-# Integrate with Existing Apps
+# 既存のアプリケーションと統合する
 
-Currently, Lynx is not suitable for building a new application from scratch. You need to integrate Lynx (engine) with your native mobile app or web app, and load Lynx apps through Lynx views. With a few steps, you can start developing with Lynx in your application.
+現在、Lynx は新しいアプリケーションをゼロから構築するためには適していません。Lynx（エンジン）をネイティブモバイルアプリケーションまたは Web アプリケーションに統合し、Lynx ビューを介して Lynx アプリケーションをロードする必要があります。Lynx でのアプリケーション開発は数ステップで開始できます。
 
-Choose your target platform to view the specific integration steps:
+統合のためのステップを確認するためには、対象プラットフォームを選択してください：
 
 <PlatformTabs hashKey="platform">
-<PlatformTabs.Tab platform="ios">
-<IntegratingLynxIOS />
-</PlatformTabs.Tab>
+  <PlatformTabs.Tab platform="ios">
+    <IntegratingLynxIOS />
+  </PlatformTabs.Tab>
 
 <PlatformTabs.Tab platform="android">
   <IntegratingLynxAndroid />
 </PlatformTabs.Tab>
 
-<PlatformTabs.Tab platform="web">
-  <IntegratingLynxWeb />
-</PlatformTabs.Tab>
-
+  <PlatformTabs.Tab platform="web">
+    <IntegratingLynxWeb />
+  </PlatformTabs.Tab>
 </PlatformTabs>
 
-## Next Steps
+## 次のステップ
 
 <NextSteps.Root>
-
-<NextSteps.Step
-  href="/guide/start/integrate-lynx-devtool"
-  title="Integrate Lynx DevTool"
-  description="Integrate Lynx DevTool to debug Lynx pages"
-/>
-
+  <NextSteps.Step
+    href="/guide/start/integrate-lynx-devtool"
+    title="Integrate Lynx DevTool"
+    description="Integrate Lynx DevTool to debug Lynx pages"
+  />
 </NextSteps.Root>
