@@ -1,22 +1,22 @@
-# Composing Elements
+# 要素の構成
 
 import { Go, CodeFold } from '@lynx';
 
-A Lynx page may contain various visual elements such as text and images, presented in different layouts to create diverse page styles. This section aims to help everyone understand how to construct the most basic views.
+Lynx ページにはテキストや画像などのさまざまなビジュアル要素が含まれ、異なるレイアウトで表示することでさまざまなページスタイルを作成することができます。このセクションでは、最も基本的なビューを構築する方法を解説します。
 
-## Element tag: UI Building Blocks
+## 要素タグ: UI 構築ブロック
 
-Lynx defines content and structure using a markup language, with the most basic unit being an [element tag](guide/spec.html#element-tag). The concept of an element tag is similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Glossary/Element), which can be used to encapsulate different parts of the content to present or operate in a specific manner.
+Lynx はマークアップ言語を使用してコンテンツと構造を定義します。最も基本的な単位は [要素タグ](guide/spec.html#element-tag) です。要素タグの概念は、[HTML 要素](https://developer.mozilla.org/ja/docs/Glossary/Element) と似ており、特定の方法で表示または操作するために異なるコンテンツをカプセル化するために使用できます。
 
-Unlike HTML, Lynx uses some unique element tags such as [`<view>`](api/elements/built-in/view), [`<text>`](api/elements/built-in/text), and [`<image>`](api/elements/built-in/image) to display different content. For example, in Lynx, the following source code can be used to display a piece of text:
+HTML とは異なり、Lynx は異なるコンテンツを表示するために [`<view>`](api/elements/built-in/view)、[`<text>`](api/elements/built-in/text)、[`<image>`](api/elements/built-in/image) などの独自の要素タグを使用します。たとえば、Lynx では次のようにしてテキストを表示できます。
 
 ```html
 <text>Hello Lynx</text>
 ```
 
-### Anatomy of an Element tag
+### 要素タグの構造
 
-The basic usage of element tags is very similar to [HTML elements](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content#anatomy_of_an_html_element):
+要素タグの基本的な使用法は、[HTML 要素](https://developer.mozilla.org/ja/docs/Learn/HTML/Introduction_to_HTML/Getting_started#anatomy_of_an_html_element) と非常に似ています。
 
 <img
   src="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/elements_tags.png"
@@ -24,41 +24,41 @@ The basic usage of element tags is very similar to [HTML elements](https://devel
   height="40%"
 />
 
-Each element tag consists of the following parts:
+要素タグは以下の部分で構成されます。
 
-1. **Start tag**: Includes the name of the element tag (in this case, text) surrounded by angle brackets, indicating where the element tag begins.
-2. **End tag**: Similar to the start tag but includes a forward slash before the element tag's name, indicating where the element tag ends.
-3. **Content**: The content of the element tag, which for the `<text>` element tag is the text itself.
+1. **開始タグ**: 要素タグの名前 (この場合は `text`) を角かっこで囲んで要素タグが始まる場所を示す。
+2. **終了タグ**: 要素タグの名前の前にスラッシュを付け、要素タグが終わる場所を示す。
+3. **コンテンツ**: 要素タグのコンテンツで、`<text>` 要素タグの場合はテキストそのものです。
 
-Combining the start tag, end tag, and content forms a complete element tag.
+開始タグ、終了タグ、コンテンツを組み合わせると、完全な要素タグが形成されます。
 
-### Attributes
+### 属性
 
-Each element tag has its own attributes that can be set by adding attribute names and values within the element tag's tag to describe its behavior and appearance.
+要素タグには、その動作や外観を説明するために、要素タグのタグ内に属性名と属性値を追加して設定することができます。
 
-For example, each element tag can use attributes such as [`style`](api/elements/built-in/view#style) and [`class`](api/elements/built-in/view#class) to set background, border-radius, shadow styles, and support some CSS syntax. The following code sets the background color of an element tag to red:
+例えば、各要素タグは [`style`](api/elements/built-in/view#style) や [`class`](api/elements/built-in/view#class) などの属性を使用して背景、角丸、影のスタイルを設定し、一部の CSS 構文をサポートすることができます。次のコードは要素タグの背景色を赤に設定します。
 
 ```html
 <text style="background:red;">Hello Lynx</text>
 ```
 
-In this example, `style` is the attribute name, and `background:red` is the attribute value.
+この例では、`style` が属性名であり、`background:red` が属性値です。
 
-For more attributes, refer to the [API Reference](api/elements/built-in/view).
+属性の詳細については、[API リファレンス](api/elements/built-in/view)を参照してください。
 
-### Empty Element tags
+### 空要素タグ
 
-Some element tags do not have content, such as the `<image>` element tag:
+一部の要素タグにはコンテンツが含まれない場合があります。例えば、`<image>` 要素タグは次のようになります。
 
 ```html
 <image src="assets/logo.png" />
 ```
 
-It does not use an `</image>` end tag, nor does it have any content inside because the `<image>` element tag uses an attribute `src` to display an image rather than content.
+この要素タグは `</image>` 終了タグを使用せず、また内部にコンテンツがないため、`<image>` 要素タグはコンテンツではなく、属性 `src` を使用して画像を表示します。
 
-### Nested Element tags
+### ネストされた要素タグ
 
-Element tags can be nested within other element tags. For example, multiple `<text>` element tags can be nested inside a `<view>` element tag:
+要素タグは他の要素タグ内にネストすることができます。例えば、複数の `<text>` 要素タグを `<view>` 要素タグ内にネストできます。
 
 ```html
 <view>
@@ -67,9 +67,9 @@ Element tags can be nested within other element tags. For example, multiple `<te
 </view>
 ```
 
-### Element Tree
+### 要素ツリー
 
-The element tags in the source code will be parsed by the Lynx engine at runtime and translated into [elements](guide/spec.html#element) for rendering. Nested element tags will form a tree composed of elements, which we refer to as the [element tree](guide/spec.html#element-tree). We rely on this tree structure to build and manage more complex interfaces.
+ソースコード内の要素タグは、実行時に Lynx エンジンによって解析され、描画用の [要素](guide/spec.html#element) に変換されます。ネストされた要素タグは木構造の要素を形成し、[要素ツリー](guide/spec.html#element-tree) を構築および管理するために使用されます。この木構造を使用することで、より複雑なインターフェースを構築および管理できます。
 
 <img
   src="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/elements_tree.png"
@@ -77,13 +77,13 @@ The element tags in the source code will be parsed by the Lynx engine at runtime
   height="30%"
 />
 
-## Built-in Elements
+## 組み込み要素
 
-The Lynx Engine comes with some built-in elements by default to help you quickly build pages.
+Lynx エンジンには、ページを迅速に構築するためにデフォルトでいくつかの組み込み要素が付属しています。
 
 ### View
 
-The `<view>` is the most basic element, commonly used to wrap other elements and carry some drawing capability. For example, the following code sets the entire view's background color to gray and adds some padding within the view:
+`<view>` は最も基本的な要素で、他の要素をラップし描画する機能を持ちます。例えば、次のコードは、全体のビューの背景色をグレーに設定し、ビュー内に余白を追加します。
 
 ```html
 <view style="padding:10px;background:gray;">
@@ -99,7 +99,7 @@ The `<view>` is the most basic element, commonly used to wrap other elements and
 
 ### Text
 
-As mentioned earlier, the `<text>` element is used to display text content. For instance, the following code can be used to display a piece of text:
+前述のように、`<text>` 要素はテキストコンテンツを表示するために使用されます。例えば、次のコードはテキストを表示するために使用できます。
 
 ```html
 <text>Hello Lynx</text>
@@ -113,7 +113,7 @@ As mentioned earlier, the `<text>` element is used to display text content. For 
 
 ### Image
 
-The `<image>` element is used to display images. For example, the following code can be used to display an image:
+`<image>` 要素は画像を表示するために使用されます。例えば、次のコードは画像を表示するために使用できます。
 
 ```html
 <image auto-size style="width:100px;" src="assets/logo.png" />
@@ -124,11 +124,11 @@ The `<image>` element is used to display images. For example, the following code
   width="20%"
 />
 
-### More Built-in Elements
+### その他の組み込み要素
 
-For all built-in Lynx elements, refer to [Built-in Elements Documentation](api/elements/built-in/view).
+全ての組み込みの Lynx 要素については、[組み込み要素ドキュメント](api/elements/built-in/view)を参照してください。
 
-## Behind the Elements: Native Rendering
+## 要素の背後: ネイティブレンダリング
 
 <img
   src="https://lf-lynx.tiktok-cdns.com/obj/lynx-artifacts-oss-sg/lynx-website/assets/doc/elements_2_na.png"
@@ -136,26 +136,26 @@ For all built-in Lynx elements, refer to [Built-in Elements Documentation](api/e
   height="30%"
 />
 
-Lynx elements are designed to be platform-agnostic. They are rendered natively by the Lynx Engine into the UI primitives for each platforms, such as iOS and Android views, or HTML elements (including [custom elements](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements)) on the Web.
+Lynx 要素はプラットフォームに依存しないように設計されており、これらは iOS および Android ビュー、または Web 上の HTML 要素 (カスタム要素を含む) などの各プラットフォームの UI プリミティブにネイティブにレンダリングされます。
 
-Lynx enables cross-platform application development based on the web technology, with its core being the establishment of a unified rendering system through element abstraction. Understanding the mapping relationship between the native views of the platform and Lynx elements is crucial to mastering the design concepts of elements within this framework. Below are some of the built-in elements and their corresponding concepts or analogues in different platforms:
+Lynx は、要素の抽象化を通じて統一されたレンダリングシステムを確立することにより、Web テクノロジーに基づくクロスプラットフォームアプリケーション開発を可能にします。プラットフォームのネイティブビューと Lynx 要素のマッピング関係を理解することは、このフレームワーク内の要素の設計コンセプトをマスターする上で重要です。以下は、異なるプラットフォームでの組み込み要素とそれに対応する概念または類似物のいくつかの例です。
 
-| Element                                              | Android                  | iOS                               | Web analogy                    | Description                                                                                                               |
-| :--------------------------------------------------- | :----------------------- | :-------------------------------- | :----------------------------- | :------------------------------------------------------------------------------------------------------------------------ |
-| [`<view>`](api/elements/built-in/view)               | `ViewGroup`              | `UIView`                          | Non-scrollable `<div>`         | Basic view container, often used for layout capabilities, stylization, and wrapping other elements.                       |
-| [`<text>`](api/elements/built-in/text)               | `TextView`               | `UITextView`                      | `<p>`                          | Used for displaying text content. Specific text styles can be aligned.                                                    |
-| [`<image>`](api/elements/built-in/image)             | `ImageView`              | `UIImageView`                     | `<img>`                        | Used for displaying different types of images, including web images, static resources, and local disk images.             |
-| [`<scroll-view>`](api/elements/built-in/scroll-view) | `ScrollView`             | `UIScrollView`                    | `<div>` with `overflow:scroll` | Basic scrollable element that supports horizontal and vertical scrolling. Allows users to scroll to display more content. |
-| [`<list>`](api/elements/built-in/list)               | `RecyclerView`           | `UICollectionView`                | None                           | High-performance scrollable element that reduces memory pressure through lazy loading and view reuse.                     |
-| [`<page>`](api/elements/built-in/page)               | `ViewRootImpl` of a page | `UIViewController.view` of a page | Non-resizable `<body>`         | Root node of a page, usually doesn't need to be added manually.                                                           |
+| 要素                                                 | Android        | iOS                     | Web 類似物                             | 説明                                                                                                                   |
+| :--------------------------------------------------- | :------------- | :---------------------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------- |
+| [`<view>`](api/elements/built-in/view)               | `ViewGroup`    | `UIView`                | スクロール不可の `<div>`               | レイアウト、スタイル、他の要素のラッピングなどの機能を提供するためによく使用されます。                                 |
+| [`<text>`](api/elements/built-in/text)               | `TextView`     | `UITextView`            | `<p>`                                  | テキストコンテンツを表示するために使用されます。特定のテキストスタイルを揃えることができます。                         |
+| [`<image>`](api/elements/built-in/image)             | `ImageView`    | `UIImageView`           | `<img>`                                | Web 画像、静的リソース、ローカルディスク画像など、さまざまな種類の画像を表示するために使用されます。                   |
+| [`<scroll-view>`](api/elements/built-in/scroll-view) | `ScrollView`   | `UIScrollView`          | `overflow:scroll` が設定された `<div>` | 水平、垂直スクロールをサポートする基本的なスクロール要素です。ユーザーがスクロールしてさらにコンテンツを表示できます。 |
+| [`<list>`](api/elements/built-in/list)               | `RecyclerView` | `UICollectionView`      | なし                                   | 遅延読み込みとビュー再利用を通じてメモリ負荷を軽減する高性能スクロール要素です。                                       |
+| [`<page>`](api/elements/built-in/page)               | `ViewRootImpl` | `UIViewController.view` | リサイズ不可の `<body>`                | ページのルートノードであり、通常は手動で追加する必要はありません。                                                     |
 
-## Extending with Custom Elements
+## カスタム要素による拡張
 
-If built-in elements can't meet your needs, you can expand Lynx's capabilities by implementing native elements customarily. This is one of Lynx's powerful features.
+組み込み要素が希望する要件を満たさない場合、カスタム要素を実装することで Lynx の機能を拡張することができます。これは Lynx の強力な機能の一つとなっています。
 
-For more details, refer to [Extending Native Elements Documentation](guide/custom-native-component).
+詳細は、[カスタム要素の拡張ドキュメント](guide/custom-native-component)を参照してください。
 
-## Components: Composition of Elements
+## コンポーネント: 要素の組み合わせ
 
 In more complex Lynx view structures, various types of elements are often nested and combined layer by layer to form richer and more diverse interface units. This is the core idea of component-based development in front-end frameworks: achieving modular construction of interfaces through reusable encapsulation units.
 
@@ -172,4 +172,4 @@ In ReactLynx, we follow the React development paradigm. By using a function and 
 
 ---
 
-In the next chapter, we will add more elaborate styles to the interface.
+次の章では、より洗練されたスタイルをインターフェースに追加します。
